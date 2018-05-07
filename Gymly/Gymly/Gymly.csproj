@@ -137,5 +137,12 @@
   <ItemGroup>
     <Resource Include="gymly_logo_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\close_icon.png" />
+    <Resource Include="Image\settings_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\lupa_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

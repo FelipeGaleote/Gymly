@@ -18,16 +18,37 @@ namespace Gymly.UserControls
 
     public partial class UserControlAluno : UserControl, INotifyPropertyChanged
     {
+
+        private string txtBoxTextoConsultaAluno = "Consultar Alunos";
+
         public UserControlAluno()
         {
             InitializeComponent();
             DataContext = this;
+            txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
+            txtBoxConsultaAluno.Foreground = Brushes.Gray;
+
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void NotificarPropriedadeAlterada(string propriedade)
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propriedade));
+        }
+
+        private void txtBoxConsultaAluno_GotFocus(object sender, RoutedEventArgs e)
+        {
+            txtBoxConsultaAluno.Clear();
+            txtBoxConsultaAluno.Foreground = Brushes.Black;
+        }
+
+        private void txtBoxConsultaAluno_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if(txtBoxConsultaAluno.Text == String.Empty)
+            {
+                txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
+                txtBoxConsultaAluno.Foreground = Brushes.Gray;
+            }
         }
     }
 }

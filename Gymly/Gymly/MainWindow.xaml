@@ -32,8 +32,34 @@
                 </Grid.ColumnDefinitions>
                 <Button Click ="BtnGymly_Click" Grid.Column="0" FontSize="25" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="268" Height="86" Background="{x:Null}" BorderBrush="{x:Null}" Name="btnGymly">GYMLY</Button>
                 <TextBlock Grid.Column="1" FontSize="25" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"   Margin="126,0,126,0" Name="txtBlockHora"></TextBlock>
-                <Button Name="btnConfiguracao" Grid.Column="2" FontSize="20" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Configuração" Width="160" Height="80" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0"></Button>
-                <Button Click="BtnSair_Click" Name="btnSair" Content="Sair" Grid.Column="3" Width="80" Height="80" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="5,-14,10,-13" Background="{x:Null}"></Button>
+                <Button Click="BtnSair_Click" Name="btnSair" Grid.Column="3" Width="80" Height="80" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="5,-14,10,-13">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Image/close_icon.png" Stretch="Uniform">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.6" ScaleY="0.6"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button  x:Name="btnConfiguracao" Grid.Column="2" FontSize="20" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Width="160" Height="80" BorderBrush="{x:Null}" Margin="0" Foreground="White">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Image/settings_icon.png" Stretch="Uniform">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.6" ScaleY="0.6"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
             </Grid>
             <Grid Grid.Row="2" Margin="4,58,4,0">
                 <Rectangle Fill="#C6C8D5"/>
@@ -50,7 +76,7 @@
                 <Button Click ="BtnAvaliacaoFisica_Click" Grid.Column="1" Content ="Avalição Física" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  VerticalAlignment="Center" Height="50" Background="#FF063BC5" BorderBrush="{x:Null}" Name="btnAvaliacaoFisica" Margin="5,0,0,0"/>
                 <Button Click ="BtnGrafico_Click" Name="btnGrafico" Grid.Column="2" FontSize="25" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Gráficos" Width="395" Height="50" Background="#FF063BC5" BorderBrush="{x:Null}"/>
             </Grid>
-            
+
         </Grid>
     </Grid>
 </Window>
