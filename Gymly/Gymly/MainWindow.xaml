@@ -19,8 +19,9 @@
         <Rectangle  Height="Auto" Fill="White"></Rectangle>
         <Grid >
             <Grid.RowDefinitions>
-                <RowDefinition Height = "1 *" />
-                <RowDefinition Height = "9 *" />
+                <RowDefinition Height = "3 *" />
+                <RowDefinition Height="2* "/>
+                <RowDefinition Height = "20 *" />
             </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Background="#000000" Margin="4,4,4,0">
@@ -30,27 +31,27 @@
                     <ColumnDefinition Width="3*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Click ="BtnGymly_Click" Grid.Column="0" FontSize="25" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="268" Height="86" Background="{x:Null}" BorderBrush="{x:Null}" Name="btnGymly">GYMLY</Button>
-                <TextBlock Grid.Column="1" FontSize="25" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"   Margin="126,0,126,0" Name="txtBlockHora"></TextBlock>
+                <Button Click ="BtnGymly_Click" Name="btnGymly"  Grid.Column="0" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto">GYMLY</Button>
+                <TextBlock Name="txtBlockHora" Grid.Column="1" FontSize="25" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"   Margin="126,0,126,0" ></TextBlock>
                 <Button Name="btnConfiguracao" Grid.Column="2" FontSize="20" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Configuração" Width="160" Height="80" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0"></Button>
                 <Button Click="BtnSair_Click" Name="btnSair" Content="Sair" Grid.Column="3" Width="80" Height="80" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="5,-14,10,-13" Background="{x:Null}"></Button>
             </Grid>
-            <Grid Grid.Row="2" Margin="4,58,4,0">
-                <Rectangle Fill="#C6C8D5"/>
-                <Image x:Name="logo" Grid.Column="1" HorizontalAlignment="Center" Margin="12,0,15,10" VerticalAlignment="Center" Source="Image/logo_gymly.png"/>
-                <DockPanel x:Name="pnl" Grid.Column="1"/>
-            </Grid>
-            <Grid Grid.Row="1" Margin="4,4,4,0" Height="50" VerticalAlignment="top" Background="#FF79738B">
+            <Grid Grid.Row="1" Margin="4,0,4,0" Background="#FF063BC5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"></ColumnDefinition>
                     <ColumnDefinition Width="4*"></ColumnDefinition>
                     <ColumnDefinition Width="4*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Click ="BtnAluno_Click" Grid.Column="0" Content ="Alunos" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  VerticalAlignment="Center" Height="50" Background="#FF063BC5" BorderBrush="{x:Null}" Name="btnAluno" HorizontalAlignment="Left" Width="394"/>
-                <Button Click ="BtnAvaliacaoFisica_Click" Grid.Column="1" Content ="Avalição Física" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  VerticalAlignment="Center" Height="50" Background="#FF063BC5" BorderBrush="{x:Null}" Name="btnAvaliacaoFisica" Margin="5,0,0,0"/>
-                <Button Click ="BtnGrafico_Click" Name="btnGrafico" Grid.Column="2" FontSize="25" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Gráficos" Width="395" Height="50" Background="#FF063BC5" BorderBrush="{x:Null}"/>
+                <Button Click ="BtnAluno_Click"  Name="btnAluno" Grid.Column="0" Content ="Alunos" FontSize="25" Foreground="#ffffff" FontWeight="Bold" Background="#FF063BC5" BorderBrush="{x:Null}" Height="Auto"/>
+                <Button Click ="BtnAvaliacaoFisica_Click" Name="btnAvaliacaoFisica" Grid.Column="1" Content ="Avalição Física" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  Background="#FF063BC5" BorderBrush="{x:Null}" Height="Auto"/>
+                <Button Click ="BtnGrafico_Click" Name="btnGrafico" Grid.Column="2" Content="Gráficos" FontSize="25" Foreground="#ffffff" FontWeight="Bold" Background="#FF063BC5" BorderBrush="{x:Null}" Height="Auto"/>
             </Grid>
-            
+            <Grid Grid.Row="2" Margin="4,4,4,0">
+                <Rectangle Fill="#C6C8D5"/>
+                <Image x:Name="logo" Grid.Column="1" HorizontalAlignment="Center" Margin="12,0,15,10" VerticalAlignment="Center" Source="Image/logo_gymly.png"/>
+                <DockPanel x:Name="pnl" Grid.Column="1"/>
+            </Grid>
+
         </Grid>
     </Grid>
 </Window>
