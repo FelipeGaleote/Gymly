@@ -26,15 +26,42 @@
 
             <Grid Grid.Row="0" Background="#000000" Margin="4,4,4,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*"></ColumnDefinition>
-                    <ColumnDefinition Width="7*"></ColumnDefinition>
-                    <ColumnDefinition Width="3*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="159*"></ColumnDefinition>
+                    <ColumnDefinition Width="357*"></ColumnDefinition>
+                    <ColumnDefinition Width="40*"></ColumnDefinition>
+                    <ColumnDefinition Width="40*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Button Click ="BtnGymly_Click" Name="btnGymly"  Grid.Column="0" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto">GYMLY</Button>
-                <TextBlock Name="txtBlockHora" Grid.Column="1" FontSize="25" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center"   Margin="126,0,126,0" ></TextBlock>
-                <Button Name="btnConfiguracao" Grid.Column="2" FontSize="20" Foreground="#ffffff" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Configuração" Width="160" Height="80" Background="{x:Null}" BorderBrush="{x:Null}" Margin="0"></Button>
-                <Button Click="BtnSair_Click" Name="btnSair" Content="Sair" Grid.Column="3" Width="80" Height="80" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="5,-14,10,-13" Background="{x:Null}"></Button>
+                <TextBlock Name="txtBlockHora" Grid.Column="0" Grid.ColumnSpan="4" FontSize="25" Foreground="#ffffff" FontWeight="Bold" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                <Button Name="btnConfiguracao" Grid.Column="2" Foreground="#ffffff" HorizontalAlignment="Right" VerticalAlignment="Center"  BorderBrush="{x:Null}" Width="80" Height="104" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="Image/settings_icon.png" Stretch="Uniform">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.7" ScaleY="0.7"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button Click="BtnSair_Click" Name="btnSair" Grid.Column="3" Width="80" Height="104" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="Image/close_icon.png" Stretch="Uniform">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.7" ScaleY="0.7"/>
+                                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
             </Grid>
             <Grid Grid.Row="1" Margin="4,0,4,0" Background="#FF063BC5">
                 <Grid.ColumnDefinitions>
