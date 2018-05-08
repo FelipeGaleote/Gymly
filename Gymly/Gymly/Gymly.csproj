@@ -102,6 +102,12 @@
     <Compile Include="UserControls\UserControlCadastroAluno.xaml.cs">
       <DependentUpon>UserControlCadastroAluno.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlCadastroAnamnese.xaml.cs">
+      <DependentUpon>UserControlCadastroAnamnese.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlCadastroAnamneseProximaEtapa.xaml.cs">
+      <DependentUpon>UserControlCadastroAnamneseProximaEtapa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlGrafico.xaml.cs">
       <DependentUpon>UserControlGrafico.xaml</DependentUpon>
     </Compile>
@@ -129,6 +135,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UserControlCadastroAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAnamnese.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAnamneseProximaEtapa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -61,5 +61,12 @@ namespace Gymly.UserControls
                 Console.WriteLine(a.Nome +" "+ a.Email);
         
         }
+
+        private void btnEditarAnamnese_Click(object sender, RoutedEventArgs e)
+        {
+            logo.Visibility = Visibility.Collapsed;
+            pnl.Children.Clear();
+            pnl.Children.Add(new UserControlGrafico());
+        }
     }
 }
