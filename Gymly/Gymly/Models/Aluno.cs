@@ -8,6 +8,7 @@ namespace Gymly.Models
 {
     class Aluno
     {
+        private int id;
         private string nome;
         private int idade;
         private int dataNasc;
@@ -134,6 +135,19 @@ namespace Gymly.Models
             set
             {
                 anamnese = value;
+            }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
             }
         }
     }

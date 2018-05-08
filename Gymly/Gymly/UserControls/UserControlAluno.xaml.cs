@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Gymly.BD;
+using Gymly.Models;
 
 namespace Gymly.UserControls
 {
@@ -49,6 +51,15 @@ namespace Gymly.UserControls
                 txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
                 txtBoxConsultaAluno.Foreground = Brushes.Gray;
             }
+        }
+
+        private void btnCadastraAluno_Click(object sender, RoutedEventArgs e)
+        {
+            BDAluno.insereAluno();
+            List<Aluno> alunos = BDAluno.consultaAluno();
+            foreach(Aluno a in alunos)
+                Console.WriteLine(a.Nome +" "+ a.Email);
+        
         }
     }
 }

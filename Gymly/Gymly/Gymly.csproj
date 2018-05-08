@@ -87,7 +87,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BD\BDAluno.cs" />
+    <Compile Include="BD\BDAnamnese.cs" />
     <Compile Include="BD\BDAvaliacaoFisica.cs" />
+    <Compile Include="BD\SQLiteConexao.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Anamnese.cs" />
     <Compile Include="Models\AvaliacaoFisica.cs" />
