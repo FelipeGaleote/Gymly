@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Gymly.BD;
 using Gymly.Models;
+using Gymly.UserControls;
 
 namespace Gymly.UserControls
 {
@@ -22,13 +23,15 @@ namespace Gymly.UserControls
     {
 
         private string txtBoxTextoConsultaAluno = "Consultar Alunos";
+        private MainWindow mainWindow;
 
-        public UserControlAluno()
+        public UserControlAluno(MainWindow mainWindow)
         {
             InitializeComponent();
             DataContext = this;
             txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
             txtBoxConsultaAluno.Foreground = Brushes.Gray;
+            this.mainWindow = mainWindow;
 
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -55,11 +58,13 @@ namespace Gymly.UserControls
 
         private void btnCadastraAluno_Click(object sender, RoutedEventArgs e)
         {
-            BDAluno.insereAluno();
+            mainWindow.mudarUserControl("cadastroAluno");
+
+            /*BDAluno.insereAluno();
             List<Aluno> alunos = BDAluno.consultaAluno();
             foreach(Aluno a in alunos)
-                Console.WriteLine(a.Nome +" "+ a.Email);
-        
+                Console.WriteLine(a.Nome +" "+ a.Email);*/
+
         }
 
         private void btnEditarAnamnese_Click(object sender, RoutedEventArgs e)

@@ -58,7 +58,7 @@ namespace Gymly
         {
             logo.Visibility = Visibility.Collapsed;
             pnl.Children.Clear();
-            pnl.Children.Add(new UserControlAluno());
+            pnl.Children.Add(new UserControlAluno(this));
         }
         private void BtnAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
@@ -71,6 +71,21 @@ namespace Gymly
             logo.Visibility = Visibility.Collapsed;
             pnl.Children.Clear();
             pnl.Children.Add(new UserControlGrafico());
+        }
+
+       public void mudarUserControl(String nomeDoControl)
+        {
+            pnl.Children.Clear();
+            switch (nomeDoControl)
+            {
+                case "cadastroAluno":
+                    pnl.Children.Add(new UserControlCadastroAluno());
+                    break;
+                case "cadastroAnamnese":
+                    break;
+                case "teste":
+                    break;
+            }
         }
     }
 }
