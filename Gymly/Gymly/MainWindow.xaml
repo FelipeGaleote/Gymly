@@ -75,7 +75,7 @@
             </Grid>
             <Grid Grid.Row="2" Margin="4,4,4,0">
                 <Rectangle Fill="#C6C8D5"/>
-                <Image x:Name="logo" Grid.Column="1" HorizontalAlignment="Center" Margin="12,0,15,10" VerticalAlignment="Center" Source="Image/logo_gymly.png"/>
+                <Image x:Name="logo" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Image/logo_gymly.png" Width="1149"/>
                 <DockPanel x:Name="pnl" Grid.Column="1"/>
             </Grid>
 

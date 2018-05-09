@@ -82,8 +82,10 @@ namespace Gymly
                     pnl.Children.Add(new UserControlCadastroAluno());
                     break;
                 case "cadastroAnamnese":
+                    pnl.Children.Add(new UserControlCadastroAnamnese());
                     break;
-                case "teste":
+                case "cadastroAnamneseProximaEtapa":
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa());
                     break;
             }
         }

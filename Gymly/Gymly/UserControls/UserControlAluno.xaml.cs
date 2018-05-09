@@ -69,9 +69,10 @@ namespace Gymly.UserControls
 
         private void btnEditarAnamnese_Click(object sender, RoutedEventArgs e)
         {
-            logo.Visibility = Visibility.Collapsed;
-            pnl.Children.Clear();
-            pnl.Children.Add(new UserControlGrafico());
+           mainWindow.mudarUserControl("cadastroAnamnese");
         }
+
+
+
     }
 }

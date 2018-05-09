@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Gymly.BD;
+using Gymly.Models;
+using Gymly.UserControls;
 
 namespace Gymly.UserControls
 {
@@ -20,9 +23,18 @@ namespace Gymly.UserControls
     /// </summary>
     public partial class UserControlCadastroAnamnese : UserControl
     {
+
+        private MainWindow mainWindow;
+
         public UserControlCadastroAnamnese()
         {
             InitializeComponent();
+            //this.mainWindow = mainWindow;
+        }
+
+        private void btnEtapa2_Click(object sender, RoutedEventArgs e)
+        {
+            //mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa");
         }
     }
 }
