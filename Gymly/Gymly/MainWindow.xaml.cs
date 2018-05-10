@@ -83,6 +83,8 @@ namespace Gymly
                     break;
                 case "cadastroAnamnese":
                     break;
+                case "teste":
+                    break;
             }
         }
     }
