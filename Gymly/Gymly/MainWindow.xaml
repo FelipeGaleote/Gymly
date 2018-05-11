@@ -14,7 +14,7 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="MainWindow" Height="900" Width="1200" ResizeMode="NoResize"  WindowState="Maximized" WindowStyle="None">
+        Title="MainWindow" Height="900" Width="1200"  ResizeMode="NoResize"  WindowState="Maximized" WindowStyle="None">
     <Grid>
         <Rectangle  Height="Auto" Fill="White"></Rectangle>
         <Grid >
@@ -70,7 +70,7 @@
                     <ColumnDefinition Width="4*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Button Click ="BtnAluno_Click"  Name="btnAluno" Grid.Column="0" Content ="Alunos" FontSize="25" Foreground="#ffffff" FontWeight="Bold" Background="#FF063BC5" BorderBrush="{x:Null}" Height="Auto"/>
-                <Button Click ="BtnAvaliacaoFisica_Click" Name="btnAvaliacaoFisica" Grid.Column="1" Content ="Avalição Física" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  Background="#FF063BC5" BorderBrush="{x:Null}" Height="Auto"/>
+                <Button Click ="BtnAvaliacaoFisica_Click" Name="btnAvaliacaoFisica" Grid.Column="1" Content ="Avaliação Física" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  Background="#FF063BC5" BorderBrush="{x:Null}" Height="Auto"/>
                 <Button Click ="BtnGrafico_Click" Name="btnGrafico" Grid.Column="2" Content="Gráficos" FontSize="25" Foreground="#ffffff" FontWeight="Bold" Background="#FF063BC5" BorderBrush="{x:Null}" Height="Auto"/>
             </Grid>
             <Grid Grid.Row="2" Margin="4,4,4,0">

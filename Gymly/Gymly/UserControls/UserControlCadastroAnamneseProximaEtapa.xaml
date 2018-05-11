@@ -111,17 +111,6 @@
             </CheckBox.RenderTransform>
         </CheckBox>
 
-        <TextBlock FontSize="18pt" Text="Angina"  Grid.Row="8" Grid.Column="1" />
-        <CheckBox  Name="checkBoxIdosoNaoAcostumado" Grid.Row="8" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
 
 
         <TextBlock FontSize="18pt" Text="Ataque cardíaco" Grid.Row="2" Grid.Column="2"  Margin="20,0,0,0"/>
