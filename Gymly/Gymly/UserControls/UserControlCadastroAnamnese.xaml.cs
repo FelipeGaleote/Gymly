@@ -26,15 +26,15 @@ namespace Gymly.UserControls
 
         private MainWindow mainWindow;
 
-        public UserControlCadastroAnamnese()
+        public UserControlCadastroAnamnese(MainWindow mainWindow)
         {
             InitializeComponent();
-            //this.mainWindow = mainWindow;
+            this.mainWindow = mainWindow;
         }
 
         private void btnEtapa2_Click(object sender, RoutedEventArgs e)
         {
-            //mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa");
+            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa");
         }
     }
 }

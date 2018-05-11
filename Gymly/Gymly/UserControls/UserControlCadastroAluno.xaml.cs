@@ -20,8 +20,10 @@ namespace Gymly.UserControls
     /// </summary>
     public partial class UserControlCadastroAluno : UserControl
     {
-        public UserControlCadastroAluno()
+        private MainWindow mainWindow;
+        public UserControlCadastroAluno(MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
         }
     }

@@ -79,13 +79,13 @@ namespace Gymly
             switch (nomeDoControl)
             {
                 case "cadastroAluno":
-                    pnl.Children.Add(new UserControlCadastroAluno());
+                    pnl.Children.Add(new UserControlCadastroAluno(this));
                     break;
                 case "cadastroAnamnese":
-                    pnl.Children.Add(new UserControlCadastroAnamnese());
+                    pnl.Children.Add(new UserControlCadastroAnamnese(this));
                     break;
                 case "cadastroAnamneseProximaEtapa":
-                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa());
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa(this));
                     break;
             }
         }

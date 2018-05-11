@@ -20,8 +20,10 @@ namespace Gymly.UserControls
     /// </summary>
     public partial class UserControlCadastroAnamneseProximaEtapa : UserControl
     {
-        public UserControlCadastroAnamneseProximaEtapa()
+        private MainWindow mainWindow;
+        public UserControlCadastroAnamneseProximaEtapa(MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
         }
     }
