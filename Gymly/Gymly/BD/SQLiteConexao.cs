@@ -13,7 +13,6 @@ namespace Gymly.BD
 
         private static string nomeBanco = "gymly.db";
         private static string conexao = "Data Source="+nomeBanco;
-        private static int IDregistro;
         private SQLiteConnection conn;
 
 
@@ -48,9 +47,7 @@ namespace Gymly.BD
                 sql.AppendLine("[EMAIL] VARCHAR(50),");
                 sql.AppendLine("[TELEFONE] VARCHAR(15),");
                 sql.AppendLine("[GENERO] VARCHAR(10),");
-                sql.AppendLine("[NIVEL] VARCHAR(50),");
-                sql.AppendLine("[IDANAMNESE] INTEGER,");
-                sql.AppendLine("FOREIGN KEY(IDANAMNESE) REFERENCES ANAMNESE(ID));");
+                sql.AppendLine("[NIVEL] VARCHAR(50));");
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();
                 sql.Clear();
