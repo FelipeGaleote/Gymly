@@ -22,8 +22,28 @@ namespace Gymly.BD
             SQLiteCommand cmd = new SQLiteCommand(sql.ToString(), conn);
             cmd.ExecuteNonQuery();
             conn.Close();
-            sql.Clear();
+            sql.Clear();    
         }
+
+        public static void insereAluno(Aluno aluno)
+        {
+            SQLiteConexao conexao = new SQLiteConexao();  
+            SQLiteConnection conn = conexao.getConexao(); 
+
+            string sql = "INSERT INTO Alunos(nome,idade,datanasc,email,telefone,genero,nivel) VALUES(@nome,@idade,@datanasc,@email,@telefone,@genero,@nivel)";
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn); 
+            cmd.Parameters.AddWithValue("nome", aluno.Nome);
+            cmd.Parameters.AddWithValue("idade", aluno.Idade);
+            cmd.Parameters.AddWithValue("datanasc", aluno.DataNasc);
+            cmd.Parameters.AddWithValue("email", aluno.Email);
+            cmd.Parameters.AddWithValue("telefone", aluno.Telefone);
+            cmd.Parameters.AddWithValue("genero", aluno.Genero);
+            cmd.Parameters.AddWithValue("nivel", aluno.Nivel);
+            cmd.ExecuteNonQuery(); 
+            conn.Close();  
+        }
+
         public static List<Aluno> consultaAluno()
         {
             SQLiteConexao conexao = new SQLiteConexao();
