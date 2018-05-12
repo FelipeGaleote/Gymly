@@ -26,5 +26,11 @@ namespace Gymly.UserControls
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
+
+        private void buttonAtivarCalendario_Click(object sender, RoutedEventArgs e)
+        {
+            calendarDataNasc.Visibility = Visibility.Visible;
+            buttonAtivarCalendario.Visibility = Visibility.Collapsed;
+        }
     }
 }
