@@ -30,13 +30,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Algum médico já disse que você tinhaalguns dos" Margin="0,0,0,25" VerticalAlignment="Bottom"/>
-        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="problemas que se seguem?" VerticalAlignment="Bottom"/>
-        <TextBlock FontSize="12pt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" TextAlignment="Center"  Foreground="Gray" Text="Marque as opções mais adequadas:" />
+        <TextBlock FontSize="22pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Algum médico já disse que você tinha alguns dos" Margin="0,25,0,-20" VerticalAlignment="Top"/>
+        <TextBlock FontSize="22pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="problemas que se seguem?"  Margin="0,10,10,-20" VerticalAlignment="Bottom"/>
+        <TextBlock FontSize="16pt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Marque as opções mais adequadas:"  Margin="0,30,0,0" VerticalAlignment="Top" />
 
-        <TextBlock FontSize="18pt" Text="Doença cardíaca "  Grid.Row="2" Grid.Column="1" /> 
+        <TextBlock FontSize="18pt" Text="Doença cardíaca "  Grid.Row="2" Grid.Column="1" />
         <TextBlock FontSize="18pt" Text="coronariana"  Grid.Row="2" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxProblemaCardiaco" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxProblemaCardiaco" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -48,8 +48,8 @@
         </CheckBox>
 
         <TextBlock  FontSize="18pt" Text="Doença cardíaca"  Grid.Row="3" Grid.Column="1" />
-        <TextBlock  FontSize="18pt" Text="reumática"  Grid.Row="3" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxDoresNoPeito" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <TextBlock  FontSize="18pt" Text="reumática"  Grid.Row="3" Grid.Column="1" Margin="0,47,0,0" />
+        <CheckBox  Name="checkBoxDoresNoPeito" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -62,7 +62,7 @@
 
         <TextBlock FontSize="18pt" Text="Doença cardíaca "  Grid.Row="4" Grid.Column="1" />
         <TextBlock  FontSize="18pt" Text="congênita"  Grid.Row="4" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxDesmaia" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxDesmaia" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -75,7 +75,7 @@
 
         <TextBlock FontSize="18pt" Text="Batimentos cardíacos" Grid.Row="5" Grid.Column="1" />
         <TextBlock  FontSize="18pt" Text="irregulares"  Grid.Row="5" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxPressaoAlta" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxPressaoAlta" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -88,7 +88,7 @@
 
         <TextBlock  FontSize="18pt" Grid.Row="6" Grid.Column="1" Text="Problemas nas" />
         <TextBlock  FontSize="18pt" Text="válvulas cardíacas"  Grid.Row="6" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxProblemaOsseo" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxProblemaOsseo" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -100,7 +100,7 @@
         </CheckBox>
 
         <TextBlock FontSize="18pt" Text="Murmúrios cardíacos"  Grid.Row="7" Grid.Column="1" />
-        <CheckBox  Name="checkBoxProblemaNaoMencionado" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxProblemaNaoMencionado" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -114,7 +114,7 @@
 
 
         <TextBlock FontSize="18pt" Text="Ataque cardíaco" Grid.Row="2" Grid.Column="2"  Margin="20,0,0,0"/>
-        <CheckBox  Name="checkBoxAtaqueCardiaco" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxAtaqueCardiaco" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -126,7 +126,7 @@
         </CheckBox>
 
         <TextBlock FontSize="18pt" Text="Derrame cerebral"  Grid.Row="3" Grid.Column="2"  Margin="20,0,0,0"/>
-        <CheckBox  Name="checkBoxDerrameCerebral" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxDerrameCerebral" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -138,7 +138,7 @@
         </CheckBox>
 
         <TextBlock FontSize="18pt" Text="Epilepsia"  Grid.Row="4" Grid.Column="2" Margin="20,0,0,0" />
-        <CheckBox  Name="checkBoxEpilepsia" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxEpilepsia" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -150,7 +150,7 @@
         </CheckBox>
 
         <TextBlock FontSize="18pt" Text="Diabetes" Grid.Row="5" Grid.Column="2" Margin="20,0,0,0" />
-        <CheckBox  Name="checkBoxDiabetes" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxDiabetes" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -162,7 +162,7 @@
         </CheckBox>
 
         <TextBlock FontSize="18pt"  Grid.Row="6" Grid.Column="2" Text="Hipertensão" Margin="20,0,0,0" />
-        <CheckBox  Name="checkBoxHipertensao" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxHipertensao" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -174,7 +174,7 @@
         </CheckBox>
 
         <TextBlock FontSize="18pt" Text="Câncer" Grid.Row="7" Grid.Column="2" Margin="20,0,0,0"/>
-        <CheckBox  Name="checkBoxCancer" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <CheckBox  Name="checkBoxCancer" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -185,8 +185,7 @@
             </CheckBox.RenderTransform>
         </CheckBox>
 
-        <Button Name="btnEtapa3" Content="Próximo" Grid.Row="9" Grid.Column="3" Height="Auto" Margin="0,20,0,10" />
-
+        <Button Name="btnEtapa3" Content="Próximo" TextBlock.FontSize ="24pt" Grid.Row="9" Grid.Column="1" Height="80" Margin="0,0,0,5" Grid.ColumnSpan="2" RenderTransformOrigin="0.424,0.439" />
         <!--<TextBox Text="{Binding Diretorio, Mode=TwoWay}" Grid.Row="1" Grid.Column="0"/> -->
         <!--<ListBox ItemsSource="{Binding ItensDiretorio}" SelectedItem="{Binding ItemSelecionado, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>-->
 
