@@ -16,20 +16,20 @@ using System.Windows.Shapes;
 namespace Gymly.UserControls
 {
     /// <summary>
-    /// Interaction logic for UserControlCadastroAnamneseProximaEtapa.xaml
+    /// Interação lógica para UserControlCadastroAnamneseProximaEtapa3.xam
     /// </summary>
-    public partial class UserControlCadastroAnamneseProximaEtapa : UserControl
+    public partial class UserControlCadastroAnamneseProximaEtapa3 : UserControl
     {
         private MainWindow mainWindow;
-        public UserControlCadastroAnamneseProximaEtapa(MainWindow mainWindow)
+        public UserControlCadastroAnamneseProximaEtapa3(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
 
-        private void btnEtapa3_Click(object sender, RoutedEventArgs e)
+        private void btnEtapa5_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa2");
+            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapaFinal");
         }
     }
 }

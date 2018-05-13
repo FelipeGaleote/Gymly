@@ -52,7 +52,7 @@ namespace Gymly
         {
             logo.Visibility = Visibility.Collapsed;
             pnl.Children.Clear();
-            pnl.Children.Add(new UserControlTelaInicial());
+            pnl.Children.Add(new UserControlTelaInicial(this));
         }
         private void BtnAluno_Click(object sender, RoutedEventArgs e)
         {
@@ -78,6 +78,12 @@ namespace Gymly
             pnl.Children.Clear();
             switch (nomeDoControl)
             {
+                case "telaInicial":
+                    pnl.Children.Add(new UserControlTelaInicial(this));
+                    break;
+                case "aluno":
+                    pnl.Children.Add(new UserControlAluno(this));
+                    break;
                 case "cadastroAluno":
                     pnl.Children.Add(new UserControlCadastroAluno(this));
                     break;
@@ -86,6 +92,15 @@ namespace Gymly
                     break;
                 case "cadastroAnamneseProximaEtapa":
                     pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa(this));
+                    break;
+                case "cadastroAnamneseProximaEtapa2":
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa2(this));
+                    break;
+                case "cadastroAnamneseProximaEtapa3":
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa3(this));
+                    break;
+                case "cadastroAnamneseProximaEtapaFinal":
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapaFinal(this));
                     break;
             }
         }

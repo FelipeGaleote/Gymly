@@ -17,8 +17,10 @@ namespace Gymly.UserControls
 {
     public partial class UserControlTelaInicial : UserControl, INotifyPropertyChanged
     {
-        public UserControlTelaInicial()
+        private MainWindow mainWindow;
+        public UserControlTelaInicial(MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
             DataContext = this;
         }

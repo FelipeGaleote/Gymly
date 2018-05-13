@@ -105,8 +105,17 @@
     <Compile Include="UserControls\UserControlCadastroAnamnese.xaml.cs">
       <DependentUpon>UserControlCadastroAnamnese.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlCadastroAnamneseProximaEtapa3.xaml.cs">
+      <DependentUpon>UserControlCadastroAnamneseProximaEtapa3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlCadastroAnamneseProximaEtapa.xaml.cs">
       <DependentUpon>UserControlCadastroAnamneseProximaEtapa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlCadastroAnamneseProximaEtapa2.xaml.cs">
+      <DependentUpon>UserControlCadastroAnamneseProximaEtapa2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlCadastroAnamneseProximaEtapaFinal.xaml.cs">
+      <DependentUpon>UserControlCadastroAnamneseProximaEtapaFinal.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlGrafico.xaml.cs">
       <DependentUpon>UserControlGrafico.xaml</DependentUpon>
@@ -142,7 +151,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\UserControlCadastroAnamneseProximaEtapa3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\UserControlCadastroAnamneseProximaEtapa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAnamneseProximaEtapa2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAnamneseProximaEtapaFinal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

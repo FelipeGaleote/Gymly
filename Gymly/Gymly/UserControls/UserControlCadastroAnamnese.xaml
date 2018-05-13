@@ -58,7 +58,7 @@
             </CheckBox.RenderTransform>
         </CheckBox>
 
-        <TextBlock FontSize="18pt" Text="3.	Você desmaia com freqüência ou tem"  Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="1" />
+        <TextBlock FontSize="18pt" Text="3.	Você desmaia com frequência ou tem"  Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="1" />
         <TextBlock FontSize="18pt" Text="episódios importantes de vertigem?" Margin="0,25,0,0"  Grid.ColumnSpan="2" Grid.Row="4" Grid.Column="1" />
         <CheckBox  Name="checkBoxDesmaia" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top">
             <CheckBox.RenderTransform>

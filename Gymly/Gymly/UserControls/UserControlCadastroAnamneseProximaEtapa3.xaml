@@ -1,0 +1,168 @@
+﻿<UserControl x:Class="Gymly.UserControls.UserControlCadastroAnamneseProximaEtapa3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:Gymly.UserControls"
+        mc:Ignorable="d" 
+        d:DesignHeight="1000" d:DesignWidth="1000">
+
+    <Grid Margin="0,2,0,-2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Quais seus Objetivos?" VerticalAlignment="Center"/>
+        <TextBlock FontSize="12pt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Marque as opções mais adequadas:"  VerticalAlignment="Center" />
+
+        <TextBlock FontSize="18pt" Text="Perder Peso"  Grid.Row="2" Grid.Column="1" />
+        <CheckBox  Name="checkBoxPerderPeso" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <TextBlock  FontSize="18pt" Text="Melhorar a Flexibilidade"  Grid.Row="3" Grid.Column="1" />
+        <CheckBox  Name="checkBoxMelhorarFlexibilidade" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <TextBlock FontSize="18pt" Text="Melhorar a Aptidão"  Grid.Row="4" Grid.Column="1" />
+        <TextBlock  FontSize="18pt" Text="Cardiovascular"  Grid.Row="4" Grid.Column="1" Margin="0,25,0,0" />
+        <CheckBox  Name="checkBoxAptidaoCardiovascular" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <TextBlock FontSize="18pt" Text="Melhorar a Condição" Grid.Row="5" Grid.Column="1" />
+        <TextBlock  FontSize="18pt" Text="Muscular"  Grid.Row="5" Grid.Column="1" Margin="0,25,0,0" />
+        <CheckBox  Name="checkBoxCondicaoMuscular" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <TextBlock  FontSize="18pt" Grid.Row="6" Grid.Column="1" Text="Sentir-se Melhor" />
+        <CheckBox  Name="checkBoxSentirMelhor" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        
+
+
+
+        <TextBlock FontSize="18pt" Text="Reduzir as Dores" Grid.Row="2" Grid.Column="2"  Margin="20,0,0,0"/>
+        <CheckBox  Name="checkBoxReduzirDores" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <TextBlock FontSize="18pt" Text="Reduzir o Estresse"  Grid.Row="3" Grid.Column="2"  Margin="20,0,0,0"/>
+        <CheckBox  Name="checkBoxReduzirEstresse" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <TextBlock FontSize="18pt" Text="Hipertrofia"  Grid.Row="4" Grid.Column="2" Margin="20,0,0,0" />
+        <CheckBox  Name="checkBoxHipertrofia" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <TextBlock FontSize="18pt" Text="Melhorar a Nutrição" Grid.Row="5" Grid.Column="2" Margin="20,0,0,0" />
+        <CheckBox  Name="checkBoxMelhorarNutricao" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+
+        <TextBlock FontSize="18pt"  Grid.Row="6" Grid.Column="2" Text="Diminuir Vicios" Margin="20,0,0,0" />
+        <CheckBox  Name="checkBoxDiminuirVicios" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="23" Margin="0,0,6,0" Width="26">
+            <CheckBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </CheckBox.RenderTransform>
+        </CheckBox>
+ 
+
+        <Button Name="btnEtapa5" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="btnEtapa5_Click"/>
+        <!--<TextBox Text="{Binding Diretorio, Mode=TwoWay}" Grid.Row="1" Grid.Column="0"/> -->
+        <!--<ListBox ItemsSource="{Binding ItensDiretorio}" SelectedItem="{Binding ItemSelecionado, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>-->
+
+    </Grid>
+</UserControl>
