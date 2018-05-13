@@ -30,9 +30,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="22pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Algum médico já disse que você tinha alguns dos" Margin="0,25,0,-20" VerticalAlignment="Top"/>
-        <TextBlock FontSize="22pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="problemas que se seguem?"  Margin="0,10,10,-20" VerticalAlignment="Bottom"/>
-        <TextBlock FontSize="16pt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Marque as opções mais adequadas:"  Margin="0,30,0,0" VerticalAlignment="Top" />
+        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Algum médico já disse que você tinha alguns dos" VerticalAlignment="Center"/>
+        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="problemas que se seguem?"  VerticalAlignment="Center" Grid.RowSpan="2"/>
+        <TextBlock FontSize="12pt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Marque as opções mais adequadas:"  VerticalAlignment="Center" />
 
         <TextBlock FontSize="18pt" Text="Doença cardíaca "  Grid.Row="2" Grid.Column="1" />
         <TextBlock FontSize="18pt" Text="coronariana"  Grid.Row="2" Grid.Column="1" Margin="0,25,0,0" />
@@ -48,7 +48,7 @@
         </CheckBox>
 
         <TextBlock  FontSize="18pt" Text="Doença cardíaca"  Grid.Row="3" Grid.Column="1" />
-        <TextBlock  FontSize="18pt" Text="reumática"  Grid.Row="3" Grid.Column="1" Margin="0,47,0,0" />
+        <TextBlock  FontSize="18pt" Text="reumática"  Grid.Row="3" Grid.Column="1" Margin="0,25,0,0" />
         <CheckBox  Name="checkBoxDoresNoPeito" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
@@ -185,7 +185,7 @@
             </CheckBox.RenderTransform>
         </CheckBox>
 
-        <Button Name="btnEtapa3" Content="Próximo" TextBlock.FontSize ="24pt" Grid.Row="9" Grid.Column="1" Height="80" Margin="0,0,0,5" Grid.ColumnSpan="2" RenderTransformOrigin="0.424,0.439" />
+        <Button Name="btnEtapa3" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2"/>
         <!--<TextBox Text="{Binding Diretorio, Mode=TwoWay}" Grid.Row="1" Grid.Column="0"/> -->
         <!--<ListBox ItemsSource="{Binding ItensDiretorio}" SelectedItem="{Binding ItemSelecionado, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>-->
 
