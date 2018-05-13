@@ -41,7 +41,7 @@ namespace Gymly.BD
                 SQLiteCommand cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();
                 sql.Clear();
-                sql.AppendLine("CREATE TABLE IF NOT EXISTS ALUNOS ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS ALUNOS ([CPF] VARCHAR(16) PRIMARY KEY,");
                 sql.AppendLine("[NOME] VARCHAR(50),");
                 sql.AppendLine("[DATANASC] DATE,");
                 sql.AppendLine("[EMAIL] VARCHAR(50),");
@@ -56,7 +56,7 @@ namespace Gymly.BD
 
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS ANAMNESES ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[ID] INT");
-                sql.AppendLine("[ID_ALUNO] INT,");
+                sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
                 sql.AppendLine("[HISTORICO_PROBLEMA_CARDIACO] INT,");
                 sql.AppendLine("[HISTORICO_DORES_PEITO] INT,");
                 sql.AppendLine("[HISTORICO_DESMAIOS_OU_VERTIGEM] INT,");
@@ -99,7 +99,7 @@ namespace Gymly.BD
                 sql.AppendLine("[SENTIR_MELHOR] INT,");
 
 
-                sql.AppendLine("FOREIGN KEY(ID_ALUNO) REFERENCES ALUNO(ID));");
+                sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNO(CPF));");
 
 
                 cmd = new SQLiteCommand(sql.ToString(), conn);
@@ -109,7 +109,7 @@ namespace Gymly.BD
                 
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS AVALIACAO FISICA ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[ID] INT,");
-                sql.AppendLine("[CPF_ALUNO] INT,");
+                sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
                 sql.AppendLine("[DATA] DATE,");
                 sql.AppendLine("[IDADE] INT,");
                 sql.AppendLine("[PESO] FLOAT,");

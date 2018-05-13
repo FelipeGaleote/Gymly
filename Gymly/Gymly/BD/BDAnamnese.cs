@@ -24,22 +24,22 @@ namespace Gymly.BD
             conn.Close();
             sql.Clear();
         }
-        public void insereAnamnese(Anamnese anamnese, int idaluno)
+        public void insereAnamnese(Anamnese anamnese, string cpfAluno)
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.getConexao();
-            string sql = "INSERT INTO Anamnese(historico_problema_cardiaco,historico_dores_peito,historico_desmaios_ou_vertigem,historico_pressao_alta,historico_problema_osseo,razao_fisica," +
+            string sql = "INSERT INTO Anamnese(cpf_aluno,historico_problema_cardiaco,historico_dores_peito,historico_desmaios_ou_vertigem,historico_pressao_alta,historico_problema_osseo,razao_fisica," +
                 "idoso_regular,doenca_cardiaca_coronariana,doenca_cardiaca_reumatica,doenca_cardiaca_congenita,batimentos_cardiacos_irregulares,problema_valvulas_cardiacas,murmurios_cardiacos," +
                 "ataque_cardiaco,derrame_cerebral,epilepsia,diabetes,hipertensao,cancer,dor_articulacao,dor_pulmonar," +"problema_recente_parente,restricao_fisica,gestante,fumante,bebida_alcoolica," +
                "todos_grupos_alimentares,alta_gordura_saturada,perder_peso,parar_fumar,reduzir_dores_costas,melhorar_nutricao,melhorar_aptidao,melhorar_muscular,reduzir_estresse,diminuir_colesterol," + "sentir_melhor) " +
-                "VALUES(@historico_problema_cardiaco,@historico_dores_peito,@historico_desmaios_ou_vertigem,@historico_pressao_alta,@historico_problema_osseo," +
+                "VALUES(@cpf,@historico_problema_cardiaco,@historico_dores_peito,@historico_desmaios_ou_vertigem,@historico_pressao_alta,@historico_problema_osseo," +
                 "@razao_fisica,@idoso_regular,@doenca_cardiaca_coronariana,@doenca_cardiaca_reumatica,@doenca_cardiaca_congenita,@batimentos_cardiacos_irregulares," +
                 "@problema_valvulas_cardiacas,@murmurios_cardiacos,@ataque_cardiaco,@derrame_cerebral,@epilepsia,@diabetes,@hipertensao,@cancer,@dor_articulacao,@dor_pulmonar," +
                 "@problema_recente_parente,@restricao_fisica,@gestante,@fumante,@bebida_alcoolica,@todos_grupos_alimentares,@alta_gordura_saturada,@perder_peso,@parar_fumar," +
                 "@reduzir_dores_costas,@melhorar_nutricao,@melhorar_aptidao,@melhorar_muscular,@reduzir_estresse,@diminuir_colesterol,@sentir_melhor)";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-            cmd.Parameters.AddWithValue("idaluno", idaluno);
+            cmd.Parameters.AddWithValue("cpf_Aluno", cpfAluno);
             cmd.Parameters.AddWithValue("historico_problema_cardiaco", anamnese.Historico_problema_cardiaco);
             cmd.Parameters.AddWithValue("historico_dores_peito", anamnese.Historico_dores_peito);
             cmd.Parameters.AddWithValue("historico_desmaios_ou_vertigem", anamnese.Historico_desmaios_ou_vertigem);

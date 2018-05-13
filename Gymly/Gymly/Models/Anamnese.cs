@@ -8,7 +8,7 @@ namespace Gymly.Models
 {
     public class Anamnese { 
         private int id;
-
+        private string cpfAluno;
         private bool historico_problema_cardiaco;
         private bool historico_dores_peito;
         private bool historico_desmaios_ou_vertigem;
@@ -50,6 +50,7 @@ namespace Gymly.Models
 
 
         public int Id { get => id; set => id = value; }
+        public string Cpf { get => Cpf; set => Cpf = value; }
         public bool Historico_problema_cardiaco { get => historico_problema_cardiaco; set => historico_problema_cardiaco = value; }
         public bool Historico_dores_peito { get => historico_dores_peito; set => historico_dores_peito = value; }
         public bool Historico_desmaios_ou_vertigem { get => historico_desmaios_ou_vertigem; set => historico_desmaios_ou_vertigem = value; }
