@@ -30,7 +30,7 @@ namespace Gymly.UserControls
         private void buttonAtivarCalendario_Click(object sender, RoutedEventArgs e)
         {
             calendarDataNasc.Visibility = Visibility.Visible;
-            buttonAtivarCalendario.Visibility = Visibility.Collapsed;
+            //buttonAtivarCalendario.Visibility = Visibility.Collapsed;
         }
     }
 }
