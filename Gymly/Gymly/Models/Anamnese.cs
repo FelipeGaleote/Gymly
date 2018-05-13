@@ -50,7 +50,7 @@ namespace Gymly.Models
 
 
         public int Id { get => id; set => id = value; }
-        public string Cpf { get => Cpf; set => Cpf = value; }
+        public string CpfAluno { get => CpfAluno; set => cpfAluno = value; }
         public bool Historico_problema_cardiaco { get => historico_problema_cardiaco; set => historico_problema_cardiaco = value; }
         public bool Historico_dores_peito { get => historico_dores_peito; set => historico_dores_peito = value; }
         public bool Historico_desmaios_ou_vertigem { get => historico_desmaios_ou_vertigem; set => historico_desmaios_ou_vertigem = value; }
