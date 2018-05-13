@@ -55,7 +55,6 @@ namespace Gymly.BD
 
 
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS ANAMNESES ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
-                sql.AppendLine("[ID] INT");
                 sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
                 sql.AppendLine("[HISTORICO_PROBLEMA_CARDIACO] INT,");
                 sql.AppendLine("[HISTORICO_DORES_PEITO] INT,");
