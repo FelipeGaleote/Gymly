@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using Gymly.Models;
+using System.Windows;
 
 namespace Gymly.BD
 {
@@ -30,12 +31,11 @@ namespace Gymly.BD
             SQLiteConexao conexao = new SQLiteConexao();  
             SQLiteConnection conn = conexao.getConexao(); 
 
-            string sql = "INSERT INTO Alunos(cpf,nome,idade,datanasc,email,telefone,genero,nivel) VALUES(@cpf,@nome,@idade,@datanasc,@email,@telefone,@genero,@nivel)";
+            string sql = "INSERT INTO Alunos(cpf,nome,datanasc,email,telefone,genero,nivel) VALUES(@cpf,@nome,@datanasc,@email,@telefone,@genero,@nivel)";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("CPF",aluno.Cpf);
             cmd.Parameters.AddWithValue("nome", aluno.Nome);
-            cmd.Parameters.AddWithValue("idade", aluno.Idade);
             cmd.Parameters.AddWithValue("datanasc", aluno.DataNasc);
             cmd.Parameters.AddWithValue("email", aluno.Email);
             cmd.Parameters.AddWithValue("telefone", aluno.Telefone);

@@ -72,7 +72,9 @@ namespace Gymly.UserControls
            mainWindow.mudarUserControl("cadastroAnamnese");
         }
 
-
-
+        private void btnPesquisar_Click(object sender, RoutedEventArgs e)
+        {
+            Aluno.listaAlunos();
+        }
     }
 }

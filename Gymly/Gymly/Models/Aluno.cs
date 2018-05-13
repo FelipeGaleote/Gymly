@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using Gymly.BD;
 
 namespace Gymly.Models
 {
@@ -11,7 +13,7 @@ namespace Gymly.Models
         private string cpf;
         private string nome;
         private int idade;
-        private int dataNasc;
+        private string dataNasc;
         private string email;
         private string telefone;
         private char genero;
@@ -20,6 +22,14 @@ namespace Gymly.Models
         private Anamnese anamnese;
 
         public Aluno() { }
+
+        public static void listaAlunos()
+        {
+            List<Aluno> alunos = new List<Aluno>();
+            alunos = BDAluno.consultaAluno();
+            alunos.ForEach(i => MessageBox.Show("Nome: " + i.Nome , "Email: " + i.Email));
+            
+        }
 
         public string Nome                                                                                                      
         {
@@ -47,7 +57,7 @@ namespace Gymly.Models
             }
         }
 
-        public int DataNasc
+        public string DataNasc
         {
             get
             {
