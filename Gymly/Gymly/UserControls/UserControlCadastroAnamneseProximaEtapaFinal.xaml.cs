@@ -51,7 +51,7 @@ namespace Gymly.UserControls
         {
             anamnese.Observacao = txtBoxObservacao.Text;
             BDAnamnese.insereAnamnese(anamnese, anamnese.CpfAluno);
-
+            MessageBox.Show("Anamnese cadastrada com sucesso!");
             mainWindow.mudarUserControl("aluno");
         }
     }
