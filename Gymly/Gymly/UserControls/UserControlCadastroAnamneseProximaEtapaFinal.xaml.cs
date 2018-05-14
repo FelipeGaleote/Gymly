@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Gymly.Models;
+using Gymly.BD;
 
 namespace Gymly.UserControls
 {
@@ -21,9 +23,11 @@ namespace Gymly.UserControls
     public partial class UserControlCadastroAnamneseProximaEtapaFinal : UserControl
     {
         private MainWindow mainWindow;
+        private Anamnese anamnese;
         private String txtBoxTextoObservacao = "Observação";
-        public UserControlCadastroAnamneseProximaEtapaFinal(MainWindow mainWindow)
+        public UserControlCadastroAnamneseProximaEtapaFinal(MainWindow mainWindow, Anamnese anamnese)
         {
+            this.anamnese = anamnese;
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
@@ -45,7 +49,9 @@ namespace Gymly.UserControls
 
         private void btnFinalizar_Click(object sender, RoutedEventArgs e)
         {
-            //Salvar no bd
+            anamnese.Observacao = txtBoxObservacao.Text;
+            BDAnamnese.insereAnamnese(anamnese, anamnese.CpfAluno);
+
             mainWindow.mudarUserControl("aluno");
         }
     }

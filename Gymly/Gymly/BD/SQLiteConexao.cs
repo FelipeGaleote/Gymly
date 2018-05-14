@@ -61,8 +61,7 @@ namespace Gymly.BD
                 sql.AppendLine("[HISTORICO_DESMAIOS_OU_VERTIGEM] INT,");
                 sql.AppendLine("[HISTORICO_PRESSAO_ALTA] INT,");
                 sql.AppendLine("[HISTORICO_PROBLEMA_OSSEO] INT,");
-                sql.AppendLine("[RAZAO_FISICA] INT,");
-                sql.AppendLine("[IDOSO_REGULAR] INT,");
+                sql.AppendLine("[IDOSO_NAO_ACOSTUMADO] INT,");
                 sql.AppendLine("[DOENCA_CARDIACA_CORONARIANA] INT,");
                 sql.AppendLine("[DOENCA_CARDIACA_REUMATICA] INT,");
                 sql.AppendLine("[DOENCA_CARDIACA_CONGENITA] INT,");
@@ -75,28 +74,24 @@ namespace Gymly.BD
                 sql.AppendLine("[DIABETES] INT,");
                 sql.AppendLine("[HIPERTENSAO] INT,");
                 sql.AppendLine("[CANCER] INT,");
-                //AINDA NÃO FORAM IMPLEMENTADOS NA TELA
                 sql.AppendLine("[DOR_COSTAS] INT,");
                 sql.AppendLine("[DOR_ARTICULACAO] INT,");
                 sql.AppendLine("[DOR_PULMONAR] INT,");
-                sql.AppendLine("[PROBLEMA_RECENTE_PARENTE] INT,");
-                sql.AppendLine("[RESTRICAO_FISICA] INT,");
                 sql.AppendLine("[GESTANTE] INT,");
                 sql.AppendLine("[FUMANTE] INT,");
                 sql.AppendLine("[BEBIDA_ALCOOLICA] INT,");
-                sql.AppendLine("[TODOS_GRUPOS_ALIMENTARES] INT,");
-                sql.AppendLine("[ALTA_GORDURA_SATURADA] INT,");
                 sql.AppendLine("[PERDER_PESO] INT,");
                 sql.AppendLine("[MELHORAR_FLEXIBILIDADE] INT,");
-                sql.AppendLine("[PARAR_FUMAR] INT,");
-                sql.AppendLine("[REDUZIR_DORES_COSTAS] INT,");
+                sql.AppendLine("[DIMINUIR_VICIOS] INT,");
+                sql.AppendLine("[REDUZIR_DORES] INT,");
                 sql.AppendLine("[MELHORAR_NUTRICAO] INT,");
                 sql.AppendLine("[MELHORAR_APTIDAO] INT,");
                 sql.AppendLine("[MELHORAR_MUSCULAR] INT,");
                 sql.AppendLine("[REDUZIR_ESTRESSE] INT,");
                 sql.AppendLine("[DIMINUIR_COLESTEROL] INT,");
                 sql.AppendLine("[SENTIR_MELHOR] INT,");
-
+                sql.AppendLine("[HIPERTROFIA] INT,");
+                sql.AppendLine("[OBSERVACAO] VARCHAR(256),");
 
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNO(CPF));");
 

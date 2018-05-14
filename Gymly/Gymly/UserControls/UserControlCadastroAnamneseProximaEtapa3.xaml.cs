@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Gymly.Models;
 
 namespace Gymly.UserControls
 {
@@ -20,16 +21,29 @@ namespace Gymly.UserControls
     /// </summary>
     public partial class UserControlCadastroAnamneseProximaEtapa3 : UserControl
     {
+        private Anamnese anamnese;
         private MainWindow mainWindow;
-        public UserControlCadastroAnamneseProximaEtapa3(MainWindow mainWindow)
+        public UserControlCadastroAnamneseProximaEtapa3(MainWindow mainWindow, Anamnese anamnese)
         {
+            this.anamnese = anamnese;
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
 
         private void btnEtapa5_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapaFinal");
+            anamnese.Perder_peso = checkBoxPerderPeso.IsChecked.Value;
+            anamnese.Melhorar_flexibilidade = checkBoxMelhorarFlexibilidade.IsChecked.Value;
+            anamnese.Melhorar_aptidao = checkBoxAptidaoCardiovascular.IsChecked.Value;
+            anamnese.Melhorar_muscular = checkBoxCondicaoMuscular.IsChecked.Value;
+            anamnese.Sentir_melhor = checkBoxSentirMelhor.IsChecked.Value;
+            anamnese.Reduzir_dores = checkBoxReduzirDores.IsChecked.Value;
+            anamnese.Reduzir_estresse = checkBoxReduzirEstresse.IsChecked.Value;
+            anamnese.Hipertrofia = checkBoxHipertrofia.IsChecked.Value;
+            anamnese.Melhorar_nutricao = checkBoxMelhorarNutricao.IsChecked.Value;
+            anamnese.Diminuir_vicios = checkBoxDiminuirVicios.IsChecked.Value;
+
+            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapaFinal", anamnese);
         }
     }
 }

@@ -36,7 +36,7 @@
 
         <TextBlock FontSize="18pt" Text="Doença cardíaca "  Grid.Row="2" Grid.Column="1" />
         <TextBlock FontSize="18pt" Text="coronariana"  Grid.Row="2" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxProblemaCardiaco" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+        <CheckBox  Name="checkBoxDoencaCardiacaCoronariana" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -49,7 +49,7 @@
 
         <TextBlock  FontSize="18pt" Text="Doença cardíaca"  Grid.Row="3" Grid.Column="1" />
         <TextBlock  FontSize="18pt" Text="reumática"  Grid.Row="3" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxDoresNoPeito" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+        <CheckBox  Name="checkBoxDoencaCardiacaReumatica" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -62,7 +62,7 @@
 
         <TextBlock FontSize="18pt" Text="Doença cardíaca "  Grid.Row="4" Grid.Column="1" />
         <TextBlock  FontSize="18pt" Text="congênita"  Grid.Row="4" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxDesmaia" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+        <CheckBox  Name="checkBoxDoencaCardiacaCongenita" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -75,7 +75,7 @@
 
         <TextBlock FontSize="18pt" Text="Batimentos cardíacos" Grid.Row="5" Grid.Column="1" />
         <TextBlock  FontSize="18pt" Text="irregulares"  Grid.Row="5" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxPressaoAlta" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+        <CheckBox  Name="checkBoxBatimentimentoIrregular" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -88,7 +88,7 @@
 
         <TextBlock  FontSize="18pt" Grid.Row="6" Grid.Column="1" Text="Problemas nas" />
         <TextBlock  FontSize="18pt" Text="válvulas cardíacas"  Grid.Row="6" Grid.Column="1" Margin="0,25,0,0" />
-        <CheckBox  Name="checkBoxProblemaOsseo" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+        <CheckBox  Name="checkBoxProblemaValvulasCard" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>
@@ -100,7 +100,7 @@
         </CheckBox>
 
         <TextBlock FontSize="18pt" Text="Murmúrios cardíacos"  Grid.Row="7" Grid.Column="1" />
-        <CheckBox  Name="checkBoxProblemaNaoMencionado" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
+        <CheckBox  Name="checkBoxMurmuriosCard" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform ScaleX="1.75" ScaleY="1.75"/>

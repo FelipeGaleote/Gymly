@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using Gymly.UserControls;
+using Gymly.Models;
 
 namespace Gymly
 {
@@ -90,17 +91,24 @@ namespace Gymly
                 case "cadastroAnamnese":
                     pnl.Children.Add(new UserControlCadastroAnamnese(this));
                     break;
+            }
+        }
+        public void mudarUserControl(String nomeDoControl, Anamnese anamnese)
+        {
+            pnl.Children.Clear();
+            switch (nomeDoControl)
+            {
                 case "cadastroAnamneseProximaEtapa":
-                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa(this));
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa(this, anamnese));
                     break;
                 case "cadastroAnamneseProximaEtapa2":
-                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa2(this));
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa2(this, anamnese));
                     break;
                 case "cadastroAnamneseProximaEtapa3":
-                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa3(this));
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa3(this, anamnese));
                     break;
                 case "cadastroAnamneseProximaEtapaFinal":
-                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapaFinal(this));
+                    pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapaFinal(this, anamnese));
                     break;
             }
         }

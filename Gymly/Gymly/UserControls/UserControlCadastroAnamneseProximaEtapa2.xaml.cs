@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Gymly.Models;
 
 namespace Gymly.UserControls
 {
@@ -20,16 +21,25 @@ namespace Gymly.UserControls
     /// </summary>
     public partial class UserControlCadastroAnamneseProximaEtapa2 : UserControl
     {
+        private Anamnese anamnese; 
         private MainWindow mainWindow;
-        public UserControlCadastroAnamneseProximaEtapa2(MainWindow mainWindow)
+        public UserControlCadastroAnamneseProximaEtapa2(MainWindow mainWindow, Anamnese anamnese)
         {
+            this.anamnese = anamnese;
             this.mainWindow = mainWindow;
             InitializeComponent();
         }
 
         private void btnEtapa4_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa3");
+            anamnese.Dor_costas = checkBoxDorNasCostas.IsChecked.Value;
+            anamnese.Dor_articulacao = checkBoxDorNasArticulacoes.IsChecked.Value;
+            anamnese.Dor_pulmonar = checkBoxDoencaPulmonar.IsChecked.Value;
+            anamnese.Gestante = checkBoxGravida.IsChecked.Value;
+            anamnese.Fumante = checkBoxFuma.IsChecked.Value;
+            anamnese.Bebida_alcoolica = checkBoxBebidaAlcoolica.IsChecked.Value;
+
+            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa3", anamnese);
         }
     }
 }
