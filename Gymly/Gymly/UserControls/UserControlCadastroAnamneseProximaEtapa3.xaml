@@ -147,7 +147,7 @@
             </CheckBox.RenderTransform>
         </CheckBox>
 
-        <TextBlock FontSize="18pt"  Grid.Row="6" Grid.Column="2" Text="Diminuir Vicios" Margin="20,0,0,0" />
+        <TextBlock FontSize="18pt"  Grid.Row="6" Grid.Column="2" Text="Diminuir Vícios" Margin="20,0,0,0" />
         <CheckBox  Name="checkBoxDiminuirVicios" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top"  Height="23" Margin="0,0,6,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
