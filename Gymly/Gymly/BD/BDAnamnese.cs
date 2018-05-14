@@ -28,15 +28,16 @@ namespace Gymly.BD
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.getConexao();
-            string sql = "INSERT INTO Anamnese(cpf_aluno,historico_problema_cardiaco,historico_dores_peito,historico_desmaios_ou_vertigem,historico_pressao_alta,historico_problema_osseo," +
+            string sql = "INSERT INTO Anamneses("+
+                "cpf_aluno,historico_problema_cardiaco,historico_dores_peito,historico_desmaios_ou_vertigem,historico_pressao_alta,historico_problema_osseo," +
                 "idoso_nao_acostumado,doenca_cardiaca_coronariana,doenca_cardiaca_reumatica,doenca_cardiaca_congenita,batimentos_cardiacos_irregulares,problema_valvulas_cardiacas,murmurios_cardiacos," +
-                "ataque_cardiaco,derrame_cerebral,epilepsia,diabetes,hipertensao,cancer,dor_articulacao,dor_pulmonar," +"gestante,fumante,bebida_alcoolica," +
+                "ataque_cardiaco,derrame_cerebral,epilepsia,diabetes,hipertensao,cancer,dor_costas,dor_articulacao,dor_pulmonar," +"gestante,fumante,bebida_alcoolica," +
                 "perder_peso,diminuir_vicios,reduzir_dores,melhorar_nutricao,melhorar_aptidao,melhorar_muscular,reduzir_estresse, sentir_melhor, hipertrofia, observacao) " +
                 "VALUES(@cpf,@historico_problema_cardiaco,@historico_dores_peito,@historico_desmaios_ou_vertigem,@historico_pressao_alta,@historico_problema_osseo," +
                 "@idoso_nao_acostumado,@doenca_cardiaca_coronariana,@doenca_cardiaca_reumatica,@doenca_cardiaca_congenita,@batimentos_cardiacos_irregulares," +
-                "@problema_valvulas_cardiacas,@murmurios_cardiacos,@ataque_cardiaco,@derrame_cerebral,@epilepsia,@diabetes,@hipertensao,@cancer,@dor_articulacao,@dor_pulmonar," +
+                "@problema_valvulas_cardiacas,@murmurios_cardiacos,@ataque_cardiaco,@derrame_cerebral,@epilepsia,@diabetes,@hipertensao,@cancer,@dor_costas,@dor_articulacao,@dor_pulmonar," +
                 "@gestante,@fumante,@bebida_alcoolica,@perder_peso,@diminuir_vicios," +
-                "@reduzir_dores,@melhorar_nutricao,@melhorar_aptidao,@melhorar_muscular,@reduzir_estresse,@sentir_melhor, @hipertrofia, @observacao)";
+                "@reduzir_dores,@melhorar_nutricao,@melhorar_aptidao,@melhorar_muscular,@reduzir_estresse,@sentir_melhor, @hipertrofia, @observacao);";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("cpf_Aluno", cpfAluno);
@@ -50,14 +51,15 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("doenca_cardiaca_reumatica", anamnese.Doenca_cardiaca_reumatica);
             cmd.Parameters.AddWithValue("doenca_cardiaca_congenita", anamnese.Doenca_cardiaca_congenita);
             cmd.Parameters.AddWithValue("batimentos_cardiacos_irregulares", anamnese.Batimentos_cardiacos_irregulares);
-            cmd.Parameters.AddWithValue(" problema_valvulas_cardiacas", anamnese.Problema_valvulas_cardiacas);
+            cmd.Parameters.AddWithValue("problema_valvulas_cardiacas", anamnese.Problema_valvulas_cardiacas);
             cmd.Parameters.AddWithValue("murmurios_cardiacos", anamnese.Murmurios_cardiacos);
             cmd.Parameters.AddWithValue("ataque_cardiaco", anamnese.Ataque_cardiaco);
             cmd.Parameters.AddWithValue("derrame_cerebral", anamnese.Derrame_cerebral);
             cmd.Parameters.AddWithValue("epilepsia", anamnese.Epilepsia);
             cmd.Parameters.AddWithValue("diabetes", anamnese.Diabetes);
             cmd.Parameters.AddWithValue("hipertensao", anamnese.Hipertensao);
-            cmd.Parameters.AddWithValue("cancer", anamnese.Cancer);
+            cmd.Parameters.AddWithValue("cancer", anamnese.Cancer); 
+            cmd.Parameters.AddWithValue("dor_costas", anamnese.Dor_costas); 
             cmd.Parameters.AddWithValue("dor_articulacao", anamnese.Dor_articulacao);
             cmd.Parameters.AddWithValue("dor_pulmonar", anamnese.Dor_pulmonar);
             cmd.Parameters.AddWithValue("gestante", anamnese.Gestante);

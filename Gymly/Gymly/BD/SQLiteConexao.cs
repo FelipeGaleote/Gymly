@@ -65,7 +65,7 @@ namespace Gymly.BD
                 sql.AppendLine("[DOENCA_CARDIACA_CORONARIANA] INT,");
                 sql.AppendLine("[DOENCA_CARDIACA_REUMATICA] INT,");
                 sql.AppendLine("[DOENCA_CARDIACA_CONGENITA] INT,");
-                sql.AppendLine("[BAIMENTOS_CARDIACOS_IRREGULARES] INT,");
+                sql.AppendLine("[BATIMENTOS_CARDIACOS_IRREGULARES] INT,");
                 sql.AppendLine("[PROBLEMA_VALVULAS_CARDIACAS] INT,");
                 sql.AppendLine("[MURMURIOS_CARDIACOS] INT,");
                 sql.AppendLine("[ATAQUE_CARDIACO] INT,");
@@ -88,7 +88,6 @@ namespace Gymly.BD
                 sql.AppendLine("[MELHORAR_APTIDAO] INT,");
                 sql.AppendLine("[MELHORAR_MUSCULAR] INT,");
                 sql.AppendLine("[REDUZIR_ESTRESSE] INT,");
-                sql.AppendLine("[DIMINUIR_COLESTEROL] INT,");
                 sql.AppendLine("[SENTIR_MELHOR] INT,");
                 sql.AppendLine("[HIPERTROFIA] INT,");
                 sql.AppendLine("[OBSERVACAO] VARCHAR(256),");
