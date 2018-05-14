@@ -207,14 +207,14 @@
     <Resource Include="Image\logo_gymly.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="gymly_logo_icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\close_icon.png" />
     <Resource Include="Image\settings_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\lupa_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="gymly_logo_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />
