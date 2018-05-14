@@ -71,8 +71,10 @@ namespace Gymly.UserControls
 
         }
 
-        private void btnEditarAnamnese_Click(object sender, RoutedEventArgs e)
+        private void btnCadastraOuEditaAnamnese_Click(object sender, RoutedEventArgs e)
         {
+            
+
            mainWindow.mudarUserControl("cadastroAnamnese");
         }
 

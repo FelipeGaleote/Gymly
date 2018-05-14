@@ -30,7 +30,7 @@
         </Button>
         <DataGrid Name="dataGridAluno" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="3" Grid.Column="1"  Grid.Row="1" Background="LightSlateGray" />
         <Button FontSize="15pt"  VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Name="btnCadastraAluno" Content="Cadastrar Aluno" Height="50" Margin="0,50,0,0" Click="btnCadastraAluno_Click"></Button>
-        <Button FontSize="15pt" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3" Name="btnEditarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="0,50,0,0" Click="btnEditarAnamnese_Click"></Button>
+        <Button FontSize="15pt" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3" Name="btnEditarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="0,50,0,0" Click="btnCadastraOuEditaAnamnese_Click"></Button>
 
         <!--<TextBox Text="{Binding Diretorio, Mode=TwoWay}" Grid.Row="1" Grid.Column="0"/> -->
         <!--<ListBox ItemsSource="{Binding ItensDiretorio}" SelectedItem="{Binding ItemSelecionado, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>-->
