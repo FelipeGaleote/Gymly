@@ -78,7 +78,21 @@ namespace Gymly.UserControls
 
         private void btnPesquisar_Click(object sender, RoutedEventArgs e)
         {
-            Aluno.listaAlunos();
+            SQLiteConexao conexao = new SQLiteConexao();
+            SQLiteConnection conn = conexao.getConexao();
+            string query = "SELECT cpf, nome FROM Alunos where nome like '%" + txtBoxConsultaAluno.Text + "%'";
+
+            SQLiteCommand command = new SQLiteCommand(query, conn);
+            DataTable dt = new DataTable("Alunos");
+
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+
+            DataSet ds = new DataSet();
+            adapter.Fill(dt);
+            dataGridAluno.ItemsSource = dt.DefaultView;
+            adapter.Update(dt);
+            conn.Close();
+            //Aluno.listaAlunos();
         }
 
         private void preencheDataGridAluno()
