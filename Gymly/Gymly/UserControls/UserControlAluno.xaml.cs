@@ -78,28 +78,35 @@ namespace Gymly.UserControls
 
         private void btnPesquisar_Click(object sender, RoutedEventArgs e)
         {
-            SQLiteConexao conexao = new SQLiteConexao();
-            SQLiteConnection conn = conexao.getConexao();
-            string query = "SELECT cpf, nome FROM Alunos where nome like '%" + txtBoxConsultaAluno.Text + "%'";
+            if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
+            {
+                SQLiteConexao conexao = new SQLiteConexao();
+                SQLiteConnection conn = conexao.getConexao();
+                string query = "SELECT cpf, nome, email FROM Alunos where nome like '%" + txtBoxConsultaAluno.Text + "%'";
 
-            SQLiteCommand command = new SQLiteCommand(query, conn);
-            DataTable dt = new DataTable("Alunos");
+                SQLiteCommand command = new SQLiteCommand(query, conn);
+                DataTable dt = new DataTable("Alunos");
 
-            SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+                SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
 
-            DataSet ds = new DataSet();
-            adapter.Fill(dt);
-            dataGridAluno.ItemsSource = dt.DefaultView;
-            adapter.Update(dt);
-            conn.Close();
-            //Aluno.listaAlunos();
+                DataSet ds = new DataSet();
+                adapter.Fill(dt);
+                dataGridAluno.ItemsSource = dt.DefaultView;
+                adapter.Update(dt);
+                conn.Close();
+                //Aluno.listaAlunos();
+            }
+            else
+            {
+                preencheDataGridAluno();
+            }
         }
 
         private void preencheDataGridAluno()
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.getConexao();
-            string query = "SELECT cpf, nome FROM Alunos;";
+            string query = "SELECT cpf, nome, email FROM Alunos;";
             SQLiteCommand command = new SQLiteCommand(query, conn);
             DataTable dt = new DataTable("Alunos");
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
