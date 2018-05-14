@@ -130,9 +130,6 @@ namespace Gymly.BD
 
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();
-
-
-
                 conn.Close();
             }
         }

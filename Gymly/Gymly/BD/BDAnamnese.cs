@@ -10,20 +10,6 @@ namespace Gymly.BD
 {
     class BDAnamnese
     {
-        
-        public void insereAnamnese()
-        {
-            SQLiteConexao conexao = new SQLiteConexao();
-            SQLiteConnection conn = conexao.getConexao();
-            StringBuilder sql = new StringBuilder();
-            sql.AppendLine("INSERT INTO ANAMNESES VALUES(NULL, 1.74);");
-            sql.AppendLine("INSERT INTO ANAMNESES VALUES(NULL, 1.42);");
-            sql.AppendLine("INSERT INTO ANAMNESES VALUES(NULL, 1.75);");
-            SQLiteCommand cmd = new SQLiteCommand(sql.ToString(), conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            sql.Clear();
-        }
         public static void insereAnamnese(Anamnese anamnese, string cpfAluno)
         {
             SQLiteConexao conexao = new SQLiteConexao();
@@ -76,7 +62,6 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@sentir_melhor", anamnese.Sentir_melhor);
             cmd.Parameters.AddWithValue("@hipertrofia", anamnese.Hipertrofia);
             cmd.Parameters.AddWithValue("@observacao", anamnese.Observacao);
-
 
             cmd.ExecuteNonQuery();
             conn.Close();

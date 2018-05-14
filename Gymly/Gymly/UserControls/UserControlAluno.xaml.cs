@@ -86,12 +86,9 @@ namespace Gymly.UserControls
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.getConexao();
             string query = "SELECT cpf, nome FROM Alunos;";
-
             SQLiteCommand command = new SQLiteCommand(query, conn);
             DataTable dt = new DataTable("Alunos");
-      
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
-            
             DataSet ds = new DataSet();
             adapter.Fill(dt);
             dataGridAluno.ItemsSource = dt.DefaultView;

@@ -18,7 +18,7 @@ namespace Gymly.Models
         private char genero;
         private string nivel;
         private List<AvaliacaoFisica> avFisica = new List<AvaliacaoFisica>();
-        private Anamnese anamnese;
+        private Anamnese anamnese; 
 
         public Aluno() { }
 
