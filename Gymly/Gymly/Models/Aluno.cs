@@ -12,7 +12,6 @@ namespace Gymly.Models
     {
         private string cpf;
         private string nome;
-        private int idade;
         private string dataNasc;
         private string email;
         private string telefone;
@@ -44,18 +43,6 @@ namespace Gymly.Models
             }
         }
 
-        public int Idade
-        {
-            get
-            {
-                return idade;
-            }
-
-            set
-            {
-                idade = value;
-            }
-        }
 
         public string DataNasc
         {
@@ -160,5 +147,15 @@ namespace Gymly.Models
                 cpf = value;
             }
         }
+
+        public static int calculaIdade(DateTime dataNasc)
+        {
+            int idade = DateTime.Now.Year - dataNasc.Year;
+            if (DateTime.Now.Month < dataNasc.Month || (DateTime.Now.Month == dataNasc.Month && DateTime.Now.Day < dataNasc.Day))
+                idade--;
+
+            return idade;
+        }
+
     }
 }
