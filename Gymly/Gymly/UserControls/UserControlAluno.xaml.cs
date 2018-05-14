@@ -15,13 +15,16 @@ using System.Windows.Shapes;
 using Gymly.BD;
 using Gymly.Models;
 using Gymly.UserControls;
+using System.Data.SQLite;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Gymly.UserControls
 {
 
     public partial class UserControlAluno : UserControl, INotifyPropertyChanged
     {
-
+        private const string nomeTabela = "Aluno";
         private string txtBoxTextoConsultaAluno = "Consultar Alunos";
         private MainWindow mainWindow;
 
@@ -32,6 +35,7 @@ namespace Gymly.UserControls
             txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
             txtBoxConsultaAluno.Foreground = Brushes.Gray;
             this.mainWindow = mainWindow;
+            preencheDataGridAluno();
 
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -76,5 +80,24 @@ namespace Gymly.UserControls
         {
             Aluno.listaAlunos();
         }
+
+        private void preencheDataGridAluno()
+        {
+            SQLiteConexao conexao = new SQLiteConexao();
+            SQLiteConnection conn = conexao.getConexao();
+            string query = "SELECT cpf, nome FROM Alunos;";
+
+            SQLiteCommand command = new SQLiteCommand(query, conn);
+            DataTable dt = new DataTable("Alunos");
+      
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+            
+            DataSet ds = new DataSet();
+            adapter.Fill(dt);
+            dataGridAluno.ItemsSource = dt.DefaultView;
+            adapter.Update(dt);
+            conn.Close();
+        }
+
     }
 }

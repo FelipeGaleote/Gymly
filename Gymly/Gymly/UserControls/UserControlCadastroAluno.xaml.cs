@@ -52,6 +52,7 @@ namespace Gymly.UserControls
             aluno.Nivel = ComboBoxNivel.SelectedValue.ToString();
             aluno.DataNasc = calendarDataNasc.SelectedDate.ToString();
             BDAluno.insereAluno(aluno);
+            mainWindow.mudarUserControl("aluno");
         }
     }
 }
