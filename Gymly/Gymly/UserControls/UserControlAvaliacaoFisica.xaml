@@ -6,26 +6,31 @@
              xmlns:local="clr-namespace:Gymly.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="1000" d:DesignWidth="1000">
+
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="180*"/>
+            <RowDefinition Height="487*"/>
+            <RowDefinition Height="333*"/>
         </Grid.RowDefinitions>
 
-        <Button Content="AV 1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"   Width="200"/>
-        <Button Content="AV 2" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"   Width="200"/>
-        <Button Content="AV 3" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"  Width="200"/>
-        <Button Content="AV 4" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"   Width="200"/>
-        <Button Content="AV 5" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"  Width="200"/>
-        <Button Content="AV 6" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200"   Width="200"/>
-
-
+        <TextBox Name="txtBoxConsultaAluno" TextAlignment="Left" FontWeight="Bold" FontSize="15pt" Grid.ColumnSpan="3"  Grid.Column="1"  Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" Grid.Row="0" Background="White" GotFocus="txtBoxConsultaAluno_GotFocus" LostFocus="txtBoxConsultaAluno_LostFocus"  />
+        <Button Width="50" Height="48" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3" Margin="0,0,0,12" Grid.Row="0" Background="LightGray" BorderBrush="GhostWhite" Name="btnPesquisar" Click="btnPesquisar_Click">
+            <StackPanel>
+                <Image Source="../Image/lupa_icon.png" />
+            </StackPanel>
+        </Button>
+        <DataGrid Name="dataGridAluno" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="3" Grid.Column="1"  Grid.Row="1" Background="LightSlateGray" />
+        <Button FontSize="15pt"  VerticalAlignment="Top" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" Name="btnCadastraAvaliacaoFisica" Content="Cadastrar Avaliação Fisica" Height="50" Margin="0,50,0,0" Click="btnCadastraAvaliacaoFisica_Click"></Button>
+        
 
         <!--<TextBox Text="{Binding Diretorio, Mode=TwoWay}" Grid.Row="1" Grid.Column="0"/> -->
         <!--<ListBox ItemsSource="{Binding ItensDiretorio}" SelectedItem="{Binding ItemSelecionado, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>-->
