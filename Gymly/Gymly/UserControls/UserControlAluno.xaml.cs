@@ -118,6 +118,10 @@ namespace Gymly.UserControls
             adapter.Update(dt);
             conn.Close();
         }
-        
+
+        private void btnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.mudarUserControl("cadastroAvaliacaoFisica");
+        }
     }
 }

@@ -30,5 +30,10 @@ namespace Gymly.UserControls
         {
             PropertyChanged(this, new PropertyChangedEventArgs(propriedade));
         }
+
+        private void btnIniciarGymly_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.mudarUserControl("aluno");
+        }
     }
 }

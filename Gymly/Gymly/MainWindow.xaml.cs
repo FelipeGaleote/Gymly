@@ -26,6 +26,7 @@ namespace Gymly
         public MainWindow()
         {
             InitializeComponent();
+            mudarUserControl("telaInicial");
             StartClock();
         }
         private void StartClock()
@@ -51,27 +52,7 @@ namespace Gymly
         }
         private void BtnGymly_Click(object sender, RoutedEventArgs e)
         {
-            logo.Visibility = Visibility.Collapsed;
-            pnl.Children.Clear();
-            pnl.Children.Add(new UserControlTelaInicial(this));
-        }
-        private void BtnAluno_Click(object sender, RoutedEventArgs e)
-        {
-            logo.Visibility = Visibility.Collapsed;
-            pnl.Children.Clear();
-            pnl.Children.Add(new UserControlAluno(this));
-        }
-        private void BtnAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
-        {
-            logo.Visibility = Visibility.Collapsed;
-            pnl.Children.Clear();
-            pnl.Children.Add(new UserControlAvaliacaoFisica(this));
-        }
-        private void BtnGrafico_Click(object sender, RoutedEventArgs e)
-        {
-            logo.Visibility = Visibility.Collapsed;
-            pnl.Children.Clear();
-            pnl.Children.Add(new UserControlGrafico());
+            mudarUserControl("telaInicial");
         }
 
        public void mudarUserControl(String nomeDoControl)

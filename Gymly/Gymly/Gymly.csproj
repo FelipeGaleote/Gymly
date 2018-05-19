@@ -120,9 +120,6 @@
     <Compile Include="UserControls\UserControlCadastroAvaliacaoFisica.xaml.cs">
       <DependentUpon>UserControlCadastroAvaliacaoFisica.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlGrafico.xaml.cs">
-      <DependentUpon>UserControlGrafico.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlTelaInicial.xaml.cs">
       <DependentUpon>UserControlTelaInicial.xaml</DependentUpon>
     </Compile>
@@ -171,10 +168,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UserControlCadastroAvaliacaoFisica.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControls\UserControlGrafico.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
