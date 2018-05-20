@@ -32,16 +32,16 @@ namespace Gymly.UserControls
 
         private void btnEtapa5_Click(object sender, RoutedEventArgs e)
         {
-            anamnese.Perder_peso = checkBoxPerderPeso.IsChecked.Value;
-            anamnese.Melhorar_flexibilidade = checkBoxMelhorarFlexibilidade.IsChecked.Value;
-            anamnese.Melhorar_aptidao = checkBoxAptidaoCardiovascular.IsChecked.Value;
-            anamnese.Melhorar_muscular = checkBoxCondicaoMuscular.IsChecked.Value;
-            anamnese.Sentir_melhor = checkBoxSentirMelhor.IsChecked.Value;
-            anamnese.Reduzir_dores = checkBoxReduzirDores.IsChecked.Value;
-            anamnese.Reduzir_estresse = checkBoxReduzirEstresse.IsChecked.Value;
+            anamnese.PerderPeso = checkBoxPerderPeso.IsChecked.Value;
+            anamnese.MelhorarFlexibilidade = checkBoxMelhorarFlexibilidade.IsChecked.Value;
+            anamnese.MelhorarAptidao = checkBoxAptidaoCardiovascular.IsChecked.Value;
+            anamnese.MelhorarMuscular = checkBoxCondicaoMuscular.IsChecked.Value;
+            anamnese.SentirMelhor = checkBoxSentirMelhor.IsChecked.Value;
+            anamnese.ReduzirDores = checkBoxReduzirDores.IsChecked.Value;
+            anamnese.ReduzirEstresse = checkBoxReduzirEstresse.IsChecked.Value;
             anamnese.Hipertrofia = checkBoxHipertrofia.IsChecked.Value;
-            anamnese.Melhorar_nutricao = checkBoxMelhorarNutricao.IsChecked.Value;
-            anamnese.Diminuir_vicios = checkBoxDiminuirVicios.IsChecked.Value;
+            anamnese.MelhorarNutricao = checkBoxMelhorarNutricao.IsChecked.Value;
+            anamnese.DiminuirVicios = checkBoxDiminuirVicios.IsChecked.Value;
 
             mainWindow.mudarUserControl("cadastroAnamneseProximaEtapaFinal", anamnese);
         }
