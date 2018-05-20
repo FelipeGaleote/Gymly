@@ -12,10 +12,10 @@ namespace Gymly.Models
     {
         private string cpf;
         private string nome;
-        private string dataNasc;
+        private DateTime dataNasc;
         private string email;
         private string telefone;
-        private char genero;
+        private char sexo;
         private string nivel;
         private List<AvaliacaoFisica> avFisica = new List<AvaliacaoFisica>();
         private Anamnese anamnese; 
@@ -40,20 +40,6 @@ namespace Gymly.Models
             set
             {
                 nome = value;
-            }
-        }
-
-
-        public string DataNasc
-        {
-            get
-            {
-                return dataNasc;
-            }
-
-            set
-            {
-                dataNasc = value;
             }
         }
 
@@ -83,16 +69,16 @@ namespace Gymly.Models
             }
         }
 
-        public char Genero
+        public char Sexo
         {
             get
             {
-                return genero;
+                return sexo;
             }
 
             set
             {
-                genero = value;
+                sexo = value;
             }
         }
 
@@ -147,6 +133,8 @@ namespace Gymly.Models
                 cpf = value;
             }
         }
+
+        public DateTime DataNasc { get { return dataNasc;  }  set { dataNasc = value; } }
 
         public static int calculaIdade(DateTime dataNasc)
         {
