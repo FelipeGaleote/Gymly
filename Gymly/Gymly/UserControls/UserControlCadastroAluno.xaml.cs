@@ -44,13 +44,13 @@ namespace Gymly.UserControls
             aluno.Telefone = txtBoxTelefone.Text;
             if(rdMasculino.IsChecked == true)
             {
-                aluno.Genero = 'M';
+                aluno.Sexo = 'M';
             } else if(rdFeminino.IsChecked == true)
             {
-                aluno.Genero = 'F';
+                aluno.Sexo = 'F';
             }
             aluno.Nivel = ComboBoxNivel.SelectedValue.ToString();
-            aluno.DataNasc = calendarDataNasc.SelectedDate.ToString();
+            aluno.DataNasc = calendarDataNasc.SelectedDate.Value;
             BDAluno.insereAluno(aluno);
             mainWindow.mudarUserControl("aluno");
         }

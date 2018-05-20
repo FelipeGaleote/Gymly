@@ -62,6 +62,7 @@ namespace Gymly.Models
         public float imc(float massa, float altura) {
             return (massa / (altura * altura));
         }
+        //Percentual de Gordural usando Dobras cutaneas 
         public double PercentualDeGordura(Aluno aluno) {
 
             double d;

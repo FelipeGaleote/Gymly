@@ -25,7 +25,7 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("datanasc", aluno.DataNasc);
             cmd.Parameters.AddWithValue("email", aluno.Email);
             cmd.Parameters.AddWithValue("telefone", aluno.Telefone);
-            cmd.Parameters.AddWithValue("genero", aluno.Genero);
+            cmd.Parameters.AddWithValue("genero", aluno.Sexo);
             cmd.Parameters.AddWithValue("nivel", aluno.Nivel);
             cmd.ExecuteNonQuery(); 
             conn.Close();  
