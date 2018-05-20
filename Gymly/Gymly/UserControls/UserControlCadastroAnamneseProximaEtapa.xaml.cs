@@ -32,14 +32,14 @@ namespace Gymly.UserControls
 
         private void btnEtapa3_Click(object sender, RoutedEventArgs e)
         {
-            anamnese.Doenca_cardiaca_coronariana = checkBoxDoencaCardiacaCoronariana.IsChecked.Value;
-            anamnese.Doenca_cardiaca_reumatica = checkBoxDoencaCardiacaReumatica.IsChecked.Value;
-            anamnese.Doenca_cardiaca_congenita = checkBoxDoencaCardiacaCongenita.IsChecked.Value;
-            anamnese.Batimentos_cardiacos_irregulares = checkBoxBatimentimentoIrregular.IsChecked.Value;
-            anamnese.Problema_valvulas_cardiacas = checkBoxProblemaValvulasCard.IsChecked.Value;
-            anamnese.Murmurios_cardiacos = checkBoxMurmuriosCard.IsChecked.Value;
-            anamnese.Ataque_cardiaco = checkBoxAtaqueCardiaco.IsChecked.Value;
-            anamnese.Derrame_cerebral = checkBoxDerrameCerebral.IsChecked.Value;
+            anamnese.DoencaCardiacaCoronariana = checkBoxDoencaCardiacaCoronariana.IsChecked.Value;
+            anamnese.DoencaCardiacaReumatica = checkBoxDoencaCardiacaReumatica.IsChecked.Value;
+            anamnese.DoencaCardiacaCongenita = checkBoxDoencaCardiacaCongenita.IsChecked.Value;
+            anamnese.BatimentosCardiacosIrregulares = checkBoxBatimentimentoIrregular.IsChecked.Value;
+            anamnese.ProblemaValvulasCardiacas = checkBoxProblemaValvulasCard.IsChecked.Value;
+            anamnese.MurmuriosCardiacos = checkBoxMurmuriosCard.IsChecked.Value;
+            anamnese.AtaqueCardiaco = checkBoxAtaqueCardiaco.IsChecked.Value;
+            anamnese.DerrameCerebral = checkBoxDerrameCerebral.IsChecked.Value;
             anamnese.Epilepsia = checkBoxEpilepsia.IsChecked.Value;
             anamnese.Diabetes = checkBoxDiabetes.IsChecked.Value;
             anamnese.Hipertensao = checkBoxHipertensao.IsChecked.Value;

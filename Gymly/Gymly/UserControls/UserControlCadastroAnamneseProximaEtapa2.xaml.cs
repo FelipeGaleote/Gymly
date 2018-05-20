@@ -33,7 +33,7 @@ namespace Gymly.UserControls
         private void btnEtapa4_Click(object sender, RoutedEventArgs e)
         {
             anamnese.Dor_costas = checkBoxDorNasCostas.IsChecked.Value;
-            anamnese.Dor_articulacao = checkBoxDorNasArticulacoes.IsChecked.Value;
+            anamnese.DorArticulacao = checkBoxDorNasArticulacoes.IsChecked.Value;
             anamnese.Dor_pulmonar = checkBoxDoencaPulmonar.IsChecked.Value;
             anamnese.Gestante = checkBoxGravida.IsChecked.Value;
             anamnese.Fumante = checkBoxFuma.IsChecked.Value;

@@ -9,78 +9,78 @@ namespace Gymly.Models
     public class Anamnese {
         private int id;
         private string cpfAluno; //Capturar da seleção no datagrid
-        private bool HistoricoProblemaCardiaco;
-        private bool HistoricoDoresPeito;
-        private bool HistoricoDesmaiosOuVertigem;
-        private bool HistoricoPressaoAlta;
-        private bool HistoricoProblemaOsseo;
-        private bool IdosoNaoAcostumado;
-        private bool DoencaCardiacaCoronariana;
-        private bool DoencaCardiacaReumatica;
-        private bool DoencaCardiacaCongenita;
-        private bool BatimentosCardiacosIrregulares;
-        private bool ProblemaValvulasCardiacas;
-        private bool MurmuriosCardiacos;
-        private bool AtaqueCardiaco;
-        private bool DerrameCerebral;
-        private bool Epilepsia;
-        private bool Diabetes;
-        private bool Hipertensao;
-        private bool Cancer;
-        private bool DorCostas;
-        private bool DorArticulacao;
-        private bool DorPulmonar;
+        private bool historicoProblemaCardiaco;
+        private bool historicoDoresPeito;
+        private bool historicoDesmaiosOuVertigem;
+        private bool historicoPressaoAlta;
+        private bool historicoProblemaOsseo;
+        private bool idosoNaoAcostumado;
+        private bool doencaCardiacaCoronariana;
+        private bool doencaCardiacaReumatica;
+        private bool doencaCardiacaCongenita;
+        private bool batimentosCardiacosIrregulares;
+        private bool problemaValvulasCardiacas;
+        private bool murmuriosCardiacos;
+        private bool ataqueCardiaco;
+        private bool derrameCerebral;
+        private bool epilepsia;
+        private bool diabetes;
+        private bool hipertensao;
+        private bool cancer;
+        private bool dorCostas;
+        private bool dorArticulacao;
+        private bool dorPulmonar;
         private bool gestante;
-        private bool Fumante;
-        private bool BebidaAlcoolica;
-        private bool PerderPeso;
-        private bool MelhorarFlexibilidade;
-        private bool DiminuirVicios;
-        private bool ReduzirDores;
-        private bool MelhorarNutricao;
-        private bool MelhorarAptidao;
-        private bool MelhorarMuscular;
-        private bool ReduzirEstresse;
-        private bool SentirMelhor;
+        private bool fumante;
+        private bool bebidaAlcoolica;
+        private bool perderPeso;
+        private bool melhorarFlexibilidade;
+        private bool diminuirVicios;
+        private bool reduzirDores;
+        private bool melhorarNutricao;
+        private bool melhorarAptidao;
+        private bool melhorarMuscular;
+        private bool reduzirEstresse;
+        private bool sentirMelhor;
         private bool hipertrofia;
         private string observacao;
 
         public int Id { get => id; set => id = value; }
         public string CpfAluno { get => cpfAluno; set => cpfAluno = value; }
-        public bool HistoricoProblemaCardiaco1 { get => HistoricoProblemaCardiaco; set => HistoricoProblemaCardiaco = value; }
-        public bool HistoricoDoresPeito1 { get => HistoricoDoresPeito; set => HistoricoDoresPeito = value; }
-        public bool HistoricoDesmaiosOuVertigem1 { get => HistoricoDesmaiosOuVertigem; set => HistoricoDesmaiosOuVertigem = value; }
-        public bool HistoricoPressaoAlta1 { get => HistoricoPressaoAlta; set => HistoricoPressaoAlta = value; }
-        public bool HistoricoProblemaOsseo1 { get => HistoricoProblemaOsseo; set => HistoricoProblemaOsseo = value; }
-        public bool IdosoNaoAcostumado1 { get => IdosoNaoAcostumado; set => IdosoNaoAcostumado = value; }
-        public bool DoencaCardiacaCoronariana1 { get => DoencaCardiacaCoronariana; set => DoencaCardiacaCoronariana = value; }
-        public bool DoencaCardiacaReumatica1 { get => DoencaCardiacaReumatica; set => DoencaCardiacaReumatica = value; }
-        public bool DoencaCardiacaCongenita1 { get => DoencaCardiacaCongenita; set => DoencaCardiacaCongenita = value; }
-        public bool BatimentosCardiacosIrregulares1 { get => BatimentosCardiacosIrregulares; set => BatimentosCardiacosIrregulares = value; }
-        public bool ProblemaValvulasCardiacas1 { get => ProblemaValvulasCardiacas; set => ProblemaValvulasCardiacas = value; }
-        public bool MurmuriosCardiacos1 { get => MurmuriosCardiacos; set => MurmuriosCardiacos = value; }
-        public bool AtaqueCardiaco1 { get => AtaqueCardiaco; set => AtaqueCardiaco = value; }
-        public bool DerrameCerebral1 { get => DerrameCerebral; set => DerrameCerebral = value; }
-        public bool Epilepsia1 { get => Epilepsia; set => Epilepsia = value; }
-        public bool Diabetes1 { get => Diabetes; set => Diabetes = value; }
-        public bool Hipertensao1 { get => Hipertensao; set => Hipertensao = value; }
-        public bool Cancer1 { get => Cancer; set => Cancer = value; }
-        public bool DorCostas1 { get => DorCostas; set => DorCostas = value; }
-        public bool DorArticulacao1 { get => DorArticulacao; set => DorArticulacao = value; }
-        public bool DorPulmonar1 { get => DorPulmonar; set => DorPulmonar = value; }
+        public bool HistoricoProblemaCardiaco { get => historicoProblemaCardiaco; set => historicoProblemaCardiaco = value; }
+        public bool HistoricoDoresPeito { get => historicoDoresPeito; set => historicoDoresPeito = value; }
+        public bool HistoricoDesmaiosOuVertigem { get => historicoDesmaiosOuVertigem; set => historicoDesmaiosOuVertigem = value; }
+        public bool HistoricoPressaoAlta { get => historicoPressaoAlta; set => historicoPressaoAlta = value; }
+        public bool HistoricoProblemaOsseo { get => historicoProblemaOsseo; set => historicoProblemaOsseo = value; }
+        public bool DoencaCardiacaCoronariana { get => doencaCardiacaCoronariana; set => doencaCardiacaCoronariana = value; }
+        public bool DoencaCardiacaReumatica { get => doencaCardiacaReumatica; set => doencaCardiacaReumatica = value; }
+        public bool DoencaCardiacaCongenita { get => doencaCardiacaCongenita; set => doencaCardiacaCongenita = value; }
+        public bool BatimentosCardiacosIrregulares { get => batimentosCardiacosIrregulares; set => batimentosCardiacosIrregulares = value; }
+        public bool ProblemaValvulasCardiacas { get => problemaValvulasCardiacas; set => problemaValvulasCardiacas = value; }
+        public bool MurmuriosCardiacos { get => murmuriosCardiacos; set => murmuriosCardiacos = value; }
+        public bool AtaqueCardiaco { get => ataqueCardiaco; set => ataqueCardiaco = value; }
+        public bool DerrameCerebral { get => derrameCerebral; set => derrameCerebral = value; }
+        public bool Epilepsia { get => epilepsia; set => epilepsia = value; }
+        public bool Diabetes { get => diabetes; set => diabetes = value; }
+        public bool Hipertensao { get => hipertensao; set => hipertensao = value; }
+        public bool Cancer { get => cancer; set => cancer = value; }
+        public bool DorCostas { get => dorCostas; set => dorCostas = value; }
+        public bool DorArticulacao { get => dorArticulacao; set => dorArticulacao = value; }
+        public bool DorPulmonar { get => dorPulmonar; set => dorPulmonar = value; }
         public bool Gestante { get => gestante; set => gestante = value; }
-        public bool Fumante1 { get => Fumante; set => Fumante = value; }
-        public bool BebidaAlcoolica1 { get => BebidaAlcoolica; set => BebidaAlcoolica = value; }
-        public bool PerderPeso1 { get => PerderPeso; set => PerderPeso = value; }
-        public bool MelhorarFlexibilidade1 { get => MelhorarFlexibilidade; set => MelhorarFlexibilidade = value; }
-        public bool DiminuirVicios1 { get => DiminuirVicios; set => DiminuirVicios = value; }
-        public bool ReduzirDores1 { get => ReduzirDores; set => ReduzirDores = value; }
-        public bool MelhorarNutricao1 { get => MelhorarNutricao; set => MelhorarNutricao = value; }
-        public bool MelhorarAptidao1 { get => MelhorarAptidao; set => MelhorarAptidao = value; }
-        public bool MelhorarMuscular1 { get => MelhorarMuscular; set => MelhorarMuscular = value; }
-        public bool ReduzirEstresse1 { get => ReduzirEstresse; set => ReduzirEstresse = value; }
-        public bool SentirMelhor1 { get => SentirMelhor; set => SentirMelhor = value; }
+        public bool Fumante { get => fumante; set => fumante = value; }
+        public bool BebidaAlcoolica { get => bebidaAlcoolica; set => bebidaAlcoolica = value; }
+        public bool PerderPeso { get => perderPeso; set => perderPeso = value; }
+        public bool MelhorarFlexibilidade { get => melhorarFlexibilidade; set => melhorarFlexibilidade = value; }
+        public bool DiminuirVicios { get => diminuirVicios; set => diminuirVicios = value; }
+        public bool ReduzirDores { get => reduzirDores; set => reduzirDores = value; }
+        public bool MelhorarNutricao { get => melhorarNutricao; set => melhorarNutricao = value; }
+        public bool MelhorarAptidao { get => melhorarAptidao; set => melhorarAptidao = value; }
+        public bool MelhorarMuscular { get => melhorarMuscular; set => melhorarMuscular = value; }
+        public bool ReduzirEstresse { get => reduzirEstresse; set => reduzirEstresse = value; }
+        public bool SentirMelhor { get => sentirMelhor; set => sentirMelhor = value; }
         public bool Hipertrofia { get => hipertrofia; set => hipertrofia = value; }
         public string Observacao { get => observacao; set => observacao = value; }
+        public bool IdosoNaoAcostumado { get => idosoNaoAcostumado; set => idosoNaoAcostumado = value; }
     }
 }

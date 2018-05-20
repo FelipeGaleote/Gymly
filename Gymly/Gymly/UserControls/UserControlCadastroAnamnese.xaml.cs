@@ -35,12 +35,12 @@ namespace Gymly.UserControls
         private void btnEtapa2_Click(object sender, RoutedEventArgs e)
         {
             Anamnese anamnese = new Anamnese();
-            anamnese.Historico_problema_cardiaco = checkBoxProblemaCardiaco.IsChecked.Value;
-            anamnese.Historico_dores_peito = checkBoxDoresNoPeito.IsChecked.Value;
-            anamnese.Historico_desmaios_ou_vertigem = checkBoxDesmaia.IsChecked.Value;
-            anamnese.Historico_pressao_alta = checkBoxPressaoAlta.IsChecked.Value;
-            anamnese.Historico_problema_osseo = checkBoxProblemaOsseo.IsChecked.Value;
-            anamnese.Idoso_nao_acostumado = checkBoxIdosoNaoAcostumado.IsChecked.Value;
+            anamnese.HistoricoProblemaCardiaco = checkBoxProblemaCardiaco.IsChecked.Value;
+            anamnese.HistoricoDoresPeito = checkBoxDoresNoPeito.IsChecked.Value;
+            anamnese.HistoricoDesmaiosOuVertigem = checkBoxDesmaia.IsChecked.Value;
+            anamnese.HistoricoPressaoAlta = checkBoxPressaoAlta.IsChecked.Value;
+            anamnese.HistoricoProblemaOsseo = checkBoxProblemaOsseo.IsChecked.Value;
+            anamnese.IdosoNaoAcostumado = checkBoxIdosoNaoAcostumado.IsChecked.Value;
 
             mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa", anamnese);
         }
