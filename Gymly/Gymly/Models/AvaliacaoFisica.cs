@@ -35,7 +35,14 @@ namespace Gymly.Models
         //Básicos
         private float altura;
         private float massa;
+        private float envergadura;
 
+        //Capacidade Anaerobica - RAST
+        private float potMinima;
+        private float potMaxima;
+        private List<float> potencias = new List<float>();
+
+       
         public float DobraCutaneaSubescapular { get => dobraCutaneaSubescapular; set => dobraCutaneaSubescapular = value; }
         public float DobraCutaneaTriceps { get => dobraCutaneaTriceps; set => dobraCutaneaTriceps = value; }
         public float DobraCutaneaBiceps { get => dobraCutaneaBiceps; set => dobraCutaneaBiceps = value; }
@@ -58,12 +65,13 @@ namespace Gymly.Models
         public float PrimetroCoxaMedial { get => primetroCoxaMedial; set => primetroCoxaMedial = value; }
         public float PrimetroDistal { get => primetroDistal; set => primetroDistal = value; }
         public float PrimetroPerna { get => primetroPerna; set => primetroPerna = value; }
+        public float Envergadura { get => envergadura; set => envergadura = value; }
 
         public float imc(float massa, float altura) {
             return (massa / (altura * altura));
         }
         //Percentual de Gordural usando Dobras cutaneas 
-        public double PercentualDeGordura(Aluno aluno) {
+        public double CalculaPercentualDeGordura(Aluno aluno) {
 
             double d;
             float somaDobras;
@@ -87,6 +95,34 @@ namespace Gymly.Models
         public double CalculaMassaGorda(Aluno aluno) {
             return Math.Round(massa * (PercentualDeGordura(aluno) / 100));
         }
+        public float CalculaPotenciaMedia(List<float> potencias)
+        {
+            float media = 0;
+            foreach (float p in potencias)
+            {
+                media = media + p;
+            }
+            return (media / potencias.Count);
+        }
 
+        public float CalculaIndiceFadiga(float potMax, float potMin) {
+            return (((potMax-potMin)*100)/potMax);
+        }
+        public float CalculaVelocidade(int tempo) {
+            return (35 / tempo);
+        }
+        public float CalculaForca(float massa, float aceleracao) {
+            return (massa*aceleracao);
+        }
+        public float CalcularAceleracao(float velocidade, int tempo) {
+            return (velocidade/tempo);
+        }
+        public float CalcularPotencia(float forca, float velocidade) {
+            return (forca*velocidade);
+        }
+        public double CalculaVO2Max(float velocidade) //Teste 2000 m
+        {
+            return (3.6*3.5*velocidade);
+        }
     }
 }
