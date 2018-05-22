@@ -18,6 +18,7 @@ using Gymly.UserControls;
 using System.Data.SQLite;
 using System.Data.SqlClient;
 using System.Data;
+using Xceed.Wpf.DataGrid;
 
 namespace Gymly.UserControls
 {
@@ -35,7 +36,7 @@ namespace Gymly.UserControls
             txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
             txtBoxConsultaAluno.Foreground = Brushes.Gray;
             this.mainWindow = mainWindow;
-            preencheDataGridAluno();
+            PreencheDataGridAluno();
 
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -45,13 +46,13 @@ namespace Gymly.UserControls
             PropertyChanged(this, new PropertyChangedEventArgs(propriedade));
         }
 
-        private void txtBoxConsultaAluno_GotFocus(object sender, RoutedEventArgs e)
+        private void TxtBoxConsultaAluno_GotFocus(object sender, RoutedEventArgs e)
         {
             txtBoxConsultaAluno.Clear();
             txtBoxConsultaAluno.Foreground = Brushes.Black;
         }
 
-        private void txtBoxConsultaAluno_LostFocus(object sender, RoutedEventArgs e)
+        private void TxtBoxConsultaAluno_LostFocus(object sender, RoutedEventArgs e)
         {
             if(txtBoxConsultaAluno.Text == String.Empty)
             {
@@ -60,9 +61,9 @@ namespace Gymly.UserControls
             }
         }
 
-        private void btnCadastraAluno_Click(object sender, RoutedEventArgs e)
+        private void BtnCadastraAluno_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.mudarUserControl("cadastroAluno");
+            mainWindow.MudarUserControl("cadastroAluno");
 
             /*BDAluno.insereAluno();
             List<Aluno> alunos = BDAluno.consultaAluno();
@@ -71,20 +72,24 @@ namespace Gymly.UserControls
 
         }
 
-        private void btnCadastraOuEditaAnamnese_Click(object sender, RoutedEventArgs e)
+        private void BtnCadastraOuEditaAnamnese_Click(object sender, RoutedEventArgs e)
         {
-            
-
-           mainWindow.mudarUserControl("cadastroAnamnese");
+            //Tentar capturar o cpf do aluno selecionado no datagrid
+           // Anamnese anamnese = new Anamnese
+          //  {
+           //     CpfAluno = dataGridAluno.Columns[0].ToString()
+          //  };
+          //  MessageBox.Show(anamnese.CpfAluno);
+         //   mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
         }
 
-        private void btnPesquisar_Click(object sender, RoutedEventArgs e)
+        private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
         {
             if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
             {
                 SQLiteConexao conexao = new SQLiteConexao();
-                SQLiteConnection conn = conexao.getConexao();
-                string query = "SELECT cpf, nome, email FROM Alunos where nome like '%" + txtBoxConsultaAluno.Text + "%'";
+                SQLiteConnection conn = conexao.GetConexao();
+                string query = "SELECT cpf, nome, email, strftime('%d-%m-%Y', datanasc)  FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
 
                 SQLiteCommand command = new SQLiteCommand(query, conn);
                 DataTable dt = new DataTable("Alunos");
@@ -100,15 +105,15 @@ namespace Gymly.UserControls
             }
             else
             {
-                preencheDataGridAluno();
+                PreencheDataGridAluno();
             }
         }
 
-        private void preencheDataGridAluno()
+        private void PreencheDataGridAluno()
         {
             SQLiteConexao conexao = new SQLiteConexao();
-            SQLiteConnection conn = conexao.getConexao();
-            string query = "SELECT cpf, nome, email FROM Alunos;";
+            SQLiteConnection conn = conexao.GetConexao();
+            string query = "SELECT cpf, nome, email, strftime('%d-%m-%Y', datanasc) FROM Alunos;";
             SQLiteCommand command = new SQLiteCommand(query, conn);
             DataTable dt = new DataTable("Alunos");
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
@@ -119,9 +124,14 @@ namespace Gymly.UserControls
             conn.Close();
         }
 
-        private void btnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        private void BtnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.mudarUserControl("cadastroAvaliacaoFisica");
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisica");
+        }
+
+        private void dataGridAluno_CurrentCellChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

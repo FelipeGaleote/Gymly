@@ -10,10 +10,10 @@ namespace Gymly.BD
 {
     class BDAnamnese
     {
-        public static void insereAnamnese(Anamnese anamnese, string cpfAluno)
+        public static void InsereAnamnese(Anamnese anamnese, string cpfAluno)
         {
             SQLiteConexao conexao = new SQLiteConexao();
-            SQLiteConnection conn = conexao.getConexao();
+            SQLiteConnection conn = conexao.GetConexao();
             string sql = "INSERT INTO Anamneses(" +
                      "id, cpf_aluno,historico_problema_cardiaco,historico_dores_peito,historico_desmaios_ou_vertigem,historico_pressao_alta,historico_problema_osseo," +
                      "idoso_nao_acostumado,doenca_cardiaca_coronariana,doenca_cardiaca_reumatica,doenca_cardiaca_congenita,batimentos_cardiacos_irregulares,problema_valvulas_cardiacas,murmurios_cardiacos," +

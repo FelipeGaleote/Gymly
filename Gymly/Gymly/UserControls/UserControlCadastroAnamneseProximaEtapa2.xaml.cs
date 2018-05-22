@@ -30,7 +30,7 @@ namespace Gymly.UserControls
             InitializeComponent();
         }
 
-        private void btnEtapa4_Click(object sender, RoutedEventArgs e)
+        private void BtnEtapa4_Click(object sender, RoutedEventArgs e)
         {
             anamnese.DorCostas = checkBoxDorNasCostas.IsChecked.Value;
             anamnese.DorArticulacao = checkBoxDorNasArticulacoes.IsChecked.Value;
@@ -39,7 +39,7 @@ namespace Gymly.UserControls
             anamnese.Fumante = checkBoxFuma.IsChecked.Value;
             anamnese.BebidaAlcoolica = checkBoxBebidaAlcoolica.IsChecked.Value;
 
-            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa3", anamnese);
+            mainWindow.MudarUserControl("cadastroAnamneseProximaEtapa3", anamnese);
         }
     }
 }

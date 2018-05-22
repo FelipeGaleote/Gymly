@@ -9,10 +9,10 @@ namespace Gymly.BD
 {
     class BDAvaliacaoFisica
     {
-        public static void insereAluno(AvaliacaoFisica avaliacaoFisica)
+        public static void InsereAluno(AvaliacaoFisica avaliacaoFisica)
         {
             SQLiteConexao conexao = new SQLiteConexao();
-            SQLiteConnection conn = conexao.getConexao();
+            SQLiteConnection conn = conexao.GetConexao();
 
             string sql = "INSERT INTO AvaliacaoFisica(perimetroOmbro,perimetroTorax,perimetroBraço,perimetroAntebraco"+
                 "perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximal,perimetroCoxaMedial,perimetroDistal"+ 

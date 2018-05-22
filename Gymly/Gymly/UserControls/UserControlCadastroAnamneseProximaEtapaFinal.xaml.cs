@@ -32,13 +32,13 @@ namespace Gymly.UserControls
             InitializeComponent();
         }
 
-        private void txtBoxObservacao_GotFocus(object sender, RoutedEventArgs e)
+        private void TxtBoxObservacao_GotFocus(object sender, RoutedEventArgs e)
         {
             txtBoxObservacao.Clear();
             txtBoxObservacao.Foreground = Brushes.Black;
         }
 
-        private void txtBoxObservacao_LostFocus(object sender, RoutedEventArgs e)
+        private void TxtBoxObservacao_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtBoxObservacao.Text == String.Empty)
             {
@@ -47,12 +47,12 @@ namespace Gymly.UserControls
             }
         }
 
-        private void btnFinalizar_Click(object sender, RoutedEventArgs e)
+        private void BtnFinalizar_Click(object sender, RoutedEventArgs e)
         {
             anamnese.Observacao = txtBoxObservacao.Text;
-            BDAnamnese.insereAnamnese(anamnese, anamnese.CpfAluno);
+            BDAnamnese.InsereAnamnese(anamnese, anamnese.CpfAluno);
             MessageBox.Show("Anamnese cadastrada com sucesso!");
-            mainWindow.mudarUserControl("aluno");
+            mainWindow.MudarUserControl("aluno");
         }
     }
 }

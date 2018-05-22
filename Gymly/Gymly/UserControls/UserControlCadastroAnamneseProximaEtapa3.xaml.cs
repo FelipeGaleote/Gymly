@@ -30,7 +30,7 @@ namespace Gymly.UserControls
             InitializeComponent();
         }
 
-        private void btnEtapa5_Click(object sender, RoutedEventArgs e)
+        private void BtnEtapa5_Click(object sender, RoutedEventArgs e)
         {
             anamnese.PerderPeso = checkBoxPerderPeso.IsChecked.Value;
             anamnese.MelhorarFlexibilidade = checkBoxMelhorarFlexibilidade.IsChecked.Value;
@@ -43,7 +43,7 @@ namespace Gymly.UserControls
             anamnese.MelhorarNutricao = checkBoxMelhorarNutricao.IsChecked.Value;
             anamnese.DiminuirVicios = checkBoxDiminuirVicios.IsChecked.Value;
 
-            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapaFinal", anamnese);
+            mainWindow.MudarUserControl("cadastroAnamneseProximaEtapaFinal", anamnese);
         }
     }
 }

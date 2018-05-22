@@ -25,16 +25,16 @@ namespace Gymly.UserControls
     {
 
         private MainWindow mainWindow;
-
-        public UserControlCadastroAnamnese(MainWindow mainWindow)
+        private Anamnese anamnese;
+        public UserControlCadastroAnamnese(MainWindow mainWindow, Anamnese anamnese)
         {
+            this.anamnese = anamnese;
             InitializeComponent();
             this.mainWindow = mainWindow;
         }
 
-        private void btnEtapa2_Click(object sender, RoutedEventArgs e)
+        private void BtnEtapa2_Click(object sender, RoutedEventArgs e)
         {
-            Anamnese anamnese = new Anamnese();
             anamnese.HistoricoProblemaCardiaco = checkBoxProblemaCardiaco.IsChecked.Value;
             anamnese.HistoricoDoresPeito = checkBoxDoresNoPeito.IsChecked.Value;
             anamnese.HistoricoDesmaiosOuVertigem = checkBoxDesmaia.IsChecked.Value;
@@ -42,7 +42,7 @@ namespace Gymly.UserControls
             anamnese.HistoricoProblemaOsseo = checkBoxProblemaOsseo.IsChecked.Value;
             anamnese.IdosoNaoAcostumado = checkBoxIdosoNaoAcostumado.IsChecked.Value;
 
-            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa", anamnese);
+            mainWindow.MudarUserControl("cadastroAnamneseProximaEtapa", anamnese);
         }
 
 

@@ -160,7 +160,7 @@
         </CheckBox>
  
 
-        <Button Name="btnEtapa5" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="btnEtapa5_Click"/>
+        <Button Name="btnEtapa5" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnEtapa5_Click"/>
         <!--<TextBox Text="{Binding Diretorio, Mode=TwoWay}" Grid.Row="1" Grid.Column="0"/> -->
         <!--<ListBox ItemsSource="{Binding ItensDiretorio}" SelectedItem="{Binding ItemSelecionado, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>-->
 

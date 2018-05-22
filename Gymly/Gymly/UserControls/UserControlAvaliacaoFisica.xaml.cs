@@ -29,7 +29,7 @@ namespace Gymly.UserControls
             this.mainWindow = mainWindow;
             InitializeComponent();
             DataContext = this;
-            preencheDataGridAluno();
+            PreencheDataGridAluno();
             txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
             txtBoxConsultaAluno.Foreground = Brushes.Gray;
         }
@@ -40,16 +40,16 @@ namespace Gymly.UserControls
             PropertyChanged(this, new PropertyChangedEventArgs(propriedade));
         }
 
-        private void btnCadastraAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        private void BtnCadastraAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.mudarUserControl("cadastroAvaliacaoFisica");
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisica");
         }
-        private void btnPesquisar_Click(object sender, RoutedEventArgs e)
+        private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
         {
             if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
             {
                 SQLiteConexao conexao = new SQLiteConexao();
-                SQLiteConnection conn = conexao.getConexao();
+                SQLiteConnection conn = conexao.GetConexao();
                 string query = "SELECT cpf, nome, email FROM Alunos where nome like '%" + txtBoxConsultaAluno.Text + "%'";
 
                 SQLiteCommand command = new SQLiteCommand(query, conn);
@@ -66,13 +66,13 @@ namespace Gymly.UserControls
             }
             else
             {
-                preencheDataGridAluno();
+                PreencheDataGridAluno();
             }
         }
-        private void preencheDataGridAluno()
+        private void PreencheDataGridAluno()
         {
             SQLiteConexao conexao = new SQLiteConexao();
-            SQLiteConnection conn = conexao.getConexao();
+            SQLiteConnection conn = conexao.GetConexao();
             string query = "SELECT cpf, nome, email FROM Alunos;";
             SQLiteCommand command = new SQLiteCommand(query, conn);
             DataTable dt = new DataTable("Alunos");
@@ -83,13 +83,13 @@ namespace Gymly.UserControls
             adapter.Update(dt);
             conn.Close();
         }
-        private void txtBoxConsultaAluno_GotFocus(object sender, RoutedEventArgs e)
+        private void TxtBoxConsultaAluno_GotFocus(object sender, RoutedEventArgs e)
         {
             txtBoxConsultaAluno.Clear();
             txtBoxConsultaAluno.Foreground = Brushes.Black;
         }
 
-        private void txtBoxConsultaAluno_LostFocus(object sender, RoutedEventArgs e)
+        private void TxtBoxConsultaAluno_LostFocus(object sender, RoutedEventArgs e)
         {
             if (txtBoxConsultaAluno.Text == String.Empty)
             {

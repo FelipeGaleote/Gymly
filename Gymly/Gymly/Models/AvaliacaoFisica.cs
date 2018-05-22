@@ -380,7 +380,7 @@ namespace Gymly.Models
             }
         }
 
-        public float imc(float massa, float altura) {
+        public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));
         }
         //Percentual de Gordural usando Dobras cutaneas 
@@ -391,12 +391,12 @@ namespace Gymly.Models
 
             if(aluno.Sexo == 'F'){
                somaDobras = (DobraCutaneaAxilarMedia + DobraCutaneaSuprailiaca + DobraCutaneaCoxa + DobraCutaneaPerna);
-               d = 1.1954713-0.07513507*Math.Log10(somaDobras)-0.00041072 * Aluno.calculaIdade(aluno.DataNasc);
+               d = 1.1954713-0.07513507*Math.Log10(somaDobras)-0.00041072 * Aluno.CalculaIdade(aluno.DataNasc);
             }
             else
             {
                 somaDobras = (DobraCutaneaSubescapular+DobraCutaneaTriceps+DobraCutaneaSuprailiaca + DobraCutaneaPerna);
-                d = 1.10726863-0.00081201*(somaDobras)+0.00000212*(somaDobras*somaDobras)-0.00041761* Aluno.calculaIdade(aluno.DataNasc);
+                d = 1.10726863-0.00081201*(somaDobras)+0.00000212*(somaDobras*somaDobras)-0.00041761* Aluno.CalculaIdade(aluno.DataNasc);
 
             }
             return ((4.95/d) - 4.5) * 100;

@@ -22,16 +22,16 @@
             <RowDefinition Height="333*"/>
         </Grid.RowDefinitions>
 
-        <TextBox Name="txtBoxConsultaAluno" TextAlignment="Left" FontWeight="Bold" FontSize="15pt" Grid.ColumnSpan="3"  Grid.Column="1"  Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" Grid.Row="0" Background="White" GotFocus="txtBoxConsultaAluno_GotFocus" LostFocus="txtBoxConsultaAluno_LostFocus" />
-        <Button Width="50" Height="48" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3" Margin="0,0,0,12" Grid.Row="0" Background="LightGray" BorderBrush="GhostWhite" Name="btnPesquisar" Click="btnPesquisar_Click">
+        <TextBox Name="txtBoxConsultaAluno" TextAlignment="Left" FontWeight="Bold" FontSize="15pt" Grid.ColumnSpan="3"  Grid.Column="1"  Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" Grid.Row="0" Background="White" GotFocus="TxtBoxConsultaAluno_GotFocus" LostFocus="TxtBoxConsultaAluno_LostFocus" />
+        <Button Width="50" Height="48" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3" Margin="0,0,0,12" Grid.Row="0" Background="LightGray" BorderBrush="GhostWhite" Name="btnPesquisar" Click="BtnPesquisar_Click">
             <StackPanel>
                 <Image Source="../Image/lupa_icon.png" />
             </StackPanel>
         </Button>
-        <DataGrid Name="dataGridAluno" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="3" Grid.Column="1"  Grid.Row="1" Background="LightSlateGray" />
-        <Button FontSize="15pt"  VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Name="btnCadastraAluno" Content="Cadastrar Aluno" Height="50" Margin="0,50,0,0" Click="btnCadastraAluno_Click"></Button>
-        <Button FontSize="15pt" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3" Name="btnEditarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="0,50,0,0" Click="btnCadastraOuEditaAnamnese_Click"></Button>
-        <Button FontSize="15pt" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Física" Height="50" Margin="0,50,0,0" Click="btnCadastrarAvaliacaoFisica_Click"></Button>
+        <DataGrid SelectionMode="Single" SelectionUnit="FullRow" Name="dataGridAluno" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="3" Grid.Column="1"  Grid.Row="1" Background="LightSlateGray" CurrentCellChanged="dataGridAluno_CurrentCellChanged" />
+        <Button FontSize="15pt"  VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Name="btnCadastraAluno" Content="Cadastrar Aluno" Height="50" Margin="0,50,0,0" Click="BtnCadastraAluno_Click"></Button>
+        <Button FontSize="15pt" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3" Name="btnEditarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="0,50,0,0" Click="BtnCadastraOuEditaAnamnese_Click"></Button>
+        <Button FontSize="15pt" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Física" Height="50" Margin="0,50,0,0" Click="BtnCadastrarAvaliacaoFisica_Click"></Button>
         <!--<TextBox Text="{Binding Diretorio, Mode=TwoWay}" Grid.Row="1" Grid.Column="0"/> -->
         <!--<ListBox ItemsSource="{Binding ItensDiretorio}" SelectedItem="{Binding ItemSelecionado, Mode=TwoWay}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>-->
 

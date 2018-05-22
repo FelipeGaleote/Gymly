@@ -26,13 +26,15 @@ namespace Gymly
         public MainWindow()
         {
             InitializeComponent();
-            mudarUserControl("telaInicial");
+            MudarUserControl("telaInicial");
             StartClock();
         }
         private void StartClock()
         {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
+            DispatcherTimer timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
             timer.Tick += Tickevent;
             timer.Start();
         }
@@ -52,10 +54,10 @@ namespace Gymly
         }
         private void BtnGymly_Click(object sender, RoutedEventArgs e)
         {
-            mudarUserControl("telaInicial");
+            MudarUserControl("telaInicial");
         }
 
-       public void mudarUserControl(String nomeDoControl)
+       public void MudarUserControl(String nomeDoControl)
         {
             pnl.Children.Clear();
             switch (nomeDoControl)
@@ -69,19 +71,19 @@ namespace Gymly
                 case "cadastroAluno":
                     pnl.Children.Add(new UserControlCadastroAluno(this));
                     break;
-                case "cadastroAnamnese":
-                    pnl.Children.Add(new UserControlCadastroAnamnese(this));
-                    break;
                 case "cadastroAvaliacaoFisica":
                     pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this));
                     break;
             }
         }
-        public void mudarUserControl(String nomeDoControl, Anamnese anamnese)
+        public void MudarUserControl(String nomeDoControl, Anamnese anamnese)
         {
             pnl.Children.Clear();
             switch (nomeDoControl)
             {
+                case "cadastroAnamnese":
+                    pnl.Children.Add(new UserControlCadastroAnamnese(this, anamnese));
+                    break;
                 case "cadastroAnamneseProximaEtapa":
                     pnl.Children.Add(new UserControlCadastroAnamneseProximaEtapa(this, anamnese));
                     break;
@@ -96,5 +98,6 @@ namespace Gymly
                     break;
             }
         }
+        
     }
 }

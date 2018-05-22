@@ -30,7 +30,7 @@ namespace Gymly.UserControls
             InitializeComponent();
         }
 
-        private void btnEtapa3_Click(object sender, RoutedEventArgs e)
+        private void BtnEtapa3_Click(object sender, RoutedEventArgs e)
         {
             anamnese.DoencaCardiacaCoronariana = checkBoxDoencaCardiacaCoronariana.IsChecked.Value;
             anamnese.DoencaCardiacaReumatica = checkBoxDoencaCardiacaReumatica.IsChecked.Value;
@@ -45,7 +45,7 @@ namespace Gymly.UserControls
             anamnese.Hipertensao = checkBoxHipertensao.IsChecked.Value;
             anamnese.Cancer = checkBoxCancer.IsChecked.Value;
 
-            mainWindow.mudarUserControl("cadastroAnamneseProximaEtapa2", anamnese);
+            mainWindow.MudarUserControl("cadastroAnamneseProximaEtapa2", anamnese);
         }
     }
 }

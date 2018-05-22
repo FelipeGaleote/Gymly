@@ -17,18 +17,10 @@ namespace Gymly.Models
         private string telefone;
         private char sexo;
         private string nivel;
-        private List<AvaliacaoFisica> avFisica = new List<AvaliacaoFisica>();
+        private string caminhoFotoDoRosto;
         private Anamnese anamnese; 
 
         public Aluno() { }
-
-        public static void listaAlunos()
-        {
-            List<Aluno> alunos = new List<Aluno>();
-            alunos = BDAluno.consultaAluno();
-            alunos.ForEach(i => MessageBox.Show("Nome: " + i.Nome , "Email: " + i.Email));
-            
-        }
 
         public string Nome                                                                                                      
         {
@@ -95,18 +87,7 @@ namespace Gymly.Models
             }
         }
 
-        public List<AvaliacaoFisica> AvFisica
-        {
-            get
-            {
-                return avFisica;
-            }
-
-            set
-            {
-                avFisica = value;
-            }
-        }
+        public List<AvaliacaoFisica> AvFisica { get; set; } = new List<AvaliacaoFisica>();
 
         public Anamnese Anamnese
         {
@@ -136,7 +117,9 @@ namespace Gymly.Models
 
         public DateTime DataNasc { get { return dataNasc;  }  set { dataNasc = value; } }
 
-        public static int calculaIdade(DateTime dataNasc)
+        public string CaminhoFotoDoRosto { get => caminhoFotoDoRosto; set => caminhoFotoDoRosto = value; }
+
+        public static int CalculaIdade(DateTime dataNasc)
         {
             int idade = DateTime.Now.Year - dataNasc.Year;
             if (DateTime.Now.Month < dataNasc.Month || (DateTime.Now.Month == dataNasc.Month && DateTime.Now.Day < dataNasc.Day))

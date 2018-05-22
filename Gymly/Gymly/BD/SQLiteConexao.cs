@@ -18,17 +18,17 @@ namespace Gymly.BD
 
         public SQLiteConexao()
         {
-            criaTabelas();
+            CriaTabelas();
         }
 
-        public SQLiteConnection getConexao()
+        public SQLiteConnection GetConexao()
         {
             conn = new SQLiteConnection(conexao);
             conn.Open();
             return conn;
         }
 
-        private void criaTabelas()
+        private void CriaTabelas()
         {
             if (!File.Exists(nomeBanco))
             {
@@ -46,8 +46,9 @@ namespace Gymly.BD
                 sql.AppendLine("[DATANASC] DATE,");
                 sql.AppendLine("[EMAIL] VARCHAR(50),");
                 sql.AppendLine("[TELEFONE] VARCHAR(15),");
-                sql.AppendLine("[GENERO] VARCHAR(10),");
-                sql.AppendLine("[NIVEL] VARCHAR(50));");
+                sql.AppendLine("[SEXO] VARCHAR(10),");
+                sql.AppendLine("[NIVEL] VARCHAR(50),"); 
+                sql.AppendLine("[FOTO_DE_ROSTO] VARCHAR(256));");
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();
                 sql.Clear();
