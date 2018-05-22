@@ -14,6 +14,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gymly.Models;
 using Gymly.BD;
+using Xceed.Wpf.Toolkit;
+using Xceed.Wpf.AvalonDock;
+using Xceed.Wpf.DataGrid;
+
 
 namespace Gymly.UserControls
 {
@@ -54,5 +58,7 @@ namespace Gymly.UserControls
             BDAluno.insereAluno(aluno);
             mainWindow.mudarUserControl("aluno");
         }
+
+    
     }
 }

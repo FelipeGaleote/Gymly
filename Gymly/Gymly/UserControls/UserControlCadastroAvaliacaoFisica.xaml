@@ -1,12 +1,37 @@
 ﻿<UserControl x:Class="Gymly.UserControls.UserControlCadastroAvaliacaoFisica"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Gymly.UserControls"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:Gymly.UserControls"
+        mc:Ignorable="d" 
+        d:DesignHeight="1000" d:DesignWidth="1000">
+
+    <Grid Margin="0,2,0,-2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Avaliação Física" VerticalAlignment="Center"/>
+        <Label BorderBrush="GhostWhite" Name="lblNomeRosto" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2"></Label>
+        <Button Name="btnFotoRosto" BorderBrush="{x:Null}" Background="{x:Null}" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2" Height="Auto"/>
+
+
     </Grid>
 </UserControl>
