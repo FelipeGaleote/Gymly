@@ -27,7 +27,7 @@ namespace Gymly.BD
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("@cpf_Aluno", cpfAluno);
-            cmd.Parameters.AddWithValue("@Historico_problem_cardiaco", anamnese.HistoricoProblemaCardiaco);
+            cmd.Parameters.AddWithValue("@historico_problema_cardiaco", anamnese.HistoricoProblemaCardiaco);
             cmd.Parameters.AddWithValue("@historico_dores_peito", anamnese.HistoricoDoresPeito);
             cmd.Parameters.AddWithValue("@historico_desmaios_ou_vertigem", anamnese.HistoricoDesmaiosOuVertigem);
             cmd.Parameters.AddWithValue("@historico_pressao_alta" , anamnese.HistoricoPressaoAlta);

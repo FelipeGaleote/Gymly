@@ -9,17 +9,17 @@ namespace Gymly.Models
     class AvaliacaoFisica
     {
         //Perimetros
-        private float primetroOmbro;
-        private float primetroTorax;
-        private float primetroBraço;
-        private float primetroAntebraco;
-        private float primetroCintura;
-        private float primetroAbdominal;
-        private float primetroQuadril;
-        private float primetroCoxaProximal;
-        private float primetroCoxaMedial;
-        private float primetroDistal;
-        private float primetroPerna;
+        private float perimetroOmbro;
+        private float perimetroTorax;
+        private float perimetroBraço;
+        private float perimetroAntebraco;
+        private float perimetroCintura;
+        private float perimetroAbdominal;
+        private float perimetroQuadril;
+        private float perimetroCoxaProximal;
+        private float perimetroCoxaMedial;
+        private float perimetroDistal;
+        private float perimetroPerna;
         
         //Dobras Cutaneas 
         private float dobraCutaneaSubescapular;
@@ -42,30 +42,343 @@ namespace Gymly.Models
         private float potMaxima;
         private List<float> potencias = new List<float>();
 
-       
-        public float DobraCutaneaSubescapular { get => dobraCutaneaSubescapular; set => dobraCutaneaSubescapular = value; }
-        public float DobraCutaneaTriceps { get => dobraCutaneaTriceps; set => dobraCutaneaTriceps = value; }
-        public float DobraCutaneaBiceps { get => dobraCutaneaBiceps; set => dobraCutaneaBiceps = value; }
-        public float DobraCutaneaTorax { get => dobraCutaneaTorax; set => dobraCutaneaTorax = value; }
-        public float DobraCutaneaAxilarMedia { get => dobraCutaneaAxilarMedia; set => dobraCutaneaAxilarMedia = value; }
-        public float DobraCutaneaSuprailiaca { get => dobraCutaneaSuprailiaca; set => dobraCutaneaSuprailiaca = value; }
-        public float DobraCutaneaAbdominal { get => dobraCutaneaAbdominal; set => dobraCutaneaAbdominal = value; }
-        public float DobraCutaneaCoxa { get => dobraCutaneaCoxa; set => dobraCutaneaCoxa = value; }
-        public float DobraCutaneaPerna { get => dobraCutaneaPerna; set => dobraCutaneaPerna = value; }
-        public float Altura { get => altura; set => altura = value; }
-        public float Massa { get => massa; set => massa = value; }
-        public float PrimetroOmbro { get => primetroOmbro; set => primetroOmbro = value; }
-        public float PrimetroTorax { get => primetroTorax; set => primetroTorax = value; }
-        public float PrimetroBraço { get => primetroBraço; set => primetroBraço = value; }
-        public float PrimetroAntebraco { get => primetroAntebraco; set => primetroAntebraco = value; }
-        public float PrimetroCintura { get => primetroCintura; set => primetroCintura = value; }
-        public float PrimetroAbdominal { get => primetroAbdominal; set => primetroAbdominal = value; }
-        public float PrimetroQuadril { get => primetroQuadril; set => primetroQuadril = value; }
-        public float PrimetroCoxaProximal { get => primetroCoxaProximal; set => primetroCoxaProximal = value; }
-        public float PrimetroCoxaMedial { get => primetroCoxaMedial; set => primetroCoxaMedial = value; }
-        public float PrimetroDistal { get => primetroDistal; set => primetroDistal = value; }
-        public float PrimetroPerna { get => primetroPerna; set => primetroPerna = value; }
-        public float Envergadura { get => envergadura; set => envergadura = value; }
+        public float PerimetroOmbro
+        {
+            get
+            {
+                return perimetroOmbro;
+            }
+
+            set
+            {
+                perimetroOmbro = value;
+            }
+        }
+
+        public float PerimetroTorax
+        {
+            get
+            {
+                return perimetroTorax;
+            }
+
+            set
+            {
+                perimetroTorax = value;
+            }
+        }
+
+        public float PerimetroBraço
+        {
+            get
+            {
+                return perimetroBraço;
+            }
+
+            set
+            {
+                perimetroBraço = value;
+            }
+        }
+
+        public float PerimetroAntebraco
+        {
+            get
+            {
+                return perimetroAntebraco;
+            }
+
+            set
+            {
+                perimetroAntebraco = value;
+            }
+        }
+
+        public float PerimetroCintura
+        {
+            get
+            {
+                return perimetroCintura;
+            }
+
+            set
+            {
+                perimetroCintura = value;
+            }
+        }
+
+        public float PerimetroAbdominal
+        {
+            get
+            {
+                return perimetroAbdominal;
+            }
+
+            set
+            {
+                perimetroAbdominal = value;
+            }
+        }
+
+        public float PerimetroQuadril
+        {
+            get
+            {
+                return perimetroQuadril;
+            }
+
+            set
+            {
+                perimetroQuadril = value;
+            }
+        }
+
+        public float PerimetroCoxaProximal
+        {
+            get
+            {
+                return perimetroCoxaProximal;
+            }
+
+            set
+            {
+                perimetroCoxaProximal = value;
+            }
+        }
+
+        public float PerimetroCoxaMedial
+        {
+            get
+            {
+                return perimetroCoxaMedial;
+            }
+
+            set
+            {
+                perimetroCoxaMedial = value;
+            }
+        }
+
+        public float PerimetroDistal
+        {
+            get
+            {
+                return perimetroDistal;
+            }
+
+            set
+            {
+                perimetroDistal = value;
+            }
+        }
+
+        public float PerimetroPerna
+        {
+            get
+            {
+                return perimetroPerna;
+            }
+
+            set
+            {
+                perimetroPerna = value;
+            }
+        }
+
+        public float DobraCutaneaSubescapular
+        {
+            get
+            {
+                return dobraCutaneaSubescapular;
+            }
+
+            set
+            {
+                dobraCutaneaSubescapular = value;
+            }
+        }
+
+        public float DobraCutaneaTriceps
+        {
+            get
+            {
+                return dobraCutaneaTriceps;
+            }
+
+            set
+            {
+                dobraCutaneaTriceps = value;
+            }
+        }
+
+        public float DobraCutaneaBiceps
+        {
+            get
+            {
+                return dobraCutaneaBiceps;
+            }
+
+            set
+            {
+                dobraCutaneaBiceps = value;
+            }
+        }
+
+        public float DobraCutaneaTorax
+        {
+            get
+            {
+                return dobraCutaneaTorax;
+            }
+
+            set
+            {
+                dobraCutaneaTorax = value;
+            }
+        }
+
+        public float DobraCutaneaAxilarMedia
+        {
+            get
+            {
+                return dobraCutaneaAxilarMedia;
+            }
+
+            set
+            {
+                dobraCutaneaAxilarMedia = value;
+            }
+        }
+
+        public float DobraCutaneaSuprailiaca
+        {
+            get
+            {
+                return dobraCutaneaSuprailiaca;
+            }
+
+            set
+            {
+                dobraCutaneaSuprailiaca = value;
+            }
+        }
+
+        public float DobraCutaneaAbdominal
+        {
+            get
+            {
+                return dobraCutaneaAbdominal;
+            }
+
+            set
+            {
+                dobraCutaneaAbdominal = value;
+            }
+        }
+
+        public float DobraCutaneaCoxa
+        {
+            get
+            {
+                return dobraCutaneaCoxa;
+            }
+
+            set
+            {
+                dobraCutaneaCoxa = value;
+            }
+        }
+
+        public float DobraCutaneaPerna
+        {
+            get
+            {
+                return dobraCutaneaPerna;
+            }
+
+            set
+            {
+                dobraCutaneaPerna = value;
+            }
+        }
+
+        public float Altura
+        {
+            get
+            {
+                return altura;
+            }
+
+            set
+            {
+                altura = value;
+            }
+        }
+
+        public float Massa
+        {
+            get
+            {
+                return massa;
+            }
+
+            set
+            {
+                massa = value;
+            }
+        }
+
+        public float Envergadura
+        {
+            get
+            {
+                return envergadura;
+            }
+
+            set
+            {
+                envergadura = value;
+            }
+        }
+
+        public float PotMinima
+        {
+            get
+            {
+                return potMinima;
+            }
+
+            set
+            {
+                potMinima = value;
+            }
+        }
+
+        public float PotMaxima
+        {
+            get
+            {
+                return potMaxima;
+            }
+
+            set
+            {
+                potMaxima = value;
+            }
+        }
+
+        public List<float> Potencias
+        {
+            get
+            {
+                return potencias;
+            }
+
+            set
+            {
+                potencias = value;
+            }
+        }
 
         public float imc(float massa, float altura) {
             return (massa / (altura * altura));
@@ -93,7 +406,7 @@ namespace Gymly.Models
             return Massa-CalculaMassaGorda(aluno);
         }
         public double CalculaMassaGorda(Aluno aluno) {
-            return Math.Round(massa * (PercentualDeGordura(aluno) / 100));
+            return Math.Round(Massa * (CalculaPercentualDeGordura(aluno) / 100));
         }
         public float CalculaPotenciaMedia(List<float> potencias)
         {
