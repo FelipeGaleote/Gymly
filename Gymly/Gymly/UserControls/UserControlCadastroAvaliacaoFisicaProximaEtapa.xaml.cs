@@ -13,27 +13,28 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gymly.Models;
-
 namespace Gymly.UserControls
 {
     /// <summary>
-    /// Interação lógica para UserControlCadastroAvaliacaoFisica.xam
+    /// Interação lógica para UserControlCadastroAvaliacaoFisicaProximaEtapa.xam
     /// </summary>
-    public partial class UserControlCadastroAvaliacaoFisica : UserControl
+    public partial class UserControlCadastroAvaliacaoFisicaProximaEtapa : UserControl
     {
-        private MainWindow mainWindow;
-        private AvaliacaoFisica avaliacaoFisica;
 
-        public UserControlCadastroAvaliacaoFisica(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        private MainWindow mainWindow;
+        private AvaliacaoFisica avaliacaoFisica; 
+
+        public UserControlCadastroAvaliacaoFisicaProximaEtapa(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
+
             InitializeComponent();
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica);
+
         }
     }
 }

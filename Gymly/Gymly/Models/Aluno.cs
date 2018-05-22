@@ -8,7 +8,7 @@ using Gymly.BD;
 
 namespace Gymly.Models
 {
-    class Aluno
+    public class Aluno
     {
         private string cpf;
         private string nome;

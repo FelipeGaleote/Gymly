@@ -127,7 +127,10 @@ namespace Gymly.UserControls
 
         private void BtnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisica");
+            AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
+            //Capturar o cpf do aluno selecionado no datagrid
+            //avaliacaoFisica.CpfAluno = ;
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
         }
         
     }

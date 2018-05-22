@@ -71,9 +71,7 @@ namespace Gymly
                 case "cadastroAluno":
                     pnl.Children.Add(new UserControlCadastroAluno(this));
                     break;
-                case "cadastroAvaliacaoFisica":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this));
-                    break;
+
             }
         }
         public void MudarUserControl(String nomeDoControl, Anamnese anamnese)
@@ -98,6 +96,21 @@ namespace Gymly
                     break;
             }
         }
-        
+        public void MudarUserControl(String nomeDoControl, AvaliacaoFisica avaliacaoFisica)
+        {
+            pnl.Children.Clear();
+            switch (nomeDoControl)
+            {
+                case "cadastroAvaliacaoFisica":
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this, avaliacaoFisica));
+                    break;
+                case "cadastroAvaliacaoFisicaProximaEtapa":
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa(this, avaliacaoFisica));
+                    break;
+               
+            }
+        }
+
     }
 }
+
