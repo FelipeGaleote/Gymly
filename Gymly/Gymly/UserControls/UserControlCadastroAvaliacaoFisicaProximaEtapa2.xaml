@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Gymly.UserControls.UserControlCadastroAvaliacaoFisicaProximaEtapa2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:Gymly.UserControls"
+        mc:Ignorable="d" 
+        d:DesignHeight="1000" d:DesignWidth="1000">
+
+    <Grid Margin="0,2,0,-2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Avaliação Física" VerticalAlignment="Center"/>
+        <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Dobras cutaneas" />
+
+        <TextBlock Grid.Row="1" Grid.Column="0" TextAlignment="Right" Text="Subescapular" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaSubescapular" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="1" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" TextAlignment="Right" Text="Tríceps" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaTriceps" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" TextAlignment="Right" Text="Bíceps" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaBiceps" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="3" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" TextAlignment="Right" Text="Tórax" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaTorax" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="4" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" TextAlignment="Right" Text="Axilar Media" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaAxilarMedia" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="5" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Right" Text="Suprailiaca" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaSuprailiaca" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="1" Grid.Column="3" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="2" TextAlignment="Right" Text="Abdominal" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaAbdominal" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="3" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="2" TextAlignment="Right" Text="Coxa" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaCoxa" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="3" Grid.Column="3" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="2" TextAlignment="Right" Text="Panturrilha" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBox Name="txtBoxDobraCutaneaPerna" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="4" Grid.Column="3" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+
+        <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnProximaEtapa_Click"/>
+
+    </Grid>
+</UserControl>

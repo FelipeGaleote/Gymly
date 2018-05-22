@@ -8,7 +8,8 @@ namespace Gymly.Models
 {
     public class AvaliacaoFisica
     {
-        private string cpfAluno;
+        private string cpfAluno; //pegar do datagrid
+        private string qtdadeDiasDeTreino;//ok
 
         //Perimetros
         private float perimetroOmbro; //ok
@@ -31,22 +32,22 @@ namespace Gymly.Models
         private float envergadura; //ok
 
         //Dobras Cutaneas 
-        private float dobraCutaneaSubescapular;
-        private float dobraCutaneaTriceps;
-        private float dobraCutaneaBiceps;
-        private float dobraCutaneaTorax;
-        private float dobraCutaneaAxilarMedia;
-        private float dobraCutaneaSuprailiaca;
-        private float dobraCutaneaAbdominal;
-        private float dobraCutaneaCoxa;
-        private float dobraCutaneaPerna;
+        private float dobraCutaneaSubescapular; //ok
+        private float dobraCutaneaTriceps;//ok
+        private float dobraCutaneaBiceps;//ok
+        private float dobraCutaneaTorax;//ok
+        private float dobraCutaneaAxilarMedia;//ok
+        private float dobraCutaneaSuprailiaca;//ok
+        private float dobraCutaneaAbdominal;//ok
+        private float dobraCutaneaCoxa;//ok
+        private float dobraCutaneaPerna;//ok
 
         //Básicos
         private float altura;//ok
         private float massa;//ok
-        private float pressaoArterialSistolica;
-        private float pressaoArterialDiastolica;
-        private float frequenciaCardiaca;
+        private float pressaoArterialSistolica;//ok
+        private float pressaoArterialDiastolica;//ok
+        private float frequenciaCardiaca;//ok
 
         //Capacidade Anaerobica - RAST
         private float potMinima;
@@ -89,6 +90,7 @@ namespace Gymly.Models
         public float PressaoArterialSistolica { get => pressaoArterialSistolica; set => pressaoArterialSistolica = value; }
         public float PressaoArterialDiastolica { get => pressaoArterialDiastolica; set => pressaoArterialDiastolica = value; }
         public string CpfAluno { get => cpfAluno; set => cpfAluno = value; }
+        public string QtdadeDiasDeTreino { get => qtdadeDiasDeTreino; set => qtdadeDiasDeTreino = value; }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));

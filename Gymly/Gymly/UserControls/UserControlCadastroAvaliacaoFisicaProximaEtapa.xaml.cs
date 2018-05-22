@@ -34,7 +34,26 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
+            avaliacaoFisica.Envergadura =  float.Parse(txtBoxEnvergadura.Text);
+            avaliacaoFisica.PerimetroAbdominal = float.Parse(txtBoxPerimetroAbdominal.Text);
+            avaliacaoFisica.PerimetroAntebracoDireito = float.Parse(txtBoxPerimetroAnteBracoD.Text);
+            avaliacaoFisica.PerimetroAntebracoEsquerdo = float.Parse(txtBoxPerimetroAnteBracoE.Text);
+            avaliacaoFisica.PerimetroBraçoDireito = float.Parse(txtBoxPerimetroBracoD.Text);
+            avaliacaoFisica.PerimetroBraçoEsquerdo = float.Parse(txtBoxPerimetroBracoE.Text);
+            avaliacaoFisica.PerimetroCintura = float.Parse(txtBoxPerimetroCintura.Text);
+            avaliacaoFisica.PerimetroCoxaDistalDireita = float.Parse(txtBoxPerimetroCoxaDistalD.Text);
+            avaliacaoFisica.PerimetroCoxaDistalEsquerda = float.Parse(txtBoxPerimetroCoxaDistalE.Text);
+            avaliacaoFisica.PerimetroCoxaMedialDireita = float.Parse(txtBoxPerimetroCoxaMedialD.Text);
+            avaliacaoFisica.PerimetroCoxaMedialEsquerda = float.Parse(txtBoxPerimetroCoxaMedialE.Text);
+            avaliacaoFisica.PerimetroCoxaProximalDireita = float.Parse(txtBoxPerimetroCoxaProximalD.Text);
+            avaliacaoFisica.PerimetroCoxaProximalEsquerda = float.Parse(txtBoxPerimetroCoxaProximalE.Text);
+            avaliacaoFisica.PerimetroOmbro = float.Parse(txtBoxPerimetroOmbro.Text);
+            avaliacaoFisica.PerimetroPernaDireita = float.Parse(txtBoxPerimetroPernaD.Text);
+            avaliacaoFisica.PerimetroPernaEsquerda = float.Parse(txtBoxPerimetroPernaE.Text);
+            avaliacaoFisica.PerimetroQuadril = float.Parse(txtBoxPerimetroQuadril.Text);
+            avaliacaoFisica.PerimetroTorax = float.Parse(txtBoxPerimetroTorax.Text);
 
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2", avaliacaoFisica);
         }
     }
 }
