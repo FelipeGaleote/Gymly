@@ -35,6 +35,9 @@ namespace Gymly.UserControls
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
+            PreencheComboBoxs("dia");
+            PreencheComboBoxs("mes");
+            PreencheComboBoxs("ano");
         }
 
        // private void buttonAtivarCalendario_Click(object sender, RoutedEventArgs e)
@@ -62,7 +65,7 @@ namespace Gymly.UserControls
             aluno.Nivel = ComboBoxNivel.SelectedValue.ToString();
             aluno.CaminhoFotoDoRosto = caminhoFotoDeRosto;
             CultureInfo culture = new CultureInfo("pt-BR");
-            aluno.DataNasc = Convert.ToDateTime(txtBoxDataNascimento.Text, culture);
+            aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "/" + comboBoxMes.SelectedValue + "/" + comboBoxAno.SelectedValue));
             BDAluno.InsereAluno(aluno);
             mainWindow.MudarUserControl("aluno");
         }
@@ -87,6 +90,32 @@ namespace Gymly.UserControls
                 btnAddFotoDeRosto.Background = Brushes.Transparent;
                 btnAddFotoDeRosto.BorderBrush = null;
             }
+        }
+        public void PreencheComboBoxs(string nomeComboBox)
+        {
+            switch (nomeComboBox)
+            {
+                case "dia":
+                    AdicionaItemNoCmB(1, 31, comboBoxDia);
+                    break;
+                case "mes":
+                    AdicionaItemNoCmB(1, 12, comboBoxMes);
+                    break;
+                case "ano":
+                    AdicionaItemNoCmB(1900, DateTime.Now.Year, comboBoxAno);
+                    break;
+            }
+        }
+        public void AdicionaItemNoCmB(int inicio, int fim, System.Windows.Controls.ComboBox comboBox)
+        {
+       
+            List<string> lista = new List<string>();
+
+            for (int i = inicio; i <= fim; i++)
+            {
+                lista.Add(i.ToString());
+            }
+            comboBox.ItemsSource = lista;
         }
     }
 }

@@ -36,6 +36,8 @@ namespace Gymly.Models
         private float altura;
         private float massa;
         private float envergadura;
+        private float pressaoArterial;
+        private float frequenciaCardiaca;
 
         //Capacidade Anaerobica - RAST
         private float potMinima;
@@ -379,6 +381,9 @@ namespace Gymly.Models
                 potencias = value;
             }
         }
+
+        public float PressaoArterial { get => pressaoArterial; set => pressaoArterial = value; }
+        public float FrequenciaCardiaca { get => frequenciaCardiaca; set => frequenciaCardiaca = value; }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));

@@ -37,6 +37,7 @@ namespace Gymly.UserControls
             txtBoxConsultaAluno.Foreground = Brushes.Gray;
             this.mainWindow = mainWindow;
             PreencheDataGridAluno();
+            
 
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -75,12 +76,12 @@ namespace Gymly.UserControls
         private void BtnCadastraOuEditaAnamnese_Click(object sender, RoutedEventArgs e)
         {
             //Tentar capturar o cpf do aluno selecionado no datagrid
-           // Anamnese anamnese = new Anamnese
-          //  {
+            Anamnese anamnese = new Anamnese();
+           // {
            //     CpfAluno = dataGridAluno.Columns[0].ToString()
-          //  };
-          //  MessageBox.Show(anamnese.CpfAluno);
-         //   mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
+           // };
+           // MessageBox.Show(anamnese.CpfAluno);
+            mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
         }
 
         private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
@@ -128,10 +129,6 @@ namespace Gymly.UserControls
         {
             mainWindow.MudarUserControl("cadastroAvaliacaoFisica");
         }
-
-        private void dataGridAluno_CurrentCellChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
