@@ -29,7 +29,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Avaliação Física" VerticalAlignment="Center"/>
-        <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Antropometria" />
+        <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Circunferência" />
 
         <TextBlock Grid.Row="1" Grid.Column="0" TextAlignment="Right" Text="Braço" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox Name="txtBoxPerimetroBracoD" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="1" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>

@@ -149,11 +149,23 @@
     <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa.xaml.cs">
       <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa2.xaml.cs">
-      <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa2.xaml</DependentUpon>
+    <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria.xaml.cs">
+      <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia.xaml.cs">
+      <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa3.xaml.cs">
       <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa4.xaml.cs">
+      <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa5.xaml.cs">
+      <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa6.xaml.cs">
+      <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa6.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControlTelaInicial.xaml.cs">
       <DependentUpon>UserControlTelaInicial.xaml</DependentUpon>
@@ -206,11 +218,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa2.xaml">
+    <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa6.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

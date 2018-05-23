@@ -108,13 +108,26 @@ namespace Gymly
                 case "cadastroAvaliacaoFisicaProximaEtapa":
                     pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa(this, avaliacaoFisica));
                     break;
-                case "cadastroAvaliacaoFisicaProximaEtapa2":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa2(this, avaliacaoFisica));
-                break;
+                case "cadastroAvaliacaoFisicaProximaEtapa2_Antropometria":
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria(this, avaliacaoFisica));
+                    break;
+                case "cadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia":
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia(this, avaliacaoFisica));
+                    break;
                 case "cadastroAvaliacaoFisicaProximaEtapa3":
                     pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa3(this, avaliacaoFisica));
-                break;
+                    break;
+                case "cadastroAvaliacaoFisicaProximaEtapa4":
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa4(this, avaliacaoFisica));
+                    break;
+                case "cadastroAvaliacaoFisicaProximaEtapa5":
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa5(this, avaliacaoFisica));
+                    break;
+                case "cadastroAvaliacaoFisicaProximaEtapa6":
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa6(this, avaliacaoFisica));
+                    break;
             }
+            
         }
 
     }

@@ -127,11 +127,36 @@ namespace Gymly.UserControls
 
         private void BtnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica();
+            
             //Capturar o cpf do aluno selecionado no datagrid
             //avaliacaoFisica.CpfAluno = ;
+            btnCadastrarAvaliacaoFisica.IsEnabled = false;
+            btnCadastrarAvaliacaoFisica.Visibility = Visibility.Collapsed;
+            btnCadastrarAvaliacaoFisicaAntropometrica.IsEnabled = true;
+            btnCadastrarAvaliacaoFisicaAntropometrica.Visibility = Visibility.Visible;
+            btnCadastrarAvaliacaoFisicaBioimpedancia.IsEnabled = true;
+            btnCadastrarAvaliacaoFisicaBioimpedancia.Visibility = Visibility.Visible; 
+            
+        }
+
+        private void BtnCadastrarAvaliacaoFisicaAntropometrica_Click(object sender, RoutedEventArgs e)
+        {
+            AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica
+            {
+                TipoDeAvaliacao = "Antropometria"
+            };
             mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
         }
-        
+
+        private void BtnCadastrarAvaliacaoFisicaBioimpedancia_Click(object sender, RoutedEventArgs e)
+        {
+            AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica
+            {
+                TipoDeAvaliacao = "Bioimpedancia"
+            };
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
+        }
+
+       
     }
 }

@@ -49,6 +49,19 @@ namespace Gymly.UserControls
                 avaliacaoFisica.QtdadeDiasDeTreino = "6-7 Dias";
             }
 
+            if (rdBom.IsChecked == true)
+            {
+                avaliacaoFisica.Flexibilidade = "Bom";
+            }
+            else if (rdRegular.IsChecked == true)
+            {
+                avaliacaoFisica.Flexibilidade = "Regular";
+            }
+            else if (rdRuim.IsChecked == true)
+            {
+                avaliacaoFisica.Flexibilidade = "Ruim";
+            }
+
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica);
         }
     }

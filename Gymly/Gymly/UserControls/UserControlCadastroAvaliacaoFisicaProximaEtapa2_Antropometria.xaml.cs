@@ -17,14 +17,14 @@ using Gymly.Models;
 namespace Gymly.UserControls
 {
     /// <summary>
-    /// Interação lógica para UserControlCadastroAvaliacaoFisicaProximaEtapa2.xam
+    /// Interação lógica para UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria.xam
     /// </summary>
-    public partial class UserControlCadastroAvaliacaoFisicaProximaEtapa2 : UserControl
+    public partial class UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria : UserControl
     {
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
 
-        public UserControlCadastroAvaliacaoFisicaProximaEtapa2(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        public UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;

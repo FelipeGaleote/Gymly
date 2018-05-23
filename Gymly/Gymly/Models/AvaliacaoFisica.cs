@@ -10,6 +10,15 @@ namespace Gymly.Models
     {
         private string cpfAluno; //pegar do datagrid
         private string qtdadeDiasDeTreino;//ok
+        private string tipoDeAvaliacao; //ok   --Pegar pelo botao-- bio. ou adip.
+
+        //Imagens
+        private string caminhoImagemFrontal;
+        private string observacaoImagemFrontal;
+        private string caminhoImagemLateral;
+        private string observacaoImagemLateral;
+        private string caminhoImagemCostas;
+        private string observacaoImagemCostas;
 
         //Perimetros
         private float perimetroOmbro; //ok
@@ -48,6 +57,13 @@ namespace Gymly.Models
         private float pressaoArterialSistolica;//ok
         private float pressaoArterialDiastolica;//ok
         private float frequenciaCardiaca;//ok
+        private string flexibilidade; //ok
+
+        //Teste Abdominal
+
+        //Teste Flexão
+
+        
 
         //Capacidade Anaerobica - RAST
         private float potMinima;
@@ -91,6 +107,14 @@ namespace Gymly.Models
         public float PressaoArterialDiastolica { get => pressaoArterialDiastolica; set => pressaoArterialDiastolica = value; }
         public string CpfAluno { get => cpfAluno; set => cpfAluno = value; }
         public string QtdadeDiasDeTreino { get => qtdadeDiasDeTreino; set => qtdadeDiasDeTreino = value; }
+        public string TipoDeAvaliacao { get => tipoDeAvaliacao; set => tipoDeAvaliacao = value; }
+        public string CaminhoImagemFrontal { get => caminhoImagemFrontal; set => caminhoImagemFrontal = value; }
+        public string ObservacaoImagemFrontal { get => observacaoImagemFrontal; set => observacaoImagemFrontal = value; }
+        public string CaminhoImagemLateral { get => caminhoImagemLateral; set => caminhoImagemLateral = value; }
+        public string ObservacaoImagemLateral { get => observacaoImagemLateral; set => observacaoImagemLateral = value; }
+        public string CaminhoImagemCostas { get => caminhoImagemCostas; set => caminhoImagemCostas = value; }
+        public string ObservacaoImagemCostas { get => observacaoImagemCostas; set => observacaoImagemCostas = value; }
+        public string Flexibilidade { get => flexibilidade; set => flexibilidade = value; }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));

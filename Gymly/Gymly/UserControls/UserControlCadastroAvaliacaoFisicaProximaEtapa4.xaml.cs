@@ -16,23 +16,23 @@ using Gymly.Models;
 namespace Gymly.UserControls
 {
     /// <summary>
-    /// Interação lógica para UserControlCadastroAvaliacaoFisicaProximaEtapa3.xam
+    /// Interação lógica para UserControlCadastroAvaliacaoFisicaProximaEtapa4.xam
     /// </summary>
-    public partial class UserControlCadastroAvaliacaoFisicaProximaEtapa3 : UserControl
+    public partial class UserControlCadastroAvaliacaoFisicaProximaEtapa4 : UserControl
     {
-
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
-        public UserControlCadastroAvaliacaoFisicaProximaEtapa3(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        public UserControlCadastroAvaliacaoFisicaProximaEtapa4(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
+
             InitializeComponent();
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa4", avaliacaoFisica);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa5", avaliacaoFisica);
         }
     }
 }

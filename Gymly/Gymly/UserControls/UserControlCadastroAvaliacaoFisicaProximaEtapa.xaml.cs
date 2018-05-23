@@ -52,8 +52,13 @@ namespace Gymly.UserControls
             avaliacaoFisica.PerimetroPernaEsquerda = float.Parse(txtBoxPerimetroPernaE.Text);
             avaliacaoFisica.PerimetroQuadril = float.Parse(txtBoxPerimetroQuadril.Text);
             avaliacaoFisica.PerimetroTorax = float.Parse(txtBoxPerimetroTorax.Text);
-
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2", avaliacaoFisica);
+            if (avaliacaoFisica.TipoDeAvaliacao == "Antropometria") {
+                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Antropometria", avaliacaoFisica);
+            }
+            else
+            {
+                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia", avaliacaoFisica);
+            }
         }
     }
 }
