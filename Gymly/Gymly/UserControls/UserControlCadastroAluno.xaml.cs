@@ -31,6 +31,7 @@ namespace Gymly.UserControls
         int caracteresCont = 0;
         private MainWindow mainWindow;
         private string caminhoFotoDeRosto;
+        private string caminhoSalvarFotoDeRosto;
 
         public UserControlCadastroAluno(MainWindow mainWindow)
         {
@@ -63,34 +64,25 @@ namespace Gymly.UserControls
             {
                 aluno.Sexo = 'F';
             }
+            string cpf = aluno.Cpf;
+            cpf = cpf.Replace(".", "").Replace("-","");
             aluno.Nivel = ComboBoxNivel.SelectedValue.ToString();
-            aluno.CaminhoFotoDoRosto = caminhoFotoDeRosto;
+            GerenciadorDeArquivos.AlocaPasta(cpf);
+            GerenciadorDeArquivos.AlocaPasta(cpf, "Cadastro");
+            caminhoSalvarFotoDeRosto = "Fotos\\" + cpf + "\\" + "Cadastro\\rosto"+ GerenciadorDeArquivos.GetExtensao(caminhoFotoDeRosto);
+            GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoFotoDeRosto, caminhoSalvarFotoDeRosto);
+            aluno.CaminhoFotoDoRosto = GerenciadorDeArquivos.GetCaminho("rosto");
             CultureInfo culture = new CultureInfo("pt-BR");
             aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "/" + comboBoxMes.SelectedValue + "/" + comboBoxAno.SelectedValue));
             BDAluno.InsereAluno(aluno);
             mainWindow.MudarUserControl("aluno");
         }
-
         private void BtnAddFotoDeRosto_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog
-            {
-                InitialDirectory = "c:\\",
-                Filter = "Image files (*.jpg)|*.jpg|All Files (*.*)|*.*",
-                RestoreDirectory = true,
-                Multiselect = false
-            };
-            if (dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                caminhoFotoDeRosto = dlg.FileName;
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(caminhoFotoDeRosto);
-                bitmap.EndInit();
-                ImageFotoDeRosto.Source = bitmap;
-                btnAddFotoDeRosto.Background = Brushes.Transparent;
-                btnAddFotoDeRosto.BorderBrush = null;
-            }
+            caminhoFotoDeRosto = GerenciadorDeArquivos.ProcuraImagem();
+            ImageFotoDeRosto.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeRosto);
+            btnAddFotoDeRosto.Background = Brushes.Transparent;
+            btnAddFotoDeRosto.BorderBrush = null;
         }
         public void PreencheComboBoxs(string nomeComboBox)
         {
@@ -119,7 +111,7 @@ namespace Gymly.UserControls
             comboBox.ItemsSource = lista;
         }
 
-        private void txtBoxCpf_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtBoxCpf_TextChanged(object sender, TextChangedEventArgs e)
         {
             int txtSize = txtBoxCpf.Text.Length;
             String temp = txtBoxCpf.Text;

@@ -26,6 +26,7 @@ namespace Gymly
         public MainWindow()
         {
             InitializeComponent();
+            GerenciadorDeArquivos.AlocaDiretorioPrincipal();
             MudarUserControl("telaInicial");
             StartClock();
         }

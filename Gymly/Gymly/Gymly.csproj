@@ -121,6 +121,7 @@
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Anamnese.cs" />
     <Compile Include="Models\AvaliacaoFisica.cs" />
+    <Compile Include="Models\GerenciadorDeArquivos.cs" />
     <Compile Include="UserControls\UserControlAluno.xaml.cs">
       <DependentUpon>UserControlAluno.xaml</DependentUpon>
     </Compile>
