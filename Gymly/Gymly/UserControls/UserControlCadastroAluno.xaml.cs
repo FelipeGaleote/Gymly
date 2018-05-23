@@ -117,5 +117,6 @@ namespace Gymly.UserControls
             }
             comboBox.ItemsSource = lista;
         }
+
     }
 }
