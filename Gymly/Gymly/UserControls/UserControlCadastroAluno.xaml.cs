@@ -28,6 +28,7 @@ namespace Gymly.UserControls
     /// </summary>
     public partial class UserControlCadastroAluno : System.Windows.Controls.UserControl
     {
+        int caracteresCont = 0;
         private MainWindow mainWindow;
         private string caminhoFotoDeRosto;
 
@@ -118,5 +119,43 @@ namespace Gymly.UserControls
             comboBox.ItemsSource = lista;
         }
 
+        private void txtBoxCpf_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int txtSize = txtBoxCpf.Text.Length;
+            String temp = txtBoxCpf.Text;
+            
+            if(txtSize == 0)
+            {
+                caracteresCont = 0;
+            }
+
+            if (txtSize > 14)
+            {
+                txtBoxCpf.Text = temp.Substring(0, 14);
+                txtBoxCpf.Select(txtSize + 1, 0);
+            }
+            if( !(caracteresCont == txtSize-2) && txtSize == 12 && !temp.Substring(11, 1).Equals("-"))
+            {
+                caracteresCont = txtSize;
+                txtBoxCpf.Text = temp.Substring(0, 11) + "-" + temp.Substring(11, txtSize - 11);
+                txtBoxCpf.Select(txtSize + 1, 0);
+            }
+            if (!(caracteresCont == txtSize-2) && txtSize ==8 && !temp.Substring(7,1).Equals("."))
+            {
+                caracteresCont = txtSize;
+                txtBoxCpf.Text = temp.Substring(0, 7) + "." + temp.Substring(7,txtSize-7);
+                txtBoxCpf.Select(txtSize + 1, 0);
+            }
+            else if (!(caracteresCont == txtSize-2) && txtSize == 4 && !temp.Substring(3, 1).Equals("."))
+            {
+                caracteresCont = txtSize;
+                txtBoxCpf.Text = temp.Substring(0, 3) + "." + temp.Substring(3, txtSize-3);
+                txtBoxCpf.Select(txtSize+1,0);
+            }
+            else 
+            {
+                caracteresCont = txtSize;
+            }
+        }     
     }
 }
