@@ -90,7 +90,7 @@ namespace Gymly.UserControls
             {
                 SQLiteConexao conexao = new SQLiteConexao();
                 SQLiteConnection conn = conexao.GetConexao();
-                string query = "SELECT cpf, nome, email, strftime('%d-%m-%Y', datanasc)  FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
+                string query = "SELECT cpf, nome, email, datanasc  FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
 
                 SQLiteCommand command = new SQLiteCommand(query, conn);
                 DataTable dt = new DataTable("Alunos");
@@ -114,7 +114,7 @@ namespace Gymly.UserControls
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT cpf, nome, email, strftime('%d-%m-%Y', datanasc) FROM Alunos;";
+            string query = "SELECT cpf, nome, email, datanasc FROM Alunos;";
             SQLiteCommand command = new SQLiteCommand(query, conn);
             DataTable dt = new DataTable("Alunos");
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);

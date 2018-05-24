@@ -70,51 +70,577 @@ namespace Gymly.Models
         private float potMaxima;
         private List<float> potencias = new List<float>();
 
-        public float PerimetroOmbro { get => perimetroOmbro; set => perimetroOmbro = value; }
-        public float PerimetroTorax { get => perimetroTorax; set => perimetroTorax = value; }
-        public float PerimetroBraçoDireito { get => perimetroBraçoDireito; set => perimetroBraçoDireito = value; }
-        public float PerimetroBraçoEsquerdo { get => perimetroBraçoEsquerdo; set => perimetroBraçoEsquerdo = value; }
-        public float PerimetroAntebracoDireito { get => perimetroAntebracoDireito; set => perimetroAntebracoDireito = value; }
-        public float PerimetroAntebracoEsquerdo { get => perimetroAntebracoEsquerdo; set => perimetroAntebracoEsquerdo = value; }
-        public float PerimetroCintura { get => perimetroCintura; set => perimetroCintura = value; }
-        public float PerimetroAbdominal { get => perimetroAbdominal; set => perimetroAbdominal = value; }
-        public float PerimetroQuadril { get => perimetroQuadril; set => perimetroQuadril = value; }
-        public float PerimetroCoxaProximalDireita { get => perimetroCoxaProximalDireita; set => perimetroCoxaProximalDireita = value; }
-        public float PerimetroCoxaProximalEsquerda { get => perimetroCoxaProximalEsquerda; set => perimetroCoxaProximalEsquerda = value; }
-        public float PerimetroCoxaMedialDireita { get => perimetroCoxaMedialDireita; set => perimetroCoxaMedialDireita = value; }
-        public float PerimetroCoxaMedialEsquerda { get => perimetroCoxaMedialEsquerda; set => perimetroCoxaMedialEsquerda = value; }
-        public float PerimetroCoxaDistalDireita { get => perimetroCoxaDistalDireita; set => perimetroCoxaDistalDireita = value; }
-        public float PerimetroCoxaDistalEsquerda { get => perimetroCoxaDistalEsquerda; set => perimetroCoxaDistalEsquerda = value; }
-        public float PerimetroPernaDireita { get => perimetroPernaDireita; set => perimetroPernaDireita = value; }
-        public float PerimetroPernaEsquerda { get => perimetroPernaEsquerda; set => perimetroPernaEsquerda = value; }
-        public float DobraCutaneaSubescapular { get => dobraCutaneaSubescapular; set => dobraCutaneaSubescapular = value; }
-        public float DobraCutaneaTriceps { get => dobraCutaneaTriceps; set => dobraCutaneaTriceps = value; }
-        public float DobraCutaneaBiceps { get => dobraCutaneaBiceps; set => dobraCutaneaBiceps = value; }
-        public float DobraCutaneaTorax { get => dobraCutaneaTorax; set => dobraCutaneaTorax = value; }
-        public float DobraCutaneaAxilarMedia { get => dobraCutaneaAxilarMedia; set => dobraCutaneaAxilarMedia = value; }
-        public float DobraCutaneaSuprailiaca { get => dobraCutaneaSuprailiaca; set => dobraCutaneaSuprailiaca = value; }
-        public float DobraCutaneaAbdominal { get => dobraCutaneaAbdominal; set => dobraCutaneaAbdominal = value; }
-        public float DobraCutaneaCoxa { get => dobraCutaneaCoxa; set => dobraCutaneaCoxa = value; }
-        public float DobraCutaneaPerna { get => dobraCutaneaPerna; set => dobraCutaneaPerna = value; }
-        public float Altura { get => altura; set => altura = value; }
-        public float Massa { get => massa; set => massa = value; }
-        public float Envergadura { get => envergadura; set => envergadura = value; }
-        public float FrequenciaCardiaca { get => frequenciaCardiaca; set => frequenciaCardiaca = value; }
-        public float PotMinima { get => potMinima; set => potMinima = value; }
-        public float PotMaxima { get => potMaxima; set => potMaxima = value; }
-        public List<float> Potencias { get => potencias; set => potencias = value; }
-        public float PressaoArterialSistolica { get => pressaoArterialSistolica; set => pressaoArterialSistolica = value; }
-        public float PressaoArterialDiastolica { get => pressaoArterialDiastolica; set => pressaoArterialDiastolica = value; }
-        public string CpfAluno { get => cpfAluno; set => cpfAluno = value; }
-        public string QtdadeDiasDeTreino { get => qtdadeDiasDeTreino; set => qtdadeDiasDeTreino = value; }
-        public string TipoDeAvaliacao { get => tipoDeAvaliacao; set => tipoDeAvaliacao = value; }
-        public string CaminhoImagemFrontal { get => caminhoImagemFrontal; set => caminhoImagemFrontal = value; }
-        public string ObservacaoImagemFrontal { get => observacaoImagemFrontal; set => observacaoImagemFrontal = value; }
-        public string CaminhoImagemLateral { get => caminhoImagemLateral; set => caminhoImagemLateral = value; }
-        public string ObservacaoImagemLateral { get => observacaoImagemLateral; set => observacaoImagemLateral = value; }
-        public string CaminhoImagemCostas { get => caminhoImagemCostas; set => caminhoImagemCostas = value; }
-        public string ObservacaoImagemCostas { get => observacaoImagemCostas; set => observacaoImagemCostas = value; }
-        public string Flexibilidade { get => flexibilidade; set => flexibilidade = value; }
+        public string CpfAluno
+        {
+            get
+            {
+                return cpfAluno;
+            }
+
+            set
+            {
+                cpfAluno = value;
+            }
+        }
+
+        public string QtdadeDiasDeTreino
+        {
+            get
+            {
+                return qtdadeDiasDeTreino;
+            }
+
+            set
+            {
+                qtdadeDiasDeTreino = value;
+            }
+        }
+
+        public string TipoDeAvaliacao
+        {
+            get
+            {
+                return tipoDeAvaliacao;
+            }
+
+            set
+            {
+                tipoDeAvaliacao = value;
+            }
+        }
+
+        public string CaminhoImagemFrontal
+        {
+            get
+            {
+                return caminhoImagemFrontal;
+            }
+
+            set
+            {
+                caminhoImagemFrontal = value;
+            }
+        }
+
+        public string ObservacaoImagemFrontal
+        {
+            get
+            {
+                return observacaoImagemFrontal;
+            }
+
+            set
+            {
+                observacaoImagemFrontal = value;
+            }
+        }
+
+        public string CaminhoImagemLateral
+        {
+            get
+            {
+                return caminhoImagemLateral;
+            }
+
+            set
+            {
+                caminhoImagemLateral = value;
+            }
+        }
+
+        public string ObservacaoImagemLateral
+        {
+            get
+            {
+                return observacaoImagemLateral;
+            }
+
+            set
+            {
+                observacaoImagemLateral = value;
+            }
+        }
+
+        public string CaminhoImagemCostas
+        {
+            get
+            {
+                return caminhoImagemCostas;
+            }
+
+            set
+            {
+                caminhoImagemCostas = value;
+            }
+        }
+
+        public string ObservacaoImagemCostas
+        {
+            get
+            {
+                return observacaoImagemCostas;
+            }
+
+            set
+            {
+                observacaoImagemCostas = value;
+            }
+        }
+
+        public float PerimetroOmbro
+        {
+            get
+            {
+                return perimetroOmbro;
+            }
+
+            set
+            {
+                perimetroOmbro = value;
+            }
+        }
+
+        public float PerimetroTorax
+        {
+            get
+            {
+                return perimetroTorax;
+            }
+
+            set
+            {
+                perimetroTorax = value;
+            }
+        }
+
+        public float PerimetroBraçoDireito
+        {
+            get
+            {
+                return perimetroBraçoDireito;
+            }
+
+            set
+            {
+                perimetroBraçoDireito = value;
+            }
+        }
+
+        public float PerimetroBraçoEsquerdo
+        {
+            get
+            {
+                return perimetroBraçoEsquerdo;
+            }
+
+            set
+            {
+                perimetroBraçoEsquerdo = value;
+            }
+        }
+
+        public float PerimetroAntebracoDireito
+        {
+            get
+            {
+                return perimetroAntebracoDireito;
+            }
+
+            set
+            {
+                perimetroAntebracoDireito = value;
+            }
+        }
+
+        public float PerimetroAntebracoEsquerdo
+        {
+            get
+            {
+                return perimetroAntebracoEsquerdo;
+            }
+
+            set
+            {
+                perimetroAntebracoEsquerdo = value;
+            }
+        }
+
+        public float PerimetroCintura
+        {
+            get
+            {
+                return perimetroCintura;
+            }
+
+            set
+            {
+                perimetroCintura = value;
+            }
+        }
+
+        public float PerimetroAbdominal
+        {
+            get
+            {
+                return perimetroAbdominal;
+            }
+
+            set
+            {
+                perimetroAbdominal = value;
+            }
+        }
+
+        public float PerimetroQuadril
+        {
+            get
+            {
+                return perimetroQuadril;
+            }
+
+            set
+            {
+                perimetroQuadril = value;
+            }
+        }
+
+        public float PerimetroCoxaProximalDireita
+        {
+            get
+            {
+                return perimetroCoxaProximalDireita;
+            }
+
+            set
+            {
+                perimetroCoxaProximalDireita = value;
+            }
+        }
+
+        public float PerimetroCoxaProximalEsquerda
+        {
+            get
+            {
+                return perimetroCoxaProximalEsquerda;
+            }
+
+            set
+            {
+                perimetroCoxaProximalEsquerda = value;
+            }
+        }
+
+        public float PerimetroCoxaMedialDireita
+        {
+            get
+            {
+                return perimetroCoxaMedialDireita;
+            }
+
+            set
+            {
+                perimetroCoxaMedialDireita = value;
+            }
+        }
+
+        public float PerimetroCoxaMedialEsquerda
+        {
+            get
+            {
+                return perimetroCoxaMedialEsquerda;
+            }
+
+            set
+            {
+                perimetroCoxaMedialEsquerda = value;
+            }
+        }
+
+        public float PerimetroCoxaDistalDireita
+        {
+            get
+            {
+                return perimetroCoxaDistalDireita;
+            }
+
+            set
+            {
+                perimetroCoxaDistalDireita = value;
+            }
+        }
+
+        public float PerimetroCoxaDistalEsquerda
+        {
+            get
+            {
+                return perimetroCoxaDistalEsquerda;
+            }
+
+            set
+            {
+                perimetroCoxaDistalEsquerda = value;
+            }
+        }
+
+        public float PerimetroPernaDireita
+        {
+            get
+            {
+                return perimetroPernaDireita;
+            }
+
+            set
+            {
+                perimetroPernaDireita = value;
+            }
+        }
+
+        public float PerimetroPernaEsquerda
+        {
+            get
+            {
+                return perimetroPernaEsquerda;
+            }
+
+            set
+            {
+                perimetroPernaEsquerda = value;
+            }
+        }
+
+        public float Envergadura
+        {
+            get
+            {
+                return envergadura;
+            }
+
+            set
+            {
+                envergadura = value;
+            }
+        }
+
+        public float DobraCutaneaSubescapular
+        {
+            get
+            {
+                return dobraCutaneaSubescapular;
+            }
+
+            set
+            {
+                dobraCutaneaSubescapular = value;
+            }
+        }
+
+        public float DobraCutaneaTriceps
+        {
+            get
+            {
+                return dobraCutaneaTriceps;
+            }
+
+            set
+            {
+                dobraCutaneaTriceps = value;
+            }
+        }
+
+        public float DobraCutaneaBiceps
+        {
+            get
+            {
+                return dobraCutaneaBiceps;
+            }
+
+            set
+            {
+                dobraCutaneaBiceps = value;
+            }
+        }
+
+        public float DobraCutaneaTorax
+        {
+            get
+            {
+                return dobraCutaneaTorax;
+            }
+
+            set
+            {
+                dobraCutaneaTorax = value;
+            }
+        }
+
+        public float DobraCutaneaAxilarMedia
+        {
+            get
+            {
+                return dobraCutaneaAxilarMedia;
+            }
+
+            set
+            {
+                dobraCutaneaAxilarMedia = value;
+            }
+        }
+
+        public float DobraCutaneaSuprailiaca
+        {
+            get
+            {
+                return dobraCutaneaSuprailiaca;
+            }
+
+            set
+            {
+                dobraCutaneaSuprailiaca = value;
+            }
+        }
+
+        public float DobraCutaneaAbdominal
+        {
+            get
+            {
+                return dobraCutaneaAbdominal;
+            }
+
+            set
+            {
+                dobraCutaneaAbdominal = value;
+            }
+        }
+
+        public float DobraCutaneaCoxa
+        {
+            get
+            {
+                return dobraCutaneaCoxa;
+            }
+
+            set
+            {
+                dobraCutaneaCoxa = value;
+            }
+        }
+
+        public float DobraCutaneaPerna
+        {
+            get
+            {
+                return dobraCutaneaPerna;
+            }
+
+            set
+            {
+                dobraCutaneaPerna = value;
+            }
+        }
+
+        public float Altura
+        {
+            get
+            {
+                return altura;
+            }
+
+            set
+            {
+                altura = value;
+            }
+        }
+
+        public float Massa
+        {
+            get
+            {
+                return massa;
+            }
+
+            set
+            {
+                massa = value;
+            }
+        }
+
+        public float PressaoArterialSistolica
+        {
+            get
+            {
+                return pressaoArterialSistolica;
+            }
+
+            set
+            {
+                pressaoArterialSistolica = value;
+            }
+        }
+
+        public float PressaoArterialDiastolica
+        {
+            get
+            {
+                return pressaoArterialDiastolica;
+            }
+
+            set
+            {
+                pressaoArterialDiastolica = value;
+            }
+        }
+
+        public float FrequenciaCardiaca
+        {
+            get
+            {
+                return frequenciaCardiaca;
+            }
+
+            set
+            {
+                frequenciaCardiaca = value;
+            }
+        }
+
+        public string Flexibilidade
+        {
+            get
+            {
+                return flexibilidade;
+            }
+
+            set
+            {
+                flexibilidade = value;
+            }
+        }
+
+        public float PotMinima
+        {
+            get
+            {
+                return potMinima;
+            }
+
+            set
+            {
+                potMinima = value;
+            }
+        }
+
+        public float PotMaxima
+        {
+            get
+            {
+                return potMaxima;
+            }
+
+            set
+            {
+                potMaxima = value;
+            }
+        }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));
