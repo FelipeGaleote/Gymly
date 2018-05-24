@@ -80,9 +80,12 @@ namespace Gymly.UserControls
         private void BtnAddFotoDeRosto_Click(object sender, RoutedEventArgs e)
         {
             caminhoFotoDeRosto = GerenciadorDeArquivos.ProcuraImagem();
-            ImageFotoDeRosto.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeRosto);
-            btnAddFotoDeRosto.Background = Brushes.Transparent;
-            btnAddFotoDeRosto.BorderBrush = null;
+            if (caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals("")) {
+                ImageFotoDeRosto.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeRosto);
+                btnAddFotoDeRosto.Background = Brushes.Transparent;
+                btnAddFotoDeRosto.BorderBrush = null;
+            }
+            
         }
         public void PreencheComboBoxs(string nomeComboBox)
         {
