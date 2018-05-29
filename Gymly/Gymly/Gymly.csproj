@@ -168,6 +168,9 @@
     <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa6.xaml.cs">
       <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapa6.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapaFinal.xaml.cs">
+      <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapaFinal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlTelaInicial.xaml.cs">
       <DependentUpon>UserControlTelaInicial.xaml</DependentUpon>
     </Compile>
@@ -240,6 +243,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapa6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapaFinal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

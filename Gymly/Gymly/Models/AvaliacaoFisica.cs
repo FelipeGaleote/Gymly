@@ -11,6 +11,7 @@ namespace Gymly.Models
         private string cpfAluno; //pegar do datagrid
         private string qtdadeDiasDeTreino;//ok
         private string tipoDeAvaliacao; //ok   --Pegar pelo botao-- bio. ou adip.
+        private string observacao; 
 
         //Imagens
         private string caminhoImagemFrontal;
@@ -641,6 +642,8 @@ namespace Gymly.Models
                 potMaxima = value;
             }
         }
+
+        public string Observacao { get => observacao; set => observacao = value; }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));

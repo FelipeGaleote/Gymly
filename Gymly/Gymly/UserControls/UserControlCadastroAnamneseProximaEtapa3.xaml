@@ -30,7 +30,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Quais seus Objetivos?" VerticalAlignment="Center"/>
+        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Quais os seus objetivos?" VerticalAlignment="Center"/>
         <TextBlock FontSize="12pt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Marque as opções mais adequadas:"  VerticalAlignment="Center" />
 
         <TextBlock FontSize="18pt" Text="Perder Peso"  Grid.Row="2" Grid.Column="1" />

@@ -9,7 +9,7 @@ namespace Gymly.BD
 {
     class BDAvaliacaoFisica
     {
-        public static void InsereAluno(AvaliacaoFisica avaliacaoFisica)
+        public static void InsereAvaliacaoFisica(AvaliacaoFisica avaliacaoFisica)
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();

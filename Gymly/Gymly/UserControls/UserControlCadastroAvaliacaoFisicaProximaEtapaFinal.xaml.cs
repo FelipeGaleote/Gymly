@@ -13,32 +13,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gymly.Models;
+using Gymly.BD;
 namespace Gymly.UserControls
 {
     /// <summary>
-    /// Interação lógica para UserControlCadastroAvaliacaoFisicaProximaEtapa3.xam
+    /// Interação lógica para UserControlCadastroAvaliacaoFisicaProximaEtapaFinal.xam
     /// </summary>
-    public partial class UserControlCadastroAvaliacaoFisicaProximaEtapa3 : UserControl
+    public partial class UserControlCadastroAvaliacaoFisicaProximaEtapaFinal : UserControl
     {
 
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
-        public UserControlCadastroAvaliacaoFisicaProximaEtapa3(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        public UserControlCadastroAvaliacaoFisicaProximaEtapaFinal(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
             InitializeComponent();
         }
 
-        private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
+        private void BtnFinalizar_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa4", avaliacaoFisica);
-        }
-
-        private void btnPulaFotos_Click(object sender, RoutedEventArgs e)
-        {
-            //colocar fotos como string vazia 
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa6", avaliacaoFisica);
+            avaliacaoFisica.Observacao = txtBoxObservacao.Text;
+            BDAvaliacaoFisica.InsereAvaliacaoFisica(avaliacaoFisica);
+            //colocar um messagebox para perguntar se deseja imprimir a avaliação fisica ----
+            mainWindow.MudarUserControl("aluno");
         }
     }
 }

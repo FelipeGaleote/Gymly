@@ -32,7 +32,7 @@
        
         <TextBlock FontSize="12pt" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Marque as opções mais adequadas:"  VerticalAlignment="Center" />
         <TextBlock FontSize="24pt" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Black" Text="Você tem algum dos sintomas abaixo?" VerticalAlignment="Center"/>
-        <TextBlock FontSize="24pt" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Black" Text="Outras Perguntas:" VerticalAlignment="Center"/>
+        <TextBlock FontSize="24pt" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Black" Text="Informações adicionais:" VerticalAlignment="Center"/>
 
         <TextBlock Margin="25,0,0,0" FontSize="18pt" Text="Dor nas costas"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
         <CheckBox  Name="checkBoxDorNasCostas" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,25,0" Width="26">

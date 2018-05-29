@@ -30,7 +30,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"  TextAlignment="Center"  Foreground="Black" Text="Questionário de Prontidão para Atividade Física" VerticalAlignment="Bottom"/>
+        <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"  TextAlignment="Center"  Foreground="Black" Text="Questionário de prontidão para atividade física" VerticalAlignment="Bottom"/>
         <TextBlock FontSize="12pt" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" TextAlignment="Center"  Foreground="Gray" Text="Marque as opções mais adequadas:" />
 
         <TextBlock FontSize="18pt" Text="1. O seu médico já lhe disse alguma vez"  Grid.ColumnSpan="2" Grid.Row="2" Grid.Column="1" />

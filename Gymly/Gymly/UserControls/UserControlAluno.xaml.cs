@@ -138,7 +138,9 @@ namespace Gymly.UserControls
             {
                 TipoDeAvaliacao = "Antropometria"
             };
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
+            // mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
+             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica);
+
         }
 
         private void BtnCadastrarAvaliacaoFisicaBioimpedancia_Click(object sender, RoutedEventArgs e)
