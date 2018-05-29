@@ -54,8 +54,6 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("altura", avaliacaoFisica.Altura);
             cmd.Parameters.AddWithValue("massa", avaliacaoFisica.Massa);
             cmd.Parameters.AddWithValue("envergadura", avaliacaoFisica.Envergadura);
-            cmd.Parameters.AddWithValue("potMinima", avaliacaoFisica.PotMinima);
-            cmd.Parameters.AddWithValue("potMaxima", avaliacaoFisica.PotMaxima);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
