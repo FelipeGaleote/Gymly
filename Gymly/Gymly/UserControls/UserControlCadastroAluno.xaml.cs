@@ -42,11 +42,11 @@ namespace Gymly.UserControls
             PreencheComboBoxs("ano");
         }
 
-       // private void buttonAtivarCalendario_Click(object sender, RoutedEventArgs e)
+        // private void buttonAtivarCalendario_Click(object sender, RoutedEventArgs e)
         //{
-           // calendarDataNasc.Visibility = Visibility.Visible;
-            //buttonAtivarCalendario.Visibility = Visibility.Collapsed;
-       // }
+        // calendarDataNasc.Visibility = Visibility.Visible;
+        //buttonAtivarCalendario.Visibility = Visibility.Collapsed;
+        // }
 
         private void BtnCadastrarAluno_Click(object sender, RoutedEventArgs e)
         {
@@ -60,18 +60,26 @@ namespace Gymly.UserControls
             if (rdMasculino.IsChecked == true)
             {
                 aluno.Sexo = 'M';
-            } else if(rdFeminino.IsChecked == true)
+            } else if (rdFeminino.IsChecked == true)
             {
                 aluno.Sexo = 'F';
             }
             string cpf = aluno.Cpf;
-            cpf = cpf.Replace(".", "").Replace("-","");
+            cpf = cpf.Replace(".", "").Replace("-", "");
             aluno.Nivel = ComboBoxNivel.SelectedValue.ToString();
-            GerenciadorDeArquivos.AlocaPasta(cpf);
-            GerenciadorDeArquivos.AlocaPasta(cpf, "Cadastro");
-            caminhoSalvarFotoDeRosto = "Fotos\\" + cpf + "\\" + "Cadastro\\rosto"+ GerenciadorDeArquivos.GetExtensao(caminhoFotoDeRosto);
-            GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoFotoDeRosto, caminhoSalvarFotoDeRosto);
-            aluno.CaminhoFotoDoRosto = GerenciadorDeArquivos.GetCaminho("rosto");
+            if(caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals(""))
+            { 
+                GerenciadorDeArquivos.AlocaPasta(cpf);
+                GerenciadorDeArquivos.AlocaPasta(cpf, "Cadastro");
+                caminhoSalvarFotoDeRosto = "Fotos\\" + cpf + "\\" + "Cadastro\\rosto" + GerenciadorDeArquivos.GetExtensao(caminhoFotoDeRosto);
+                GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoFotoDeRosto, caminhoSalvarFotoDeRosto);
+                aluno.CaminhoFotoDoRosto = GerenciadorDeArquivos.GetCaminho("rosto");
+            }
+            else
+            {
+                aluno.CaminhoFotoDoRosto = String.Empty;
+            }
+            
             CultureInfo culture = new CultureInfo("pt-BR");
             aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "/" + comboBoxMes.SelectedValue + "/" + comboBoxAno.SelectedValue));
             BDAluno.InsereAluno(aluno);
@@ -80,12 +88,13 @@ namespace Gymly.UserControls
         private void BtnAddFotoDeRosto_Click(object sender, RoutedEventArgs e)
         {
             caminhoFotoDeRosto = GerenciadorDeArquivos.ProcuraImagem();
-            if (caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals("")) {
+
+            if (caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals(""))
+            {
                 ImageFotoDeRosto.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeRosto);
                 btnAddFotoDeRosto.Background = Brushes.Transparent;
                 btnAddFotoDeRosto.BorderBrush = null;
             }
-            
         }
         public void PreencheComboBoxs(string nomeComboBox)
         {

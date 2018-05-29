@@ -45,7 +45,7 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
-            avaliacaoFisica.Altura =  float.Parse(txtBoxAltura.Text);
+            avaliacaoFisica.Altura =  float.Parse(txtBoxAltura.Text.Replace(",", ".").Trim());
             avaliacaoFisica.PressaoArterialDiastolica = float.Parse(txtBoxPressaoArterialDiastolica.Text);
             avaliacaoFisica.PressaoArterialSistolica = float.Parse(txtBoxPressaoArterialSistolica.Text);
             avaliacaoFisica.FrequenciaCardiaca = float.Parse(txtBoxFrenquenciaCardiaca.Text);
