@@ -23,12 +23,24 @@ namespace Gymly.UserControls
     {
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
+        private string txtBoxTextoMedida = "Medida(Cm)";
+        private string txtBoxTextoMassa = "Massa(Kg)";
+        private string txtBoxTextoPressao = "Pressão(mmHg)";
+        private string txtBoxTextoFrequenciaCardiaca = "Frequência(btm)";
+
+
 
         public UserControlCadastroAvaliacaoFisica(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
             InitializeComponent();
+            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxAltura, txtBoxTextoMedida);
+            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxMassa, txtBoxTextoMedida);
+            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPressaoArterialDiastolica, txtBoxTextoPressao);
+            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPressaoArterialSistolica, txtBoxTextoPressao);
+            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxFrenquenciaCardiaca, txtBoxTextoFrequenciaCardiaca);
+
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
@@ -64,5 +76,53 @@ namespace Gymly.UserControls
 
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica);
         }
+
+        private void txtBoxAltura_GotFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.GotFocus(txtBoxAltura);
+        }
+
+        private void txtBoxAltura_LostFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.LostFocus(txtBoxAltura, txtBoxTextoMedida);
+        }
+
+        private void txtBoxMassa_GotFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.GotFocus(txtBoxMassa);
+        }
+
+        private void txtBoxMassa_LostFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.LostFocus(txtBoxMassa, txtBoxTextoMassa);
+        }
+        private void txtBoxFrenquenciaCardiaca_GotFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.GotFocus(txtBoxFrenquenciaCardiaca);
+        }
+
+        private void txtBoxFrenquenciaCardiaca_LostFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.LostFocus(txtBoxFrenquenciaCardiaca, txtBoxTextoFrequenciaCardiaca);
+        }
+        private void txtBoxPressaoArterialDiastolica_GotFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.GotFocus(txtBoxPressaoArterialDiastolica);
+        }
+
+        private void txtBoxPressaoArterialDiastolica_LostFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.LostFocus(txtBoxPressaoArterialDiastolica, txtBoxTextoPressao);
+        }
+        private void txtBoxPressaoArterialSistolica_GotFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.GotFocus(txtBoxPressaoArterialSistolica);
+        }
+
+        private void txtBoxPressaoArterialSistolica_LostFocus(object sender, RoutedEventArgs e)
+        {
+            EditorTxtBox.LostFocus(txtBoxPressaoArterialSistolica, txtBoxTextoPressao);
+        }
+
     }
 }

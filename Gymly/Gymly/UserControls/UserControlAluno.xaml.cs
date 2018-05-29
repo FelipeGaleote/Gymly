@@ -33,12 +33,9 @@ namespace Gymly.UserControls
         {
             InitializeComponent();
             DataContext = this;
-            txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
-            txtBoxConsultaAluno.Foreground = Brushes.Gray;
+            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxConsultaAluno, txtBoxTextoConsultaAluno);
             this.mainWindow = mainWindow;
             PreencheDataGridAluno();
-            
-
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -49,17 +46,13 @@ namespace Gymly.UserControls
 
         private void TxtBoxConsultaAluno_GotFocus(object sender, RoutedEventArgs e)
         {
-            txtBoxConsultaAluno.Clear();
-            txtBoxConsultaAluno.Foreground = Brushes.Black;
+            EditorTxtBox.GotFocus(txtBoxConsultaAluno);
         }
 
         private void TxtBoxConsultaAluno_LostFocus(object sender, RoutedEventArgs e)
         {
-            if(txtBoxConsultaAluno.Text == String.Empty)
-            {
-                txtBoxConsultaAluno.Text = txtBoxTextoConsultaAluno;
-                txtBoxConsultaAluno.Foreground = Brushes.Gray;
-            }
+            
+            EditorTxtBox.LostFocus(txtBoxConsultaAluno, txtBoxTextoConsultaAluno);
         }
 
         private void BtnCadastraAluno_Click(object sender, RoutedEventArgs e)
