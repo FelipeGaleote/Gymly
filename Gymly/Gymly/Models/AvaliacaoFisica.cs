@@ -8,20 +8,17 @@ namespace Gymly.Models
 {
     public class AvaliacaoFisica
     {
+        //Tabela Avaliação fisica
         private string cpfAluno; //pegar do datagrid
         private string qtdadeDiasDeTreino;
         private string tipoDeAvaliacao; 
         private string observacao; 
-
-        //Imagens
         private string caminhoImagemFrontal;
         private string observacaoImagemFrontal;
         private string caminhoImagemLateral;
         private string observacaoImagemLateral;
         private string caminhoImagemCostas;
         private string observacaoImagemCostas;
-
-        //Perimetros
         private float perimetroOmbro; 
         private float perimetroTorax; 
         private float perimetroBraçoDireito; 
@@ -39,9 +36,20 @@ namespace Gymly.Models
         private float perimetroCoxaDistalEsquerda;
         private float perimetroPernaDireita;
         private float perimetroPernaEsquerda;
-        private float envergadura; 
+        private float envergadura;
+        private float altura;
+        private float massa;
+        private float pressaoArterialSistolica;
+        private float pressaoArterialDiastolica;
+        private float frequenciaCardiaca;
+        private string flexibilidade;
+        private int qtdadeAbdominais;
+        private float tempoAbdominal;
+        private int qtdadeFlexao;
+        private float tempoFlexao;
+        private float distanciaCooper;
 
-        //Dobras Cutaneas 
+        //Tabela Antropomerica
         private float dobraCutaneaSubescapular; 
         private float dobraCutaneaTriceps;
         private float dobraCutaneaBiceps;
@@ -52,24 +60,7 @@ namespace Gymly.Models
         private float dobraCutaneaCoxa;
         private float dobraCutaneaPerna;
 
-        //Básicos
-        private float altura;
-        private float massa;
-        private float pressaoArterialSistolica;
-        private float pressaoArterialDiastolica;
-        private float frequenciaCardiaca;
-        private string flexibilidade; 
-
-        //Teste Abdominal
-        private int qtdadeAbdominais;
-        private float tempoAbdominal;
-
-        //Teste Flexão
-        private int qtdadeFlexao;
-        private float tempoFlexao;
-
-        //Teste de cooper
-        private float distanciaCooper;
+        //Bioimpedancia ainda n fiz, mas são poucos campos.Contudo as outras duas tabelas estão completas!
 
         public string CpfAluno
         {
