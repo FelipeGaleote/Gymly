@@ -9,8 +9,8 @@ namespace Gymly.Models
     public class AvaliacaoFisica
     {
         private string cpfAluno; //pegar do datagrid
-        private string qtdadeDiasDeTreino;//ok
-        private string tipoDeAvaliacao; //ok   --Pegar pelo botao-- bio. ou adip.
+        private string qtdadeDiasDeTreino;
+        private string tipoDeAvaliacao; 
         private string observacao; 
 
         //Imagens
@@ -22,54 +22,54 @@ namespace Gymly.Models
         private string observacaoImagemCostas;
 
         //Perimetros
-        private float perimetroOmbro; //ok
-        private float perimetroTorax; //ok
-        private float perimetroBraçoDireito; //ok
-        private float perimetroBraçoEsquerdo;//ok
-        private float perimetroAntebracoDireito; //ok
-        private float perimetroAntebracoEsquerdo;//ok
-        private float perimetroCintura;//ok
-        private float perimetroAbdominal; //ok
-        private float perimetroQuadril;//ok
-        private float perimetroCoxaProximalDireita; //ok
-        private float perimetroCoxaProximalEsquerda; //ok
-        private float perimetroCoxaMedialDireita;//ok
-        private float perimetroCoxaMedialEsquerda;//ok
-        private float perimetroCoxaDistalDireita;//ok
-        private float perimetroCoxaDistalEsquerda;//ok
-        private float perimetroPernaDireita;//ok
-        private float perimetroPernaEsquerda;//ok
-        private float envergadura; //ok
+        private float perimetroOmbro; 
+        private float perimetroTorax; 
+        private float perimetroBraçoDireito; 
+        private float perimetroBraçoEsquerdo;
+        private float perimetroAntebracoDireito; 
+        private float perimetroAntebracoEsquerdo;
+        private float perimetroCintura;
+        private float perimetroAbdominal; 
+        private float perimetroQuadril;
+        private float perimetroCoxaProximalDireita; 
+        private float perimetroCoxaProximalEsquerda; 
+        private float perimetroCoxaMedialDireita;
+        private float perimetroCoxaMedialEsquerda;
+        private float perimetroCoxaDistalDireita;
+        private float perimetroCoxaDistalEsquerda;
+        private float perimetroPernaDireita;
+        private float perimetroPernaEsquerda;
+        private float envergadura; 
 
         //Dobras Cutaneas 
-        private float dobraCutaneaSubescapular; //ok
-        private float dobraCutaneaTriceps;//ok
-        private float dobraCutaneaBiceps;//ok
-        private float dobraCutaneaTorax;//ok
-        private float dobraCutaneaAxilarMedia;//ok
-        private float dobraCutaneaSuprailiaca;//ok
-        private float dobraCutaneaAbdominal;//ok
-        private float dobraCutaneaCoxa;//ok
-        private float dobraCutaneaPerna;//ok
+        private float dobraCutaneaSubescapular; 
+        private float dobraCutaneaTriceps;
+        private float dobraCutaneaBiceps;
+        private float dobraCutaneaTorax;
+        private float dobraCutaneaAxilarMedia;
+        private float dobraCutaneaSuprailiaca;
+        private float dobraCutaneaAbdominal;
+        private float dobraCutaneaCoxa;
+        private float dobraCutaneaPerna;
 
         //Básicos
-        private float altura;//ok
-        private float massa;//ok
-        private float pressaoArterialSistolica;//ok
-        private float pressaoArterialDiastolica;//ok
-        private float frequenciaCardiaca;//ok
-        private string flexibilidade; //ok
+        private float altura;
+        private float massa;
+        private float pressaoArterialSistolica;
+        private float pressaoArterialDiastolica;
+        private float frequenciaCardiaca;
+        private string flexibilidade; 
 
         //Teste Abdominal
+        private int qtdadeAbdominais;
+        private float tempoAbdominal;
 
         //Teste Flexão
+        private int qtdadeFlexao;
+        private float tempoFlexao;
 
-        
-
-        //Capacidade Anaerobica - RAST
-        private float potMinima;
-        private float potMaxima;
-        private List<float> potencias = new List<float>();
+        //Teste de cooper
+        private float distanciaCooper;
 
         public string CpfAluno
         {
@@ -644,6 +644,11 @@ namespace Gymly.Models
         }
 
         public string Observacao { get => observacao; set => observacao = value; }
+        public int QtdadeAbdominais { get => qtdadeAbdominais; set => qtdadeAbdominais = value; }
+        public float TempoAbdominal { get => tempoAbdominal; set => tempoAbdominal = value; }
+        public int QtdadeFlexao { get => qtdadeFlexao; set => qtdadeFlexao = value; }
+        public float TempoFlexao { get => tempoFlexao; set => tempoFlexao = value; }
+        public float DistanciaCooper { get => distanciaCooper; set => distanciaCooper = value; }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));

@@ -149,7 +149,5 @@ namespace Gymly.UserControls
             };
             mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
         }
-
-       
     }
 }

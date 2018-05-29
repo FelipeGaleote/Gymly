@@ -42,6 +42,7 @@
         <TextBox Name="txtBoxObservacao" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Grid.Row="2" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="50,0,50,0" LostFocus="TxtBoxObservacao_LostFocus" GotFocus="TxtBoxObservacao_GotFocus" ></TextBox>
 
         <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnProximaEtapa_Click"/>
+        <Button Name="btnPulaFotos" Content="Pular fotos" FontSize ="14pt" HorizontalContentAlignment="Right" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="Blue" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="3" Width="auto" Height="auto" Margin="124.4,0,0,23.2" Click="BtnPulaFotos_Click"/>
 
     </Grid>
 </UserControl>

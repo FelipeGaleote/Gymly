@@ -32,7 +32,7 @@
         <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Foto : Frontal" />
 
         <Image  Name="ImageFotoDeFrente"  Margin="25,0,0,0" Grid.Row="2" Grid.RowSpan="4" Grid.Column="0" />
-        <Button Name="btnAddFotoDeFrente" Grid.Row="2" Margin="25,0,0,0"  Grid.RowSpan="4" Grid.Column="0" Width="auto" Height="Auto" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button Name="btnAddFotoDeFrente" Grid.Row="2" Margin="25,0,0,0"  Grid.RowSpan="4" Grid.Column="0" Width="auto" Height="Auto" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="BtnAddFotoDeFrente_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Gymly;component/Image/sem_foto.png" Stretch="UniformToFill"/>
             </Button.Background>

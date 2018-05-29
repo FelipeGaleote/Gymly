@@ -24,6 +24,8 @@ namespace Gymly.UserControls
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
         private string txtBoxTextoObservacao = "Observação";
+        private string caminhoFotoDeFrente;
+
         public UserControlCadastroAvaliacaoFisicaProximaEtapa3(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
         {
             this.mainWindow = mainWindow;
@@ -34,12 +36,31 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
+            if (caminhoFotoDeFrente != null && !caminhoFotoDeFrente.Equals(""))
+            {
+                avaliacaoFisica.CaminhoImagemFrontal = caminhoFotoDeFrente;
+            }
+            else
+            {
+                avaliacaoFisica.CaminhoImagemFrontal = String.Empty;
+
+            }
+            if(txtBoxObservacao.Text != String.Empty)
+            {
+                avaliacaoFisica.ObservacaoImagemFrontal = txtBoxObservacao.Text;
+            }
+            
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa4", avaliacaoFisica);
         }
 
         private void BtnPulaFotos_Click(object sender, RoutedEventArgs e)
         {
-            //colocar fotos como string vazia  
+            avaliacaoFisica.CaminhoImagemFrontal = String.Empty;
+            avaliacaoFisica.ObservacaoImagemFrontal = String.Empty;
+            avaliacaoFisica.CaminhoImagemCostas = String.Empty;
+            avaliacaoFisica.ObservacaoImagemCostas = String.Empty;
+            avaliacaoFisica.CaminhoImagemLateral = String.Empty;
+            avaliacaoFisica.ObservacaoImagemLateral = String.Empty;
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa6", avaliacaoFisica);
         }
 
@@ -51,6 +72,18 @@ namespace Gymly.UserControls
         private void TxtBoxObservacao_LostFocus(object sender, RoutedEventArgs e)
         {
             EditorTxtBox.LostFocus(txtBoxObservacao, txtBoxTextoObservacao);
+        }
+
+        private void BtnAddFotoDeFrente_Click(object sender, RoutedEventArgs e)
+        {
+            caminhoFotoDeFrente = GerenciadorDeArquivos.ProcuraImagem();
+
+            if (caminhoFotoDeFrente != null && !caminhoFotoDeFrente.Equals(""))
+            {
+                ImageFotoDeFrente.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeFrente);
+                btnAddFotoDeFrente.Background = Brushes.Transparent;
+                btnAddFotoDeFrente.BorderBrush = null;
+            }
         }
     }
 }

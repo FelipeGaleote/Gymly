@@ -41,7 +41,12 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapaFInal");
+            avaliacaoFisica.DistanciaCooper = float.Parse(txtBoxDistanciaCooper.Text.Replace(",", ".").Trim());
+            avaliacaoFisica.QtdadeAbdominais = int.Parse(txtBoxQtdadeAbdominal.Text.Trim());
+            avaliacaoFisica.QtdadeFlexao = int.Parse(txtBoxQtdadeFlexao.Text.Trim());
+            avaliacaoFisica.TempoFlexao = float.Parse(txtBoxTempoFlexao.Text.Replace(",", ".").Trim());
+            avaliacaoFisica.TempoAbdominal = float.Parse(txtBoxTempoAbdominal.Text.Replace(",", ".").Trim());
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapaFinal", avaliacaoFisica);
         }
 
         private void TxtBoxTempoFlexao_GotFocus(object sender, RoutedEventArgs e)
