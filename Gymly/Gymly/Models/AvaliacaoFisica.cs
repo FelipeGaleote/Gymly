@@ -617,32 +617,6 @@ namespace Gymly.Models
             }
         }
 
-        public float PotMinima
-        {
-            get
-            {
-                return potMinima;
-            }
-
-            set
-            {
-                potMinima = value;
-            }
-        }
-
-        public float PotMaxima
-        {
-            get
-            {
-                return potMaxima;
-            }
-
-            set
-            {
-                potMaxima = value;
-            }
-        }
-
         public string Observacao { get => observacao; set => observacao = value; }
         public int QtdadeAbdominais { get => qtdadeAbdominais; set => qtdadeAbdominais = value; }
         public float TempoAbdominal { get => tempoAbdominal; set => tempoAbdominal = value; }
@@ -678,34 +652,6 @@ namespace Gymly.Models
         public double CalculaMassaGorda(Aluno aluno) {
             return Math.Round(Massa * (CalculaPercentualDeGordura(aluno) / 100));
         }
-        public float CalculaPotenciaMedia(List<float> potencias)
-        {
-            float media = 0;
-            foreach (float p in potencias)
-            {
-                media = media + p;
-            }
-            return (media / potencias.Count);
-        }
-
-        public float CalculaIndiceFadiga(float potMax, float potMin) {
-            return (((potMax-potMin)*100)/potMax);
-        }
-        public float CalculaVelocidade(int tempo) {
-            return (35 / tempo);
-        }
-        public float CalculaForca(float massa, float aceleracao) {
-            return (massa*aceleracao);
-        }
-        public float CalcularAceleracao(float velocidade, int tempo) {
-            return (velocidade/tempo);
-        }
-        public float CalcularPotencia(float forca, float velocidade) {
-            return (forca*velocidade);
-        }
-        public double CalculaVO2Max(float velocidade) //Teste 2000 m
-        {
-            return (3.6*3.5*velocidade);
-        }
+       
     }
 }
