@@ -30,7 +30,7 @@
         </Grid.RowDefinitions>
         <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Avaliação Física" VerticalAlignment="Center"/>
         <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Observações" />
-        <TextBox  TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Name="txtBoxObservacao" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="4"  />
+        <TextBox  TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Name="txtBoxObservacao" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="4" LostFocus="TxtBoxObservacao_LostFocus" GotFocus="TxtBoxObservacao_GotFocus" />
 
         <Button Name="btnFinalizar" Content="Finalizar" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnFinalizar_Click"/>
     </Grid>

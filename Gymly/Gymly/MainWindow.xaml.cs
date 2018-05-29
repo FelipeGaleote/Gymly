@@ -126,6 +126,9 @@ namespace Gymly
                 case "cadastroAvaliacaoFisicaProximaEtapa6":
                     pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa6(this, avaliacaoFisica));
                     break;
+                case "cadastroAvaliacaoFisicaProximaEtapaFinal":
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapaFinal(this, avaliacaoFisica));
+                    break;
             }
             
         }

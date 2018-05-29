@@ -31,10 +31,10 @@ namespace Gymly.UserControls
 
         public UserControlAluno(MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
             DataContext = this;
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxConsultaAluno, txtBoxTextoConsultaAluno);
-            this.mainWindow = mainWindow;
             PreencheDataGridAluno();
         }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -138,9 +138,7 @@ namespace Gymly.UserControls
             {
                 TipoDeAvaliacao = "Antropometria"
             };
-            // mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
-             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica);
-
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
         }
 
         private void BtnCadastrarAvaliacaoFisicaBioimpedancia_Click(object sender, RoutedEventArgs e)

@@ -32,8 +32,8 @@
         <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Testes" />
 
         <TextBlock Grid.Row="1" Grid.Column="0" TextAlignment="Right" Text="Flexão" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox Name="txtBoxTempoFlexao" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="1" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
-        <TextBox Name="txtBoxQtdadeFlexao" Height="auto" MinWidth="120" HorizontalAlignment="Right" Margin="20,0,20,0" Grid.Row="1" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+        <TextBox Name="txtBoxTempoFlexao" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="1" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxTempoFlexao_GotFocus" LostFocus="TxtBoxTempoFlexao_LostFocus"></TextBox>
+        <TextBox Name="txtBoxQtdadeFlexao" Height="auto" MinWidth="120" HorizontalAlignment="Right" Margin="20,0,20,0" Grid.Row="1" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" LostFocus="TxtBoxQtdadeFlexao_LostFocus" GotFocus="TxtBoxQtdadeFlexao_GotFocus"></TextBox>
 
         <TextBlock Text="Avaliação" Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" Margin="45,0,0,0" HorizontalAlignment="Left" FontSize="18pt"></TextBlock>
         <RadioButton GroupName="avaliacaoF" Content="Bom" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="175,0,0,0" FontSize="18pt" Name="rdFBom"/>
@@ -41,8 +41,8 @@
         <RadioButton GroupName="avaliacaoF" Content="Ruim" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="150,0,150,0" FontSize="18pt" Name="rdFRuim"/>
 
         <TextBlock Grid.Row="2" Grid.Column="0" TextAlignment="Right" Text="Abdominal" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox Name="txtBoxTempoAbdominal" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
-        <TextBox Name="txtBoxQtdadeAbdominal" Height="auto" MinWidth="120" HorizontalAlignment="Right" Margin="20,0,20,0" Grid.Row="2" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+        <TextBox Name="txtBoxTempoAbdominal" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxTempoAbdominal_GotFocus" LostFocus="TxtBoxTempoAbdominal_LostFocus"></TextBox>
+        <TextBox Name="txtBoxQtdadeAbdominal" Height="auto" MinWidth="120" HorizontalAlignment="Right" Margin="20,0,20,0" Grid.Row="2" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" LostFocus="TxtBoxQtdadeAbdominal_LostFocus" GotFocus="TxtBoxQtdadeAbdominal_GotFocus"></TextBox>
 
         <TextBlock Text="Avaliação" Grid.Row="2" Grid.Column="2" VerticalAlignment="Bottom" Margin="45,0,0,0" HorizontalAlignment="Left" FontSize="18pt"></TextBlock>
         <RadioButton GroupName="avaliacaoA" Content="Bom" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="175,0,0,0" FontSize="18pt" Name="rdABom"/>
@@ -50,14 +50,14 @@
         <RadioButton GroupName="avaliacaoA" Content="Ruim" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="150,0,150,0" FontSize="18pt" Name="rdARuim"/>
 
         <TextBlock Grid.Row="3" Grid.Column="0" TextAlignment="Right" Text="Teste de Cooper" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox Name="txtBoxDistanciaCooper" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="1" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="18pt" Width="210"></TextBox>
+        <TextBox Name="txtBoxDistanciaCooper" Height="auto" MinWidth="120" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" Width="210" GotFocus="TxtBoxDistanciaCooper_GotFocus" LostFocus="TxtBoxDistanciaCooper_LostFocus"></TextBox>
         
         <TextBlock Text="Avaliação" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom" Margin="45,0,0,0" HorizontalAlignment="Left" FontSize="18pt"></TextBlock>
         <RadioButton GroupName="avaliacaoCooper" Content="Bom" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="175,0,0,0" FontSize="18pt" Name="rdCBom"/>
         <RadioButton GroupName="avaliacaoCooper" Content="Regular" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  Margin="150,0,125,0" FontSize="18pt" Name="rdCRegular"/>
         <RadioButton GroupName="avaliacaoCooper" Content="Ruim" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="150,0,150,0" FontSize="18pt" Name="rdCRuim"/>
 
-        <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2"/>
+        <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnProximaEtapa_Click"/>
 
     </Grid>
 </UserControl>
