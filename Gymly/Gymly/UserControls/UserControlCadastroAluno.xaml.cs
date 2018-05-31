@@ -50,40 +50,64 @@ namespace Gymly.UserControls
 
         private void BtnCadastrarAluno_Click(object sender, RoutedEventArgs e)
         {
-            Aluno aluno = new Aluno
+            bool todosCamposValidos = true;
+            if (txtBoxCpf.Text.Equals(""))
             {
-                Nome = txtBoxNome.Text,
-                Cpf = txtBoxCpf.Text,
-                Email = txtBoxEmail.Text,
-                Telefone = txtBoxTelefone.Text
-            };
-            if (rdMasculino.IsChecked == true)
-            {
-                aluno.Sexo = 'M';
-            } else if (rdFeminino.IsChecked == true)
-            {
-                aluno.Sexo = 'F';
+                hintCPF.Visibility = Visibility.Visible;
+                todosCamposValidos = false;
             }
-            string cpf = aluno.Cpf;
-            cpf = cpf.Replace(".", "").Replace("-", "");
-            aluno.Nivel = ComboBoxNivel.SelectedValue.ToString();
-            if(caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals(""))
-            { 
-                GerenciadorDeArquivos.AlocaPasta(cpf);
-                GerenciadorDeArquivos.AlocaPasta(cpf, "Cadastro");
-                caminhoSalvarFotoDeRosto = "Fotos\\" + cpf + "\\" + "Cadastro\\rosto" + GerenciadorDeArquivos.GetExtensao(caminhoFotoDeRosto);
-                GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoFotoDeRosto, caminhoSalvarFotoDeRosto);
-                aluno.CaminhoFotoDoRosto = GerenciadorDeArquivos.GetCaminho("rosto");
-            }
-            else
+            if (txtBoxNome.Text.Equals(""))
             {
-                aluno.CaminhoFotoDoRosto = String.Empty;
+                hintNome.Visibility = Visibility.Visible;
+                todosCamposValidos = false;
+            }
+            if (comboBoxDia.SelectedValue == null || comboBoxMes.SelectedValue == null || comboBoxAno.SelectedValue == null)
+            {
+                hintDataNasc.Visibility = Visibility.Visible;
+                todosCamposValidos = false;
             }
             
-            CultureInfo culture = new CultureInfo("pt-BR");
-            aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "/" + comboBoxMes.SelectedValue + "/" + comboBoxAno.SelectedValue));
-            BDAluno.InsereAluno(aluno);
-            mainWindow.MudarUserControl("aluno");
+
+            if (todosCamposValidos)
+            {
+                Aluno aluno = new Aluno
+                {
+                    Nome = txtBoxNome.Text,
+                    Cpf = txtBoxCpf.Text,
+                    Email = txtBoxEmail.Text,
+                    Telefone = txtBoxTelefone.Text
+                };
+                if (rdMasculino.IsChecked == true)
+                {
+                    aluno.Sexo = 'M';
+                }
+                else if (rdFeminino.IsChecked == true)
+                {
+                    aluno.Sexo = 'F';
+                }
+                string cpf = aluno.Cpf;
+                cpf = cpf.Replace(".", "").Replace("-", "");
+                if(ComboBoxNivel.SelectedValue != null)
+                aluno.Nivel = ComboBoxNivel.SelectedValue.ToString();
+                if (caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals(""))
+                {
+                    GerenciadorDeArquivos.AlocaPasta(cpf);
+                    GerenciadorDeArquivos.AlocaPasta(cpf, "Cadastro");
+                    caminhoSalvarFotoDeRosto = "Fotos\\" + cpf + "\\" + "Cadastro\\rosto" + GerenciadorDeArquivos.GetExtensao(caminhoFotoDeRosto);
+                    GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoFotoDeRosto, caminhoSalvarFotoDeRosto);
+                    aluno.CaminhoFotoDoRosto = GerenciadorDeArquivos.GetCaminho("rosto");
+                }
+                else
+                {
+                    aluno.CaminhoFotoDoRosto = String.Empty;
+                }
+
+                CultureInfo culture = new CultureInfo("pt-BR");
+
+                aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "/" + comboBoxMes.SelectedValue + "/" + comboBoxAno.SelectedValue));
+                BDAluno.InsereAluno(aluno);
+                mainWindow.MudarUserControl("aluno");
+            }
         }
         private void BtnAddFotoDeRosto_Click(object sender, RoutedEventArgs e)
         {
@@ -133,11 +157,6 @@ namespace Gymly.UserControls
                 caracteresCont = 0;
             }
 
-            if (txtSize > 14)
-            {
-                txtBoxCpf.Text = temp.Substring(0, 14);
-                txtBoxCpf.Select(txtSize + 1, 0);
-            }
             if( !(caracteresCont == txtSize-2) && txtSize == 12 && !temp.Substring(11, 1).Equals("-"))
             {
                 caracteresCont = txtSize;
@@ -172,7 +191,10 @@ namespace Gymly.UserControls
 
             int valor = (int) e.Key;
             if ((valor >= 34 && valor <= 43) || (valor >= 74 && valor <= 83))
+            {
+                hintCPF.Visibility = Visibility.Hidden;
                 e.Handled = false;
+            }
             else
                 e.Handled = true;
         }
@@ -184,6 +206,29 @@ namespace Gymly.UserControls
                 e.Handled = false;
             else
                 e.Handled = true;
+        }
+
+        private void txtBoxNome_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            hintNome.Visibility = Visibility.Hidden;
+        }
+
+        private void comboBoxDia_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(comboBoxAno.SelectedValue != null && comboBoxMes.SelectedValue != null)
+            hintDataNasc.Visibility = Visibility.Hidden;
+        }
+
+        private void comboBoxMes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboBoxAno.SelectedValue != null && comboBoxDia.SelectedValue != null)
+                hintDataNasc.Visibility = Visibility.Hidden;
+        }
+
+        private void comboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboBoxDia.SelectedValue != null && comboBoxMes.SelectedValue != null)
+                hintDataNasc.Visibility = Visibility.Hidden;
         }
     }
 }
