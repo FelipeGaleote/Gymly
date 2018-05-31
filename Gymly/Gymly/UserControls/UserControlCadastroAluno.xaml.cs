@@ -160,6 +160,15 @@ namespace Gymly.UserControls
             {
                 caracteresCont = txtSize;
             }
-        }     
+        }
+
+        private void txtBoxCpf_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            int valor = (int) e.Key;
+            if ((valor >= 34 && valor <= 43) || (valor >= 74 && valor <= 83))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
     }
 }
