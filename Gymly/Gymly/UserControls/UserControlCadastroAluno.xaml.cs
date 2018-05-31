@@ -164,7 +164,22 @@ namespace Gymly.UserControls
 
         private void txtBoxCpf_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
+            if(txtBoxCpf.Text.Length == 14)
+            {
+                e.Handled = true;
+                return;
+            }
+
             int valor = (int) e.Key;
+            if ((valor >= 34 && valor <= 43) || (valor >= 74 && valor <= 83))
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void txtBoxTelefone_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            int valor = (int)e.Key;
             if ((valor >= 34 && valor <= 43) || (valor >= 74 && valor <= 83))
                 e.Handled = false;
             else
