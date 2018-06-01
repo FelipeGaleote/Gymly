@@ -159,6 +159,9 @@ namespace Gymly.UserControls
             {
                 btnEditarAnamnese.Content = "Cadastrar anamnese";
                 PreencheDataGridAluno(txtBoxConsultaAluno.Text);
+            } else
+            {
+                PreencheDataGridAluno();
             }
         }
 
