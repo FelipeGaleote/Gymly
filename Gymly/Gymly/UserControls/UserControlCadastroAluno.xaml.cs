@@ -49,26 +49,8 @@ namespace Gymly.UserControls
         // }
 
         private void BtnCadastrarAluno_Click(object sender, RoutedEventArgs e)
-        {
-            bool todosCamposValidos = true;
-            if (txtBoxCpf.Text.Equals(""))
-            {
-                hintCPF.Visibility = Visibility.Visible;
-                todosCamposValidos = false;
-            }
-            if (txtBoxNome.Text.Equals(""))
-            {
-                hintNome.Visibility = Visibility.Visible;
-                todosCamposValidos = false;
-            }
-            if (comboBoxDia.SelectedValue == null || comboBoxMes.SelectedValue == null || comboBoxAno.SelectedValue == null)
-            {
-                hintDataNasc.Visibility = Visibility.Visible;
-                todosCamposValidos = false;
-            }
-            
-
-            if (todosCamposValidos)
+        {                   
+            if (camposValidos())
             {
                 Aluno aluno = new Aluno
                 {
@@ -244,6 +226,56 @@ namespace Gymly.UserControls
         {
             if (comboBoxDia.SelectedValue != null && comboBoxMes.SelectedValue != null)
                 hintDataNasc.Visibility = Visibility.Hidden;
+        }
+
+        private bool camposValidos()
+        {
+            bool todosCamposValidos = true;
+            if (txtBoxCpf.Text.Equals(""))
+            {
+                hintCPF.Text = "Informe o CPF";
+                hintCPF.Visibility = Visibility.Visible;
+                todosCamposValidos = false;
+            }
+            if (txtBoxNome.Text.Equals(""))
+            {
+                hintNome.Text = "Informe o nome";
+                hintNome.Visibility = Visibility.Visible;
+                todosCamposValidos = false;
+            }
+            if (comboBoxDia.SelectedValue == null || comboBoxMes.SelectedValue == null || comboBoxAno.SelectedValue == null)
+            {
+                hintDataNasc.Text = "Informe a data de nascimento";
+                hintDataNasc.Visibility = Visibility.Visible;
+                todosCamposValidos = false;
+            }
+            /*if (!validaCpf(txtBoxCpf.ToString()){
+                    todosCamposValidos = false;
+            }*/
+            if (!validaEmail(txtBoxEmail.Text.ToString()))
+            {
+                txtBoxEmail.Text = "";
+                todosCamposValidos = false;
+                hintEmail.Text = "Formato de email invalido!";
+                hintEmail.Visibility = Visibility.Visible;
+            } else
+                hintEmail.Visibility = Visibility.Hidden;
+            return todosCamposValidos;
+        }
+        private bool validaEmail(String email)
+        {
+            if (!email.Equals(""))
+            {
+                System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"@");
+                return regex.IsMatch(email);
+            }
+            else
+                return true;
+        }
+
+        private void txtBoxEmail_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            hintEmail.Visibility = Visibility.Hidden;
         }
     }
 }
