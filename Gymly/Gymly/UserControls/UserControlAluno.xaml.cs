@@ -87,6 +87,7 @@ namespace Gymly.UserControls
             {
                 PreencheDataGridAluno();
             }
+            btnEditarAnamnese.Content = "Cadastrar anamnese";
         }
 
         private void PreencheDataGridAluno(string nome)
@@ -156,6 +157,7 @@ namespace Gymly.UserControls
         {
             if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
             {
+                btnEditarAnamnese.Content = "Cadastrar anamnese";
                 PreencheDataGridAluno(txtBoxConsultaAluno.Text);
             }
         }
@@ -165,6 +167,11 @@ namespace Gymly.UserControls
             DataRowView dataRow = (DataRowView) dataGridAluno.SelectedItem;
             string cpf = dataRow.Row.ItemArray[0].ToString();
             mainWindow.MudarUserControl("detalhesAluno",cpf);
+        }
+
+        private void dataGridAluno_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            btnEditarAnamnese.Content = "Editar anamnese";
         }
     }
 }
