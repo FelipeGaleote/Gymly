@@ -20,11 +20,11 @@ namespace Gymly.Models
 
             }
         }
-        public static void AlocaPasta(string cpfAluno)
+        public static void AlocaPasta(string nomePasta)
         {
-            if (!File.Exists("Fotos\\" + cpfAluno))
+            if (!File.Exists("Fotos\\" + nomePasta))
             {
-                Directory.CreateDirectory("Fotos\\" + cpfAluno);
+                Directory.CreateDirectory("Fotos\\" + nomePasta);
 
             }
         }

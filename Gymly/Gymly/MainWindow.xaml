@@ -33,7 +33,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Click ="BtnGymly_Click" Name="btnGymly"  Grid.Column="0" FontSize="25" Foreground="#ffffff" FontWeight="Bold"  Background="{x:Null}" BorderBrush="{x:Null}" Height="Auto">GYMLY</Button>
                 <TextBlock Name="txtBlockHora" Grid.Column="0" Grid.ColumnSpan="4" FontSize="25" Foreground="#ffffff" FontWeight="Bold" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
-                <Button Name="btnConfiguracao" Grid.Column="2" Foreground="#ffffff" HorizontalAlignment="Right" VerticalAlignment="Center"  BorderBrush="{x:Null}" Width="80" Height="104" >
+                <Button Name="btnConfiguracao" Grid.Column="2" Foreground="#ffffff" HorizontalAlignment="Right" VerticalAlignment="Center"  BorderBrush="{x:Null}" Width="80" Height="104" Click="btnConfiguracao_Click" >
                     <Button.Background>
                         <ImageBrush ImageSource="Image/settings_icon.png" Stretch="Uniform">
                             <ImageBrush.RelativeTransform>

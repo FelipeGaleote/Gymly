@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Gymly.UserControls.UserControlConfiguracao"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Gymly.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" FontSize="18pt">Adicionar Logo:</TextBlock>
+        <Button Content="Adicionar" Name="adicionarLogo" Grid.Column="1" Margin="20,0,20,0" Grid.Row="0" Click="adicionarLogo_Click"></Button> 
+        
+        <TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" FontSize="18pt">Emitir relatório de Alunos:</TextBlock>
+        <Button Content="Emitir Relatorio" Name="emitirRelatorioAluno" Grid.Column="1" Margin="20,0,20,0" Grid.Row="1" Click="emitirRelatorioAluno_Click"></Button>
+
+
+    </Grid>
+</UserControl>
