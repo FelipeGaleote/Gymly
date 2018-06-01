@@ -47,6 +47,9 @@
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -171,6 +174,9 @@
     <Compile Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapaFinal.xaml.cs">
       <DependentUpon>UserControlCadastroAvaliacaoFisicaProximaEtapaFinal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlConfiguracao.xaml.cs">
+      <DependentUpon>UserControlConfiguracao.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlTelaInicial.xaml.cs">
       <DependentUpon>UserControlTelaInicial.xaml</DependentUpon>
     </Compile>
@@ -247,6 +253,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapaFinal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlConfiguracao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

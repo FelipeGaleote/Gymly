@@ -72,7 +72,9 @@ namespace Gymly
                 case "cadastroAluno":
                     pnl.Children.Add(new UserControlCadastroAluno(this));
                     break;
-
+                case "configuracao":
+                    pnl.Children.Add(new UserControlConfiguracao(this));
+                    break;
             }
         }
         public void MudarUserControl(String nomeDoControl, Anamnese anamnese)
@@ -133,6 +135,10 @@ namespace Gymly
             
         }
 
+        private void btnConfiguracao_Click(object sender, RoutedEventArgs e)
+        {
+            MudarUserControl("configuracao");
+        }
     }
 }
 
