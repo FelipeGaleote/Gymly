@@ -81,26 +81,30 @@ namespace Gymly.UserControls
         {
             if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
             {
-                SQLiteConexao conexao = new SQLiteConexao();
-                SQLiteConnection conn = conexao.GetConexao();
-                string query = "SELECT cpf, nome, email, datanasc  FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
-
-                SQLiteCommand command = new SQLiteCommand(query, conn);
-                DataTable dt = new DataTable("Alunos");
-
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
-
-                DataSet ds = new DataSet();
-                adapter.Fill(dt);
-                dataGridAluno.ItemsSource = dt.DefaultView;
-                adapter.Update(dt);
-                conn.Close();
-                //Aluno.listaAlunos();
+                PreencheDataGridAluno(txtBoxConsultaAluno.Text);
             }
             else
             {
                 PreencheDataGridAluno();
             }
+        }
+
+        private void PreencheDataGridAluno(string nome)
+        {
+            SQLiteConexao conexao = new SQLiteConexao();
+            SQLiteConnection conn = conexao.GetConexao();
+            string query = "SELECT cpf, nome, email, datanasc  FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
+
+            SQLiteCommand command = new SQLiteCommand(query, conn);
+            DataTable dt = new DataTable("Alunos");
+
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+
+            DataSet ds = new DataSet();
+            adapter.Fill(dt);
+            dataGridAluno.ItemsSource = dt.DefaultView;
+            adapter.Update(dt);
+            conn.Close();
         }
 
         private void PreencheDataGridAluno()
@@ -148,6 +152,14 @@ namespace Gymly.UserControls
                 TipoDeAvaliacao = "Bioimpedancia"
             };
             mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
+        }
+
+        private void txtBoxConsultaAluno_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
+            {
+                PreencheDataGridAluno(txtBoxConsultaAluno.Text);
+            }
         }
     }
 }
