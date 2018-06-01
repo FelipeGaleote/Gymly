@@ -50,9 +50,15 @@ namespace Gymly.UserControls
         private void BtnFinalizar_Click(object sender, RoutedEventArgs e)
         {
             anamnese.Observacao = txtBoxObservacao.Text;
-            BDAnamnese.InsereAnamnese(anamnese, anamnese.CpfAluno);
-            MessageBox.Show("Anamnese cadastrada com sucesso!");
-            mainWindow.MudarUserControl("aluno");
+            if (anamnese.CpfAluno != null && !anamnese.CpfAluno.Equals(""))
+            {
+                BDAnamnese.InsereAnamnese(anamnese, anamnese.CpfAluno);
+                MessageBox.Show("Anamnese cadastrada com sucesso!");
+                mainWindow.MudarUserControl("aluno");
+            } else
+            {
+                MessageBox.Show("CPF do aluno não pode ser nulo");
+            }
         }
     }
 }

@@ -106,7 +106,9 @@ namespace Gymly.UserControls
 
                 aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "/" + comboBoxMes.SelectedValue + "/" + comboBoxAno.SelectedValue));
                 BDAluno.InsereAluno(aluno);
-                mainWindow.MudarUserControl("aluno");
+                Anamnese anamnese = new Anamnese();
+                anamnese.CpfAluno = aluno.Cpf;
+                mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
             }
         }
         private void BtnAddFotoDeRosto_Click(object sender, RoutedEventArgs e)
