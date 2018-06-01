@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <TextBox Name="txtBoxConsultaAluno" TextAlignment="Left" FontWeight="Bold" FontSize="15pt" Grid.ColumnSpan="3"  Grid.Column="1"  Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" Grid.Row="0" Background="White" GotFocus="TxtBoxConsultaAluno_GotFocus" LostFocus="TxtBoxConsultaAluno_LostFocus" TextChanged="txtBoxConsultaAluno_TextChanged" />
-        <Button Width="50" Height="48" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3" Margin="0,0,0,12" Grid.Row="0" Background="LightGray" BorderBrush="GhostWhite" Name="btnPesquisar" Click="BtnPesquisar_Click">
+        <Button Width="50" Height="48" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="3" Margin="0,0,0,11" Grid.Row="0" Background="WhiteSmoke" BorderBrush="White" BorderThickness="0" Name="btnPesquisar" Click="BtnPesquisar_Click">
             <StackPanel>
                 <Image Source="../Image/lupa_icon.png" />
             </StackPanel>
