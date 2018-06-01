@@ -105,10 +105,23 @@ namespace Gymly.UserControls
                 CultureInfo culture = new CultureInfo("pt-BR");
 
                 aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "/" + comboBoxMes.SelectedValue + "/" + comboBoxAno.SelectedValue));
-                BDAluno.InsereAluno(aluno);
-                Anamnese anamnese = new Anamnese();
-                anamnese.CpfAluno = aluno.Cpf;
-                mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
+                try
+                {
+                    BDAluno.InsereAluno(aluno);
+                    Anamnese anamnese = new Anamnese();
+                    anamnese.CpfAluno = aluno.Cpf;
+                    mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
+                }
+                 catch(Exception ex)
+                 {
+                      if (ex is System.Data.SQLite.SQLiteException && ex.Message.Equals("constraint failed\r\nUNIQUE constraint failed: ALUNOS.CPF"))
+                     {
+                        System.Windows.MessageBox.Show("Este cpf ja foi utilizado!");
+                     } else
+                    {
+                        System.Windows.MessageBox.Show("Falha ao salvar aluno no banco de dados");
+                    }
+                 }
             }
         }
         private void BtnAddFotoDeRosto_Click(object sender, RoutedEventArgs e)
