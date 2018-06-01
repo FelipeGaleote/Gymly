@@ -94,8 +94,8 @@ namespace Gymly.UserControls
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
             string query = "SELECT cpf, nome, email, datanasc  FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
-
             SQLiteCommand command = new SQLiteCommand(query, conn);
+
             DataTable dt = new DataTable("Alunos");
 
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
@@ -103,7 +103,6 @@ namespace Gymly.UserControls
             DataSet ds = new DataSet();
             adapter.Fill(dt);
             dataGridAluno.ItemsSource = dt.DefaultView;
-            adapter.Update(dt);
             conn.Close();
         }
 
@@ -118,7 +117,6 @@ namespace Gymly.UserControls
             DataSet ds = new DataSet();
             adapter.Fill(dt);
             dataGridAluno.ItemsSource = dt.DefaultView;
-            adapter.Update(dt);
             conn.Close();
         }
 
@@ -160,6 +158,13 @@ namespace Gymly.UserControls
             {
                 PreencheDataGridAluno(txtBoxConsultaAluno.Text);
             }
+        }
+
+        private void dataGridAluno_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataRowView dataRow = (DataRowView) dataGridAluno.SelectedItem;
+            string cpf = dataRow.Row.ItemArray[0].ToString();
+            mainWindow.MudarUserControl("detalhesAluno",cpf);
         }
     }
 }
