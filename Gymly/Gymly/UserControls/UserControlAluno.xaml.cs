@@ -174,7 +174,12 @@ namespace Gymly.UserControls
 
         private void dataGridAluno_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            btnEditarAnamnese.Content = "Editar anamnese";
+            DataRowView dataRow = (DataRowView)dataGridAluno.SelectedItem;
+            string cpf = dataRow.Row.ItemArray[0].ToString();
+            if (BDAnamnese.selecionaAnamnesePeloCpf(cpf).CpfAluno != null)
+                btnEditarAnamnese.Content = "Editar Anamnese";
+            else
+                btnEditarAnamnese.Content = "Cadastrar Anamnese";
         }
     }
 }

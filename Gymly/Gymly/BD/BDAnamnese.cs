@@ -15,11 +15,11 @@ namespace Gymly.BD
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
             string sql = "INSERT INTO Anamneses(" +
-                     "id, cpf_aluno,historico_problema_cardiaco,historico_dores_peito,historico_desmaios_ou_vertigem,historico_pressao_alta,historico_problema_osseo," +
+                     "cpf_aluno,historico_problema_cardiaco,historico_dores_peito,historico_desmaios_ou_vertigem,historico_pressao_alta,historico_problema_osseo," +
                      "idoso_nao_acostumado,doenca_cardiaca_coronariana,doenca_cardiaca_reumatica,doenca_cardiaca_congenita,batimentos_cardiacos_irregulares,problema_valvulas_cardiacas,murmurios_cardiacos," +
                      "ataque_cardiaco,derrame_cerebral,epilepsia,diabetes,hipertensao,cancer,dor_costas,dor_articulacao,dor_pulmonar," + "gestante,fumante,bebida_alcoolica," +
                      "perder_peso,melhorar_flexibilidade,diminuir_vicios,reduzir_dores,melhorar_nutricao,melhorar_aptidao,melhorar_muscular,reduzir_estresse, sentir_melhor, hipertrofia, observacao) " +
-                     "VALUES(NULL, @cpf_aluno,@historico_problema_cardiaco,@historico_dores_peito,@historico_desmaios_ou_vertigem,@historico_pressao_alta,@historico_problema_osseo," +
+                     "VALUES(@cpf_aluno,@historico_problema_cardiaco,@historico_dores_peito,@historico_desmaios_ou_vertigem,@historico_pressao_alta,@historico_problema_osseo," +
                      "@idoso_nao_acostumado,@doenca_cardiaca_coronariana,@doenca_cardiaca_reumatica,@doenca_cardiaca_congenita,@batimentos_cardiacos_irregulares," +
                      "@problema_valvulas_cardiacas,@murmurios_cardiacos,@ataque_cardiaco,@derrame_cerebral,@epilepsia,@diabetes,@hipertensao,@cancer,@dor_costas,@dor_articulacao,@dor_pulmonar," +
                      "@gestante,@fumante,@bebida_alcoolica,@perder_peso,@melhorar_flexibilidade,@diminuir_vicios," +
@@ -65,6 +65,30 @@ namespace Gymly.BD
 
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+        public static Anamnese selecionaAnamnesePeloCpf(String cpf)
+        {
+            SQLiteConexao conexao = new SQLiteConexao();
+            SQLiteConnection conn = conexao.GetConexao();
+
+            string sql = "SELECT * FROM anamneses where cpf_aluno like '" + cpf + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+            //cmd.Parameters.AddWithValue("cpf_aluno", cpf);
+            SQLiteDataReader reader =  cmd.ExecuteReader();
+            reader.Read();
+
+            Anamnese an = new Anamnese();
+            try
+            {             
+                an.CpfAluno = reader["cpf_aluno"].ToString();
+            }
+            catch
+            {
+
+            }
+
+            conn.Close();
+            return an;
         }
     }
 }
