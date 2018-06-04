@@ -47,7 +47,7 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@dobraCutaneaBiceps", avaliacaoFisica.DobraCutaneaBiceps);
             cmd.Parameters.AddWithValue("@dobraCutaneaTorax", avaliacaoFisica.DobraCutaneaTorax);
             cmd.Parameters.AddWithValue("@dobraCutaneaAxilarMedia", avaliacaoFisica.DobraCutaneaAxilarMedia);
-            cmd.Parameters.AddWithValue("@dobraCutaneauprailiaca", avaliacaoFisica.DobraCutaneaSuprailiaca);
+            cmd.Parameters.AddWithValue("@dobraCutaneaSuprailiaca", avaliacaoFisica.DobraCutaneaSuprailiaca);
             cmd.Parameters.AddWithValue("@dobraCutaneaAbdominal", avaliacaoFisica.DobraCutaneaAbdominal);
             cmd.Parameters.AddWithValue("@dobraCutaneaCoxa", avaliacaoFisica.DobraCutaneaCoxa);
             cmd.Parameters.AddWithValue("@dobraCutaneaPerna", avaliacaoFisica.DobraCutaneaPerna);
