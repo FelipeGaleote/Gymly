@@ -131,16 +131,34 @@ namespace Gymly.BD
                 sql.AppendLine("[OBSERVACAOIMAGEMLATERAL] INT,");
                 sql.AppendLine("[CAMINHOIMAGEMCOSTAS] INT,");
                 sql.AppendLine("[OBSERVACAOIMAGEMCOSTAS] INT,");
-                sql.AppendLine("[PERIMETROOMBRO] INT,");
-                sql.AppendLine("[PERIMETROTORAX] INT,");
-                sql.AppendLine("[PERIMETROBRACODIREITO] INT,");
-                sql.AppendLine("[PERIMETROBRACOESQUERDO] INT,");
-                sql.AppendLine("[PERIMETROCINTURA] INT,");
-                sql.AppendLine("[PERIMETROABDOMINAL] INT,");
-                sql.AppendLine("[PERIMETROQUADRIL] INT,");
-                sql.AppendLine("[PERIMETROCOXAPROXIMALDIREITA] INT,");
-                sql.AppendLine("[PERIMETROCOXAPROXIMALESQUERDA] INT,");
-           
+                sql.AppendLine("[PERIMETROOMBRO] FLOAT,");
+                sql.AppendLine("[PERIMETROTORAX] FLOAT,");
+                sql.AppendLine("[PERIMETROBRACODIREITO] FLOAT,");
+                sql.AppendLine("[PERIMETROBRACOESQUERDO] FLOAT,");
+                sql.AppendLine("[PERIMETROCINTURA] FLOAT,");
+                sql.AppendLine("[PERIMETROABDOMINAL] FLOAT,");
+                sql.AppendLine("[PERIMETROQUADRIL] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXAPROXIMALDIREITA] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXAPROXIMALESQUERDA] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXAMEDIALDIREITA] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXAMEDIALESQUERDA] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXADISTALDIREITA] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXADISTALESQUERDA] FLOAT,");
+                sql.AppendLine("[PERIMETROPERNADIREITA] FLOAT,");
+                sql.AppendLine("[PERIMETROPERNAESQUERDA] FLOAT,");
+                sql.AppendLine("[ENVERGADURA] FLOAT,");
+                sql.AppendLine("[ALTURA] FLOAT,");
+                sql.AppendLine("[MASSA] FLOAT,");
+                sql.AppendLine("[PRESSAOARTERIALSISTOLICA] FLOAT,");
+                sql.AppendLine("[PRESSAOARTERIALDIASTOLICA] FLOAT,");
+                sql.AppendLine("[FREQUENCIACARDIACA] FLOAT,");
+
+                sql.AppendLine("[TEMPOABDOMINAL] FLOAT,");
+                sql.AppendLine("[TEMPOFLEXAO] FLOAT,");
+
+
+
+
 
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
 
