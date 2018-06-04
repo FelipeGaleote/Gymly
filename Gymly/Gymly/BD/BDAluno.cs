@@ -20,14 +20,14 @@ namespace Gymly.BD
             string sql = "INSERT INTO Alunos(cpf,nome,datanasc,email,telefone,sexo,nivel, foto_de_rosto) VALUES(@cpf,@nome,@datanasc,@email,@telefone,@sexo,@nivel, @foto_de_rosto)";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-            cmd.Parameters.AddWithValue("CPF",aluno.Cpf);
-            cmd.Parameters.AddWithValue("nome", aluno.Nome);
-            cmd.Parameters.AddWithValue("datanasc", aluno.DataNasc);
-            cmd.Parameters.AddWithValue("email", aluno.Email);
-            cmd.Parameters.AddWithValue("telefone", aluno.Telefone);
-            cmd.Parameters.AddWithValue("sexo", aluno.Sexo);
-            cmd.Parameters.AddWithValue("nivel", aluno.Nivel);
-            cmd.Parameters.AddWithValue("foto_de_rosto", aluno.CaminhoFotoDoRosto);
+            cmd.Parameters.AddWithValue("@CPF",aluno.Cpf);
+            cmd.Parameters.AddWithValue("@nome", aluno.Nome);
+            cmd.Parameters.AddWithValue("@datanasc", aluno.DataNasc);
+            cmd.Parameters.AddWithValue("@email", aluno.Email);
+            cmd.Parameters.AddWithValue("@telefone", aluno.Telefone);
+            cmd.Parameters.AddWithValue("@sexo", aluno.Sexo);
+            cmd.Parameters.AddWithValue("@nivel", aluno.Nivel);
+            cmd.Parameters.AddWithValue("@foto_de_rosto", aluno.CaminhoFotoDoRosto);
             cmd.ExecuteNonQuery(); 
             conn.Close();  
         }
