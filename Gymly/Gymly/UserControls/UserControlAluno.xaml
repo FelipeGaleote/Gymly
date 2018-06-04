@@ -30,7 +30,6 @@
         </Button>
         <DataGrid SelectionMode="Single" SelectionUnit="FullRow" Name="dataGridAluno" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="3" Grid.Column="1"  Grid.Row="1" Background="LightSlateGray" MouseDoubleClick="dataGridAluno_MouseDoubleClick" SelectionChanged="dataGridAluno_SelectionChanged" />
         <Button FontSize="16pt"  VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Name="btnCadastraAluno" Content="Cadastrar Aluno" Height="50" Margin="0,4,2,0" Click="BtnCadastraAluno_Click"></Button>
-        <Button FontSize="16pt" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2" Name="btnEditarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="2,4,2,0" Click="BtnCadastraOuEditaAnamnese_Click"></Button>
         <Button FontSize="16pt" VerticalAlignment="Top" Grid.Row="2" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Física" Height="50" Margin="2,4,0,0" Click="BtnCadastrarAvaliacaoFisica_Click"></Button>
 
         <Button IsEnabled="false" Visibility="Collapsed" FontSize="15pt" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Name="btnCadastrarAvaliacaoFisicaAntropometrica" Content="Antropometrica" Height="50" Margin="50,50,200,0" Click="BtnCadastrarAvaliacaoFisicaAntropometrica_Click"></Button>

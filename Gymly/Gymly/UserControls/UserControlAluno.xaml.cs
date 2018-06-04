@@ -66,17 +66,6 @@ namespace Gymly.UserControls
 
         }
 
-        private void BtnCadastraOuEditaAnamnese_Click(object sender, RoutedEventArgs e)
-        {
-            //Tentar capturar o cpf do aluno selecionado no datagrid
-            Anamnese anamnese = new Anamnese();
-           // {
-           //     CpfAluno = dataGridAluno.Columns[0].ToString()
-           // };
-           // MessageBox.Show(anamnese.CpfAluno);
-            mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
-        }
-
         private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
         {
             if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
@@ -87,7 +76,6 @@ namespace Gymly.UserControls
             {
                 PreencheDataGridAluno();
             }
-            btnEditarAnamnese.Content = "Cadastrar anamnese";
         }
 
         private void PreencheDataGridAluno(string nome)
@@ -157,7 +145,6 @@ namespace Gymly.UserControls
         {
             if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
             {
-                btnEditarAnamnese.Content = "Cadastrar anamnese";
                 PreencheDataGridAluno(txtBoxConsultaAluno.Text);
             } else
             {
@@ -181,19 +168,8 @@ namespace Gymly.UserControls
 
         private void dataGridAluno_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DataRowView dataRow = (DataRowView)dataGridAluno.SelectedItem;
-            try
-            {
-                string cpf = dataRow.Row.ItemArray[0].ToString();
-                if (BDAnamnese.selecionaAnamnesePeloCpf(cpf).CpfAluno != null)
-                    btnEditarAnamnese.Content = "Editar Anamnese";
-                else
-                    btnEditarAnamnese.Content = "Cadastrar Anamnese";
-            }
-            catch
-            {
-
-            }
+            //DataRowView dataRow = (DataRowView)dataGridAluno.SelectedItem;
+            //string cpf = dataRow.Row.ItemArray[0].ToString();
         }
     }
 }

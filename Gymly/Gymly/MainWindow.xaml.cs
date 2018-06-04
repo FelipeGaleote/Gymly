@@ -134,23 +134,13 @@ namespace Gymly
             }
 
         }
-        public void MudarUserControl(String nomeDoControl, Aluno aluno)
-        {
-            pnl.Children.Clear();
-            /*switch (nomeDoControl)
-            {
-                case "detalhesAluno":
-                    pnl.Children.Add(new UserControlDetalhesAluno(aluno));
-                    break;
-            }*/
-        }
         public void MudarUserControl(String nomeDoControl, String parametroAdicional)
         {
             pnl.Children.Clear();
             switch (nomeDoControl)
             {
                 case "detalhesAluno":
-                    pnl.Children.Add(new UserControlDetalhesAluno(parametroAdicional));
+                    pnl.Children.Add(new UserControlDetalhesAluno(parametroAdicional,this));
                     break;
             }
         }

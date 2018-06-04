@@ -22,14 +22,19 @@ namespace Gymly.UserControls
     /// </summary>
     public partial class UserControlDetalhesAluno : UserControl
     {
+        private MainWindow mainWindow;
+        private Aluno aluno;
         public UserControlDetalhesAluno()
         {
             InitializeComponent();
         }
-        public UserControlDetalhesAluno(string cpf)
+        public UserControlDetalhesAluno(string cpf, MainWindow mainWindow)
         {
+            this.mainWindow = mainWindow;
+            this.aluno = new Aluno();
             InitializeComponent();
             preencherInformacoes(cpf);
+            configurarBotoes(cpf);
         }
 
         private void preencherInformacoes(string cpf)
@@ -43,7 +48,35 @@ namespace Gymly.UserControls
                 txtBlockEmail.Text = aluno.Email;
                 txtBlockTelefone.Text = aluno.Telefone;
                 txtBlockNivel.Text = aluno.Nivel;
-                txtBlockSexo.Text = aluno.Sexo.ToString();
+                txtBlockSexo.Text = aluno.Sexo.ToString().Equals("F")? "Feminino" : "Masculino";
+                this.aluno = aluno;
+            }
+        }
+        private void configurarBotoes(string cpf)
+        {
+            Anamnese anamnese = BDAnamnese.selecionaAnamnesePeloCpf(cpf);
+            if (anamnese.CpfAluno != null)
+            {
+                btnCadastrarAnamnese.Content = "Editar anamnese";
+                this.aluno.Anamnese = anamnese;
+            }
+            else
+            {
+                btnCadastrarAnamnese.Content = "Cadastrar anamnese";
+            }
+        }
+
+        private void btnCadastrarAnamnese_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.aluno.Anamnese == null)
+            {
+                Anamnese an = new Anamnese();
+                an.CpfAluno = this.aluno.Cpf;
+                mainWindow.MudarUserControl("cadastroAnamnese", an);
+            }
+            else
+            {
+                //O aluno deve ser direcionado para uma tela de edição da anamnese
             }
         }
     }
