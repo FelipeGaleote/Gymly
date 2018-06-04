@@ -104,6 +104,9 @@ namespace Gymly
             pnl.Children.Clear();
             switch (nomeDoControl)
             {
+                case "selecionarTipoAvalicaoFisica":
+                    pnl.Children.Add(new UserControlTipoAvaliacaoFisica(this, avaliacaoFisica));
+                    break;
                 case "cadastroAvaliacaoFisica":
                     pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this, avaliacaoFisica));
                     break;

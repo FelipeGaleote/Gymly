@@ -39,15 +39,15 @@
         <TextBlock Name="txtBlockTituloNivel"  Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3" TextAlignment="Left" FontWeight="Bold" FontSize="20pt" Text="Nivel"/>
         <TextBlock Name="txtBlockTituloSexo"  Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" TextAlignment="Left" FontWeight="Bold" FontSize="20pt" Text="Sexo"/>
 
-        <TextBlock Name="txtBlockNome"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Left" FontWeight="Bold" FontSize="25pt"/>
+        <TextBlock Name="txtBlockNome"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" TextAlignment="Left" FontWeight="Bold" FontSize="28pt"/>
         <TextBlock Name="txtBlockCpf"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" FontSize="16pt"/>
         <TextBlock Name="txtBlockEmail"  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" FontSize="16pt"/>
         <TextBlock Name="txtBlockTelefone"  Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Left" FontSize="16pt"/>
         <TextBlock Name="txtBlockNivel"  Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" TextAlignment="Left" FontSize="16pt"/>
         <TextBlock Name="txtBlockSexo"  Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" TextAlignment="Left" FontSize="16pt"/>
 
-        <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="2,4,2,0" Grid.ColumnSpan="2" FontSize="16pt" VerticalAlignment="Top" Click="btnCadastrarAnamnese_Click"></Button>
-        <Button Grid.Row="10" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Fisica" Height="50" Margin="2,4,2,0" Grid.ColumnSpan="2" FontSize="16pt" VerticalAlignment="Top"></Button>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="8,0" Grid.ColumnSpan="2" FontSize="16pt" VerticalAlignment="Top" Click="btnCadastrarAnamnese_Click"></Button>
+        <Button Grid.Row="10" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Fisica" Height="50" Margin="8,0" Grid.ColumnSpan="2" FontSize="16pt" VerticalAlignment="Top" Click="btnCadastrarAvaliacaoFisica_Click"></Button>
 
 
 

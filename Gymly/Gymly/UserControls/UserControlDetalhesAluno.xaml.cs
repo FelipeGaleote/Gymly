@@ -79,5 +79,11 @@ namespace Gymly.UserControls
                 //O aluno deve ser direcionado para uma tela de edição da anamnese
             }
         }
+
+        private void btnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        {
+            AvaliacaoFisica av = new AvaliacaoFisica();
+            mainWindow.MudarUserControl("selecionarTipoAvalicaoFisica", av);
+        }
     }
 }

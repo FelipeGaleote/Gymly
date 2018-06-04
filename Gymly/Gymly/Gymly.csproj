@@ -183,6 +183,9 @@
     <Compile Include="UserControls\UserControlTelaInicial.xaml.cs">
       <DependentUpon>UserControlTelaInicial.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlTipoAvaliacaoFisica.xaml.cs">
+      <DependentUpon>UserControlTipoAvaliacaoFisica.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -263,11 +266,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-	<Page Include="UserControls\UserControlDetalhesAluno.xaml">
+    <Page Include="UserControls\UserControlDetalhesAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-	<Page Include="UserControls\UserControlConfiguracao.xaml">
+    <Page Include="UserControls\UserControlConfiguracao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlTipoAvaliacaoFisica.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
