@@ -15,7 +15,7 @@ namespace Gymly.Models
         private DateTime dataNasc;
         private string email;
         private string telefone;
-        private char sexo;
+        private string sexo;
         private string nivel;
         private string caminhoFotoDoRosto;
         private Anamnese anamnese; 
@@ -61,7 +61,7 @@ namespace Gymly.Models
             }
         }
 
-        public char Sexo
+        public string Sexo
         {
             get
             {

@@ -16,13 +16,21 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="180*"/>
-            <RowDefinition Height="487*"/>
-            <RowDefinition Height="333*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Name="txtBlockCpf" TextAlignment="Left" FontWeight="Bold" FontSize="15pt" Grid.ColumnSpan="3"  Grid.Column="1"  Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" Grid.Row="0" Background="White" />
-        
+
+        <TextBlock Name="txtBlockNome"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" TextAlignment="Left" FontWeight="Bold" FontSize="15pt"/>
+        <TextBlock Name="txtBlockCpf"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" TextAlignment="Left" FontWeight="Bold" FontSize="15pt"/>
+        <TextBlock Name="txtBlockEmail"  Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" TextAlignment="Left" FontWeight="Bold" FontSize="15pt"/>
+        <TextBlock Name="txtBlockTelefone"  Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" TextAlignment="Left" FontWeight="Bold" FontSize="15pt"/>
+        <TextBlock Name="txtBlockNivel"  Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" TextAlignment="Left" FontWeight="Bold" FontSize="15pt"/>
+        <TextBlock Name="txtBlockSexo"  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Height="50" Margin="0,0,0,10" VerticalAlignment="Bottom" TextAlignment="Left" FontWeight="Bold" FontSize="15pt"/>
 
 
     </Grid>

@@ -1,4 +1,5 @@
-﻿using Gymly.Models;
+﻿using Gymly.BD;
+using Gymly.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,22 @@ namespace Gymly.UserControls
         public UserControlDetalhesAluno(string cpf)
         {
             InitializeComponent();
-            txtBlockCpf.Text = cpf;
+            preencherInformacoes(cpf);
+        }
+
+        private void preencherInformacoes(string cpf)
+        {
+            Aluno aluno = new Aluno();
+            aluno = BDAluno.selecionaAlunoPorCpf(cpf);
+            if (aluno != null)
+            {
+                txtBlockNome.Text = aluno.Nome;
+                txtBlockCpf.Text = aluno.Cpf;
+                txtBlockEmail.Text = aluno.Email;
+                txtBlockTelefone.Text = aluno.Telefone;
+                txtBlockNivel.Text = aluno.Nivel;
+                txtBlockSexo.Text = aluno.Sexo.ToString();
+            }
         }
     }
 }

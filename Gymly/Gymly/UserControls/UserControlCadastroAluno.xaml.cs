@@ -61,16 +61,20 @@ namespace Gymly.UserControls
                 };
                 if (rdMasculino.IsChecked == true)
                 {
-                    aluno.Sexo = 'M';
+                    aluno.Sexo = "M";
                 }
                 else if (rdFeminino.IsChecked == true)
                 {
-                    aluno.Sexo = 'F';
+                    aluno.Sexo = "F";
                 }
                 string cpf = aluno.Cpf;
                 cpf = cpf.Replace(".", "").Replace("-", "");
-                if(ComboBoxNivel.SelectedValue != null)
-                aluno.Nivel = ComboBoxNivel.SelectedValue.ToString();
+                if (ComboBoxNivel.SelectedValue != null)
+                {             
+                    var item = ComboBoxNivel.SelectedValue as ComboBoxItem;
+                    var text = item.Content.ToString();
+                    aluno.Nivel = text;
+                }
                 if (caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals(""))
                 {
                     GerenciadorDeArquivos.AlocaPasta(cpf);

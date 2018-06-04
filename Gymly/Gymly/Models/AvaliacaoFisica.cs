@@ -624,7 +624,7 @@ namespace Gymly.Models
             double d;
             float somaDobras;
 
-            if(aluno.Sexo == 'F'){
+            if(aluno.Sexo.Equals("F")){
                somaDobras = (DobraCutaneaAxilarMedia + DobraCutaneaSuprailiaca + DobraCutaneaCoxa + DobraCutaneaPerna);
                d = 1.1954713-0.07513507*Math.Log10(somaDobras)-0.00041072 * Aluno.CalculaIdade(aluno.DataNasc);
             }

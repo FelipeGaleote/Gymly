@@ -31,6 +31,34 @@ namespace Gymly.BD
             cmd.ExecuteNonQuery(); 
             conn.Close();  
         }
+        public static Aluno selecionaAlunoPorCpf(string cpf)
+        {
+            SQLiteConexao conexao = new SQLiteConexao();
+            SQLiteConnection conn = conexao.GetConexao();
+
+            string sql = "SELECT * FROM alunos where cpf like '" + cpf + "';";
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+
+            Aluno aluno = new Aluno();
+            try
+            {
+                aluno.Nome = reader["nome"].ToString();
+                aluno.Cpf = reader["cpf"].ToString();
+                aluno.Email = reader["email"].ToString();
+                aluno.Nivel = reader["nivel"].ToString();
+                aluno.Telefone = reader["telefone"].ToString();
+                aluno.Sexo = reader["sexo"].ToString();
+            }
+            catch
+            {
+
+            }
+
+            conn.Close();
+            return aluno;
+        }
 
         
     }
