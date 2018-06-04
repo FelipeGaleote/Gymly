@@ -168,18 +168,32 @@ namespace Gymly.UserControls
         private void dataGridAluno_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataRowView dataRow = (DataRowView) dataGridAluno.SelectedItem;
-            string cpf = dataRow.Row.ItemArray[0].ToString();
-            mainWindow.MudarUserControl("detalhesAluno",cpf);
+            try
+            {
+                string cpf = dataRow.Row.ItemArray[0].ToString();
+                mainWindow.MudarUserControl("detalhesAluno", cpf);
+            }
+            catch
+            {
+
+            }
         }
 
         private void dataGridAluno_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataRowView dataRow = (DataRowView)dataGridAluno.SelectedItem;
-            string cpf = dataRow.Row.ItemArray[0].ToString();
-            if (BDAnamnese.selecionaAnamnesePeloCpf(cpf).CpfAluno != null)
-                btnEditarAnamnese.Content = "Editar Anamnese";
-            else
-                btnEditarAnamnese.Content = "Cadastrar Anamnese";
+            try
+            {
+                string cpf = dataRow.Row.ItemArray[0].ToString();
+                if (BDAnamnese.selecionaAnamnesePeloCpf(cpf).CpfAluno != null)
+                    btnEditarAnamnese.Content = "Editar Anamnese";
+                else
+                    btnEditarAnamnese.Content = "Cadastrar Anamnese";
+            }
+            catch
+            {
+
+            }
         }
     }
 }
