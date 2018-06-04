@@ -115,9 +115,29 @@ namespace Gymly.Models
             }
         }
 
-        public DateTime DataNasc { get { return dataNasc;  }  set { dataNasc = value; } }
+        public DateTime DataNasc
+        {
+            get
+            {
+                return dataNasc;
+            }
+            set
+            {
+                dataNasc = value;
+            }
+        }
 
-        public string CaminhoFotoDoRosto { get { return caminhoFotoDoRosto; } set { caminhoFotoDoRosto = value; } }
+        public string CaminhoFotoDoRosto
+        {
+            get
+            {
+                return caminhoFotoDoRosto;
+            }
+            set
+            {
+                caminhoFotoDoRosto = value;
+            }
+        }
 
         public static int CalculaIdade(DateTime dataNasc)
         {

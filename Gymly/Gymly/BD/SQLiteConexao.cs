@@ -125,6 +125,22 @@ namespace Gymly.BD
                 sql.AppendLine("[PANTURRILHA_ESQUERDA] FLOAT,");
                 sql.AppendLine("[FLEXAO] INT,");
                 sql.AppendLine("[ABDOMINAL] INT,");
+                sql.AppendLine("[CAMINHOIMAGEMFRONTAL] INT,");
+                sql.AppendLine("[OBSERVACAOIMAGEMFRONTAL] INT,");
+                sql.AppendLine("[CAMINHOIMAGEMLATERAL] INT,");
+                sql.AppendLine("[OBSERVACAOIMAGEMLATERAL] INT,");
+                sql.AppendLine("[CAMINHOIMAGEMCOSTAS] INT,");
+                sql.AppendLine("[OBSERVACAOIMAGEMCOSTAS] INT,");
+                sql.AppendLine("[PERIMETROOMBRO] INT,");
+                sql.AppendLine("[PERIMETROTORAX] INT,");
+                sql.AppendLine("[PERIMETROBRACODIREITO] INT,");
+                sql.AppendLine("[PERIMETROBRACOESQUERDO] INT,");
+                sql.AppendLine("[PERIMETROCINTURA] INT,");
+                sql.AppendLine("[PERIMETROABDOMINAL] INT,");
+                sql.AppendLine("[PERIMETROQUADRIL] INT,");
+                sql.AppendLine("[PERIMETROCOXAPROXIMALDIREITA] INT,");
+                sql.AppendLine("[PERIMETROCOXAPROXIMALESQUERDA] INT,");
+           
 
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
 
