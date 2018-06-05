@@ -71,5 +71,12 @@ namespace Gymly.Models
             bitmap.EndInit();
             return bitmap;
         }
+        public static string BuscaLocalParaSalvarArquivo() {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF File|*.pdf";
+            saveFileDialog.Title = "Salvar Relatório";
+            saveFileDialog.ShowDialog();
+            return saveFileDialog.FileName;
+        }
     }
 }

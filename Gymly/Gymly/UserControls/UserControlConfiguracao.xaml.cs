@@ -40,8 +40,8 @@ namespace Gymly.UserControls
 
         private void EmitirRelatorioAluno_Click(object sender, RoutedEventArgs e)
         {
-          
-            Relatorio.GeraRelatorioAlunos();
+            
+            Relatorio.GeraRelatorioAlunos(GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo());
         }
     }
 }

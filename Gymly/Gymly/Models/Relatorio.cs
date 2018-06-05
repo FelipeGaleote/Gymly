@@ -11,15 +11,15 @@ namespace Gymly.Models
 {
     class Relatorio
     {
-        private static string caminhoPdf = "Relatorios\\RelatorioAlunos.pdf";
+        //private static string caminhoPdf = "Relatorios\\RelatorioAlunos.pdf";
         private static Font fonteTitulo = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18);
         private static Font fonteTextoComum = FontFactory.GetFont(FontFactory.HELVETICA, 12);
 
-        public static void GeraRelatorioAlunos()
+        public static void GeraRelatorioAlunos(string local)
         {
 
             Document doc = new Document(iTextSharp.text.PageSize.A4, 20, 20, 10, 10);
-            PdfWriter pdfWriter = PdfWriter.GetInstance(doc, new FileStream(caminhoPdf, FileMode.Create));
+            PdfWriter pdfWriter = PdfWriter.GetInstance(doc, new FileStream(local, FileMode.Create));
             doc.Open();
 
             Paragraph p1 = new Paragraph("Relatório de Alunos", fonteTitulo)
@@ -121,5 +121,8 @@ namespace Gymly.Models
             }
             return cell;
         }
+
+
+
     }
 }
