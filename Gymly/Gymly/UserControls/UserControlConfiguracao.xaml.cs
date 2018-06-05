@@ -29,7 +29,7 @@ namespace Gymly.UserControls
             InitializeComponent();
         }
 
-        private void adicionarLogo_Click(object sender, RoutedEventArgs e)
+        private void AdicionarLogo_Click(object sender, RoutedEventArgs e)
         {
             caminhoLogo = GerenciadorDeArquivos.ProcuraImagem();
             GerenciadorDeArquivos.AlocaPasta("Config");
@@ -38,9 +38,10 @@ namespace Gymly.UserControls
             GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoLogo, caminhoLogoSalvar);
         }
 
-        private void emitirRelatorioAluno_Click(object sender, RoutedEventArgs e)
+        private void EmitirRelatorioAluno_Click(object sender, RoutedEventArgs e)
         {
-
+          
+            Relatorio.GeraRelatorioAlunos();
         }
     }
 }

@@ -26,7 +26,8 @@ namespace Gymly
         public MainWindow()
         {
             InitializeComponent();
-            GerenciadorDeArquivos.AlocaDiretorioPrincipal();
+            GerenciadorDeArquivos.AlocaDiretorioPrincipal("Fotos");
+            GerenciadorDeArquivos.AlocaDiretorioPrincipal("Relatorios");
             MudarUserControl("telaInicial");
             StartClock();
         }
@@ -148,7 +149,7 @@ namespace Gymly
             }
         }
 
-        private void btnConfiguracao_Click(object sender, RoutedEventArgs e)
+        private void BtnConfiguracao_Click(object sender, RoutedEventArgs e)
         {
             MudarUserControl("configuracao");
         }

@@ -33,14 +33,14 @@ namespace Gymly.UserControls
             this.mainWindow = mainWindow;
             this.aluno = new Aluno();
             InitializeComponent();
-            preencherInformacoes(cpf);
-            configurarBotoes(cpf);
+            PreencherInformacoes(cpf);
+            ConfigurarBotoes(cpf);
         }
 
-        private void preencherInformacoes(string cpf)
+        private void PreencherInformacoes(string cpf)
         {
             Aluno aluno = new Aluno();
-            aluno = BDAluno.selecionaAlunoPorCpf(cpf);
+            aluno = BDAluno.SelecionaAlunoPorCpf(cpf);
             if (aluno != null)
             {
                 txtBlockNome.Text = aluno.Nome;
@@ -52,9 +52,9 @@ namespace Gymly.UserControls
                 this.aluno = aluno;
             }
         }
-        private void configurarBotoes(string cpf)
+        private void ConfigurarBotoes(string cpf)
         {
-            Anamnese anamnese = BDAnamnese.selecionaAnamnesePeloCpf(cpf);
+            Anamnese anamnese = BDAnamnese.SelecionaAnamnesePeloCpf(cpf);
             if (anamnese.CpfAluno != null)
             {
                 btnCadastrarAnamnese.Content = "Editar anamnese";
@@ -66,12 +66,14 @@ namespace Gymly.UserControls
             }
         }
 
-        private void btnCadastrarAnamnese_Click(object sender, RoutedEventArgs e)
+        private void BtnCadastrarAnamnese_Click(object sender, RoutedEventArgs e)
         {
             if(this.aluno.Anamnese == null)
             {
-                Anamnese an = new Anamnese();
-                an.CpfAluno = this.aluno.Cpf;
+                Anamnese an = new Anamnese
+                {
+                    CpfAluno = this.aluno.Cpf
+                };
                 mainWindow.MudarUserControl("cadastroAnamnese", an);
             }
             else
@@ -80,7 +82,7 @@ namespace Gymly.UserControls
             }
         }
 
-        private void btnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        private void BtnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
             AvaliacaoFisica av = new AvaliacaoFisica();
             mainWindow.MudarUserControl("selecionarTipoAvalicaoFisica", av);

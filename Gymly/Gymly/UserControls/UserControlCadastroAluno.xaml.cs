@@ -50,7 +50,7 @@ namespace Gymly.UserControls
 
         private void BtnCadastrarAluno_Click(object sender, RoutedEventArgs e)
         {                   
-            if (camposValidos())
+            if (CamposValidos())
             {
                 Aluno aluno = new Aluno
                 {
@@ -90,12 +90,14 @@ namespace Gymly.UserControls
 
                 CultureInfo culture = new CultureInfo("pt-BR");
 
-                aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "/" + comboBoxMes.SelectedValue + "/" + comboBoxAno.SelectedValue));
+                aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "-" + comboBoxMes.SelectedValue + "-" + comboBoxAno.SelectedValue));
                 try
                 {
                     BDAluno.InsereAluno(aluno);
-                    Anamnese anamnese = new Anamnese();
-                    anamnese.CpfAluno = aluno.Cpf;
+                    Anamnese anamnese = new Anamnese
+                    {
+                        CpfAluno = aluno.Cpf
+                    };
                     mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
                 }
                  catch(Exception ex)
@@ -182,7 +184,7 @@ namespace Gymly.UserControls
             }
         }
 
-        private void txtBoxCpf_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void TxtBoxCpf_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if(txtBoxCpf.Text.Length == 14)
             {
@@ -200,7 +202,7 @@ namespace Gymly.UserControls
                 e.Handled = true;
         }
 
-        private void txtBoxTelefone_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void TxtBoxTelefone_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             int valor = (int)e.Key;
             if ((valor >= 34 && valor <= 43) || (valor >= 74 && valor <= 83))
@@ -209,30 +211,30 @@ namespace Gymly.UserControls
                 e.Handled = true;
         }
 
-        private void txtBoxNome_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void TxtBoxNome_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             hintNome.Visibility = Visibility.Hidden;
         }
 
-        private void comboBoxDia_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboBoxDia_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(comboBoxAno.SelectedValue != null && comboBoxMes.SelectedValue != null)
             hintDataNasc.Visibility = Visibility.Hidden;
         }
 
-        private void comboBoxMes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboBoxMes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (comboBoxAno.SelectedValue != null && comboBoxDia.SelectedValue != null)
                 hintDataNasc.Visibility = Visibility.Hidden;
         }
 
-        private void comboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ComboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (comboBoxDia.SelectedValue != null && comboBoxMes.SelectedValue != null)
                 hintDataNasc.Visibility = Visibility.Hidden;
         }
 
-        private bool camposValidos()
+        private bool CamposValidos()
         {
             bool todosCamposValidos = true;
             if (txtBoxCpf.Text.Equals(""))
@@ -256,7 +258,7 @@ namespace Gymly.UserControls
             /*if (!validaCpf(txtBoxCpf.ToString()){
                     todosCamposValidos = false;
             }*/
-            if (!validaEmail(txtBoxEmail.Text.ToString()))
+            if (!ValidaEmail(txtBoxEmail.Text.ToString()))
             {
                 txtBoxEmail.Text = "";
                 todosCamposValidos = false;
@@ -266,7 +268,7 @@ namespace Gymly.UserControls
                 hintEmail.Visibility = Visibility.Hidden;
             return todosCamposValidos;
         }
-        private bool validaEmail(String email)
+        private bool ValidaEmail(String email)
         {
             if (!email.Equals(""))
             {
@@ -277,7 +279,7 @@ namespace Gymly.UserControls
                 return true;
         }
 
-        private void txtBoxEmail_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void TxtBoxEmail_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             hintEmail.Visibility = Visibility.Hidden;
         }

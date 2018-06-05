@@ -46,8 +46,8 @@
         <TextBlock Name="txtBlockNivel"  Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" TextAlignment="Left" FontSize="16pt"/>
         <TextBlock Name="txtBlockSexo"  Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" TextAlignment="Left" FontSize="16pt"/>
 
-        <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="8,0" Grid.ColumnSpan="2" FontSize="16pt" VerticalAlignment="Top" Click="btnCadastrarAnamnese_Click"></Button>
-        <Button Grid.Row="10" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Fisica" Height="50" Margin="8,0" Grid.ColumnSpan="2" FontSize="16pt" VerticalAlignment="Top" Click="btnCadastrarAvaliacaoFisica_Click"></Button>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Content="Cadastrar Anamnese" Height="50" Margin="8,0" Grid.ColumnSpan="2" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAnamnese_Click"></Button>
+        <Button Grid.Row="10" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Fisica" Height="50" Margin="8,0" Grid.ColumnSpan="2" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAvaliacaoFisica_Click"></Button>
 
 
 

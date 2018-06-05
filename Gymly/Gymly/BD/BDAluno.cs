@@ -31,7 +31,7 @@ namespace Gymly.BD
             cmd.ExecuteNonQuery(); 
             conn.Close();  
         }
-        public static Aluno selecionaAlunoPorCpf(string cpf)
+        public static Aluno SelecionaAlunoPorCpf(string cpf)
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
@@ -55,11 +55,26 @@ namespace Gymly.BD
             {
 
             }
-
+            reader.Close();
             conn.Close();
             return aluno;
         }
+        public static List<string> SelecionaCpfsDosAlunos() {
+            List<string> cpfs = new List<string>();
+            SQLiteConexao conexao = new SQLiteConexao();
+            SQLiteConnection conn = conexao.GetConexao();
 
+            string sql = "SELECT cpf FROM alunos;";
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+            SQLiteDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                cpfs.Add(reader.GetString(0));
+            }
+            reader.Close();
+            return cpfs;
+        }
         
     }
 }

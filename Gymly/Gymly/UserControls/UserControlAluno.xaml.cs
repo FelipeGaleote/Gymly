@@ -99,7 +99,7 @@ namespace Gymly.UserControls
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT cpf, nome, email, datanasc FROM Alunos;";
+            string query = "SELECT cpf, nome, email, STRFTIME('%d/%m/%Y',datanasc) FROM Alunos;";
             SQLiteCommand command = new SQLiteCommand(query, conn);
             DataTable dt = new DataTable("Alunos");
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
@@ -109,7 +109,7 @@ namespace Gymly.UserControls
             conn.Close();
         }
 
-        private void txtBoxConsultaAluno_TextChanged(object sender, TextChangedEventArgs e)
+        private void TxtBoxConsultaAluno_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
             {
@@ -120,7 +120,7 @@ namespace Gymly.UserControls
             }
         }
 
-        private void dataGridAluno_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void DataGridAluno_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataRowView dataRow = (DataRowView) dataGridAluno.SelectedItem;
             try
@@ -134,7 +134,7 @@ namespace Gymly.UserControls
             }
         }
 
-        private void dataGridAluno_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DataGridAluno_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //DataRowView dataRow = (DataRowView)dataGridAluno.SelectedItem;
             //string cpf = dataRow.Row.ItemArray[0].ToString();

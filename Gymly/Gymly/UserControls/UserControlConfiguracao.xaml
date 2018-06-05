@@ -22,10 +22,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" FontSize="18pt">Adicionar Logo:</TextBlock>
-        <Button Content="Adicionar" Name="adicionarLogo" Grid.Column="1" Margin="20,0,20,0" Grid.Row="0" Click="adicionarLogo_Click"></Button> 
+        <Button Content="Adicionar" Name="adicionarLogo" Grid.Column="1" Margin="20,0,20,0" Grid.Row="0" Click="AdicionarLogo_Click"></Button> 
         
         <TextBlock VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" FontSize="18pt">Emitir relatório de Alunos:</TextBlock>
-        <Button Content="Emitir Relatorio" Name="emitirRelatorioAluno" Grid.Column="1" Margin="20,0,20,0" Grid.Row="1" Click="emitirRelatorioAluno_Click"></Button>
+        <Button Content="Emitir Relatorio" Name="emitirRelatorioAluno" Grid.Column="1" Margin="20,0,20,0" Grid.Row="1" Click="EmitirRelatorioAluno_Click"></Button>
 
 
     </Grid>

@@ -12,11 +12,11 @@ namespace Gymly.Models
     class GerenciadorDeArquivos
     {
 
-        public static void AlocaDiretorioPrincipal()
+        public static void AlocaDiretorioPrincipal(string nome)
         {
-            if (!File.Exists("Fotos"))
+            if (!File.Exists(nome))
             {
-                Directory.CreateDirectory("Fotos");
+                Directory.CreateDirectory(nome);
 
             }
         }

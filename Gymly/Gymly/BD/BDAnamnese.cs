@@ -66,7 +66,7 @@ namespace Gymly.BD
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public static Anamnese selecionaAnamnesePeloCpf(String cpf)
+        public static Anamnese SelecionaAnamnesePeloCpf(String cpf)
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
