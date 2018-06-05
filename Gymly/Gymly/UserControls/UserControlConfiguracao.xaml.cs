@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gymly.Models;
+using Xceed.Wpf.Toolkit;
 namespace Gymly.UserControls
 {
     /// <summary>
@@ -40,8 +41,12 @@ namespace Gymly.UserControls
 
         private void EmitirRelatorioAluno_Click(object sender, RoutedEventArgs e)
         {
-            
-            Relatorio.GeraRelatorioAlunos(GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo());
+            string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
+
+            if (!local.Equals(""))
+            {
+                Relatorio.GeraRelatorioAlunos(local);
+            }
         }
     }
 }
