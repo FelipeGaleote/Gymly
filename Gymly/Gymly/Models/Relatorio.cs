@@ -50,7 +50,7 @@ namespace Gymly.Models
                 PdfPTable dados = new PdfPTable(6);
                 dados.AddCell(CriaCell(aluno.Nome, fonteTextoComum, "Center", "Center"));
                 dados.AddCell(CriaCell(aluno.Cpf, fonteTextoComum, "Center", "Center"));
-                dados.AddCell(CriaCell(Aluno.CalculaIdade(aluno).ToString(), fonteTextoComum, "Center", "Center"));
+                dados.AddCell(CriaCell(aluno.CalculaIdade().ToString(), fonteTextoComum, "Center", "Center"));
                 dados.AddCell(CriaCell(aluno.Sexo, fonteTextoComum, "Center", "Center"));
                 dados.AddCell(CriaCell(aluno.Email, fonteTextoComum, "Center", "Center"));
                 dados.AddCell(CriaCell(aluno.Telefone, fonteTextoComum, "Center", "Center"));

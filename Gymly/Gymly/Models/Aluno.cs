@@ -139,11 +139,10 @@ namespace Gymly.Models
             }
         }
 
-        public static int CalculaIdade(Aluno aluno)
+        public int CalculaIdade()
         {
-            int idade = DateTime.Now.Year - aluno.dataNasc.Year;
-            MessageBox.Show(aluno.dataNasc.ToString());
-            if (DateTime.Now.Month < aluno.dataNasc.Day || (DateTime.Now.Month == aluno.dataNasc.Month && DateTime.Now.Day < aluno.dataNasc.Day))
+            int idade = DateTime.Now.Year - this.dataNasc.Year;
+            if (DateTime.Now.Month < this.dataNasc.Day || (DateTime.Now.Month == this.dataNasc.Month && DateTime.Now.Day < this.dataNasc.Day))
                 idade--;
 
             return idade;

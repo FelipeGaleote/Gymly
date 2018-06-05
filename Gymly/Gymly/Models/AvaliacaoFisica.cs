@@ -626,12 +626,12 @@ namespace Gymly.Models
 
             if(aluno.Sexo.Equals("F")){
                somaDobras = (DobraCutaneaAxilarMedia + DobraCutaneaSuprailiaca + DobraCutaneaCoxa + DobraCutaneaPerna);
-               d = 1.1954713-0.07513507*Math.Log10(somaDobras)-0.00041072 * Aluno.CalculaIdade(aluno);
+               d = 1.1954713-0.07513507*Math.Log10(somaDobras)-0.00041072 * aluno.CalculaIdade();
             }
             else
             {
                 somaDobras = (DobraCutaneaSubescapular+DobraCutaneaTriceps+DobraCutaneaSuprailiaca + DobraCutaneaPerna);
-                d = 1.10726863-0.00081201*(somaDobras)+0.00000212*(somaDobras*somaDobras)-0.00041761* Aluno.CalculaIdade(aluno);
+                d = 1.10726863-0.00081201*(somaDobras)+0.00000212*(somaDobras*somaDobras)-0.00041761* aluno.CalculaIdade();
 
             }
             return ((4.95/d) - 4.5) * 100;

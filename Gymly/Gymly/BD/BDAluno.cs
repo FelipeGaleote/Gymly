@@ -49,6 +49,7 @@ namespace Gymly.BD
                 aluno.Email = reader["email"].ToString();
                 aluno.Nivel = reader["nivel"].ToString();
                 aluno.Telefone = reader["telefone"].ToString();
+                aluno.DataNasc = DateTime.Parse(reader["datanasc"].ToString());
                 aluno.Sexo = reader["sexo"].ToString();
             }
             catch
