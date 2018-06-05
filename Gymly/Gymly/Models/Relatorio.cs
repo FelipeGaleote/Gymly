@@ -13,7 +13,7 @@ namespace Gymly.Models
     {
         private static string caminhoPdf = "Relatorios\\RelatorioAlunos.pdf";
         private static Font fonteTitulo = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 18);
-        private static Font fonteTextoComum = FontFactory.GetFont(FontFactory.HELVETICA, 14);
+        private static Font fonteTextoComum = FontFactory.GetFont(FontFactory.HELVETICA, 12);
 
         public static void GeraRelatorioAlunos()
         {
@@ -29,7 +29,7 @@ namespace Gymly.Models
             Paragraph pulaLinha = new Paragraph(" ");
 
 
-            PdfPTable table = new PdfPTable(6);
+            PdfPTable table = new PdfPTable(6) { WidthPercentage = 106, RunDirection = PdfWriter.RUN_DIRECTION_LTR, ExtendLastRow = false };
             table.AddCell(CriaCell("Nome", fonteTextoComum, "Center", "Center", iTextSharp.text.BaseColor.GRAY));
             table.AddCell(CriaCell("CPF", fonteTextoComum, "Center", "Center", iTextSharp.text.BaseColor.GRAY));
             table.AddCell(CriaCell("Idade", fonteTextoComum, "Center", "Center", iTextSharp.text.BaseColor.GRAY));
@@ -47,7 +47,7 @@ namespace Gymly.Models
             {
                 Aluno aluno = BDAluno.SelecionaAlunoPorCpf(cpf);
 
-                PdfPTable dados = new PdfPTable(6);
+                PdfPTable dados = new PdfPTable(6) {WidthPercentage=106 ,RunDirection = PdfWriter.RUN_DIRECTION_LTR, ExtendLastRow = false };
                 dados.AddCell(CriaCell(aluno.Nome, fonteTextoComum, "Center", "Center"));
                 dados.AddCell(CriaCell(aluno.Cpf, fonteTextoComum, "Center", "Center"));
                 dados.AddCell(CriaCell(aluno.CalculaIdade().ToString(), fonteTextoComum, "Center", "Center"));
@@ -93,6 +93,8 @@ namespace Gymly.Models
         public static PdfPCell CriaCell(string texto, Font fonte, string alinhamentoX, string alinhamentoY)
         {
             PdfPCell cell = new PdfPCell(new Phrase(texto, fonte));
+            cell.NoWrap = false;
+            cell.Column.AdjustFirstLine = true;
             switch (alinhamentoX)
             {
                 case "Center":
