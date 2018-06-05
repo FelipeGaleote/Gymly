@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gymly.Models;
 using Gymly.BD;
-
+using Xceed.Wpf.Toolkit;
 namespace Gymly.UserControls
 {
     /// <summary>
@@ -53,11 +53,11 @@ namespace Gymly.UserControls
             if (anamnese.CpfAluno != null && !anamnese.CpfAluno.Equals(""))
             {
                 BDAnamnese.InsereAnamnese(anamnese, anamnese.CpfAluno);
-                MessageBox.Show("Anamnese cadastrada com sucesso!");
+                Xceed.Wpf.Toolkit.MessageBox.Show("Anamnese cadastrada com sucesso!", "Anamnese", MessageBoxButton.OK, MessageBoxImage.None);
                 mainWindow.MudarUserControl("aluno");
             } else
             {
-                MessageBox.Show("CPF do aluno não pode ser nulo");
+                Xceed.Wpf.Toolkit.MessageBox.Show("CPF do aluno não pode ser nulo", "Anamnese", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gymly.Models;
 using Gymly.BD;
+using Xceed.Wpf.Toolkit;
 namespace Gymly.UserControls
 {
     /// <summary>

@@ -56,6 +56,7 @@ namespace Gymly.Models
                 dados.AddCell(CriaCell(aluno.Telefone, fonteTextoComum, "Center", "Center"));
                 doc.Add(dados);
             }
+            
             doc.Close();
 
         }
