@@ -99,7 +99,12 @@ namespace Gymly.BD
                 cmd.ExecuteNonQuery();
                 sql.Clear();
 
-                
+
+
+
+
+
+
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS AVALIACAOFISICA ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
                 sql.AppendLine("[DATA] DATE,");
@@ -157,10 +162,26 @@ namespace Gymly.BD
                 sql.AppendLine("[TEMPOFLEXAO] FLOAT,");
 
 
+                
+
+
 
 
 
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
+
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS ANTROPOMETRICA ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
+                sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
+                sql.AppendLine("[DOBRACUTANEASUBESCAPULAR] VARCHAR(15),");
+                sql.AppendLine("[DOBRACUTANEATRICEPS] VARCHAR(15),");
+                sql.AppendLine("[DOBRACUTANEABICEPS] VARCHAR(15),");
+                sql.AppendLine("[DOBRACUTANEATORAX] VARCHAR(15),");
+                sql.AppendLine("[DOBRACUTANEAAXILARMEDIA] VARCHAR(15),");
+                sql.AppendLine("[DOBRACUTANEASUPRAILIACA] VARCHAR(15),");
+                sql.AppendLine("[DOBRACUTANEAABDOMINAL] VARCHAR(15),");
+                sql.AppendLine("[DOBRACUTANEACOXA] VARCHAR(15),");
+                sql.AppendLine("[DOBRACUTANEAPERNA] VARCHAR(15),");
+        
 
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();

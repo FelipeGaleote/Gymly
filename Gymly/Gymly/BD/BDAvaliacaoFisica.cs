@@ -24,6 +24,8 @@ namespace Gymly.BD
                 "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura"+
                 "@potMinima,@potMaxima)";
 
+
+
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
             cmd.Parameters.AddWithValue("@perimetroTorax", avaliacaoFisica.PerimetroTorax);
