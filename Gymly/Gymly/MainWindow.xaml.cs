@@ -26,10 +26,8 @@ namespace Gymly
         public MainWindow()
         {
             InitializeComponent();
-            GerenciadorDeArquivos.AlocaDiretorioPrincipal("Fotos");
-            GerenciadorDeArquivos.AlocaDiretorioPrincipal("Relatorios");
-            MudarUserControl("telaInicial");
             StartClock();
+            MudarUserControl("telaInicial");  
         }
         private void StartClock()
         {

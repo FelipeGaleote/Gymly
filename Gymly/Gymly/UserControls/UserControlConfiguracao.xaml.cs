@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gymly.Models;
 using Xceed.Wpf.Toolkit;
+using System.IO;
+
 namespace Gymly.UserControls
 {
     /// <summary>
@@ -35,9 +37,14 @@ namespace Gymly.UserControls
             caminhoLogo = GerenciadorDeArquivos.ProcuraImagem();
             if (caminhoLogo != String.Empty)
             {
-                GerenciadorDeArquivos.AlocaPasta("Config");
-                GerenciadorDeArquivos.AlocaPasta("Config", "Logo");
-                caminhoLogoSalvar = "Fotos\\Config\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao(caminhoLogo);
+                GerenciadorDeArquivos.AlocaPasta("Academia");
+                GerenciadorDeArquivos.AlocaPasta("Academia\\", "Logo");
+                caminhoLogoSalvar = "Fotos\\Academia\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao(caminhoLogo);
+                if (File.Exists(caminhoLogoSalvar))
+                {
+                    GerenciadorDeArquivos.DeletaArquivo(GerenciadorDeArquivos.GetCaminho(caminhoLogoSalvar));
+                    System.Windows.MessageBox.Show("Deletou");
+                }
                 GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoLogo, caminhoLogoSalvar);
             }
             

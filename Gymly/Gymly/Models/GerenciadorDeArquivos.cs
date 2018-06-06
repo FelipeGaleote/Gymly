@@ -12,6 +12,11 @@ namespace Gymly.Models
     class GerenciadorDeArquivos
     {
 
+        public static void DeletaArquivo(string caminho)
+        {
+            File.Delete(caminho);
+        }
+
         public static void AlocaDiretorioPrincipal(string nome)
         {
             if (!File.Exists(nome))
@@ -28,11 +33,11 @@ namespace Gymly.Models
 
             }
         }
-        public static void AlocaPasta(string cpfAluno, string nomeDaPastaNova)
+        public static void AlocaPasta(string pastaIntermediaria, string nomeDaPastaNova)
         {
-            if (!File.Exists("Fotos\\" + cpfAluno + "\\" + nomeDaPastaNova))
+            if (!File.Exists("Fotos\\" + pastaIntermediaria + "\\" + nomeDaPastaNova))
             {
-                Directory.CreateDirectory("Fotos\\" + cpfAluno + "\\" + nomeDaPastaNova);
+                Directory.CreateDirectory("Fotos\\" + pastaIntermediaria + "\\" + nomeDaPastaNova);
             }
         }
         public static void MoveCopiaDeArquivo(string caminhoOrigem, string caminhoDestino)
@@ -45,7 +50,7 @@ namespace Gymly.Models
             OpenFileDialog dlg = new OpenFileDialog
             {
                 InitialDirectory = "c:\\",
-                Filter = "Image files (*.jpg)|*.jpg|All Files (*.*)|*.*",
+                Filter = "Image files (*.jpg)|*.jpg |All Files (*.*)|*.*",
                 RestoreDirectory = true,
                 Multiselect = false
             };
