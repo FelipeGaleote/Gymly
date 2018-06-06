@@ -53,7 +53,7 @@ namespace Gymly.UserControls
             if (anamnese.CpfAluno != null && !anamnese.CpfAluno.Equals(""))
             {
                 BDAnamnese.InsereAnamnese(anamnese, anamnese.CpfAluno);
-                Xceed.Wpf.Toolkit.MessageBox.Show("Anamnese cadastrada com sucesso!", "Anamnese", MessageBoxButton.OK, MessageBoxImage.None);
+                Xceed.Wpf.Toolkit.MessageBox.Show("Anamnese cadastrada com sucesso!", "Anamnese", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 mainWindow.MudarUserControl("aluno");
             } else
             {

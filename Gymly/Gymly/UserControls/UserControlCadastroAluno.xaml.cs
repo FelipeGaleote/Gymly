@@ -81,7 +81,7 @@ namespace Gymly.UserControls
                     GerenciadorDeArquivos.AlocaPasta(cpf, "Cadastro");
                     caminhoSalvarFotoDeRosto = "Fotos\\" + cpf + "\\" + "Cadastro\\rosto" + GerenciadorDeArquivos.GetExtensao(caminhoFotoDeRosto);
                     GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoFotoDeRosto, caminhoSalvarFotoDeRosto);
-                    aluno.CaminhoFotoDoRosto = GerenciadorDeArquivos.GetCaminho("rosto");
+                    aluno.CaminhoFotoDoRosto = caminhoSalvarFotoDeRosto;
                 }
                 else
                 {
@@ -100,16 +100,17 @@ namespace Gymly.UserControls
                     };
                     mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
                 }
-                 catch(Exception ex)
-                 {
-                      if (ex is System.Data.SQLite.SQLiteException && ex.Message.Equals("constraint failed\r\nUNIQUE constraint failed: ALUNOS.CPF"))
-                     {
-                        System.Windows.MessageBox.Show("Este cpf ja foi utilizado!");
-                     } else
+                catch(Exception ex)
+                {
+                    if (ex is System.Data.SQLite.SQLiteException && ex.Message.Equals("constraint failed\r\nUNIQUE constraint failed: ALUNOS.CPF"))
                     {
-                        System.Windows.MessageBox.Show("Falha ao salvar aluno no banco de dados");
+                        Xceed.Wpf.Toolkit.MessageBox.Show("Este cpf ja foi utilizado!", "Cadastro de Aluno", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     }
-                 }
+                    else
+                     {
+                        Xceed.Wpf.Toolkit.MessageBox.Show("Falha ao salvar aluno no banco de dados", "Cadastro de Aluno", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
             }
         }
         private void BtnAddFotoDeRosto_Click(object sender, RoutedEventArgs e)

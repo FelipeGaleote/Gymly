@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Xceed.Wpf.Toolkit;
 namespace Gymly.UserControls
 {
     /// <summary>
@@ -27,14 +28,19 @@ namespace Gymly.UserControls
         public UserControlDetalhesAluno()
         {
             InitializeComponent();
+
+
         }
         public UserControlDetalhesAluno(string cpf, MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
-            this.aluno = new Aluno();
+            aluno = new Aluno();
             InitializeComponent();
             PreencherInformacoes(cpf);
             ConfigurarBotoes(cpf);
+
+            
+           
         }
 
         private void PreencherInformacoes(string cpf)
@@ -49,8 +55,19 @@ namespace Gymly.UserControls
                 txtBlockTelefone.Text = aluno.Telefone;
                 txtBlockNivel.Text = aluno.Nivel;
                 txtBlockSexo.Text = aluno.Sexo.ToString().Equals("F")? "Feminino" : "Masculino";
+               // Xceed.Wpf.Toolkit.MessageBox.Show(aluno.CaminhoFotoDoRosto);
+               // if (aluno.CaminhoFotoDoRosto != String.Empty)
+               // {
+
+               //     imageFotoDeRosto.Source = GerenciadorDeArquivos.AdicionaImagem(aluno.CaminhoFotoDoRosto);
+              //  }
+              //  else
+               // {
+                //    imageFotoDeRosto.Source = GerenciadorDeArquivos.AdicionaImagem("Image\\sem_foto.png");
+               // }
                 this.aluno = aluno;
             }
+
         }
         private void ConfigurarBotoes(string cpf)
         {

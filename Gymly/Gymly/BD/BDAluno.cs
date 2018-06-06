@@ -17,7 +17,7 @@ namespace Gymly.BD
             SQLiteConexao conexao = new SQLiteConexao();  
             SQLiteConnection conn = conexao.GetConexao(); 
 
-            string sql = "INSERT INTO Alunos(cpf,nome,datanasc,email,telefone,sexo,nivel, foto_de_rosto) VALUES(@cpf,@nome,@datanasc,@email,@telefone,@sexo,@nivel, @foto_de_rosto)";
+            string sql = "INSERT INTO Alunos(cpf,nome,datanasc,email,telefone,sexo,nivel, foto_de_rosto) VALUES(@cpf,@nome,@datanasc,@email,@telefone,@sexo,@nivel, @foto_de_rosto);";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("@CPF",aluno.Cpf);
@@ -51,6 +51,7 @@ namespace Gymly.BD
                 aluno.Telefone = reader["telefone"].ToString();
                 aluno.DataNasc = DateTime.Parse(reader["datanasc"].ToString());
                 aluno.Sexo = reader["sexo"].ToString();
+                aluno.CaminhoFotoDoRosto = reader["foto_de_rosto"].ToString();
             }
             catch
             {

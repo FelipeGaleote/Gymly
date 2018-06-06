@@ -41,7 +41,7 @@ namespace Gymly.Models
         }
         public static string ProcuraImagem()
         {
-            string nomeFoto=null;
+            string nomeFoto=string.Empty;
             OpenFileDialog dlg = new OpenFileDialog
             {
                 InitialDirectory = "c:\\",

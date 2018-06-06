@@ -33,10 +33,14 @@ namespace Gymly.UserControls
         private void AdicionarLogo_Click(object sender, RoutedEventArgs e)
         {
             caminhoLogo = GerenciadorDeArquivos.ProcuraImagem();
-            GerenciadorDeArquivos.AlocaPasta("Config");
-            GerenciadorDeArquivos.AlocaPasta("Config", "Logo");
-            caminhoLogoSalvar = "Fotos\\Config\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao(caminhoLogo);
-            GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoLogo, caminhoLogoSalvar);
+            if (caminhoLogo != String.Empty)
+            {
+                GerenciadorDeArquivos.AlocaPasta("Config");
+                GerenciadorDeArquivos.AlocaPasta("Config", "Logo");
+                caminhoLogoSalvar = "Fotos\\Config\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao(caminhoLogo);
+                GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoLogo, caminhoLogoSalvar);
+            }
+            
         }
 
         private void EmitirRelatorioAluno_Click(object sender, RoutedEventArgs e)
