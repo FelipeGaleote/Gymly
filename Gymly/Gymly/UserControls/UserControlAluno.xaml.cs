@@ -65,7 +65,7 @@ namespace Gymly.UserControls
                 Console.WriteLine(a.Nome +" "+ a.Email);*/
 
         }
-
+        /*
         private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
         {
             if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
@@ -77,12 +77,12 @@ namespace Gymly.UserControls
                 PreencheDataGridAluno();
             }
         }
-
+        */
         private void PreencheDataGridAluno(string nome)
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT cpf, nome, email, datanasc  FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
+            string query = "SELECT cpf, nome, email, STRFTIME('%d/%m/%Y',datanasc) AS 'Data de Nascimento' FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
             SQLiteCommand command = new SQLiteCommand(query, conn);
 
             DataTable dt = new DataTable("Alunos");
@@ -99,7 +99,7 @@ namespace Gymly.UserControls
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT cpf, nome, email, STRFTIME('%d/%m/%Y',datanasc) FROM Alunos;";
+            string query = "SELECT cpf, nome, email, STRFTIME('%d/%m/%Y',datanasc) AS 'Data de Nascimento' FROM Alunos;";
             SQLiteCommand command = new SQLiteCommand(query, conn);
             DataTable dt = new DataTable("Alunos");
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
