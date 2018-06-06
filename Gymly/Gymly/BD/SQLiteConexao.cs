@@ -91,51 +91,20 @@ namespace Gymly.BD
                 sql.AppendLine("[SENTIR_MELHOR] INT,");
                 sql.AppendLine("[HIPERTROFIA] INT,");
                 sql.AppendLine("[OBSERVACAO] VARCHAR(256),");
-
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNO(CPF));");
-
-
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();
                 sql.Clear();
 
-
-
-
-
-
-
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS AVALIACAOFISICA ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
                 sql.AppendLine("[DATA] DATE,");
-                sql.AppendLine("[IDADE] INT,");
-                sql.AppendLine("[PESO] FLOAT,");
-                sql.AppendLine("[ALTURA] FLOAT,");
-                sql.AppendLine("[TAXA_MUSCULO] FLOAT,");
-                sql.AppendLine("[TAXA_GORDURA] FLOAT,");
-                sql.AppendLine("[TAXA_AGUA] FLOAT,");
-                sql.AppendLine("[FREQUENCIA_CARDIACA] INT,");
-                sql.AppendLine("[PRESSAO_ARTERIAL] VARCHAR(7),");
-                sql.AppendLine("[BRACO_DIREITO] FLOAT,");
-                sql.AppendLine("[BRACO_ESQUERDO] FLOAT,");
-                sql.AppendLine("[ANTEBRACO_DIREITO] FLOAT,");
-                sql.AppendLine("[ANTEBRACO_ESQUERDO] FLOAT,");
-                sql.AppendLine("[TORAX] FLOAT,");
-                sql.AppendLine("[CINTURA] FLOAT,");
-                sql.AppendLine("[ABDOME] FLOAT,");
-                sql.AppendLine("[QUADRIL] FLOAT,");
-                sql.AppendLine("[COXA_DIREITA] FLOAT,");
-                sql.AppendLine("[COXA_ESQUERDA] FLOAT,");
-                sql.AppendLine("[PANTURRILHA_DIREITA] FLOAT,");
-                sql.AppendLine("[PANTURRILHA_ESQUERDA] FLOAT,");
-                sql.AppendLine("[FLEXAO] INT,");
-                sql.AppendLine("[ABDOMINAL] INT,");
-                sql.AppendLine("[CAMINHOIMAGEMFRONTAL] INT,");
-                sql.AppendLine("[OBSERVACAOIMAGEMFRONTAL] INT,");
-                sql.AppendLine("[CAMINHOIMAGEMLATERAL] INT,");
-                sql.AppendLine("[OBSERVACAOIMAGEMLATERAL] INT,");
-                sql.AppendLine("[CAMINHOIMAGEMCOSTAS] INT,");
-                sql.AppendLine("[OBSERVACAOIMAGEMCOSTAS] INT,");
+                sql.AppendLine("[CAMINHOIMAGEMFRONTAL]  VARCHAR(256),");
+                sql.AppendLine("[OBSERVACAOIMAGEMFRONTAL]  VARCHAR(256),");
+                sql.AppendLine("[CAMINHOIMAGEMLATERAL]  VARCHAR(256),");
+                sql.AppendLine("[OBSERVACAOIMAGEMLATERAL]  VARCHAR(256),");
+                sql.AppendLine("[CAMINHOIMAGEMCOSTAS]  VARCHAR(256),");
+                sql.AppendLine("[OBSERVACAOIMAGEMCOSTAS] VARCHAR(256),");
                 sql.AppendLine("[PERIMETROOMBRO] FLOAT,");
                 sql.AppendLine("[PERIMETROTORAX] FLOAT,");
                 sql.AppendLine("[PERIMETROBRACODIREITO] FLOAT,");
@@ -157,31 +126,25 @@ namespace Gymly.BD
                 sql.AppendLine("[PRESSAOARTERIALSISTOLICA] FLOAT,");
                 sql.AppendLine("[PRESSAOARTERIALDIASTOLICA] FLOAT,");
                 sql.AppendLine("[FREQUENCIACARDIACA] FLOAT,");
-
                 sql.AppendLine("[TEMPOABDOMINAL] FLOAT,");
                 sql.AppendLine("[TEMPOFLEXAO] FLOAT,");
-
-
-                
-
-
-
-
-
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
+                cmd = new SQLiteCommand(sql.ToString(), conn);
+                cmd.ExecuteNonQuery();
+                sql.Clear();
 
-                sql.AppendLine("CREATE TABLE IF NOT EXISTS ANTROPOMETRICA ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS AF_ANTROPOMETRICA ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
-                sql.AppendLine("[DOBRACUTANEASUBESCAPULAR] VARCHAR(15),");
-                sql.AppendLine("[DOBRACUTANEATRICEPS] VARCHAR(15),");
-                sql.AppendLine("[DOBRACUTANEABICEPS] VARCHAR(15),");
-                sql.AppendLine("[DOBRACUTANEATORAX] VARCHAR(15),");
-                sql.AppendLine("[DOBRACUTANEAAXILARMEDIA] VARCHAR(15),");
-                sql.AppendLine("[DOBRACUTANEASUPRAILIACA] VARCHAR(15),");
-                sql.AppendLine("[DOBRACUTANEAABDOMINAL] VARCHAR(15),");
-                sql.AppendLine("[DOBRACUTANEACOXA] VARCHAR(15),");
-                sql.AppendLine("[DOBRACUTANEAPERNA] VARCHAR(15),");
-        
+                sql.AppendLine("[DOBRACUTANEASUBESCAPULAR] FLOAT,");
+                sql.AppendLine("[DOBRACUTANEATRICEPS] FLOAT,");
+                sql.AppendLine("[DOBRACUTANEABICEPS] FLOAT,");
+                sql.AppendLine("[DOBRACUTANEATORAX] FLOAT,");
+                sql.AppendLine("[DOBRACUTANEAAXILARMEDIA] FLOAT,");
+                sql.AppendLine("[DOBRACUTANEASUPRAILIACA] FLOAT,");
+                sql.AppendLine("[DOBRACUTANEAABDOMINAL] FLOAT,");
+                sql.AppendLine("[DOBRACUTANEACOXA] FLOAT,");
+                sql.AppendLine("[DOBRACUTANEAPERNA] FLOAT,");
+                sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
 
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();
