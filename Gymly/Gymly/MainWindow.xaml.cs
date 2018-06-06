@@ -53,6 +53,7 @@ namespace Gymly
         private void BtnSair_Click(object sender, RoutedEventArgs e)
         {
             Close();
+            
         }
         private void BtnGymly_Click(object sender, RoutedEventArgs e)
         {
@@ -152,6 +153,11 @@ namespace Gymly
         private void BtnConfiguracao_Click(object sender, RoutedEventArgs e)
         {
             MudarUserControl("configuracao");
+        }
+
+        private void BtnMinimiza_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
