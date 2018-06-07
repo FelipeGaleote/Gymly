@@ -608,12 +608,37 @@ namespace Gymly.Models
             }
         }
 
-        public string Observacao { get => observacao; set => observacao = value; }
-        public int QtdadeAbdominais { get => qtdadeAbdominais; set => qtdadeAbdominais = value; }
-        public float TempoAbdominal { get => tempoAbdominal; set => tempoAbdominal = value; }
-        public int QtdadeFlexao { get => qtdadeFlexao; set => qtdadeFlexao = value; }
-        public float TempoFlexao { get => tempoFlexao; set => tempoFlexao = value; }
-        public float DistanciaCooper { get => distanciaCooper; set => distanciaCooper = value; }
+        public string Observacao {
+            get { return observacao; }
+            set { observacao = value; }
+        }
+
+
+        public int QtdadeAbdominais
+        {
+            get { return qtdadeAbdominais; }
+            set { qtdadeAbdominais = value; }
+        }
+        public float TempoAbdominal
+        {
+            get { return tempoAbdominal; }
+            set { tempoAbdominal = value; }
+        }
+        public int QtdadeFlexao
+        {
+            get { return qtdadeFlexao; }
+            set { qtdadeFlexao = value; }
+        }
+        public float TempoFlexao
+        {
+            get { return tempoFlexao; }
+            set { tempoFlexao = value; }
+        }
+        public float DistanciaCooper
+        {
+            get { return distanciaCooper; }
+            set { distanciaCooper = value; }
+        }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));
