@@ -668,6 +668,10 @@ namespace Gymly.Models
         public double CalculaMassaGorda(Aluno aluno) {
             return Math.Round(Massa * (CalculaPercentualDeGordura(aluno) / 100));
         }
+        public double CalculaVo2Max(double distancia)
+        {
+            return ((distancia-504.9) / 44.73);
+        }
        
     }
 }
