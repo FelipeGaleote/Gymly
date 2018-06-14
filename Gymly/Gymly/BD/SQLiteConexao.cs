@@ -133,7 +133,7 @@ namespace Gymly.BD
                 cmd.ExecuteNonQuery();
                 sql.Clear();
 
-                sql.AppendLine("CREATE TABLE IF NOT EXISTS AF_ANTROPOMETRICA ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
+                sql.AppendLine("CREATE TABLE IF NOT EXISTS AF_ANTROPOMETRICA ([ID_AF] INTEGER PRIMARY KEY,");
                 sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
                 sql.AppendLine("[DOBRACUTANEASUBESCAPULAR] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEATRICEPS] FLOAT,");
@@ -144,6 +144,7 @@ namespace Gymly.BD
                 sql.AppendLine("[DOBRACUTANEAABDOMINAL] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEACOXA] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEAPERNA] FLOAT,");
+                sql.AppendLine("FOREIGN KEY(ID) REFERENCES AVALIACAOFISICA(ID_AF)),");
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
 
                 cmd = new SQLiteCommand(sql.ToString(), conn);
