@@ -673,9 +673,9 @@ namespace Gymly.Models
             return ((distancia-504.9) / 44.73);
         }
        
-        public string VerificaNivelCapacidadeAerobica(int vo2, string sexo, int idade)
+        public string VerificaNivelCapacidadeAerobica(double vo2, string sexo, int idade)
         {
-            string nivel;
+            string nivel = String.Empty;
 
             if (sexo.Equals("M"))
             {
@@ -790,6 +790,67 @@ namespace Gymly.Models
             return nivel;
         }
 
+
+        public string ClassificacaoIMC(float imc) {
+
+            string classificacao = String.Empty;
+
+            if (imc <16)
+            {
+                classificacao = "Magreza Grau III";
+            }
+            else
+            {
+                if (imc <= 16.9)
+                {
+                    classificacao = "Magreza Grau II";
+                }
+                else
+                {
+                    if (imc <= 18.4)
+                    {
+                        classificacao = "Magreza Grau I";
+                    }
+                    else
+                    {
+                        if (imc <= 24.9)
+                        {
+                            classificacao = "Eutrofia";
+                        }
+                        else
+                        {
+                            if (imc <= 29.9)
+                            {
+                                classificacao = "Pré-obesidade";
+                            }
+                            else
+                            {
+                                if (imc <= 34.9)
+                                {
+                                    classificacao = "Obesidade I";
+                                }
+                                else
+                                {
+                                    if (imc <= 39.9)
+                                    {
+                                        classificacao = "Obesidade II";
+                                    }
+                                    else
+                                    {
+                                        if (imc > 40)
+                                        {
+                                            classificacao = "Obesidade III";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return classificacao;
+        }
 
     }
 }

@@ -206,7 +206,7 @@ namespace Gymly.Models
             doc.Open();
             doc = CriaCapaPdf(doc, aluno);
             
-            doc = GeraAvaliacaoFisica(doc, avaliacaoFisica);
+            doc = GeraAvaliacaoFisica(doc, avaliacaoFisica, aluno);
             
             doc.Close();
         }
@@ -234,15 +234,22 @@ namespace Gymly.Models
             doc.Open();
             doc = CriaCapaPdf(doc, aluno);
             doc = GeraAnamnese(doc, anamnese);
-            doc = GeraAvaliacaoFisica(doc, avaliacaoFisica);
+            doc = GeraAvaliacaoFisica(doc, avaliacaoFisica, aluno);
             
             doc.Close();
         }
 
-        public static Document GeraAvaliacaoFisica(Document doc, AvaliacaoFisica avaliacaoFisica)
+        public static Document GeraAvaliacaoFisica(Document doc, AvaliacaoFisica avaliacaoFisica, Aluno aluno)
         {
-
+            /*
+             Falta:
+             - Colocar IMC
+             - %Gordura
+             - Quantidade de massa magra
+             - Quantidade de massa gorda
+             */
             float diferenca = 0f;
+            double vo2;
 
             Paragraph pulaLinha = new Paragraph(" ");
 
@@ -258,11 +265,16 @@ namespace Gymly.Models
 
             PdfPTable table = new PdfPTable(4);
 
-            table.AddCell(CriaCell("Altura:", SelecionaFonte(textoComum, 12), "Right", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.Altura + "cm", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //altura
+            table.AddCell(CriaCell("Altura", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            table.AddCell(CriaCell("Peso", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            table.AddCell(CriaCell("IMC (Kg/m²)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            table.AddCell(CriaCell("Classificação", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
 
-            table.AddCell(CriaCell("Peso:", SelecionaFonte(textoComum, 12), "Right", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            float imc =  avaliacaoFisica.CalculoImc(avaliacaoFisica.Massa, avaliacaoFisica.Altura);
+            table.AddCell(CriaCell(avaliacaoFisica.Altura + "cm", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //altura
             table.AddCell(CriaCell(avaliacaoFisica.Massa + "Kg", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
+            table.AddCell(CriaCell(imc + "Kg", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
+            table.AddCell(CriaCell(avaliacaoFisica.ClassificacaoIMC(imc) + "Kg", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
 
             doc.Add(table);
 
@@ -540,12 +552,12 @@ namespace Gymly.Models
             table.AddCell(CriaCell("VO2Max(ml/kg/min)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
             table.AddCell(CriaCell("Avaliação", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
 
-            avaliacao = "Muito Fraco";
+            vo2 = avaliacaoFisica.CalculaVo2Max(avaliacaoFisica.DistanciaCooper);
 
             table.AddCell(CriaCell(12.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.DistanciaCooper.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.CalculaVo2Max(avaliacaoFisica.DistanciaCooper).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacao, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, (avaliacao.Equals("Muito Fraco")) ? BaseColor.RED : BaseColor.WHITE)));  //avaliacaoooo coopppeeerrr
+            table.AddCell(CriaCell(vo2.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            table.AddCell(CriaCell(avaliacaoFisica.VerificaNivelCapacidadeAerobica(vo2, aluno.Sexo, aluno.CalculaIdade()), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, (avaliacao.Equals("Muito Fraco")) ? BaseColor.RED : BaseColor.WHITE)));  //avaliacaoooo coopppeeerrr
 
             doc.Add(table);
 
