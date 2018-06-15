@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using Gymly.UserControls;
 using Gymly.Models;
+using Gymly.BD;
 
 namespace Gymly
 {
@@ -99,6 +100,19 @@ namespace Gymly
                     break;
             }
         }
+
+        internal void MudarUserControl(string nomeDoControl, Aluno aluno)
+        {
+          
+            pnl.Children.Clear();
+            switch (nomeDoControl)
+            {
+                case "editarAluno":
+                    pnl.Children.Add(new UserControlEditarAluno(this, aluno));
+                    break;
+            }
+        }
+
         public void MudarUserControl(String nomeDoControl, AvaliacaoFisica avaliacaoFisica)
         {
             pnl.Children.Clear();

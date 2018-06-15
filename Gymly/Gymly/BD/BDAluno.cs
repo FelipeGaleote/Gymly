@@ -77,6 +77,26 @@ namespace Gymly.BD
             reader.Close();
             return cpfs;
         }
-        
+
+        internal static void AtualizaAluno(Aluno aluno)
+        {
+            SQLiteConexao conexao = new SQLiteConexao();
+            SQLiteConnection conn = conexao.GetConexao();
+
+            string sql = "UPDATE Alunos SET nome = @nome ,datanasc = @datanasc ,email = @email, telefone = @telefone,sexo = @sexo,nivel = @nivel , foto_de_rosto = @foto_de_rosto " +
+                         "where cpf = @CPF;";
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@CPF", aluno.Cpf);
+            cmd.Parameters.AddWithValue("@nome", aluno.Nome);
+            cmd.Parameters.AddWithValue("@datanasc", aluno.DataNasc);
+            cmd.Parameters.AddWithValue("@email", aluno.Email);
+            cmd.Parameters.AddWithValue("@telefone", aluno.Telefone);
+            cmd.Parameters.AddWithValue("@sexo", aluno.Sexo);
+            cmd.Parameters.AddWithValue("@nivel", aluno.Nivel);
+            cmd.Parameters.AddWithValue("@foto_de_rosto", aluno.CaminhoFotoDoRosto);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }

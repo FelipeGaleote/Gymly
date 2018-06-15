@@ -268,8 +268,8 @@ namespace Gymly.Models
 
             table.AddCell(CriaCell((avaliacaoFisica.Altura/100).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //altura
             table.AddCell(CriaCell(avaliacaoFisica.Massa.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
-            table.AddCell(CriaCell(imc.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (imc >= 18.5 && imc <= 24.9) ? BaseColor.WHITE : BaseColor.RED), BaseColor.WHITE); 
-            table.AddCell(CriaCell(avaliacaoFisica.ClassificacaoIMC(imc), SelecionaFonte(textoComum, 12), "Center", "Center", (avaliacaoFisica.ClassificacaoIMC(imc).Equals("Eutrofia")) ? BaseColor.WHITE : BaseColor.RED), BaseColor.WHITE);
+            table.AddCell(CriaCell(imc.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (imc >= 18.5 && imc <= 24.9) ? BaseColor.WHITE : BaseColor.RED)); 
+            table.AddCell(CriaCell(avaliacaoFisica.ClassificacaoIMC(imc), SelecionaFonte(textoComum, 12), "Center", "Center", (avaliacaoFisica.ClassificacaoIMC(imc).Equals("Eutrofia")) ? BaseColor.WHITE : BaseColor.RED));
 
             doc.Add(table);
 
@@ -574,7 +574,7 @@ namespace Gymly.Models
             table.AddCell(CriaCell(12.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.DistanciaCooper.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(vo2.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.VerificaNivelCapacidadeAerobica(vo2, aluno.Sexo, aluno.CalculaIdade()), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, (avaliacao.Equals("Muito Fraco")) ? BaseColor.RED : BaseColor.WHITE)));  //avaliacaoooo coopppeeerrr
+            table.AddCell(CriaCell(avaliacaoFisica.VerificaNivelCapacidadeAerobica(vo2, aluno.Sexo, aluno.CalculaIdade()), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, (avaliacao.Equals("Muito Fraco")) ? BaseColor.RED : BaseColor.WHITE));  //avaliacaoooo coopppeeerrr
 
             doc.Add(table);
 

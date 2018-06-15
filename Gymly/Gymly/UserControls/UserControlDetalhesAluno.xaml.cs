@@ -104,5 +104,10 @@ namespace Gymly.UserControls
             AvaliacaoFisica av = new AvaliacaoFisica();
             mainWindow.MudarUserControl("selecionarTipoAvalicaoFisica", av);
         }
+
+        private void editarAluno_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.MudarUserControl("editarAluno", aluno);
+        }
     }
 }
