@@ -241,13 +241,7 @@ namespace Gymly.Models
 
         public static Document GeraAvaliacaoFisica(Document doc, AvaliacaoFisica avaliacaoFisica, Aluno aluno)
         {
-            /*
-             Falta:
-             - Colocar IMC
-             - %Gordura
-             - Quantidade de massa magra
-             - Quantidade de massa gorda
-             */
+           
             float diferenca = 0f;
             double vo2;
 
@@ -265,35 +259,58 @@ namespace Gymly.Models
 
             PdfPTable table = new PdfPTable(4);
 
-            table.AddCell(CriaCell("Altura", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-            table.AddCell(CriaCell("Peso", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            table.AddCell(CriaCell("Altura(m)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            table.AddCell(CriaCell("Peso(Kg)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
             table.AddCell(CriaCell("IMC (Kg/m²)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
             table.AddCell(CriaCell("Classificação", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
 
             float imc =  avaliacaoFisica.CalculoImc(avaliacaoFisica.Massa, avaliacaoFisica.Altura);
-            table.AddCell(CriaCell(avaliacaoFisica.Altura + "cm", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //altura
-            table.AddCell(CriaCell(avaliacaoFisica.Massa + "Kg", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
-            table.AddCell(CriaCell(imc + "Kg", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
-            table.AddCell(CriaCell(avaliacaoFisica.ClassificacaoIMC(imc) + "Kg", SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
+
+            table.AddCell(CriaCell((avaliacaoFisica.Altura/100).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //altura
+            table.AddCell(CriaCell(avaliacaoFisica.Massa.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
+            table.AddCell(CriaCell(imc.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (imc >= 18.5 && imc <= 24.9) ? BaseColor.WHITE : BaseColor.RED), BaseColor.WHITE); 
+            table.AddCell(CriaCell(avaliacaoFisica.ClassificacaoIMC(imc), SelecionaFonte(textoComum, 12), "Center", "Center", (avaliacaoFisica.ClassificacaoIMC(imc).Equals("Eutrofia")) ? BaseColor.WHITE : BaseColor.RED), BaseColor.WHITE);
 
             doc.Add(table);
 
             doc.Add(pulaLinha);
 
-            table = new PdfPTable(4);
 
-            table.AddCell(CriaCell("Treinos/semana:", SelecionaFonte(textoComum, 12), "Right", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            table = new PdfPTable(3);
+
+            table.AddCell(CriaCell("Percentual de Gordura(%)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            table.AddCell(CriaCell("Massa Magra(Kg)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            table.AddCell(CriaCell("Massa Gorda(Kg)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+
+            table.AddCell(CriaCell(avaliacaoFisica.CalculaPercentualDeGordura(aluno).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            table.AddCell(CriaCell(avaliacaoFisica.CalculaMassaMagra(aluno).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            table.AddCell(CriaCell(avaliacaoFisica.CalculaMassaGorda(aluno).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+
+            doc.Add(table);
+
+            table = new PdfPTable(2);
+
+            table.AddCell(CriaCell("Pressão Arterial:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            table.AddCell(CriaCell("Frequência Cardiaca:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+
+            table.AddCell(CriaCell(avaliacaoFisica.PressaoArterialSistolica + "x" + avaliacaoFisica.PressaoArterialDiastolica, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//pressao
+            table.AddCell(CriaCell(avaliacaoFisica.FrequenciaCardiaca.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //Frequencia Cardiaca
+
+
+            table = new PdfPTable(1);
+
+
+            table.AddCell(CriaCell("Treinos/semana:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.QtdadeDiasDeTreino, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//qtdade Dias de treino
 
-            table.AddCell(CriaCell("Flexibilidade:", SelecionaFonte(textoComum, 12), "Right", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            doc.Add(table);
+
+            table = new PdfPTable(1);
+
+            table.AddCell(CriaCell("Flexibilidade:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.Flexibilidade, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//Flexibilidade
 
-            table.AddCell(CriaCell("Pressão Arterial:", SelecionaFonte(textoComum, 12), "Right", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.PressaoArterialSistolica + "x" + avaliacaoFisica.PressaoArterialDiastolica, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//pressao
-
-            table.AddCell(CriaCell("Frequência Cardiaca:", SelecionaFonte(textoComum, 12), "Right", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.FrequenciaCardiaca.ToString(), SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //Frequencia Cardiaca
-
+           
             doc.Add(table);
 
             doc = AdicionaLinha(doc, "Circunferências:", SelecionaFonte(textoTitulo, 14), 0);
