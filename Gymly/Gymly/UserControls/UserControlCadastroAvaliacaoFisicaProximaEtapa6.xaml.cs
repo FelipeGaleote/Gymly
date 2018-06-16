@@ -41,11 +41,16 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
+            if(!txtBoxDistanciaCooper.Text.Equals("Dist.(m)"))
             avaliacaoFisica.DistanciaCooper = float.Parse(txtBoxDistanciaCooper.Text.Replace(",", ".").Trim());
-            avaliacaoFisica.QtdadeAbdominais = int.Parse(txtBoxQtdadeAbdominal.Text.Trim());
-            avaliacaoFisica.QtdadeFlexao = int.Parse(txtBoxQtdadeFlexao.Text.Trim());
-            avaliacaoFisica.TempoFlexao = float.Parse(txtBoxTempoFlexao.Text.Replace(",", ".").Trim());
-            avaliacaoFisica.TempoAbdominal = float.Parse(txtBoxTempoAbdominal.Text.Replace(",", ".").Trim());
+            if (!txtBoxQtdadeAbdominal.Text.Equals("Repetição"))
+                avaliacaoFisica.QtdadeAbdominais = int.Parse(txtBoxQtdadeAbdominal.Text.Trim());
+            if (!txtBoxQtdadeFlexao.Text.Equals("Repetição"))
+                avaliacaoFisica.QtdadeFlexao = int.Parse(txtBoxQtdadeFlexao.Text.Trim());
+            if (!txtBoxTempoFlexao.Text.Equals("Tempo(s)"))
+                avaliacaoFisica.TempoFlexao = float.Parse(txtBoxTempoFlexao.Text.Replace(",", ".").Trim());
+            if (!txtBoxTempoAbdominal.Text.Equals("Tempo(s)"))
+                avaliacaoFisica.TempoAbdominal = float.Parse(txtBoxTempoAbdominal.Text.Replace(",", ".").Trim());
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapaFinal", avaliacaoFisica);
         }
 
