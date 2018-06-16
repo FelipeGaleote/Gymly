@@ -65,7 +65,7 @@ namespace Gymly.UserControls
 
                 }
                 Xceed.Wpf.Toolkit.MessageBox.Show("Anamnese cadastrada com sucesso!", "Anamnese", MessageBoxButton.OK, MessageBoxImage.Asterisk);
-                mainWindow.MudarUserControl("aluno");
+                mainWindow.MudarUserControl("detalhesAluno", anamnese.CpfAluno);
             } else
             {
                 Xceed.Wpf.Toolkit.MessageBox.Show("CPF do aluno não pode ser nulo", "Anamnese", MessageBoxButton.OK, MessageBoxImage.Error);
