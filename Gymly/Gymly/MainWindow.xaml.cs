@@ -56,7 +56,7 @@ namespace Gymly
         }
         private void BtnGymly_Click(object sender, RoutedEventArgs e)
         {
-            MudarUserControl("telaInicial");
+            MudarUserControl("aluno");
         }
 
         public void MudarUserControl(String nomeDoControl)
