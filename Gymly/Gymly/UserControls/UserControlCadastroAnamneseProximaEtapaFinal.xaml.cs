@@ -19,7 +19,7 @@ namespace Gymly.UserControls
             this.anamnese = anamnese;
             this.mainWindow = mainWindow;
             InitializeComponent();
-            if (!anamnese.Observacao.Equals(""))
+            if (anamnese.Observacao != null && !anamnese.Observacao.Equals(""))
                 txtBoxObservacao.Text = anamnese.Observacao;
             else
                 mostraDica();
@@ -51,6 +51,7 @@ namespace Gymly.UserControls
 
         private void BtnFinalizar_Click(object sender, RoutedEventArgs e)
         {
+            if(!txtBoxObservacao.Text.Equals("Observação"))
             anamnese.Observacao = txtBoxObservacao.Text;
             if (anamnese.CpfAluno != null && !anamnese.CpfAluno.Equals(""))
             {
