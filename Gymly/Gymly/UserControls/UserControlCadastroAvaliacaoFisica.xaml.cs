@@ -24,7 +24,7 @@ namespace Gymly.UserControls
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
         private string txtBoxTextoMedida = "cm";
-        private string txtBoxTextoMassa = "Kg";
+        private string txtBoxTextoMassa = "kg";
         private string txtBoxTextoPressao = "mmHg";
         private string txtBoxTextoFrequenciaCardiaca = "bpm";
 
@@ -36,7 +36,7 @@ namespace Gymly.UserControls
             this.avaliacaoFisica = avaliacaoFisica;
             InitializeComponent();
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxAltura, txtBoxTextoMedida);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxMassa, txtBoxTextoMedida);
+            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxMassa, txtBoxTextoMassa);
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPressaoArterialDiastolica, ("Diast. " + txtBoxTextoPressao));
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPressaoArterialSistolica, ("Sist. " + txtBoxTextoPressao));
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxFrenquenciaCardiaca, txtBoxTextoFrequenciaCardiaca);
@@ -53,7 +53,7 @@ namespace Gymly.UserControls
                 avaliacaoFisica.PressaoArterialSistolica = float.Parse(txtBoxPressaoArterialSistolica.Text.Replace(",", ".").Trim());
             if (!txtBoxFrenquenciaCardiaca.Text.Equals("bpm"))
                 avaliacaoFisica.FrequenciaCardiaca = float.Parse(txtBoxFrenquenciaCardiaca.Text.Replace(",", ".").Trim());
-            if (!txtBoxMassa.Text.Equals("cm"))
+            if (!txtBoxMassa.Text.Equals("kg"))
                 avaliacaoFisica.Massa = float.Parse(txtBoxMassa.Text.Replace(",", ".").Trim());
             if (rd0_2.IsChecked == true)
             {
