@@ -28,6 +28,18 @@ namespace Gymly.UserControls
             this.mainWindow = mainWindow;
             this.anamnese = anamnese;
             InitializeComponent();
+            checkBoxDoencaCardiacaCoronariana.IsChecked = anamnese.DoencaCardiacaCoronariana;
+            checkBoxDoencaCardiacaReumatica.IsChecked = anamnese.DoencaCardiacaReumatica;
+            checkBoxDoencaCardiacaCongenita.IsChecked = anamnese.DoencaCardiacaCongenita;
+            checkBoxBatimentimentoIrregular.IsChecked = anamnese.BatimentosCardiacosIrregulares;
+            checkBoxProblemaValvulasCard.IsChecked = anamnese.ProblemaValvulasCardiacas;
+            checkBoxMurmuriosCard.IsChecked = anamnese.MurmuriosCardiacos;
+            checkBoxAtaqueCardiaco.IsChecked = anamnese.AtaqueCardiaco;
+            checkBoxDerrameCerebral.IsChecked = anamnese.DerrameCerebral;
+            checkBoxEpilepsia.IsChecked = anamnese.Epilepsia;
+            checkBoxDiabetes.IsChecked = anamnese.Diabetes;
+            checkBoxHipertensao.IsChecked = anamnese.Hipertensao;
+            checkBoxCancer.IsChecked = anamnese.Cancer;
         }
 
         private void BtnEtapa3_Click(object sender, RoutedEventArgs e)

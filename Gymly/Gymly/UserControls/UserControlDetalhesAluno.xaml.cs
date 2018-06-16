@@ -79,13 +79,19 @@ namespace Gymly.UserControls
             }
             else
             {
+                Anamnese an = new Anamnese
+                {
+                    CpfAluno = this.aluno.Cpf
+                };
+                this.aluno.Anamnese = an;
                 btnCadastrarAnamnese.Content = "Cadastrar anamnese";
             }
         }
 
         private void BtnCadastrarAnamnese_Click(object sender, RoutedEventArgs e)
         {
-            if(this.aluno.Anamnese == null)
+            mainWindow.MudarUserControl("cadastroAnamnese", this.aluno.Anamnese);
+            /*if (this.aluno.Anamnese == null)
             {
                 Anamnese an = new Anamnese
                 {
@@ -97,6 +103,7 @@ namespace Gymly.UserControls
             {
                 //O aluno deve ser direcionado para uma tela de edição da anamnese
             }
+            */
         }
 
         private void BtnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)

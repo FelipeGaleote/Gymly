@@ -30,6 +30,8 @@ namespace Gymly.UserControls
             this.anamnese = anamnese;
             this.mainWindow = mainWindow;
             InitializeComponent();
+            txtBoxObservacao.Text = anamnese.Observacao;
+
         }
 
         private void TxtBoxObservacao_GotFocus(object sender, RoutedEventArgs e)
@@ -52,7 +54,16 @@ namespace Gymly.UserControls
             anamnese.Observacao = txtBoxObservacao.Text;
             if (anamnese.CpfAluno != null && !anamnese.CpfAluno.Equals(""))
             {
-                BDAnamnese.InsereAnamnese(anamnese, anamnese.CpfAluno);
+                Anamnese an = BDAnamnese.SelecionaAnamnesePeloCpf(anamnese.CpfAluno);
+                if (an.CpfAluno != null)
+                {
+                    BD.BDAnamnese.AtualizaAnamnese(anamnese);
+                }
+                else
+                {
+                    BDAnamnese.InsereAnamnese(anamnese, anamnese.CpfAluno);
+
+                }
                 Xceed.Wpf.Toolkit.MessageBox.Show("Anamnese cadastrada com sucesso!", "Anamnese", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 mainWindow.MudarUserControl("aluno");
             } else

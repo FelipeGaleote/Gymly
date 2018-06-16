@@ -28,6 +28,16 @@ namespace Gymly.UserControls
             this.anamnese = anamnese;
             this.mainWindow = mainWindow;
             InitializeComponent();
+            checkBoxPerderPeso.IsChecked = anamnese.PerderPeso;
+            checkBoxMelhorarFlexibilidade.IsChecked = anamnese.MelhorarFlexibilidade;
+            checkBoxAptidaoCardiovascular.IsChecked = anamnese.MelhorarAptidao;
+            checkBoxCondicaoMuscular.IsChecked = anamnese.MelhorarMuscular;
+            checkBoxSentirMelhor.IsChecked = anamnese.SentirMelhor;
+            checkBoxReduzirDores.IsChecked = anamnese.ReduzirDores;
+            checkBoxReduzirEstresse.IsChecked = anamnese.ReduzirEstresse;
+            checkBoxHipertrofia.IsChecked = anamnese.Hipertrofia;
+            checkBoxMelhorarNutricao.IsChecked = anamnese.MelhorarNutricao;
+            checkBoxDiminuirVicios.IsChecked = anamnese.DiminuirVicios;
         }
 
         private void BtnEtapa5_Click(object sender, RoutedEventArgs e)

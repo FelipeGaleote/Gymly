@@ -28,6 +28,12 @@ namespace Gymly.UserControls
             this.anamnese = anamnese;
             this.mainWindow = mainWindow;
             InitializeComponent();
+            checkBoxDorNasCostas.IsChecked = anamnese.DorCostas;
+            checkBoxDorNasArticulacoes.IsChecked = anamnese.DorArticulacao;
+            checkBoxDoencaPulmonar.IsChecked = anamnese.DorPulmonar;
+            checkBoxGravida.IsChecked = anamnese.Gestante;
+            checkBoxFuma.IsChecked = anamnese.Fumante;
+            checkBoxBebidaAlcoolica.IsChecked = anamnese.BebidaAlcoolica;
         }
 
         private void BtnEtapa4_Click(object sender, RoutedEventArgs e)
