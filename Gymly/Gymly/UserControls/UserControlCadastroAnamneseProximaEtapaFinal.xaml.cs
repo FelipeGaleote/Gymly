@@ -19,17 +19,28 @@ namespace Gymly.UserControls
             this.anamnese = anamnese;
             this.mainWindow = mainWindow;
             InitializeComponent();
-            txtBoxObservacao.Text = anamnese.Observacao;
+            if (!anamnese.Observacao.Equals(""))
+                txtBoxObservacao.Text = anamnese.Observacao;
+            else
+                mostraDica();
 
         }
 
         private void TxtBoxObservacao_GotFocus(object sender, RoutedEventArgs e)
         {
-            txtBoxObservacao.Clear();
-            txtBoxObservacao.Foreground = Brushes.Black;
+            if (txtBoxObservacao.Text.Equals("Observação"))
+            {
+                txtBoxObservacao.Clear();
+                txtBoxObservacao.Foreground = Brushes.Black;
+            }
         }
 
         private void TxtBoxObservacao_LostFocus(object sender, RoutedEventArgs e)
+        {
+            mostraDica();
+        }
+
+        private void mostraDica()
         {
             if (txtBoxObservacao.Text == String.Empty)
             {
