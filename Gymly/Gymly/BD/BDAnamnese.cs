@@ -194,7 +194,7 @@ namespace Gymly.BD
                 anamnese.PerderPeso = Convert.ToBoolean(reader["perder_peso"]);
                 anamnese.MelhorarFlexibilidade = Convert.ToBoolean(reader["melhorar_flexibilidade"]);
                 anamnese.DiminuirVicios = Convert.ToBoolean(reader["diminuir_vicios"]);
-                anamnese.ReduzirDores = Convert.ToBoolean(reader["ReduzirDores"]);
+                anamnese.ReduzirDores = Convert.ToBoolean(reader["reduzir_dores"]);
                 anamnese.MelhorarNutricao = Convert.ToBoolean(reader["melhorar_nutricao"]);
                 anamnese.MelhorarAptidao = Convert.ToBoolean(reader["melhorar_aptidao"]);
                 anamnese.MelhorarMuscular = Convert.ToBoolean(reader["melhorar_muscular"]);
