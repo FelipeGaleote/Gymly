@@ -58,26 +58,8 @@ namespace Gymly.UserControls
         private void BtnCadastraAluno_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.MudarUserControl("cadastroAluno");
-
-            /*BDAluno.insereAluno();
-            List<Aluno> alunos = BDAluno.consultaAluno();
-            foreach(Aluno a in alunos)
-                Console.WriteLine(a.Nome +" "+ a.Email);*/
-
         }
-        /*
-        private void BtnPesquisar_Click(object sender, RoutedEventArgs e)
-        {
-            if (!(txtBoxConsultaAluno.Text == String.Empty) && !(txtBoxConsultaAluno.Text == txtBoxTextoConsultaAluno))
-            {
-                PreencheDataGridAluno(txtBoxConsultaAluno.Text);
-            }
-            else
-            {
-                PreencheDataGridAluno();
-            }
-        }
-        */
+
         private void PreencheDataGridAluno(string nome)
         {
             SQLiteConexao conexao = new SQLiteConexao();
