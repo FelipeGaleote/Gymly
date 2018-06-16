@@ -29,8 +29,8 @@ namespace Gymly.BD
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
             cmd.Parameters.AddWithValue("@perimetroTorax", avaliacaoFisica.PerimetroTorax);
-            cmd.Parameters.AddWithValue("@perimetroBraçoE", avaliacaoFisica.PerimetroBraçoEsquerdo);
-            cmd.Parameters.AddWithValue("@perimetroBraçoD", avaliacaoFisica.PerimetroBraçoDireito);
+            cmd.Parameters.AddWithValue("@perimetroBraçoE", avaliacaoFisica.PerimetroBracoEsquerdo);
+            cmd.Parameters.AddWithValue("@perimetroBraçoD", avaliacaoFisica.PerimetroBracoDireito);
             cmd.Parameters.AddWithValue("@perimetroAntebraçoE", avaliacaoFisica.PerimetroAntebracoEsquerdo);
             cmd.Parameters.AddWithValue("@perimetroAntebraçoD", avaliacaoFisica.PerimetroAntebracoDireito);
             cmd.Parameters.AddWithValue("@perimetroCintura", avaliacaoFisica.PerimetroCintura);

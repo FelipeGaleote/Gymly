@@ -21,8 +21,8 @@ namespace Gymly.Models
         private string observacaoImagemCostas;
         private float perimetroOmbro; 
         private float perimetroTorax; 
-        private float perimetroBraçoDireito; 
-        private float perimetroBraçoEsquerdo;
+        private float perimetroBracoDireito; 
+        private float perimetroBracoEsquerdo;
         private float perimetroAntebracoDireito; 
         private float perimetroAntebracoEsquerdo;
         private float perimetroCintura;
@@ -205,29 +205,29 @@ namespace Gymly.Models
             }
         }
 
-        public float PerimetroBraçoDireito
+        public float PerimetroBracoDireito
         {
             get
             {
-                return perimetroBraçoDireito;
+                return perimetroBracoDireito;
             }
 
             set
             {
-                perimetroBraçoDireito = value;
+                perimetroBracoDireito = value;
             }
         }
 
-        public float PerimetroBraçoEsquerdo
+        public float PerimetroBracoEsquerdo
         {
             get
             {
-                return perimetroBraçoEsquerdo;
+                return perimetroBracoEsquerdo;
             }
 
             set
             {
-                perimetroBraçoEsquerdo = value;
+                perimetroBracoEsquerdo = value;
             }
         }
 

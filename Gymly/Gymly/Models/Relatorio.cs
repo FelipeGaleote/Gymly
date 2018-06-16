@@ -326,9 +326,9 @@ namespace Gymly.Models
 
             //braço
             table.AddCell(CriaCell("Braço", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.PerimetroBraçoEsquerdo.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Esquerda
-            table.AddCell(CriaCell(avaliacaoFisica.PerimetroBraçoDireito.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//direita
-            diferenca = Math.Abs(avaliacaoFisica.PerimetroBraçoEsquerdo - avaliacaoFisica.PerimetroBraçoDireito);
+            table.AddCell(CriaCell(avaliacaoFisica.PerimetroBracoEsquerdo.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Esquerda
+            table.AddCell(CriaCell(avaliacaoFisica.PerimetroBracoDireito.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//direita
+            diferenca = Math.Abs(avaliacaoFisica.PerimetroBracoEsquerdo - avaliacaoFisica.PerimetroBracoDireito);
             table.AddCell(CriaCell(Math.Abs(diferenca).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (diferenca <= 0.5) ? BaseColor.WHITE : BaseColor.RED, BaseColor.WHITE));//diferença
 
             //Antebraço
