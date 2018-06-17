@@ -62,6 +62,7 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@altura", avaliacaoFisica.Altura);
             cmd.Parameters.AddWithValue("@massa", avaliacaoFisica.Massa);
             cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
+            cmd.Parameters.AddWithValue("@distanciaCooper", avaliacaoFisica.DistanciaCooper); 
             cmd.ExecuteNonQuery();
             conn.Close();
         }
