@@ -46,7 +46,8 @@ namespace Gymly.UserControls
         }
         private void TxtBoxObservacao_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxObservacao);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxObservacao);
         }
 
         private void TxtBoxObservacao_LostFocus(object sender, RoutedEventArgs e)

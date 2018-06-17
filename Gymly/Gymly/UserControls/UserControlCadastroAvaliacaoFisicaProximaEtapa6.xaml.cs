@@ -59,7 +59,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxTempoFlexao_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxTempoFlexao);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxTempoFlexao);
         }
 
         private void TxtBoxTempoFlexao_LostFocus(object sender, RoutedEventArgs e)
@@ -74,12 +75,14 @@ namespace Gymly.UserControls
 
         private void TxtBoxQtdadeFlexao_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxQtdadeFlexao);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxQtdadeFlexao);
         }
 
         private void TxtBoxTempoAbdominal_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxTempoAbdominal);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxTempoAbdominal);
         }
 
         private void TxtBoxTempoAbdominal_LostFocus(object sender, RoutedEventArgs e)
@@ -94,12 +97,14 @@ namespace Gymly.UserControls
 
         private void TxtBoxQtdadeAbdominal_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxQtdadeAbdominal);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxQtdadeAbdominal);
         }
 
         private void TxtBoxDistanciaCooper_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxDistanciaCooper);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxDistanciaCooper);
         }
 
         private void TxtBoxDistanciaCooper_LostFocus(object sender, RoutedEventArgs e)

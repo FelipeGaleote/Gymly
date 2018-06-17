@@ -101,7 +101,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxAltura_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxAltura);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxAltura);
         }
 
         private void TxtBoxAltura_LostFocus(object sender, RoutedEventArgs e)
@@ -111,7 +112,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxMassa_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxMassa);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxMassa);
         }
 
         private void TxtBoxMassa_LostFocus(object sender, RoutedEventArgs e)
@@ -120,7 +122,8 @@ namespace Gymly.UserControls
         }
         private void TxtBoxFrenquenciaCardiaca_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxFrenquenciaCardiaca);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxFrenquenciaCardiaca);
         }
 
         private void TxtBoxFrenquenciaCardiaca_LostFocus(object sender, RoutedEventArgs e)
@@ -129,7 +132,8 @@ namespace Gymly.UserControls
         }
         private void TxtBoxPressaoArterialDiastolica_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPressaoArterialDiastolica);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPressaoArterialDiastolica);
         }
 
         private void TxtBoxPressaoArterialDiastolica_LostFocus(object sender, RoutedEventArgs e)
@@ -138,7 +142,8 @@ namespace Gymly.UserControls
         }
         private void TxtBoxPressaoArterialSistolica_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPressaoArterialSistolica);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPressaoArterialSistolica);
         }
 
         private void TxtBoxPressaoArterialSistolica_LostFocus(object sender, RoutedEventArgs e)

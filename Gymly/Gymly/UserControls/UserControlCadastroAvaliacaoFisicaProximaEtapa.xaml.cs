@@ -117,6 +117,7 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroBracoD_GotFocus(object sender, RoutedEventArgs e)
         {
+            if( !acao.Equals("Editar"))
             EditorTxtBox.GotFocus(txtBoxPerimetroBracoD);
         }
 
@@ -127,7 +128,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroAnteBracoD_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroAnteBracoD);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroAnteBracoD);
         }
 
         private void TxtBoxPerimetroAnteBracoD_LostFocus(object sender, RoutedEventArgs e)
@@ -138,7 +140,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroCoxaProximalD_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroCoxaProximalD);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroCoxaProximalD);
         }
 
         private void TxtBoxPerimetroCoxaProximalD_LostFocus(object sender, RoutedEventArgs e)
@@ -148,7 +151,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroCoxaMedialD_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroCoxaMedialD);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroCoxaMedialD);
         }
 
         private void TxtBoxPerimetroCoxaMedialD_LostFocus(object sender, RoutedEventArgs e)
@@ -158,7 +162,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroCoxaDistalD_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroCoxaDistalD);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroCoxaDistalD);
         }
 
         private void TxtBoxPerimetroCoxaDistalD_LostFocus(object sender, RoutedEventArgs e)
@@ -168,7 +173,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroPernaD_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroPernaD);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroPernaD);
         }
 
         private void TxtBoxPerimetroPernaD_LostFocus(object sender, RoutedEventArgs e)
@@ -178,7 +184,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroOmbro_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroOmbro);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroOmbro);
         }
 
         private void TxtBoxPerimetroOmbro_LostFocus(object sender, RoutedEventArgs e)
@@ -188,7 +195,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroTorax_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroTorax);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroTorax);
         }
 
         private void TxtBoxPerimetroTorax_LostFocus(object sender, RoutedEventArgs e)
@@ -198,7 +206,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroCintura_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroCintura);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroCintura);
         }
 
         private void TxtBoxPerimetroCintura_LostFocus(object sender, RoutedEventArgs e)
@@ -208,7 +217,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroAbdominal_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroAbdominal);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroAbdominal);
         }
 
         private void TxtBoxPerimetroAbdominal_LostFocus(object sender, RoutedEventArgs e)
@@ -218,7 +228,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroQuadril_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroQuadril);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroQuadril);
         }
 
         private void TxtBoxPerimetroQuadril_LostFocus(object sender, RoutedEventArgs e)
@@ -228,7 +239,8 @@ namespace Gymly.UserControls
 
         private void TxtBoxEnvergadura_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxEnvergadura);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxEnvergadura);
         }
 
         private void TxtBoxEnvergadura_LostFocus(object sender, RoutedEventArgs e)
@@ -243,12 +255,14 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroBracoE_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroBracoE);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroBracoE);
         }
 
         private void TxtBoxPerimetroAnteBracoE_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroAnteBracoE);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroAnteBracoE);
         }
 
         private void TxtBoxPerimetroAnteBracoE_LostFocus(object sender, RoutedEventArgs e)
@@ -263,12 +277,14 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroCoxaProximalE_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroCoxaProximalE);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroCoxaProximalE);
         }
 
         private void TxtBoxPerimetroCoxaMedialE_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroCoxaMedialE);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroCoxaMedialE);
 
         }
 
@@ -284,12 +300,14 @@ namespace Gymly.UserControls
 
         private void TxtBoxPerimetroCoxaDistalE_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroCoxaDistalE);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroCoxaDistalE);
         }
 
         private void TxtBoxPerimetroPernaE_GotFocus(object sender, RoutedEventArgs e)
         {
-            EditorTxtBox.GotFocus(txtBoxPerimetroPernaE);
+            if (!acao.Equals("Editar"))
+                EditorTxtBox.GotFocus(txtBoxPerimetroPernaE);
         }
 
         private void TxtBoxPerimetroPernaE_LostFocus(object sender, RoutedEventArgs e)

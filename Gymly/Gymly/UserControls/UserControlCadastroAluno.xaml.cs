@@ -37,7 +37,7 @@ namespace Gymly.UserControls
          
             this.aluno = aluno;
             this.acao = "EDITAR";
-            
+            txtBoxCpf.IsEnabled = false;
             btnCadastrarAluno.Content = "SALVAR"; 
             this.aluno = aluno;
             if (aluno != null)
