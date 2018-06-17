@@ -14,25 +14,24 @@ namespace Gymly.BD
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
 
-            string sql = "INSERT INTO AvaliacaoFisica(perimetroOmbro,perimetroTorax,perimetroBraçoE,perimetroBraçoD,perimetroAntebraçoE,perimetroAntebraçoD" +
-                "perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroDistalE, perimetroDistalD" +
-                "perimetroPernaE, perimetroPernaD,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia" +
-                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura"+
-                "potMinima,potMaxima)VALUES(@perimetroOmbro,@perimetroTorax,@perimetroBraçoE,@perimetroBraçoD,@perimetroAntebraçoE,@perimetroAntebraçoD,@perimetroCintura" +
-                "@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD,@perimetroDistalE, @perimetroDistalD,@perimetroPernaE, @perimetroPernaD" +
-                "@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax,@dobraCutaneaAxilarMedia" +
-                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura"+
-                "@potMinima,@potMaxima)";
+            string sql = "INSERT INTO AvaliacaoFisica(perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
+                ",perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroCoxaDistalE, perimetroCoxaDistalD," +
+                "perimetroPernaE, perimetroPernaD,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
+                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura)"+
+                "VALUES(@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE,@perimetroAntebracoD,@perimetroCintura" +
+                ",@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD,@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD," +
+                "@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax,@dobraCutaneaAxilarMedia," +
+                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura);";
 
 
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
             cmd.Parameters.AddWithValue("@perimetroTorax", avaliacaoFisica.PerimetroTorax);
-            cmd.Parameters.AddWithValue("@perimetroBraçoE", avaliacaoFisica.PerimetroBracoEsquerdo);
-            cmd.Parameters.AddWithValue("@perimetroBraçoD", avaliacaoFisica.PerimetroBracoDireito);
-            cmd.Parameters.AddWithValue("@perimetroAntebraçoE", avaliacaoFisica.PerimetroAntebracoEsquerdo);
-            cmd.Parameters.AddWithValue("@perimetroAntebraçoD", avaliacaoFisica.PerimetroAntebracoDireito);
+            cmd.Parameters.AddWithValue("@perimetroBracoE", avaliacaoFisica.PerimetroBracoEsquerdo);
+            cmd.Parameters.AddWithValue("@perimetroBracoD", avaliacaoFisica.PerimetroBracoDireito);
+            cmd.Parameters.AddWithValue("@perimetroAntebracoE", avaliacaoFisica.PerimetroAntebracoEsquerdo);
+            cmd.Parameters.AddWithValue("@perimetroAntebracoD", avaliacaoFisica.PerimetroAntebracoDireito);
             cmd.Parameters.AddWithValue("@perimetroCintura", avaliacaoFisica.PerimetroCintura);
             cmd.Parameters.AddWithValue("@perimetroAbdominal", avaliacaoFisica.PerimetroAbdominal);
             cmd.Parameters.AddWithValue("@perimetroQuadril", avaliacaoFisica.PerimetroQuadril);
@@ -40,8 +39,8 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@perimetroCoxaProximalD", avaliacaoFisica.PerimetroCoxaProximalDireita);
             cmd.Parameters.AddWithValue("@perimetroCoxaMedialE", avaliacaoFisica.PerimetroCoxaMedialEsquerda);
             cmd.Parameters.AddWithValue("@perimetroCoxaMedialD", avaliacaoFisica.PerimetroCoxaMedialDireita);
-            cmd.Parameters.AddWithValue("@perimetroDistalE", avaliacaoFisica.PerimetroCoxaDistalEsquerda);
-            cmd.Parameters.AddWithValue("@perimetroDistalD", avaliacaoFisica.PerimetroCoxaDistalDireita);
+            cmd.Parameters.AddWithValue("@perimetroCoxaDistalE", avaliacaoFisica.PerimetroCoxaDistalEsquerda);
+            cmd.Parameters.AddWithValue("@perimetroCoxaDistalD", avaliacaoFisica.PerimetroCoxaDistalDireita);
             cmd.Parameters.AddWithValue("@perimetroPernaE", avaliacaoFisica.PerimetroPernaEsquerda);
             cmd.Parameters.AddWithValue("@perimetroPernaD", avaliacaoFisica.PerimetroPernaDireita);
             cmd.Parameters.AddWithValue("@dobraCutaneaSubescapular", avaliacaoFisica.DobraCutaneaSubescapular);

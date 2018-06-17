@@ -184,6 +184,9 @@
     <Compile Include="UserControls\UserControlConfiguracao.xaml.cs">
       <DependentUpon>UserControlConfiguracao.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControlListaDeAvaliacoes.xaml.cs">
+      <DependentUpon>UserControlListaDeAvaliacoes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControlTelaInicial.xaml.cs">
       <DependentUpon>UserControlTelaInicial.xaml</DependentUpon>
     </Compile>
@@ -268,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\UserControlCadastroAvaliacaoFisicaProximaEtapaFinal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserControlListaDeAvaliacoes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

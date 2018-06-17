@@ -102,5 +102,10 @@ namespace Gymly.UserControls
         {
             mainWindow.MudarUserControl("editarAluno", aluno);
         }
+
+        private void btnListaAvaliacaoFisicas_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.MudarUserControl("listarAvaliacoes",aluno.Cpf);
+        }
     }
 }

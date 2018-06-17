@@ -91,7 +91,7 @@ namespace Gymly.BD
                 sql.AppendLine("[SENTIR_MELHOR] INT,");
                 sql.AppendLine("[HIPERTROFIA] INT,");
                 sql.AppendLine("[OBSERVACAO] VARCHAR(256),");
-                sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNO(CPF));");
+                sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();
                 sql.Clear();
@@ -106,20 +106,22 @@ namespace Gymly.BD
                 sql.AppendLine("[CAMINHOIMAGEMCOSTAS]  VARCHAR(256),");
                 sql.AppendLine("[OBSERVACAOIMAGEMCOSTAS] VARCHAR(256),");
                 sql.AppendLine("[PERIMETROOMBRO] FLOAT,");
-                sql.AppendLine("[PERIMETROTORAX] FLOAT,");
-                sql.AppendLine("[PERIMETROBRACODIREITO] FLOAT,");
-                sql.AppendLine("[PERIMETROBRACOESQUERDO] FLOAT,");
+                sql.AppendLine("[PERIMETROTORAX] FLOAT,"); 
+                sql.AppendLine("[PERIMETROBRACOD] FLOAT,");
+                sql.AppendLine("[perimetroAntebracoE] FLOAT,");
+                sql.AppendLine("[perimetroAntebracoD] FLOAT,");
+                sql.AppendLine("[PERIMETROBRACOE] FLOAT,");
                 sql.AppendLine("[PERIMETROCINTURA] FLOAT,");
                 sql.AppendLine("[PERIMETROABDOMINAL] FLOAT,");
                 sql.AppendLine("[PERIMETROQUADRIL] FLOAT,");
-                sql.AppendLine("[PERIMETROCOXAPROXIMALDIREITA] FLOAT,");
-                sql.AppendLine("[PERIMETROCOXAPROXIMALESQUERDA] FLOAT,");
-                sql.AppendLine("[PERIMETROCOXAMEDIALDIREITA] FLOAT,");
-                sql.AppendLine("[PERIMETROCOXAMEDIALESQUERDA] FLOAT,");
-                sql.AppendLine("[PERIMETROCOXADISTALDIREITA] FLOAT,");
-                sql.AppendLine("[PERIMETROCOXADISTALESQUERDA] FLOAT,");
-                sql.AppendLine("[PERIMETROPERNADIREITA] FLOAT,");
-                sql.AppendLine("[PERIMETROPERNAESQUERDA] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXAPROXIMALD] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXAPROXIMALE] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXAMEDIALD] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXAMEDIALE] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXADISTALD] FLOAT,");
+                sql.AppendLine("[PERIMETROCOXADISTALE] FLOAT,");
+                sql.AppendLine("[PERIMETROPERNAD] FLOAT,");
+                sql.AppendLine("[PERIMETROPERNAE] FLOAT,");
                 sql.AppendLine("[ENVERGADURA] FLOAT,");
                 sql.AppendLine("[ALTURA] FLOAT,");
                 sql.AppendLine("[MASSA] FLOAT,");
@@ -128,13 +130,6 @@ namespace Gymly.BD
                 sql.AppendLine("[FREQUENCIACARDIACA] FLOAT,");
                 sql.AppendLine("[TEMPOABDOMINAL] FLOAT,");
                 sql.AppendLine("[TEMPOFLEXAO] FLOAT,");
-                sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
-                cmd = new SQLiteCommand(sql.ToString(), conn);
-                cmd.ExecuteNonQuery();
-                sql.Clear();
-
-                sql.AppendLine("CREATE TABLE IF NOT EXISTS AF_ANTROPOMETRICA ([ID_AF] INTEGER PRIMARY KEY,");
-                sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
                 sql.AppendLine("[DOBRACUTANEASUBESCAPULAR] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEATRICEPS] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEABICEPS] FLOAT,");
@@ -144,8 +139,10 @@ namespace Gymly.BD
                 sql.AppendLine("[DOBRACUTANEAABDOMINAL] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEACOXA] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEAPERNA] FLOAT,");
-                sql.AppendLine("FOREIGN KEY(ID) REFERENCES AVALIACAOFISICA(ID_AF)),");
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
+                cmd = new SQLiteCommand(sql.ToString(), conn);
+                cmd.ExecuteNonQuery();
+                sql.Clear();
 
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();

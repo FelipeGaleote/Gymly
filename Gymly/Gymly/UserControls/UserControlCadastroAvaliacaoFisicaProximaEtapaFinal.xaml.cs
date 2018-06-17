@@ -1,4 +1,5 @@
-﻿using Gymly.Models;
+﻿using Gymly.BD;
+using Gymly.Models;
 using System.Windows;
 using System.Windows.Controls;
 namespace Gymly.UserControls
@@ -24,7 +25,7 @@ namespace Gymly.UserControls
         private void BtnFinalizar_Click(object sender, RoutedEventArgs e)
         {
             avaliacaoFisica.Observacao = txtBoxObservacao.Text.Trim();
-            //BDAvaliacaoFisica.InsereAvaliacaoFisica(avaliacaoFisica);
+            BDAvaliacaoFisica.InsereAvaliacaoFisica(avaliacaoFisica);
             //colocar um messagebox para perguntar se deseja imprimir a avaliação fisica ----
             mainWindow.MudarUserControl("aluno");
         }

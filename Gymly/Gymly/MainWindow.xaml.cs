@@ -159,6 +159,9 @@ namespace Gymly
                 case "detalhesAluno":
                     pnl.Children.Add(new UserControlDetalhesAluno(parametroAdicional,this));
                     break;
+                case "listarAvaliacoes":
+                    pnl.Children.Add(new UserControlListaDeAvaliacoes(this,parametroAdicional));
+                    break;
             }
         }
 
