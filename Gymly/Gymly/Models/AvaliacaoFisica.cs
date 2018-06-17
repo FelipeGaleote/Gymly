@@ -10,6 +10,7 @@ namespace Gymly.Models
     {
         //Tabela Avaliação fisica
         private string cpfAluno; //pegar do datagrid
+        private DateTime data;
         private string qtdadeDiasDeTreino;
         private string tipoDeAvaliacao; 
         private string observacao; 
@@ -85,6 +86,18 @@ namespace Gymly.Models
             set
             {
                 qtdadeDiasDeTreino = value;
+            }
+        }
+
+        public DateTime Data
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
             }
         }
 
