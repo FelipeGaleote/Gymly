@@ -29,7 +29,7 @@ namespace Gymly.UserControls
                 txtBoxPerimetroPernaD.Text = avaliacaoFisica.PerimetroPernaDireita.ToString();
                 txtBoxPerimetroOmbro.Text = avaliacaoFisica.PerimetroOmbro.ToString();
                 txtBoxPerimetroCoxaProximalE.Text = avaliacaoFisica.PerimetroCoxaProximalEsquerda.ToString();
-                txtBoxPerimetroCoxaProximalD.Text = avaliacaoFisica.PerimetroCoxaProximalDireita.ToString();     
+                txtBoxPerimetroCoxaProximalD.Text = avaliacaoFisica.PerimetroCoxaProximalDireita.ToString();
                 txtBoxPerimetroCoxaMedialD.Text = avaliacaoFisica.PerimetroCoxaMedialDireita.ToString();
                 txtBoxPerimetroCoxaMedialE.Text = avaliacaoFisica.PerimetroCoxaMedialEsquerda.ToString();
                 txtBoxPerimetroCoxaDistalE.Text = avaliacaoFisica.PerimetroCoxaDistalEsquerda.ToString();
@@ -40,8 +40,8 @@ namespace Gymly.UserControls
                 txtBoxPerimetroAnteBracoE.Text = avaliacaoFisica.PerimetroAntebracoEsquerdo.ToString();
                 txtBoxPerimetroAnteBracoD.Text = avaliacaoFisica.PerimetroAntebracoDireito.ToString();
                 txtBoxPerimetroAbdominal.Text = avaliacaoFisica.PerimetroAbdominal.ToString();
-                
-             
+                txtBoxEnvergadura.Text = avaliacaoFisica.Envergadura.ToString();
+
 
             }
             else
@@ -63,11 +63,10 @@ namespace Gymly.UserControls
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAnteBracoE, "Esq. " + txtBoxTextoMedidaCM);
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAnteBracoD, "Dir. " + txtBoxTextoMedidaCM);
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAbdominal, txtBoxTextoMedidaCM);
-                
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxEnvergadura, txtBoxTextoMedidaCM);
             }
 
         }
-
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
             if(!txtBoxEnvergadura.Text.Equals("cm"))
