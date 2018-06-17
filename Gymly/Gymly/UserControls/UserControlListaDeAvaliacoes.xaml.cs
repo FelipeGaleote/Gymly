@@ -24,11 +24,11 @@ namespace Gymly.UserControls
     public partial class UserControlListaDeAvaliacoes : UserControl
     {
         private MainWindow mainWindow;
-        private string CpfAluno;
+        private string cpfAluno;
         public UserControlListaDeAvaliacoes(MainWindow mainWindow,String cpf)
         {
             this.mainWindow = mainWindow;
-            this.CpfAluno = cpf;
+            this.cpfAluno = cpf;
             InitializeComponent();
             PreencheDataGridAV("bunda");
         }
@@ -37,7 +37,7 @@ namespace Gymly.UserControls
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT id, STRFTIME('%d/%m/%Y',data) as 'Data de criação', tipo FROM AvaliacaoFisica";
+            string query = "SELECT id, STRFTIME('%d/%m/%Y',data) as 'Data de criação', tipo FROM AvaliacaoFisica where cpf_aluno like '"+ cpfAluno + "'";
             SQLiteCommand command = new SQLiteCommand(query, conn);
 
             DataTable dt = new DataTable("AvaliacaoFisica");
