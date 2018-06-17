@@ -29,9 +29,9 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@cpf_aluno", avaliacaoFisica.CpfAluno);
             String data = avaliacaoFisica.Data.ToString("dd/MM/yyyy HH:mm:ss");
             if (!data.Equals("01/01/0001 00:00:00"))
-                cmd.Parameters.AddWithValue("@data", data);
+                cmd.Parameters.AddWithValue("@data", avaliacaoFisica.Data);
             else
-                cmd.Parameters.AddWithValue("@data", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
+                cmd.Parameters.AddWithValue("@data", DateTime.Now);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
             cmd.Parameters.AddWithValue("@perimetroTorax", avaliacaoFisica.PerimetroTorax);
             cmd.Parameters.AddWithValue("@perimetroBracoE", avaliacaoFisica.PerimetroBracoEsquerdo);

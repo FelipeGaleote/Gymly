@@ -37,7 +37,7 @@ namespace Gymly.UserControls
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT cpf_aluno,STRFTIME('%d/%m/%Y',data) AS 'Criada em' FROM AvaliacaoFisica WHERE cpf_aluno like '%1%'";
+            string query = "SELECT id, STRFTIME('%d/%m/%Y',data) as 'data' FROM AvaliacaoFisica";
             SQLiteCommand command = new SQLiteCommand(query, conn);
 
             DataTable dt = new DataTable("AvaliacaoFisica");

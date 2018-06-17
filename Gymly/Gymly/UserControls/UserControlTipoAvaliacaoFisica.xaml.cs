@@ -24,20 +24,14 @@ namespace Gymly.UserControls
 
         private void Antropometrica_Click(object sender, RoutedEventArgs e)
         {
-            AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica
-            {
-                TipoDeAvaliacao = "Antropometria"
-            };
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
+            av.TipoDeAvaliacao = "Antropometria";
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", av);
         }
 
         private void Bioimpedancia_Click(object sender, RoutedEventArgs e)
         {
-            AvaliacaoFisica avaliacaoFisica = new AvaliacaoFisica
-            {
-                TipoDeAvaliacao = "Bioimpedancia"
-            };
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
+            av.TipoDeAvaliacao = "Bioimpedancia";
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", av);
         }
     }
 }

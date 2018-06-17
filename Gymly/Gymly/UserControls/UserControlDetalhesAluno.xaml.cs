@@ -20,13 +20,9 @@ namespace Gymly.UserControls
         public UserControlDetalhesAluno(string cpf, MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
-            aluno = new Aluno();
             InitializeComponent();
             PreencherInformacoes(cpf);
-            ConfigurarBotoes(cpf);
-
-            
-           
+            ConfigurarBotoes(cpf);          
         }
 
         private void PreencherInformacoes(string cpf)
@@ -95,6 +91,7 @@ namespace Gymly.UserControls
         private void BtnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
             AvaliacaoFisica av = new AvaliacaoFisica();
+            av.CpfAluno = aluno.Cpf;
             mainWindow.MudarUserControl("selecionarTipoAvalicaoFisica", av);
         }
 
