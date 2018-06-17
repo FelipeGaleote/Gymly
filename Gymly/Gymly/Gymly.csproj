@@ -127,9 +127,6 @@
     <Compile Include="Models\EditorTxtBox.cs" />
     <Compile Include="Models\GerenciadorDeArquivos.cs" />
     <Compile Include="Models\Relatorio.cs" />
-    <Compile Include="UserControls\UserControlEditarAluno.xaml.cs">
-      <DependentUpon>UserControlEditarAluno.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UserControlAluno.xaml.cs">
       <DependentUpon>UserControlAluno.xaml</DependentUpon>
     </Compile>
@@ -206,10 +203,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UserControls\UserControlEditarAluno.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UserControls\UserControlAluno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

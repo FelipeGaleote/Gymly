@@ -121,7 +121,7 @@ namespace Gymly
             switch (nomeDoControl)
             {
                 case "editarAluno":
-                    pnl.Children.Add(new UserControlEditarAluno(this, aluno));
+                    pnl.Children.Add(new UserControlCadastroAluno(this, aluno));
                     break;
             }
         }

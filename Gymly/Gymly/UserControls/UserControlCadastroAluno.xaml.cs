@@ -18,14 +18,43 @@ namespace Gymly.UserControls
         private MainWindow mainWindow;
         private string caminhoFotoDeRosto;
         private string caminhoSalvarFotoDeRosto;
+        private string acao;
+        private Aluno aluno;
 
         public UserControlCadastroAluno(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
+            this.acao = "CADASTRAR";
             InitializeComponent();
             PreencheComboBoxs("dia");
             PreencheComboBoxs("mes");
             PreencheComboBoxs("ano");
+        }
+
+        public UserControlCadastroAluno(MainWindow mainWindow, Aluno aluno)
+            : this(mainWindow)
+        {
+         
+            this.aluno = aluno;
+            this.acao = "EDITAR";
+            
+            btnCadastrarAluno.Content = "SALVAR"; 
+            this.aluno = aluno;
+            if (aluno != null)
+            {
+                txtBoxNome.Text = aluno.Nome;
+                txtBoxCpf.Text = aluno.Cpf;
+                txtBoxEmail.Text = aluno.Email;
+                txtBoxTelefone.Text = aluno.Telefone;
+                comboBoxDia.Text = aluno.DataNasc.Day.ToString();
+                comboBoxMes.Text = aluno.DataNasc.Month.ToString();
+                comboBoxAno.Text = aluno.DataNasc.Year.ToString();
+                ComboBoxNivel.Text = aluno.Nivel;
+                rdMasculino.IsChecked = aluno.Sexo.ToString().Equals("M");
+                rdFeminino.IsChecked = aluno.Sexo.ToString().Equals("F");
+
+            }
+
         }
 
         // private void buttonAtivarCalendario_Click(object sender, RoutedEventArgs e)
@@ -79,12 +108,22 @@ namespace Gymly.UserControls
                 aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "-" + comboBoxMes.SelectedValue + "-" + comboBoxAno.SelectedValue));
                 try
                 {
-                    BDAluno.InsereAluno(aluno);
-                    Anamnese anamnese = new Anamnese
+                    if (acao.Equals("EDITAR"))
                     {
-                        CpfAluno = aluno.Cpf
-                    };
-                    mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
+                        BDAluno.AtualizaAluno(aluno);
+                        mainWindow.MudarUserControl("detalhesAluno", aluno.Cpf);
+                    }
+                    else
+                    {
+
+
+                        BDAluno.InsereAluno(aluno);
+                        Anamnese anamnese = new Anamnese
+                        {
+                            CpfAluno = aluno.Cpf
+                        };
+                        mainWindow.MudarUserControl("cadastroAnamnese", anamnese);
+                    }
                 }
                 catch(Exception ex)
                 {
