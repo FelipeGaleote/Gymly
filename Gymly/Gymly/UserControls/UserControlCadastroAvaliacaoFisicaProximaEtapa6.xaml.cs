@@ -28,8 +28,7 @@ namespace Gymly.UserControls
                 txtBoxDistanciaCooper.Text = avaliacaoFisica.DistanciaCooper.ToString();
                 txtBoxQtdadeAbdominal.Text = avaliacaoFisica.QtdadeAbdominais.ToString();
                 txtBoxQtdadeFlexao.Text = avaliacaoFisica.QtdadeFlexao.ToString();
-                txtBoxTempoFlexao.Text = avaliacaoFisica.TempoFlexao.ToString();
-                txtBoxTempoAbdominal.Text = avaliacaoFisica.TempoAbdominal.ToString();
+
 
             }
             else
@@ -37,8 +36,7 @@ namespace Gymly.UserControls
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDistanciaCooper, txtBoxTextoDistancia);
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxQtdadeAbdominal, txtBoxTextoQuantidade);
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxQtdadeFlexao, txtBoxTextoQuantidade);
-                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxTempoFlexao, txtBoxTextoTempo);
-                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxTempoAbdominal, txtBoxTextoTempo);
+ 
             }
         }
 
