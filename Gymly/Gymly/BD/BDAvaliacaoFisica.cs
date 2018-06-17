@@ -31,7 +31,7 @@ namespace Gymly.BD
             if (!data.Equals("01/01/0001 00:00:00"))
                 cmd.Parameters.AddWithValue("@data", avaliacaoFisica.Data);
             else
-             cmd.Parameters.AddWithValue("@id", avaliacaoFisica.id);
+             cmd.Parameters.AddWithValue("@id", avaliacaoFisica.Id);
             cmd.Parameters.AddWithValue("@data", DateTime.Now);
             cmd.Parameters.AddWithValue("@tipo", avaliacaoFisica.TipoDeAvaliacao);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
@@ -68,8 +68,8 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@tempoAbdominal", avaliacaoFisica.TempoAbdominal);
             cmd.Parameters.AddWithValue("@flexibilidade", avaliacaoFisica.Flexibilidade);
             cmd.Parameters.AddWithValue("@pressaoArterialSistolica", avaliacaoFisica.PressaoArterialSistolica);
-            cmd.Parameters.AddWithValue("@pressaoArterialDiastolica", avaliacaoFisica.pressaoArterialDiastolica);
-            cmd.Parameters.AddWithValue("@frequenciaCardiaca", avaliacaoFisica.frequenciaCardiaca);
+            cmd.Parameters.AddWithValue("@pressaoArterialDiastolica", avaliacaoFisica.PressaoArterialDiastolica);
+            cmd.Parameters.AddWithValue("@frequenciaCardiaca", avaliacaoFisica.FrequenciaCardiaca);
 
 
 
