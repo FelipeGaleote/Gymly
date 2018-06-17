@@ -17,11 +17,11 @@ namespace Gymly.BD
             string sql = "INSERT INTO AvaliacaoFisica(id,cpf_aluno,data,tipo,perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
                 ",perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroCoxaDistalE, perimetroCoxaDistalD," +
                 "perimetroPernaE, perimetroPernaD,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
-                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura,tempoflexao,tempoabdominal)"+
+                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura,tempoFlexao,tempoAbdominal,flexibilidade)" +
                 "VALUES(@id,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE,@perimetroAntebracoD,@perimetroCintura" +
                 ",@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD,@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD," +
                 "@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax,@dobraCutaneaAxilarMedia," +
-                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura,@tempoflexao,@tempoabdominal);";
+                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura,@tempoFlexao,@tempoAbdominal,@flexibilidade);";
 
 
 
@@ -64,8 +64,11 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@massa", avaliacaoFisica.Massa);
             cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
             cmd.Parameters.AddWithValue("@distanciaCooper", avaliacaoFisica.DistanciaCooper);
-            cmd.Parameters.AddWithValue("@tempoflexao", avaliacaoFisica.TempoFlexao);
-            cmd.Parameters.AddWithValue("@tempoabdominal", avaliacaoFisica.TempoAbdominal);
+            cmd.Parameters.AddWithValue("@tempoFlexao", avaliacaoFisica.TempoFlexao);
+            cmd.Parameters.AddWithValue("@tempoAbdominal", avaliacaoFisica.TempoAbdominal);
+            cmd.Parameters.AddWithValue("@flexibilidade", avaliacaoFisica.Flexibilidade);
+
+
 
 
             cmd.ExecuteNonQuery();
