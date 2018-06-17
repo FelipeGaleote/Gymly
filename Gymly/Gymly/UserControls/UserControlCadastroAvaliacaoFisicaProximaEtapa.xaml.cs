@@ -40,7 +40,7 @@ namespace Gymly.UserControls
                 txtBoxPerimetroAnteBracoE.Text = avaliacaoFisica.PerimetroAntebracoEsquerdo.ToString();
                 txtBoxPerimetroAnteBracoD.Text = avaliacaoFisica.PerimetroAntebracoDireito.ToString();
                 txtBoxPerimetroAbdominal.Text = avaliacaoFisica.PerimetroAbdominal.ToString();
-                txtBoxEnvergadura.Text = avaliacaoFisica.Envergadura.ToString();
+                
              
 
             }
@@ -63,7 +63,7 @@ namespace Gymly.UserControls
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAnteBracoE, "Esq. " + txtBoxTextoMedidaCM);
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAnteBracoD, "Dir. " + txtBoxTextoMedidaCM);
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAbdominal, txtBoxTextoMedidaCM);
-                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxEnvergadura, txtBoxTextoMedidaCM);
+                
             }
 
         }
