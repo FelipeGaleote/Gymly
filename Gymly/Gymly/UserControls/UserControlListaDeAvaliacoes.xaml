@@ -31,7 +31,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="1" Grid.Column="3" FontSize="26" FontWeight="Bold" Text="Avaliações fisicas" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
-        <DataGrid Grid.Column="1" Grid.Row="3" RowHeaderWidth="230" ColumnWidth="230"  CanUserResizeColumns="False" CanUserResizeRows="False" SelectionMode="Single" SelectionUnit="FullRow" Name="dataGridAV" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="6" Grid.RowSpan="6"></DataGrid>
+        <DataGrid Grid.Column="1" Grid.Row="3" RowHeaderWidth="230" ColumnWidth="230"  CanUserResizeColumns="False" CanUserResizeRows="False" SelectionMode="Single" SelectionUnit="FullRow" Name="dataGridAV" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="6" Grid.RowSpan="5"></DataGrid>
         
     </Grid>
 </UserControl>

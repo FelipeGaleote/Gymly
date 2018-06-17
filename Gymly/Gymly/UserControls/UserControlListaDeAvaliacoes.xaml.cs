@@ -37,7 +37,7 @@ namespace Gymly.UserControls
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT id, STRFTIME('%d/%m/%Y',data) as 'data' FROM AvaliacaoFisica";
+            string query = "SELECT id, STRFTIME('%d/%m/%Y',data) as 'Data de criação', tipo FROM AvaliacaoFisica";
             SQLiteCommand command = new SQLiteCommand(query, conn);
 
             DataTable dt = new DataTable("AvaliacaoFisica");

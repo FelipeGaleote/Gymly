@@ -14,11 +14,11 @@ namespace Gymly.BD
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
 
-            string sql = "INSERT INTO AvaliacaoFisica(cpf_aluno,data,perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
+            string sql = "INSERT INTO AvaliacaoFisica(cpf_aluno,data,tipo,perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
                 ",perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroCoxaDistalE, perimetroCoxaDistalD," +
                 "perimetroPernaE, perimetroPernaD,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
                 "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura)"+
-                "VALUES(@cpf_aluno,@data,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE,@perimetroAntebracoD,@perimetroCintura" +
+                "VALUES(@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE,@perimetroAntebracoD,@perimetroCintura" +
                 ",@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD,@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD," +
                 "@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax,@dobraCutaneaAxilarMedia," +
                 "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura);";
@@ -32,6 +32,7 @@ namespace Gymly.BD
                 cmd.Parameters.AddWithValue("@data", avaliacaoFisica.Data);
             else
                 cmd.Parameters.AddWithValue("@data", DateTime.Now);
+            cmd.Parameters.AddWithValue("@tipo", avaliacaoFisica.TipoDeAvaliacao);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
             cmd.Parameters.AddWithValue("@perimetroTorax", avaliacaoFisica.PerimetroTorax);
             cmd.Parameters.AddWithValue("@perimetroBracoE", avaliacaoFisica.PerimetroBracoEsquerdo);
