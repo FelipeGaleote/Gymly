@@ -17,11 +17,11 @@ namespace Gymly.BD
             string sql = "INSERT INTO AvaliacaoFisica(id,cpf_aluno,data,tipo,perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
                 ",perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroCoxaDistalE, perimetroCoxaDistalD," +
                 "perimetroPernaE, perimetroPernaD,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
-                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura,tempoFlexao,tempoAbdominal,flexibilidade,pressaoArterialSistolica,pressaoArterialDiastolica)" +
+                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura,tempoFlexao,tempoAbdominal,flexibilidade,pressaoArterialSistolica,pressaoArterialDiastolica,frequenciaCardiaca)" +
                 "VALUES(@id,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE,@perimetroAntebracoD,@perimetroCintura" +
                 ",@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD,@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD," +
                 "@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax,@dobraCutaneaAxilarMedia," +
-                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura,@tempoFlexao,@tempoAbdominal,@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica);";
+                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura,@tempoFlexao,@tempoAbdominal,@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica,@frequenciaCardiaca);";
 
 
 
@@ -69,6 +69,7 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@flexibilidade", avaliacaoFisica.Flexibilidade);
             cmd.Parameters.AddWithValue("@pressaoArterialSistolica", avaliacaoFisica.PressaoArterialSistolica);
             cmd.Parameters.AddWithValue("@pressaoArterialDiastolica", avaliacaoFisica.pressaoArterialDiastolica);
+            cmd.Parameters.AddWithValue("@frequenciaCardiaca", avaliacaoFisica.frequenciaCardiaca);
 
 
 
