@@ -107,11 +107,11 @@ namespace Gymly.BD
                 sql.AppendLine("[CAMINHOIMAGEMCOSTAS]  VARCHAR(256),");
                 sql.AppendLine("[OBSERVACAOIMAGEMCOSTAS] VARCHAR(256),");
                 sql.AppendLine("[PERIMETROOMBRO] FLOAT,");
-                sql.AppendLine("[PERIMETROTORAX] FLOAT,"); 
+                sql.AppendLine("[PERIMETROTORAX] FLOAT,");
+                sql.AppendLine("[PERIMETROBRACOE] FLOAT,");
                 sql.AppendLine("[PERIMETROBRACOD] FLOAT,");
                 sql.AppendLine("[perimetroAntebracoE] FLOAT,");
                 sql.AppendLine("[perimetroAntebracoD] FLOAT,");
-                sql.AppendLine("[PERIMETROBRACOE] FLOAT,");
                 sql.AppendLine("[PERIMETROCINTURA] FLOAT,");
                 sql.AppendLine("[PERIMETROABDOMINAL] FLOAT,");
                 sql.AppendLine("[PERIMETROQUADRIL] FLOAT,");
@@ -140,6 +140,12 @@ namespace Gymly.BD
                 sql.AppendLine("[DOBRACUTANEAABDOMINAL] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEACOXA] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEAPERNA] FLOAT,");
+                sql.AppendLine("[QUANTIDADEABDOMINAL] INT,");
+                sql.AppendLine("[QUANTIDADEFLEXAO] INT,");
+                sql.AppendLine("[FLEXIBILIDADE] INT,");
+
+                sql.AppendLine("[DISTANCIACOOPER] FLOAT,");
+
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
                 cmd = new SQLiteCommand(sql.ToString(), conn);
                 cmd.ExecuteNonQuery();

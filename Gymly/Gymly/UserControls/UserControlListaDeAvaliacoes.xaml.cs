@@ -30,6 +30,7 @@ namespace Gymly.UserControls
             this.mainWindow = mainWindow;
             this.cpfAluno = cpf;
             InitializeComponent();
+            DataContext = this;
             PreencheDataGridAV("bunda");
         }
 
@@ -49,5 +50,25 @@ namespace Gymly.UserControls
             dataGridAV.ItemsSource = dt.DefaultView;
             conn.Close();
         }
+
+        private void dataGridAV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            DataRowView dataRow = (DataRowView)dataGridAV.SelectedItem;
+            try
+            {
+               int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
+                mainWindow.MudarUserControl("editarAvaliacao",id);
+            }
+            catch (Exception x)
+            {
+                Console.WriteLine(x.Message);
+            }
+        }
+
+        private void dataGridAV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
-}
+    }
+

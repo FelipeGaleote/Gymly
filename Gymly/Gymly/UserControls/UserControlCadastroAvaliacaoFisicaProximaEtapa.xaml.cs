@@ -13,30 +13,58 @@ namespace Gymly.UserControls
         private AvaliacaoFisica avaliacaoFisica;
 
         private string txtBoxTextoMedidaCM = "cm";
+        private string acao;
 
-        public UserControlCadastroAvaliacaoFisicaProximaEtapa(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        public UserControlCadastroAvaliacaoFisicaProximaEtapa(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica , string acao)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
+            this.acao = acao;
             InitializeComponent();
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroTorax, txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroQuadril, txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroPernaE, "Esq. "+txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroPernaD, "Dir. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroOmbro, txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaProximalE, "Esq. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaProximalD, "Dir. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaMedialD, "Dir. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaMedialE, "Esq. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaDistalE, "Esq. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaDistalD, "Dir. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCintura, txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroBracoE, "Esq. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroBracoD, "Dir. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAnteBracoE, "Esq. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAnteBracoD, "Dir. " + txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAbdominal, txtBoxTextoMedidaCM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxEnvergadura, txtBoxTextoMedidaCM);
+            if (acao.Equals("Editar"))
+            {
+                txtBoxPerimetroTorax.Text = avaliacaoFisica.PerimetroTorax.ToString();
+                txtBoxPerimetroQuadril.Text = avaliacaoFisica.PerimetroQuadril.ToString();
+                txtBoxPerimetroPernaE.Text = avaliacaoFisica.PerimetroPernaEsquerda.ToString();
+                txtBoxPerimetroPernaD.Text = avaliacaoFisica.PerimetroPernaDireita.ToString();
+                txtBoxPerimetroOmbro.Text = avaliacaoFisica.PerimetroOmbro.ToString();
+                txtBoxPerimetroCoxaProximalE.Text = avaliacaoFisica.PerimetroCoxaProximalEsquerda.ToString();
+                txtBoxPerimetroCoxaProximalD.Text = avaliacaoFisica.PerimetroCoxaProximalDireita.ToString();     
+                txtBoxPerimetroCoxaMedialD.Text = avaliacaoFisica.PerimetroCoxaMedialDireita.ToString();
+                txtBoxPerimetroCoxaMedialE.Text = avaliacaoFisica.PerimetroCoxaMedialEsquerda.ToString();
+                txtBoxPerimetroCoxaDistalE.Text = avaliacaoFisica.PerimetroCoxaDistalEsquerda.ToString();
+                txtBoxPerimetroCoxaDistalD.Text = avaliacaoFisica.PerimetroCoxaDistalDireita.ToString();
+                txtBoxPerimetroCintura.Text = avaliacaoFisica.PerimetroCintura.ToString();
+                txtBoxPerimetroBracoE.Text = avaliacaoFisica.PerimetroBracoEsquerdo.ToString();
+                txtBoxPerimetroBracoD.Text = avaliacaoFisica.PerimetroBracoDireito.ToString();
+                txtBoxPerimetroAnteBracoE.Text = avaliacaoFisica.PerimetroAntebracoEsquerdo.ToString();
+                txtBoxPerimetroAnteBracoD.Text = avaliacaoFisica.PerimetroAntebracoDireito.ToString();
+                txtBoxPerimetroAbdominal.Text = avaliacaoFisica.PerimetroAbdominal.ToString();
+                txtBoxEnvergadura.Text = avaliacaoFisica.Envergadura.ToString();
+             
+
+            }
+            else
+            {
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroTorax, txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroQuadril, txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroPernaE, "Esq. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroPernaD, "Dir. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroOmbro, txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaProximalE, "Esq. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaProximalD, "Dir. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaMedialD, "Dir. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaMedialE, "Esq. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaDistalE, "Esq. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCoxaDistalD, "Dir. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroCintura, txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroBracoE, "Esq. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroBracoD, "Dir. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAnteBracoE, "Esq. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAnteBracoD, "Dir. " + txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPerimetroAbdominal, txtBoxTextoMedidaCM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxEnvergadura, txtBoxTextoMedidaCM);
+            }
 
         }
 
@@ -79,11 +107,11 @@ namespace Gymly.UserControls
             if (!txtBoxPerimetroTorax.Text.Equals("cm"))
                 avaliacaoFisica.PerimetroTorax = float.Parse(txtBoxPerimetroTorax.Text.Replace(",", ".").Trim());
             if (avaliacaoFisica.TipoDeAvaliacao == "Antropometria") {
-                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Antropometria", avaliacaoFisica);
+                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Antropometria", avaliacaoFisica,acao);
             }
             else
             {
-                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia", avaliacaoFisica);
+                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia", avaliacaoFisica,acao);
             }
         }
 

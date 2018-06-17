@@ -13,19 +13,40 @@ namespace Gymly.UserControls
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
         private string txtBoxTextoObservacao = "Observação";
-        public UserControlCadastroAvaliacaoFisicaProximaEtapaFinal(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        private string acao;
+
+        public UserControlCadastroAvaliacaoFisicaProximaEtapaFinal(MainWindow mainWindow,
+            AvaliacaoFisica avaliacaoFisica, string acao)
         {
-            
+
             InitializeComponent();
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
+            this.acao = acao;
+            if (acao.Equals("Editar"))
+            {
+                txtBoxObservacao.Text = avaliacaoFisica.Observacao;
+
+
+            }
+            else
+            {
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
+            }
         }
 
         private void BtnFinalizar_Click(object sender, RoutedEventArgs e)
         {
             avaliacaoFisica.Observacao = txtBoxObservacao.Text.Trim();
-            BDAvaliacaoFisica.InsereAvaliacaoFisica(avaliacaoFisica);
+            if (acao.Equals("Editar"))
+            {
+                BDAvaliacaoFisica.AtualizaAvaliacaoFisica(avaliacaoFisica);
+            }
+            else
+            {
+                BDAvaliacaoFisica.InsereAvaliacaoFisica(avaliacaoFisica);
+             }
+            
             //colocar um messagebox para perguntar se deseja imprimir a avaliação fisica ----
             mainWindow.MudarUserControl("aluno");
         }

@@ -12,21 +12,39 @@ namespace Gymly.UserControls
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
         private string txtBoxTextoMedidaMM = "mm";
-        public UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        private string acao;
+
+        public UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica , string acao)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
+            this.acao = acao;
             InitializeComponent();
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaAbdominal, txtBoxTextoMedidaMM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaAxilarMedia, txtBoxTextoMedidaMM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaBiceps, txtBoxTextoMedidaMM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaCoxa, txtBoxTextoMedidaMM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaPerna, txtBoxTextoMedidaMM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaSubescapular, txtBoxTextoMedidaMM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaSuprailiaca, txtBoxTextoMedidaMM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaTorax, txtBoxTextoMedidaMM);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaTriceps, txtBoxTextoMedidaMM);
+            if (acao.Equals("Editar"))
+            {
+                txtBoxDobraCutaneaAbdominal.Text = avaliacaoFisica.DobraCutaneaAbdominal.ToString();
+                txtBoxDobraCutaneaAxilarMedia.Text = avaliacaoFisica.DobraCutaneaAxilarMedia.ToString();
+                txtBoxDobraCutaneaBiceps.Text = avaliacaoFisica.DobraCutaneaBiceps.ToString();
+                txtBoxDobraCutaneaCoxa.Text = avaliacaoFisica.DobraCutaneaCoxa.ToString();
+                txtBoxDobraCutaneaPerna.Text = avaliacaoFisica.DobraCutaneaPerna.ToString();
+                txtBoxDobraCutaneaSubescapular.Text = avaliacaoFisica.DobraCutaneaSubescapular.ToString();
+                txtBoxDobraCutaneaSuprailiaca.Text = avaliacaoFisica.DobraCutaneaSuprailiaca.ToString();
+                txtBoxDobraCutaneaTorax.Text = avaliacaoFisica.DobraCutaneaTorax.ToString();
+                txtBoxDobraCutaneaTriceps.Text = avaliacaoFisica.DobraCutaneaTriceps.ToString();
 
+            }
+            else
+            {
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaAbdominal, txtBoxTextoMedidaMM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaAxilarMedia, txtBoxTextoMedidaMM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaBiceps, txtBoxTextoMedidaMM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaCoxa, txtBoxTextoMedidaMM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaPerna, txtBoxTextoMedidaMM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaSubescapular, txtBoxTextoMedidaMM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaSuprailiaca, txtBoxTextoMedidaMM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaTorax, txtBoxTextoMedidaMM);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaTriceps, txtBoxTextoMedidaMM);
+            }
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
@@ -50,7 +68,7 @@ namespace Gymly.UserControls
             if (!txtBoxDobraCutaneaTriceps.Text.Equals("mm"))
                 avaliacaoFisica.DobraCutaneaTriceps = float.Parse(txtBoxDobraCutaneaTriceps.Text.Replace(",", ".").Trim());
 
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica , acao);
         }
 
         private void TxtBoxDobraCutaneaSubescapular_GotFocus(object sender, RoutedEventArgs e)

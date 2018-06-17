@@ -11,6 +11,7 @@ namespace Gymly.UserControls
     {
         private MainWindow mainWindow;
         private AvaliacaoFisica avaliacaoFisica;
+        private string acao;
         private string txtBoxTextoMedida = "cm";
         private string txtBoxTextoMassa = "kg";
         private string txtBoxTextoPressao = "mmHg";
@@ -18,17 +19,45 @@ namespace Gymly.UserControls
 
 
 
-        public UserControlCadastroAvaliacaoFisica(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        public UserControlCadastroAvaliacaoFisica(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica, string acao)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
+            this.acao = acao;
             InitializeComponent();
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxAltura, txtBoxTextoMedida);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxMassa, txtBoxTextoMassa);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPressaoArterialDiastolica, ("Diast. " + txtBoxTextoPressao));
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPressaoArterialSistolica, ("Sist. " + txtBoxTextoPressao));
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxFrenquenciaCardiaca, txtBoxTextoFrequenciaCardiaca);
+            if (acao.Equals("Editar"))
+            {
+                txtBoxAltura.Text = avaliacaoFisica.Altura.ToString();
+                txtBoxMassa.Text = avaliacaoFisica.Massa.ToString();
+                txtBoxPressaoArterialDiastolica.Text = avaliacaoFisica.PressaoArterialDiastolica.ToString();
+                txtBoxPressaoArterialSistolica.Text = avaliacaoFisica.PressaoArterialSistolica.ToString();
+                txtBoxFrenquenciaCardiaca.Text = avaliacaoFisica.FrequenciaCardiaca.ToString();
 
+                if (avaliacaoFisica.QtdadeDiasDeTreino != null)
+                {
+                    rd0_2.IsChecked = avaliacaoFisica.QtdadeDiasDeTreino.Equals("0-2 Dias");
+                    rd3_5.IsChecked = avaliacaoFisica.QtdadeDiasDeTreino.Equals("3-5 Dias");
+                    rd6_7.IsChecked = avaliacaoFisica.QtdadeDiasDeTreino.Equals("6-7 Dias");
+                }
+                if (avaliacaoFisica.Flexibilidade != null)
+                {
+
+                    rdBom.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Bom");
+                    rdRegular.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Regular");
+                    rdRuim.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Ruim");
+                }
+            }
+            else
+            {
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxAltura, txtBoxTextoMedida);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxMassa, txtBoxTextoMassa);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPressaoArterialDiastolica,
+                    ("Diast. " + txtBoxTextoPressao));
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxPressaoArterialSistolica,
+                    ("Sist. " + txtBoxTextoPressao));
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxFrenquenciaCardiaca, txtBoxTextoFrequenciaCardiaca);
+
+            }
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
@@ -67,7 +96,7 @@ namespace Gymly.UserControls
                 avaliacaoFisica.Flexibilidade = "Ruim";
             }
 
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica,acao);
         }
 
         private void TxtBoxAltura_GotFocus(object sender, RoutedEventArgs e)

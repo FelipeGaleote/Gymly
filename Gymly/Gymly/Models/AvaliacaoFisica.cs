@@ -9,6 +9,7 @@ namespace Gymly.Models
     public class AvaliacaoFisica
     {
         //Tabela Avaliação fisica
+        private int id;
         private string cpfAluno; //pegar do datagrid
         private DateTime data;
         private string qtdadeDiasDeTreino;
@@ -62,6 +63,22 @@ namespace Gymly.Models
         private float dobraCutaneaPerna;
 
         //Bioimpedancia ainda n fiz, mas são poucos campos.Contudo as outras duas tabelas estão completas!
+
+
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+
 
         public string CpfAluno
         {

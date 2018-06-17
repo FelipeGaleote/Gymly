@@ -14,17 +14,32 @@ namespace Gymly.UserControls
         private string txtBoxTextoTempo = "Tempo(s)";
         private string txtBoxTextoDistancia = "Dist.(m)";
         private string txtBoxTextoQuantidade = "Repetição";
+        private string acao;
 
-        public UserControlCadastroAvaliacaoFisicaProximaEtapa6(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        public UserControlCadastroAvaliacaoFisicaProximaEtapa6(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica , string acao)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
+            this.acao = acao;
+
             InitializeComponent();
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDistanciaCooper, txtBoxTextoDistancia);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxQtdadeAbdominal, txtBoxTextoQuantidade);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxQtdadeFlexao, txtBoxTextoQuantidade);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxTempoFlexao, txtBoxTextoTempo);
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxTempoAbdominal, txtBoxTextoTempo);
+            if (acao.Equals("Editar"))
+            {
+                txtBoxDistanciaCooper.Text = avaliacaoFisica.DistanciaCooper.ToString();
+                txtBoxQtdadeAbdominal.Text = avaliacaoFisica.QtdadeAbdominais.ToString();
+                txtBoxQtdadeFlexao.Text = avaliacaoFisica.QtdadeFlexao.ToString();
+                txtBoxTempoFlexao.Text = avaliacaoFisica.TempoFlexao.ToString();
+                txtBoxTempoAbdominal.Text = avaliacaoFisica.TempoAbdominal.ToString();
+
+            }
+            else
+            {
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDistanciaCooper, txtBoxTextoDistancia);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxQtdadeAbdominal, txtBoxTextoQuantidade);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxQtdadeFlexao, txtBoxTextoQuantidade);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxTempoFlexao, txtBoxTextoTempo);
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxTempoAbdominal, txtBoxTextoTempo);
+            }
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
@@ -39,7 +54,7 @@ namespace Gymly.UserControls
                 avaliacaoFisica.TempoFlexao = float.Parse(txtBoxTempoFlexao.Text.Replace(",", ".").Trim());
             if (!txtBoxTempoAbdominal.Text.Equals("Tempo(s)"))
                 avaliacaoFisica.TempoAbdominal = float.Parse(txtBoxTempoAbdominal.Text.Replace(",", ".").Trim());
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapaFinal", avaliacaoFisica);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapaFinal", avaliacaoFisica,acao);
         }
 
         private void TxtBoxTempoFlexao_GotFocus(object sender, RoutedEventArgs e)

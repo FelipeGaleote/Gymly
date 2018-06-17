@@ -78,6 +78,19 @@ namespace Gymly
                     break;
             }
         }
+
+        internal void MudarUserControl(string nomeDoControl, int id)
+        {
+            pnl.Children.Clear();
+            switch (nomeDoControl)
+            {
+                case "editarAvaliacao":
+                    AvaliacaoFisica avaliacaoFisica = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this,avaliacaoFisica,"Editar"));
+                    break;
+            }
+        }
+
         public void MudarUserControl(String nomeDoControl, Anamnese anamnese)
         {
             pnl.Children.Clear();
@@ -113,7 +126,7 @@ namespace Gymly
             }
         }
 
-        public void MudarUserControl(String nomeDoControl, AvaliacaoFisica avaliacaoFisica)
+        public void MudarUserControl(String nomeDoControl, AvaliacaoFisica avaliacaoFisica, string acao)
         {
             pnl.Children.Clear();
             switch (nomeDoControl)
@@ -122,31 +135,31 @@ namespace Gymly
                     pnl.Children.Add(new UserControlTipoAvaliacaoFisica(this, avaliacaoFisica));
                     break;
                 case "cadastroAvaliacaoFisica":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this, avaliacaoFisica,"Cadastrar"));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapa":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa(this, avaliacaoFisica ,acao));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapa2_Antropometria":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa2_Antropometria(this, avaliacaoFisica,acao));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia(this, avaliacaoFisica,acao));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapa3":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa3(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa3(this, avaliacaoFisica,acao));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapa4":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa4(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa4(this, avaliacaoFisica ,acao));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapa5":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa5(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa5(this, avaliacaoFisica,acao));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapa6":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa6(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa6(this, avaliacaoFisica,acao));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapaFinal":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapaFinal(this, avaliacaoFisica));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapaFinal(this, avaliacaoFisica,acao));
                     break;
             }
 

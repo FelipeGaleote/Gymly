@@ -15,11 +15,13 @@ namespace Gymly.UserControls
         private AvaliacaoFisica avaliacaoFisica;
         private string txtBoxTextoObservacao = "Observação";
         private string caminhoFotoDeFrente;
+        private string acao;
 
-        public UserControlCadastroAvaliacaoFisicaProximaEtapa3(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica)
+        public UserControlCadastroAvaliacaoFisicaProximaEtapa3(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica,string acao)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
+            this.acao = acao;
             InitializeComponent();
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
         }
@@ -40,7 +42,7 @@ namespace Gymly.UserControls
                 avaliacaoFisica.ObservacaoImagemFrontal = txtBoxObservacao.Text;
             }
             
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa4", avaliacaoFisica);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa4", avaliacaoFisica,acao);
         }
 
         private void BtnPulaFotos_Click(object sender, RoutedEventArgs e)
@@ -51,7 +53,7 @@ namespace Gymly.UserControls
             avaliacaoFisica.ObservacaoImagemCostas = String.Empty;
             avaliacaoFisica.CaminhoImagemLateral = String.Empty;
             avaliacaoFisica.ObservacaoImagemLateral = String.Empty;
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa6", avaliacaoFisica);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa6", avaliacaoFisica,acao);
         }
 
         private void TxtBoxObservacao_GotFocus(object sender, RoutedEventArgs e)

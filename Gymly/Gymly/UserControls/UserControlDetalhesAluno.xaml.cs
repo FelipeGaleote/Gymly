@@ -92,7 +92,7 @@ namespace Gymly.UserControls
         {
             AvaliacaoFisica av = new AvaliacaoFisica();
             av.CpfAluno = aluno.Cpf;
-            mainWindow.MudarUserControl("selecionarTipoAvalicaoFisica", av);
+            mainWindow.MudarUserControl("selecionarTipoAvalicaoFisica", av,"Cadastrar");
         }
 
         private void editarAluno_Click(object sender, RoutedEventArgs e)
