@@ -46,7 +46,7 @@
         <TextBlock Grid.Row="3" Grid.Column="4" TextAlignment="Right" Text="Frequência cardiaca" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox TextAlignment="Center" Name="txtBoxFrenquenciaCardiaca"  GotFocus="TxtBoxFrenquenciaCardiaca_GotFocus" LostFocus="TxtBoxFrenquenciaCardiaca_LostFocus" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="5"  VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
 
-        <TextBlock Text="Dias de treino por semana" Grid.Row="5" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="18pt" Grid.ColumnSpan="4" Margin="-27,0,215,62" Height="110" Width="312" Grid.RowSpan="2"></TextBlock>
+        <TextBlock Text="Dias de treino por semana" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="18pt" Grid.ColumnSpan="3" Margin="0,0,176,0.2" Width="324" ></TextBlock>
         <RadioButton GroupName="diasDeTreino" Content="0-2" Grid.Column="3" Grid.Row="5" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="100,0,0,0" FontSize="18pt" Name="rd0_2"/>
         <RadioButton GroupName="diasDeTreino" Content="3-5" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="5" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  Margin="196,0,246,0" FontSize="18pt" Name="rd3_5"/>
         <RadioButton GroupName="diasDeTreino" Content="6-7" Grid.Column="4" Grid.Row="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="0,0,150,0" FontSize="18pt" Name="rd6_7"/>
