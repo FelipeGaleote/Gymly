@@ -63,15 +63,15 @@ namespace Gymly.UserControls
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
             if(!txtBoxAltura.Text.Equals("cm")) 
-                avaliacaoFisica.Altura =  float.Parse(txtBoxAltura.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.Altura =  float.Parse(txtBoxAltura.Text.Trim());
             if (!txtBoxPressaoArterialDiastolica.Text.Equals("Diast. mmHg"))
-                avaliacaoFisica.PressaoArterialDiastolica = float.Parse(txtBoxPressaoArterialDiastolica.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PressaoArterialDiastolica = float.Parse(txtBoxPressaoArterialDiastolica.Text.Trim());
             if (!txtBoxPressaoArterialSistolica.Text.Equals("Sist. mmHg")) 
-                avaliacaoFisica.PressaoArterialSistolica = float.Parse(txtBoxPressaoArterialSistolica.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PressaoArterialSistolica = float.Parse(txtBoxPressaoArterialSistolica.Text.Trim());
             if (!txtBoxFrenquenciaCardiaca.Text.Equals("bpm"))
-                avaliacaoFisica.FrequenciaCardiaca = float.Parse(txtBoxFrenquenciaCardiaca.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.FrequenciaCardiaca = float.Parse(txtBoxFrenquenciaCardiaca.Text.Trim());
             if (!txtBoxMassa.Text.Equals("kg"))
-                avaliacaoFisica.Massa = float.Parse(txtBoxMassa.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.Massa = float.Parse(txtBoxMassa.Text.Trim());
             if (rd0_2.IsChecked == true)
             {
                 avaliacaoFisica.QtdadeDiasDeTreino = "0-2 Dias";
