@@ -35,9 +35,18 @@ namespace Gymly.UserControls
 
                 if (avaliacaoFisica.QtdadeDiasDeTreino != null)
                 {
-                    rd0_2.IsChecked = avaliacaoFisica.QtdadeDiasDeTreino.Equals("0-2 Dias");
-                    rd3_5.IsChecked = avaliacaoFisica.QtdadeDiasDeTreino.Equals("3-5 Dias");
-                    rd6_7.IsChecked = avaliacaoFisica.QtdadeDiasDeTreino.Equals("6-7 Dias");
+
+                    if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("0-2 Dias")) {
+                        rd0_2.IsChecked = true;
+                    }
+                    else if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("3-5 Dias")) {
+                        rd3_5.IsChecked = true;
+                    }
+                    else if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("6-7 Dias"))
+                    {
+                        rd6_7.IsChecked = true;
+                    }
+                    
                 }
                 if (avaliacaoFisica.Flexibilidade != null)
                 {
