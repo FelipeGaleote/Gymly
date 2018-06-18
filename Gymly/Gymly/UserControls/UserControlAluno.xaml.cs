@@ -52,7 +52,7 @@ namespace Gymly.UserControls
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT cpf, nome, email, STRFTIME('%d/%m/%Y',datanasc) AS 'Data de Nascimento' FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%'";
+            string query = "SELECT cpf, nome, email, STRFTIME('%d/%m/%Y',datanasc) AS 'Data de Nascimento' FROM Alunos WHERE nome like '%" + txtBoxConsultaAluno.Text + "%';";
             SQLiteCommand command = new SQLiteCommand(query, conn);
 
             DataTable dt = new DataTable("Alunos");

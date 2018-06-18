@@ -151,7 +151,7 @@ namespace Gymly.BD
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("@id", avaliacaoFisica.Id);
-            cmd.Parameters.AddWithValue("@data", DateTime.Now);
+            cmd.Parameters.AddWithValue("@data", DateTime.Now.ToShortDateString());
             cmd.Parameters.AddWithValue("@tipo", avaliacaoFisica.TipoDeAvaliacao);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
             cmd.Parameters.AddWithValue("@perimetroTorax", avaliacaoFisica.PerimetroTorax);
