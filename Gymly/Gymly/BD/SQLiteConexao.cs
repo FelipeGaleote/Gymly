@@ -100,6 +100,7 @@ namespace Gymly.BD
                 sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
                 sql.AppendLine("[DATA] DATE,");
                 sql.AppendLine("[TIPO] VARCHAR(30),");
+                sql.AppendLine("[OBSERVACAO]  VARCHAR(256),");
                 sql.AppendLine("[CAMINHOIMAGEMFRONTAL]  VARCHAR(256),");
                 sql.AppendLine("[OBSERVACAOIMAGEMFRONTAL]  VARCHAR(256),");
                 sql.AppendLine("[CAMINHOIMAGEMLATERAL]  VARCHAR(256),");
@@ -126,11 +127,16 @@ namespace Gymly.BD
                 sql.AppendLine("[ENVERGADURA] FLOAT,");
                 sql.AppendLine("[ALTURA] FLOAT,");
                 sql.AppendLine("[MASSA] FLOAT,");
-                sql.AppendLine("[PRESSAOARTERIALSISTOLICA] FLOAT,");
-                sql.AppendLine("[PRESSAOARTERIALDIASTOLICA] FLOAT,");
+                sql.AppendLine("[PRESSAOARTERIALSISTOLICA] INTEGER,");
+                sql.AppendLine("[PRESSAOARTERIALDIASTOLICA] INTEGER,");
                 sql.AppendLine("[FREQUENCIACARDIACA] FLOAT,");
-                sql.AppendLine("[TEMPOABDOMINAL] FLOAT,");
-                sql.AppendLine("[TEMPOFLEXAO] FLOAT,");
+                sql.AppendLine("[TEMPOABDOMINAL] TIME,");
+                sql.AppendLine("[TEMPOFLEXAO] TIME,");
+                sql.AppendLine("[QUANTIDADEABDOMINAL] INTEGER,");
+                sql.AppendLine("[QUANTIDADEFLEXAO] INTEGER,");
+                sql.AppendLine("[FLEXIBILIDADE] VARCHAR(10),");
+                sql.AppendLine("[DISTANCIACOOPER] FLOAT,");
+                sql.AppendLine("[QUANTIDADEDIAS] VARCHAR(10),");
                 sql.AppendLine("[DOBRACUTANEASUBESCAPULAR] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEATRICEPS] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEABICEPS] FLOAT,");
@@ -140,11 +146,7 @@ namespace Gymly.BD
                 sql.AppendLine("[DOBRACUTANEAABDOMINAL] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEACOXA] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEAPERNA] FLOAT,");
-                sql.AppendLine("[QUANTIDADEABDOMINAL] INT,");
-                sql.AppendLine("[QUANTIDADEFLEXAO] INT,");
-                sql.AppendLine("[FLEXIBILIDADE] INT,");
 
-                sql.AppendLine("[DISTANCIACOOPER] FLOAT,");
 
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
                 cmd = new SQLiteCommand(sql.ToString(), conn);

@@ -51,6 +51,21 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@perimetroCoxaDistalD", avaliacaoFisica.PerimetroCoxaDistalDireita);
             cmd.Parameters.AddWithValue("@perimetroPernaE", avaliacaoFisica.PerimetroPernaEsquerda);
             cmd.Parameters.AddWithValue("@perimetroPernaD", avaliacaoFisica.PerimetroPernaDireita);
+            cmd.Parameters.AddWithValue("@altura", avaliacaoFisica.Altura);
+            cmd.Parameters.AddWithValue("@massa", avaliacaoFisica.Massa);
+            cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
+            cmd.Parameters.AddWithValue("@distanciaCooper", avaliacaoFisica.DistanciaCooper);
+            cmd.Parameters.AddWithValue("@quantidadeDias", avaliacaoFisica.QtdadeDiasDeTreino);
+
+            cmd.Parameters.AddWithValue("@quantidadeFlexao", avaliacaoFisica.QtdadeFlexao);
+            cmd.Parameters.AddWithValue("@quantidadeAbdominal", avaliacaoFisica.QtdadeAbdominais);
+            cmd.Parameters.AddWithValue("@tempoFlexao", avaliacaoFisica.TempoFlexao);
+            cmd.Parameters.AddWithValue("@tempoAbdominal", avaliacaoFisica.TempoAbdominal);
+            cmd.Parameters.AddWithValue("@flexibilidade", avaliacaoFisica.Flexibilidade);
+            cmd.Parameters.AddWithValue("@pressaoArterialSistolica", avaliacaoFisica.PressaoArterialSistolica);
+            cmd.Parameters.AddWithValue("@pressaoArterialDiastolica", avaliacaoFisica.PressaoArterialDiastolica);
+            cmd.Parameters.AddWithValue("@frequenciaCardiaca", avaliacaoFisica.FrequenciaCardiaca);
+
             cmd.Parameters.AddWithValue("@dobraCutaneaSubescapular", avaliacaoFisica.DobraCutaneaSubescapular);
             cmd.Parameters.AddWithValue("@dobraCutaneaTriceps", avaliacaoFisica.DobraCutaneaTriceps);
             cmd.Parameters.AddWithValue("@dobraCutaneaBiceps", avaliacaoFisica.DobraCutaneaBiceps);
@@ -60,20 +75,15 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@dobraCutaneaAbdominal", avaliacaoFisica.DobraCutaneaAbdominal);
             cmd.Parameters.AddWithValue("@dobraCutaneaCoxa", avaliacaoFisica.DobraCutaneaCoxa);
             cmd.Parameters.AddWithValue("@dobraCutaneaPerna", avaliacaoFisica.DobraCutaneaPerna);
-            cmd.Parameters.AddWithValue("@altura", avaliacaoFisica.Altura);
-            cmd.Parameters.AddWithValue("@massa", avaliacaoFisica.Massa);
-            cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
-            cmd.Parameters.AddWithValue("@distanciaCooper", avaliacaoFisica.DistanciaCooper);
-            cmd.Parameters.AddWithValue("@tempoFlexao", avaliacaoFisica.TempoFlexao);
-            cmd.Parameters.AddWithValue("@tempoAbdominal", avaliacaoFisica.TempoAbdominal);
-            cmd.Parameters.AddWithValue("@flexibilidade", avaliacaoFisica.Flexibilidade);
-            cmd.Parameters.AddWithValue("@pressaoArterialSistolica", avaliacaoFisica.PressaoArterialSistolica);
-            cmd.Parameters.AddWithValue("@pressaoArterialDiastolica", avaliacaoFisica.PressaoArterialDiastolica);
-            cmd.Parameters.AddWithValue("@frequenciaCardiaca", avaliacaoFisica.FrequenciaCardiaca);
 
+            cmd.Parameters.AddWithValue("@observacao", avaliacaoFisica.Observacao);
 
-
-
+            cmd.Parameters.AddWithValue("@CAMINHOIMAGEMFRONTAL", avaliacaoFisica.CaminhoImagemFrontal);
+            cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMFRONTAL", avaliacaoFisica.ObservacaoImagemFrontal);
+            cmd.Parameters.AddWithValue("@CAMINHOIMAGEMLATERAL", avaliacaoFisica.CaminhoImagemLateral);
+            cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMLATERAL", avaliacaoFisica.ObservacaoImagemLateral);
+            cmd.Parameters.AddWithValue("@CAMINHOIMAGEMCOSTAS", avaliacaoFisica.CaminhoImagemCostas);
+            cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMCOSTAS", avaliacaoFisica.ObservacaoImagemCostas);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -191,6 +201,12 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@tempoFlexao", avaliacaoFisica.TempoFlexao);
             cmd.Parameters.AddWithValue("@distanciaCooper", avaliacaoFisica.DistanciaCooper);
             cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
+
+
+
+
+
+           
 
             cmd.ExecuteNonQuery();
             conn.Close();
