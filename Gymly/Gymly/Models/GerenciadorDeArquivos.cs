@@ -50,7 +50,13 @@ namespace Gymly.Models
         }
         public static void MoveCopiaDeArquivo(string caminhoOrigem, string caminhoDestino)
         {
+            if (File.Exists(caminhoDestino))
+            {
+                File.Delete(caminhoDestino);
+            }
+
             File.Copy(caminhoOrigem, caminhoDestino);
+         
         }
         public static string ProcuraImagem()
         {
