@@ -24,6 +24,10 @@ namespace Gymly
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string nomeAvaliador;
+
+        public string NomeAvaliador { get => nomeAvaliador; set => nomeAvaliador = value; }
+
         public MainWindow()
         {
             InitializeComponent();

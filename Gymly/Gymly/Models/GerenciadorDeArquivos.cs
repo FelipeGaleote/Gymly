@@ -22,7 +22,7 @@ namespace Gymly.Models
             cpf_aluno = cpf_aluno.Replace(".", "").Replace("-", "");
 
             string[] listAv = Directory.GetDirectories(Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString()) + "\\Fotos\\" + cpf_aluno + "\\Avaliacoes");
-            return (listAv.Length > 0) ?int.Parse(listAv[listAv.Length - 1]):-1;
+            return (listAv.Length > 0) ?listAv.Length - 1:-1;
         }
 
         public static void AlocaDiretorioPrincipal(string nome)

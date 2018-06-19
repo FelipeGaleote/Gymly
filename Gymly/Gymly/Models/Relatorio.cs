@@ -303,21 +303,25 @@ namespace Gymly.Models
             table.AddCell(CriaCell(avaliacaoFisica.FrequenciaCardiaca.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //Frequencia Cardiaca
 
 
-            table = new PdfPTable(1);
+            table = new PdfPTable(3);
 
 
-            table.AddCell(CriaCell("Treinos/semana:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.QtdadeDiasDeTreino, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//qtdade Dias de treino
+            PdfPTable tableTemp = new PdfPTable(1);
+
+            tableTemp.AddCell(CriaCell("Treinos/semana:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            tableTemp.AddCell(CriaCell(avaliacaoFisica.QtdadeDiasDeTreino, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//qtdade Dias de treino
+
+            table.AddCell(tableTemp);
+            table.AddCell(new Phrase(""));
+
+            tableTemp = new PdfPTable(1);
+
+            tableTemp.AddCell(CriaCell("Flexibilidade:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            tableTemp.AddCell(CriaCell(avaliacaoFisica.Flexibilidade, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//Flexibilidade
+            table.AddCell(tableTemp);
 
             doc.Add(table);
 
-            table = new PdfPTable(1);
-
-            table.AddCell(CriaCell("Flexibilidade:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.Flexibilidade, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//Flexibilidade
-
-           
-            doc.Add(table);
 
             doc = AdicionaLinha(doc, "Circunferências:", SelecionaFonte(textoTitulo, 14), 0);
             doc.Add(pulaLinha);
@@ -554,12 +558,12 @@ namespace Gymly.Models
             table.AddCell(CriaCell("Flexão", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.TempoFlexao.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.QtdadeFlexao.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacao, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, (avaliacao.Equals("Ruim")) ? BaseColor.RED : BaseColor.WHITE ));   ///Avaliacaooooooo flexaooooooooooooooo-----------
+            table.AddCell(CriaCell(avaliacao, SelecionaFonte(textoComum, 12), "Center", "Center", (avaliacao.Equals("Ruim")) ? BaseColor.RED : BaseColor.WHITE,  BaseColor.WHITE ));   ///Avaliacaooooooo flexaooooooooooooooo-----------
 
             table.AddCell(CriaCell("Abdominal", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.TempoAbdominal.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.QtdadeAbdominais.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacao, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, (avaliacao.Equals("Ruim")) ? BaseColor.RED : BaseColor.WHITE)); ///Avaliacaooooooo Abdominallllllll-----------
+            table.AddCell(CriaCell(avaliacao, SelecionaFonte(textoComum, 12), "Center", "Center", (avaliacao.Equals("Ruim")) ? BaseColor.RED : BaseColor.WHITE,  BaseColor.WHITE)); ///Avaliacaooooooo Abdominallllllll-----------
 
             doc.Add(table);
             doc.Add(pulaLinha);
@@ -642,6 +646,9 @@ namespace Gymly.Models
 
             doc.Add(table);
             doc = AdicionaLinha(doc, DateTime.Now.ToShortDateString(), SelecionaFonte(textoTitulo, 14), 2);
+
+
+            doc.NewPage();
 
             return doc;
 

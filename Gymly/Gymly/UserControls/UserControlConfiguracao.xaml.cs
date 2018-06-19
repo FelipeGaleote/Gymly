@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using Xceed.Wpf.Toolkit;
 
 namespace Gymly.UserControls
 {
@@ -12,28 +13,26 @@ namespace Gymly.UserControls
     public partial class UserControlConfiguracao : UserControl
     {
         private MainWindow mainWindow;
-        private string caminhoLogo;
-        private string caminhoLogoSalvar;
+        private string caminhoLogoSalvar = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString())+ "\\Fotos\\Academia\\Logo\\logo"+ GerenciadorDeArquivos.GetExtensao("Fotos\\Academia\\Logo\\logo");
+
         public UserControlConfiguracao(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
+            
         }
 
         private void AdicionarLogo_Click(object sender, RoutedEventArgs e)
         {
+            string caminhoLogo;
             caminhoLogo = GerenciadorDeArquivos.ProcuraImagem();
             if (caminhoLogo != String.Empty)
             {
                 GerenciadorDeArquivos.AlocaPasta("Academia\\", "Logo");
                 caminhoLogoSalvar = "Fotos\\Academia\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao(caminhoLogo);
-                if (File.Exists(caminhoLogoSalvar))
-                {
-                    GerenciadorDeArquivos.DeletaArquivo(GerenciadorDeArquivos.GetCaminho(caminhoLogoSalvar));
-                    System.Windows.MessageBox.Show("Deletou");
-                }
                 GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoLogo, caminhoLogoSalvar);
                 txtBoxcaminhoFoto.Text = caminhoLogoSalvar;
+                Xceed.Wpf.Toolkit.MessageBox.Show("Logo adicionado com sucesso", "Logo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             
         }
