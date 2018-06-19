@@ -46,7 +46,7 @@
         <TextBlock Grid.Row="5" Grid.Column="0" TextAlignment="Right" Text="Axilar Media" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox Name="txtBoxDobraCutaneaAxilarMedia" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="5" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxDobraCutaneaAxilarMedia_GotFocus" LostFocus="TxtBoxDobraCutaneaAxilarMedia_LostFocus"></TextBox>
 
-        <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Right" Text="Suprailiaca" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Right" Text="Supra-ilíaca" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox Name="txtBoxDobraCutaneaSuprailiaca" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="1" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" LostFocus="TxtBoxDobraCutaneaSuprailiaca_LostFocus" GotFocus="TxtBoxDobraCutaneaSuprailiaca_GotFocus"></TextBox>
 
         <TextBlock Grid.Row="2" Grid.Column="2" TextAlignment="Right" Text="Abdominal" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
