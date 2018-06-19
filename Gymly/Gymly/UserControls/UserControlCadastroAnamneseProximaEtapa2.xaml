@@ -46,7 +46,7 @@
             </CheckBox.RenderTransform>
         </CheckBox>
 
-        <TextBlock Margin="25,0,0,0" FontSize="18pt" Text="Dor nas articulações, tendões ou músculo " Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" />
+        <TextBlock Margin="25,0,0,0" FontSize="18pt" Text="Dor nas articulações, tendões ou músculos " Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3" />
         <CheckBox  Name="checkBoxDorNasArticulacoes" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Margin="0,0,25,0" Width="26">
             <CheckBox.RenderTransform>
                 <TransformGroup>
