@@ -161,24 +161,33 @@ namespace Gymly.UserControls
             switch (nomeComboBox)
             {
                 case "dia":
-                    AdicionaItemNoCmB(1, 31, comboBoxDia);
+                    AdicionaItemNoCmB(1, 31, comboBoxDia, "ASC");
                     break;
                 case "mes":
-                    AdicionaItemNoCmB(1, 12, comboBoxMes);
+                    AdicionaItemNoCmB(1, 12, comboBoxMes, "ASC");
                     break;
                 case "ano":
-                    AdicionaItemNoCmB(1900, DateTime.Now.Year, comboBoxAno);
+                    AdicionaItemNoCmB((DateTime.Now.Year - 120), DateTime.Now.Year, comboBoxAno , "DESC");
                     break;
             }
         }
-        public void AdicionaItemNoCmB(int inicio, int fim, System.Windows.Controls.ComboBox comboBox)
+        public void AdicionaItemNoCmB(int valorInicial, int valorFinal, System.Windows.Controls.ComboBox comboBox, string ordenacao)
         {
        
             List<string> lista = new List<string>();
-
-            for (int i = inicio; i <= fim; i++)
+            if (ordenacao.Equals("ASC"))
             {
-                lista.Add(i.ToString());
+                for (int i = valorInicial; i <= valorFinal; i++)
+                {
+                    lista.Add(i.ToString());
+                }
+            }
+            else
+            {
+                for (int i = valorFinal; i >= valorInicial; i--)
+                {
+                    lista.Add(i.ToString());
+                }
             }
             comboBox.ItemsSource = lista;
         }

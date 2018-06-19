@@ -19,10 +19,14 @@ namespace Gymly.BD
                 " perimetroCoxaDistalD,perimetroPernaE, perimetroPernaD,envergadura,altura,massa,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
                 "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,tempoFlexao,tempoAbdominal,quantidadeFlexao,quantidadeAbdominal,flexibilidade,pressaoArterialSistolica," +
                 "pressaoArterialDiastolica,frequenciaCardiaca,observacao,caminhoImagemFrontal,observacaoImagemFrontal,caminhoImagemLateral,observacaoImagemLateral,caminhoImagemCostas," +
-                "observacaoImagemCostas,distanciaCooper,quantidadeDias)  VALUES(NULL,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE," +
+                "observacaoImagemCostas,distanciaCooper,quantidadeDias)  " +
+                "" +
+                "VALUES" +
+                "" +
+                "(NULL,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE," +
                 "@perimetroAntebracoD,@perimetroCintura,@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD," +
                 "@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD,@envergadura,@altura,@massa,@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax," +
-                "@dobraCutaneaAxilarMedia,@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@tempoFlexao,@tempoAbdominal,@quantidadeFlexao,@quantidadeAbdominal" +
+                "@dobraCutaneaAxilarMedia,@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@tempoFlexao,@tempoAbdominal,@quantidadeFlexao,@quantidadeAbdominal," +
                 "@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica,@frequenciaCardiaca,@observacao,@caminhoImagemFrontal,@observacaoImagemFrontal,@caminhoImagemLateral," +
                 "@observacaoImagemLateral,@caminhoImagemCostas,@observacaoImagemCostas,@distanciaCooper,@quantidadeDias);";
 

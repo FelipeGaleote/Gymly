@@ -56,16 +56,18 @@ namespace Gymly.UserControls
         {
             DataRowView dataRow = (DataRowView)dataGridAV.SelectedItem;
             int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
-            /*
+            
             try
             {
-               int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
+               //int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
                 mainWindow.MudarUserControl("editarAvaliacao",id);
             }
             catch (Exception x)
             {
                 Console.WriteLine(x.Message);
-            }*/
+            }
+
+            /*
             System.Windows.MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show("Deseja gerar pdf?", "Gerar pdf da avaliação fisica", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result.ToString().ToUpper() == "YES")
@@ -75,6 +77,7 @@ namespace Gymly.UserControls
                 av = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
                 Relatorio.GerarRelatorioDeAvaliacao(av.CpfAluno, local, av);
             }
+        */
         }
 
         private void DataGridAV_SelectionChanged(object sender, SelectionChangedEventArgs e)
