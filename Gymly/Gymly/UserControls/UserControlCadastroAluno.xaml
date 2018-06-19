@@ -49,9 +49,9 @@
         <RadioButton GroupName="Genero" Content="Masculino" Grid.Column="2" Grid.Row="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center" Margin="0,10,20,10" FontSize="18pt" Name="rdMasculino" IsChecked="True"/>
         <RadioButton GroupName="Genero" Content="Feminino" Grid.Column="3" Grid.Row="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Center" VerticalContentAlignment="Center"  Margin="0,10,20,10" FontSize="18pt" Name="rdFeminino"/>
         <ComboBox Grid.Column="3" Grid.Row="6" MinWidth="120" Width="Auto" HorizontalAlignment="Right" Margin="0,10,20,10" VerticalAlignment="Center" Name="ComboBoxNivel" FontSize="18pt">
-            <ComboBoxItem FontSize="16">Sedentario</ComboBoxItem>
+            <ComboBoxItem FontSize="16">Sedentário</ComboBoxItem>
             <ComboBoxItem FontSize="16">Iniciante</ComboBoxItem>
-            <ComboBoxItem FontSize="16">Intermediario</ComboBoxItem>
+            <ComboBoxItem FontSize="16">Intermediário</ComboBoxItem>
             <ComboBoxItem FontSize="16">Avançado</ComboBoxItem>
         </ComboBox>
 

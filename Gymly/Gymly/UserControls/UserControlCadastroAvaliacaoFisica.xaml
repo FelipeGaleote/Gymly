@@ -43,7 +43,7 @@
         <TextBox TextAlignment="Center" Name="txtBoxPressaoArterialSistolica" GotFocus="TxtBoxPressaoArterialSistolica_GotFocus" LostFocus="TxtBoxPressaoArterialSistolica_LostFocus" Height="auto"  MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="3" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
         <TextBox TextAlignment="Center" Name="txtBoxPressaoArterialDiastolica" GotFocus="TxtBoxPressaoArterialDiastolica_GotFocus" LostFocus="TxtBoxPressaoArterialDiastolica_LostFocus" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Right" Margin="0,0,20,0" Grid.Row="3" Grid.Column="3" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
 
-        <TextBlock Grid.Row="3" Grid.Column="4" TextAlignment="Right" Text="Frequência cardiaca" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="4" TextAlignment="Right" Text="Frequência cardíaca" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox TextAlignment="Center" Name="txtBoxFrenquenciaCardiaca"  GotFocus="TxtBoxFrenquenciaCardiaca_GotFocus" LostFocus="TxtBoxFrenquenciaCardiaca_LostFocus" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="5"  VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
 
         <TextBlock Text="Dias de treino por semana" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="18pt" Grid.ColumnSpan="3" Margin="0,0,176,0.2" Width="324" ></TextBlock>

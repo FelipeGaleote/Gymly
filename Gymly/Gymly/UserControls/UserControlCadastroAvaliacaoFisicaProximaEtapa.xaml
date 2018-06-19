@@ -58,7 +58,7 @@
         <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Right" Text="Ombro" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox Name="txtBoxPerimetroOmbro" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="1" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxPerimetroOmbro_GotFocus" LostFocus="TxtBoxPerimetroOmbro_LostFocus"></TextBox>
 
-        <TextBlock Grid.Row="2" Grid.Column="2" TextAlignment="Right" Text="Toráx" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="2" TextAlignment="Right" Text="Tórax" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox Name="txtBoxPerimetroTorax" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxPerimetroTorax_GotFocus" LostFocus="TxtBoxPerimetroTorax_LostFocus"></TextBox>
 
         <TextBlock Grid.Row="3" Grid.Column="2" TextAlignment="Right" Text="Cintura" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
