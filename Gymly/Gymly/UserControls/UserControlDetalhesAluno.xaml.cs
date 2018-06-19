@@ -39,15 +39,12 @@ namespace Gymly.UserControls
                 txtBlockNivel.Text = aluno.Nivel;
                 txtBlockSexo.Text = aluno.Sexo.ToString().Equals("F")? "Feminino" : "Masculino";
                 Xceed.Wpf.Toolkit.MessageBox.Show(aluno.CaminhoFotoDoRosto);
-                 if (!aluno.CaminhoFotoDoRosto.Equals(""))
-                 {
+                if (!aluno.CaminhoFotoDoRosto.Equals(""))
+                {
 
                     imageFotoDeRosto.Source = GerenciadorDeArquivos.BuscaImagem(aluno.CaminhoFotoDoRosto);
                 }
-                  else
-                {
-                   imageFotoDeRosto.Source = GerenciadorDeArquivos.AdicionaImagem("Image\\sem_foto.png");
-                 }
+                  
                 this.aluno = aluno;
             }
 

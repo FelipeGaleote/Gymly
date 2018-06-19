@@ -48,7 +48,7 @@
         <TextBlock Name="txtBlockNivel"  Grid.Row="3" Grid.Column="4" TextAlignment="Left" FontSize="16pt"/>
         <TextBlock Name="txtBlockSexo"  Grid.Row="5" Grid.Column="4" TextAlignment="Left" FontSize="16pt" />
 
-        <Image Name="imageFotoDeRosto" Grid.Row="2" Grid.RowSpan="5" Grid.Column="5" Grid.ColumnSpan="2" Margin="50,0,50,0"></Image>
+        <Image Name="imageFotoDeRosto" Source="/Gymly;component/Image/sem_foto.png" Grid.Row="2" Grid.RowSpan="5" Grid.Column="5" Grid.ColumnSpan="2" Margin="50,0,0,0"/>
 
 
         <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Content="Cadastrar Anamnese" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAnamnese_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0"/>
