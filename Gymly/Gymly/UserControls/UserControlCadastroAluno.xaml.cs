@@ -140,7 +140,7 @@ namespace Gymly.UserControls
         }
         private void BtnAddFotoDeRosto_Click(object sender, RoutedEventArgs e)
         {
-            GerenciadorDeArquivos.AlocaDiretorioPrincipal("Fotos");
+            
             caminhoFotoDeRosto = GerenciadorDeArquivos.ProcuraImagem();
 
             if (caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals(""))

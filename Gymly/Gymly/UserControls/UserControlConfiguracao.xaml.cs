@@ -25,7 +25,6 @@ namespace Gymly.UserControls
             caminhoLogo = GerenciadorDeArquivos.ProcuraImagem();
             if (caminhoLogo != String.Empty)
             {
-                GerenciadorDeArquivos.AlocaPasta("Academia");
                 GerenciadorDeArquivos.AlocaPasta("Academia\\", "Logo");
                 caminhoLogoSalvar = "Fotos\\Academia\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao(caminhoLogo);
                 if (File.Exists(caminhoLogoSalvar))

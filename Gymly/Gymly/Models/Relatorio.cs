@@ -130,8 +130,10 @@ namespace Gymly.Models
         }
         public static PdfPCell CriaCell(string texto1, string texto2, Font fonteTexto1, Font fonteTexto2, string alinhamentoX, string alinhamentoY, BaseColor corFundo, BaseColor corBorda)
         {
-            Paragraph p = new Paragraph(texto1, fonteTexto1);
-            p.Add(new Chunk(texto2, fonteTexto2));
+            Paragraph p = new Paragraph(texto1, fonteTexto1)
+            {
+                new Chunk(texto2, fonteTexto2)
+            };
             PdfPCell cell = new PdfPCell(p);
             switch (alinhamentoX)
             {
@@ -165,7 +167,7 @@ namespace Gymly.Models
         public static iTextSharp.text.Image AdicionaImagem(string caminhoImagem, float escalaX, float escalaY, int alinhamento)
         {
 
-            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(String.Format(caminhoImagem));
+            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\" + caminhoImagem);
             img.Alignment = (alinhamento | iTextSharp.text.Image.TEXTWRAP);
             img.Border = (iTextSharp.text.Image.BOX);
             img.BorderWidth = (10);
@@ -176,16 +178,20 @@ namespace Gymly.Models
         }
         public static Document AdicionaLinha(Document doc, string texto, Font fonte, int alinhamento)
         {
-            Paragraph paragraph = new Paragraph(texto, fonte);
-            paragraph.Alignment = alinhamento;
+            Paragraph paragraph = new Paragraph(texto, fonte)
+            {
+                Alignment = alinhamento
+            };
             doc.Add(paragraph);
 
             return doc;
         }
         public static Document AdicionaLinha(Document doc, string texto1, string texto2, Font fonteTexto1, Font fonteTexto2, int alinhamento)
         {
-            Paragraph paragraph = new Paragraph(texto1, fonteTexto1);
-            paragraph.Add(new Chunk(texto2, fonteTexto2));
+            Paragraph paragraph = new Paragraph(texto1, fonteTexto1)
+            {
+                new Chunk(texto2, fonteTexto2)
+            };
             paragraph.Alignment = alinhamento;
             doc.Add(paragraph);
 
@@ -459,8 +465,8 @@ namespace Gymly.Models
             doc.Add(table);
 
             doc.NewPage();
-            /*
-            if (avaliacaoFisica.CaminhoImagemFrontal != String.Empty) {
+            
+            if (!avaliacaoFisica.CaminhoImagemFrontal.Equals("")) {
                 doc.Add(pulaLinha);
                 doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
                 doc.Add(pulaLinha);
@@ -482,7 +488,7 @@ namespace Gymly.Models
 
             }
 
-            if (avaliacaoFisica.CaminhoImagemLateral != String.Empty) { 
+            if (!avaliacaoFisica.CaminhoImagemLateral.Equals("")) { 
                 doc.Add(pulaLinha);
                 doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
                 doc.Add(pulaLinha);
@@ -503,7 +509,7 @@ namespace Gymly.Models
 
                 doc.NewPage();
             }
-            if (avaliacaoFisica.CaminhoImagemCostas != String.Empty) {
+            if (!avaliacaoFisica.CaminhoImagemCostas.Equals("")) {
                 doc.Add(pulaLinha);
                 doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
                 doc.Add(pulaLinha);
@@ -524,7 +530,7 @@ namespace Gymly.Models
 
                 doc.NewPage();
             }
-            */
+            
             doc.Add(pulaLinha);
             doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
             doc.Add(pulaLinha);
@@ -606,8 +612,8 @@ namespace Gymly.Models
             doc.Add(pulaLinha);
             doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
             doc.Add(pulaLinha);
-            /*
-            if (!File.Exists(caminhoFotoLogoEmpresa))
+            
+            if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\" + caminhoFotoLogoEmpresa))
             {
                 doc.Add(pulaLinha);
                 doc.Add(pulaLinha);
@@ -621,7 +627,7 @@ namespace Gymly.Models
                 doc.Add(pulaLinha);
             }
             doc.Add(AdicionaImagem(aluno.CaminhoFotoDoRosto, 800, 300, 1));
-            */
+            
             doc.Add(pulaLinha);
             doc.Add(pulaLinha);
             

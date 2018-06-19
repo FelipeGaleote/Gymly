@@ -30,16 +30,16 @@ namespace Gymly.UserControls
         {
             if (caminhoFotoDeLado != null && !caminhoFotoDeLado.Equals(""))
             {
-                avaliacaoFisica.CaminhoImagemFrontal = caminhoFotoDeLado;
+                avaliacaoFisica.CaminhoImagemLateral = caminhoFotoDeLado;
             }
             else
             {
-                avaliacaoFisica.CaminhoImagemFrontal = String.Empty;
+                avaliacaoFisica.CaminhoImagemLateral = String.Empty;
 
             }
             if (txtBoxObservacao.Text != String.Empty)
             {
-                avaliacaoFisica.ObservacaoImagemFrontal = txtBoxObservacao.Text;
+                avaliacaoFisica.ObservacaoImagemLateral = txtBoxObservacao.Text;
             }
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa5", avaliacaoFisica , acao);
         }

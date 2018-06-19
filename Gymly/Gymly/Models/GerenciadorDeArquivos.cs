@@ -17,6 +17,14 @@ namespace Gymly.Models
             File.Delete(caminho);
         }
 
+        public static int BuscaUltimaAvDoAluno(string cpf_aluno)
+        {
+            cpf_aluno = cpf_aluno.Replace(".", "").Replace("-", "");
+
+            string[] listAv = Directory.GetDirectories(Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString()) + "\\Fotos\\" + cpf_aluno + "\\Avaliacoes");
+            return (listAv.Length > 0) ?int.Parse(listAv[listAv.Length - 1]):-1;
+        }
+
         public static void AlocaDiretorioPrincipal(string nome)
         {
             if (!File.Exists(nome))
@@ -85,9 +93,11 @@ namespace Gymly.Models
         }
 
         public static string BuscaLocalParaSalvarArquivo() {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "PDF File|*.pdf";
-            saveFileDialog.Title = "Salvar Relatório";
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "PDF File|*.pdf",
+                Title = "Salvar Relatório"
+            };
             saveFileDialog.ShowDialog();
             return saveFileDialog.FileName;
         }

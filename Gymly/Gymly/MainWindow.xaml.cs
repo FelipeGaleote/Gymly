@@ -28,14 +28,18 @@ namespace Gymly
         {
             InitializeComponent();
             StartClock();
-            MudarUserControl("telaInicial");  
+            MudarUserControl("telaInicial");
+            GerenciadorDeArquivos.AlocaDiretorioPrincipal("Fotos");
+            GerenciadorDeArquivos.AlocaPasta("Academia");
+            GerenciadorDeArquivos.AlocaPasta("Academia\\Logo");
+
         }
         private void StartClock()
         {
-            DispatcherTimer timer = new DispatcherTimer
-            {
-                Interval = TimeSpan.FromSeconds(1)
-            };
+            DispatcherTimer timer = new DispatcherTimer();
+           // {
+           //     Interval = TimeSpan.FromSeconds(1)
+            //};
             timer.Tick += Tickevent;
             timer.Start();
         }
