@@ -50,7 +50,7 @@ namespace Gymly.Models
             OpenFileDialog dlg = new OpenFileDialog
             {
                 InitialDirectory = "c:\\",
-                Filter = "Image files (*.jpg)|*.jpg |All Files (*.*)|*.*",
+                Filter = "Image files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png |All Files (*.*)|*.*",
                 RestoreDirectory = true,
                 Multiselect = false
             };
