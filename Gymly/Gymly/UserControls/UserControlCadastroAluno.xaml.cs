@@ -38,7 +38,7 @@ namespace Gymly.UserControls
             this.aluno = aluno;
             this.acao = "EDITAR";
             txtBoxCpf.IsEnabled = false;
-            btnCadastrarAluno.Content = "SALVAR"; 
+            btnCadastrarAluno.Content = "Salvar"; 
             this.aluno = aluno;
             if (aluno != null)
             {
@@ -52,6 +52,12 @@ namespace Gymly.UserControls
                 ComboBoxNivel.Text = aluno.Nivel;
                 rdMasculino.IsChecked = aluno.Sexo.ToString().Equals("M");
                 rdFeminino.IsChecked = aluno.Sexo.ToString().Equals("F");
+                if (aluno.CaminhoFotoDoRosto != null && !aluno.CaminhoFotoDoRosto.Equals(""))
+                {
+                    ImageFotoDeRosto.Source = GerenciadorDeArquivos.BuscaImagem(aluno.CaminhoFotoDoRosto);
+                    btnAddFotoDeRosto.Background = Brushes.Transparent;
+                    btnAddFotoDeRosto.BorderBrush = null;
+                }
 
             }
 

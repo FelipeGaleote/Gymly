@@ -87,7 +87,7 @@ namespace Gymly.Models
             
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri(@caminho);
+            bitmap.UriSource = new Uri(caminho);
             bitmap.EndInit();
             return bitmap;
           
