@@ -56,7 +56,8 @@
         <RadioButton GroupName="flexibilidade" Content="Regular" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="6" MinWidth="120"  HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  Margin="165,0,215,0" FontSize="18pt" Name="rdRegular" Height="125" Grid.RowSpan="2"/>
         <RadioButton GroupName="flexibilidade" Content="Ruim" Grid.Column="4" Grid.Row="6" MinWidth="120"  HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="0,0,93,70" FontSize="18pt" Name="rdRuim" Height="150" Grid.RowSpan="3" Width="147"/>
 
-        <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="3" Height="auto" MinWidth="120" MaxWidth="400" Grid.ColumnSpan="2" Click="BtnProximaEtapa_Click"/>
+        <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="3" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnProximaEtapa_Click"/>
+
 
     </Grid>
 </UserControl>
