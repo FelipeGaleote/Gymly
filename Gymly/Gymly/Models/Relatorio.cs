@@ -15,9 +15,9 @@ namespace Gymly.Models
 
     class Relatorio
     {
-        private static string textoTitulo = FontFactory.HELVETICA_BOLD;
-        private static string textoComum = FontFactory.HELVETICA;
-        private static string caminhoFotoLogoEmpresa = "Fotos\\Academia\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao("Fotos\\Academia\\Logo\\logo");
+        private static readonly string textoTitulo = FontFactory.HELVETICA_BOLD;
+        private static readonly string textoComum = FontFactory.HELVETICA;
+        private static readonly string caminhoFotoLogoEmpresa = "Fotos\\Academia\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao("Fotos\\Academia\\Logo\\logo");
 
         //private string caminhoRelatorioAvaliacaoFisica = "av.pdf";
         
@@ -99,8 +99,10 @@ namespace Gymly.Models
         }
         public static PdfPCell CriaCell(string texto, Font fonte, string alinhamentoX, string alinhamentoY)
         {
-            PdfPCell cell = new PdfPCell(new Phrase(texto, fonte));
-            cell.NoWrap = false;
+            PdfPCell cell = new PdfPCell(new Phrase(texto, fonte))
+            {
+                NoWrap = false
+            };
             cell.Column.AdjustFirstLine = true;
             switch (alinhamentoX)
             {
@@ -307,17 +309,17 @@ namespace Gymly.Models
 
 
             PdfPTable tableTemp = new PdfPTable(1);
-
-            tableTemp.AddCell(CriaCell("Treinos/semana:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            tableTemp.AddCell(CriaCell(avaliacaoFisica.QtdadeDiasDeTreino, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//qtdade Dias de treino
+            
+            tableTemp.AddCell(CriaCell("Treinos/semana:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+            tableTemp.AddCell(CriaCell(avaliacaoFisica.QtdadeDiasDeTreino, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//qtdade Dias de treino
 
             table.AddCell(tableTemp);
-            table.AddCell(new Phrase(""));
+            table.AddCell(new PdfPCell() { BorderColor = BaseColor.WHITE , FixedHeight = 10});
 
             tableTemp = new PdfPTable(1);
 
             tableTemp.AddCell(CriaCell("Flexibilidade:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-            tableTemp.AddCell(CriaCell(avaliacaoFisica.Flexibilidade, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));//Flexibilidade
+            tableTemp.AddCell(CriaCell(avaliacaoFisica.Flexibilidade, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Flexibilidade
             table.AddCell(tableTemp);
 
             doc.Add(table);
@@ -639,8 +641,8 @@ namespace Gymly.Models
 
             table.AddCell(CriaCell("Nome: ", aluno.Nome, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell("Idade: ", aluno.CalculaIdade().ToString(), SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell("Sexo: ", aluno.Sexo, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell("Nivel: ", aluno.Nivel, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            table.AddCell(CriaCell("Sexo: ", (aluno.Sexo.Equals("M")?"Masculino":"Feminino"), SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            table.AddCell(CriaCell("Nível: ", aluno.Nivel, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell("E-mail: ", aluno.Email, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell("Telefone: ", aluno.Telefone, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
 

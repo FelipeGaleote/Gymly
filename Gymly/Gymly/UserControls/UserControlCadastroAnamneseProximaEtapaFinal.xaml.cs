@@ -22,7 +22,7 @@ namespace Gymly.UserControls
             if (anamnese.Observacao != null && !anamnese.Observacao.Equals(""))
                 txtBoxObservacao.Text = anamnese.Observacao;
             else
-                mostraDica();
+                MostraDica();
 
         }
 
@@ -37,10 +37,10 @@ namespace Gymly.UserControls
 
         private void TxtBoxObservacao_LostFocus(object sender, RoutedEventArgs e)
         {
-            mostraDica();
+            MostraDica();
         }
 
-        private void mostraDica()
+        private void MostraDica()
         {
             if (txtBoxObservacao.Text == String.Empty)
             {

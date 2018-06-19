@@ -52,7 +52,7 @@ namespace Gymly.UserControls
             conn.Close();
         }
 
-        private void dataGridAV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void DataGridAV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataRowView dataRow = (DataRowView)dataGridAV.SelectedItem;
             int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
@@ -77,7 +77,7 @@ namespace Gymly.UserControls
             }
         }
 
-        private void dataGridAV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DataGridAV_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -11,8 +11,8 @@ namespace Gymly.BD
     class SQLiteConexao
     {
 
-        private static string nomeBanco = "gymly.db";
-        private static string conexao = "Data Source="+nomeBanco;
+        private static readonly string nomeBanco = "gymly.db";
+        private static readonly string conexao = "Data Source="+nomeBanco;
         private SQLiteConnection conn;
 
 

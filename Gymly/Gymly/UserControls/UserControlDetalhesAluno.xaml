@@ -53,8 +53,8 @@
 
         <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Content="Cadastrar Anamnese" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAnamnese_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0"/>
         <Button Grid.Row="10" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Fisica" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAvaliacaoFisica_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0"/>
-        <Button Grid.Row="10" Grid.Column="5" Name="btnListaAvaliacaoFisicas" Content="Listar Avaliações" Height="50" FontSize="16pt" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0" Click="btnListaAvaliacaoFisicas_Click"/>
-        <Button Grid.Row="1"  Grid.Column="6" Content="Editar Aluno" Name="editarAluno" BorderBrush="{x:Null}" Foreground="Blue" Background="Transparent" HorizontalAlignment="Right"  VerticalAlignment="Top" Height="24" Click="editarAluno_Click"/>
+        <Button Grid.Row="10" Grid.Column="5" Name="btnListaAvaliacaoFisicas" Content="Listar Avaliações" Height="50" FontSize="16pt" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0" Click="BtnListaAvaliacaoFisicas_Click"/>
+        <Button Grid.Row="1"  Grid.Column="6" Content="Editar Aluno" Name="editarAluno" BorderBrush="{x:Null}" Foreground="Blue" Background="Transparent" HorizontalAlignment="Right"  VerticalAlignment="Top" Height="24" Click="EditarAluno_Click"/>
 
 
 

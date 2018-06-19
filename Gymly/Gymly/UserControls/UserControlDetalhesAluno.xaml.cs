@@ -87,17 +87,19 @@ namespace Gymly.UserControls
 
         private void BtnCadastrarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            AvaliacaoFisica av = new AvaliacaoFisica();
-            av.CpfAluno = aluno.Cpf;
+            AvaliacaoFisica av = new AvaliacaoFisica
+            {
+                CpfAluno = aluno.Cpf
+            };
             mainWindow.MudarUserControl("selecionarTipoAvalicaoFisica", av,"Cadastrar");
         }
 
-        private void editarAluno_Click(object sender, RoutedEventArgs e)
+        private void EditarAluno_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.MudarUserControl("editarAluno", aluno);
         }
 
-        private void btnListaAvaliacaoFisicas_Click(object sender, RoutedEventArgs e)
+        private void BtnListaAvaliacaoFisicas_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.MudarUserControl("listarAvaliacoes",aluno.Cpf);
         }
