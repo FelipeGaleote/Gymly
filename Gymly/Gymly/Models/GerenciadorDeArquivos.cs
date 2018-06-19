@@ -70,12 +70,20 @@ namespace Gymly.Models
             return Path.GetFileName(nome);
         }
         public static BitmapImage AdicionaImagem(string caminho) {
+            
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
-            bitmap.UriSource = new Uri(caminho);
+            bitmap.UriSource = new Uri(@caminho);
             bitmap.EndInit();
             return bitmap;
+          
         }
+
+        public static BitmapImage BuscaImagem(string caminhoRelativo)
+        {
+            return new BitmapImage(new Uri(Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString()) + "\\" + caminhoRelativo));
+        }
+
         public static string BuscaLocalParaSalvarArquivo() {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "PDF File|*.pdf";
