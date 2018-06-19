@@ -34,6 +34,7 @@ namespace Gymly.UserControls
                     System.Windows.MessageBox.Show("Deletou");
                 }
                 GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoLogo, caminhoLogoSalvar);
+                txtBoxcaminhoFoto.Text = caminhoLogoSalvar;
             }
             
         }

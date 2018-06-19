@@ -19,7 +19,7 @@ namespace Gymly.Models
         private static string textoComum = FontFactory.HELVETICA;
         private static string caminhoFotoLogoEmpresa = "Fotos\\Academia\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao("Fotos\\Academia\\Logo\\logo");
 
-        private string caminhoRelatorioAvaliacaoFisica = "av.pdf";
+        //private string caminhoRelatorioAvaliacaoFisica = "av.pdf";
         
         public static void GeraRelatorioAlunos(string local)
         {
@@ -54,12 +54,12 @@ namespace Gymly.Models
                 Aluno aluno = BDAluno.SelecionaAlunoPorCpf(cpf);
 
                 PdfPTable dados = new PdfPTable(6) {WidthPercentage=106 ,RunDirection = PdfWriter.RUN_DIRECTION_LTR, ExtendLastRow = false };
-                dados.AddCell(CriaCell(aluno.Nome, SelecionaFonte(textoComum, 14), "Center", "Center"));
-                dados.AddCell(CriaCell(aluno.Cpf, SelecionaFonte(textoComum, 14), "Center", "Center"));
-                dados.AddCell(CriaCell(aluno.CalculaIdade().ToString(), SelecionaFonte(textoComum, 14), "Center", "Center"));
-                dados.AddCell(CriaCell(aluno.Sexo, SelecionaFonte(textoComum, 14), "Center", "Center"));
-                dados.AddCell(CriaCell(aluno.Email, SelecionaFonte(textoComum, 14), "Center", "Center"));
-                dados.AddCell(CriaCell(aluno.Telefone, SelecionaFonte(textoComum, 14), "Center", "Center"));
+                dados.AddCell(CriaCell(aluno.Nome, SelecionaFonte(textoComum, 12), "Center", "Center"));
+                dados.AddCell(CriaCell(aluno.Cpf, SelecionaFonte(textoComum, 12), "Center", "Center"));
+                dados.AddCell(CriaCell(aluno.CalculaIdade().ToString(), SelecionaFonte(textoComum, 12), "Center", "Center"));
+                dados.AddCell(CriaCell(aluno.Sexo, SelecionaFonte(textoComum, 12), "Center", "Center"));
+                dados.AddCell(CriaCell(aluno.Email, SelecionaFonte(textoComum, 12), "Center", "Center"));
+                dados.AddCell(CriaCell(aluno.Telefone, SelecionaFonte(textoComum, 12), "Center", "Center"));
                 doc.Add(dados);
             }
             

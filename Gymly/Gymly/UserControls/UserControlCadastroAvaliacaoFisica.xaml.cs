@@ -104,14 +104,10 @@ namespace Gymly.UserControls
             {
                 avaliacaoFisica.Flexibilidade = "Ruim";
             }
-            if(avaliacaoFisica.PressaoArterialSistolica == avaliacaoFisica.PressaoArterialDiastolica)
-            {
-                Xceed.Wpf.Toolkit.MessageBox.Show("Valores de pressão arterial inválidos! Insira valores válidos.", "Pressão Arterial", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else
-            {
-                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, acao);
-            }
+           
+            
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, acao);
+            
 
             
         }

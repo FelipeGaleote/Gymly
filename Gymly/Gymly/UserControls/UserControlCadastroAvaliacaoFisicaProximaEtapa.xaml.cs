@@ -105,6 +105,8 @@ namespace Gymly.UserControls
                 avaliacaoFisica.PerimetroQuadril = float.Parse(txtBoxPerimetroQuadril.Text.Replace(",", ".").Trim());
             if (!txtBoxPerimetroTorax.Text.Equals("cm"))
                 avaliacaoFisica.PerimetroTorax = float.Parse(txtBoxPerimetroTorax.Text.Replace(",", ".").Trim());
+            if (!txtBoxPerimetroTorax.Text.Equals("cm"))
+                avaliacaoFisica.Envergadura = float.Parse(txtBoxEnvergadura.Text.Replace(",", ".").Trim());
             if (avaliacaoFisica.TipoDeAvaliacao == "Antropometria") {
                 mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Antropometria", avaliacaoFisica,acao);
             }
