@@ -15,13 +15,16 @@ namespace Gymly.BD
             SQLiteConnection conn = conexao.GetConexao();
 
             string sql = "INSERT INTO AvaliacaoFisica(id,cpf_aluno,data,tipo,perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
-                ",perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroCoxaDistalE, perimetroCoxaDistalD," +
-                "perimetroPernaE, perimetroPernaD,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
-                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura,tempoFlexao,tempoAbdominal,flexibilidade,pressaoArterialSistolica,pressaoArterialDiastolica,frequenciaCardiaca)" +
-                "VALUES(NULL,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE,@perimetroAntebracoD,@perimetroCintura" +
-                ",@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD,@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD," +
-                "@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax,@dobraCutaneaAxilarMedia," +
-                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura,@tempoFlexao,@tempoAbdominal,@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica,@frequenciaCardiaca);";
+                ",perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroCoxaDistalE," +
+                " perimetroCoxaDistalD,perimetroPernaE, perimetroPernaD,envergadura,altura,massa,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
+                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,tempoFlexao,tempoAbdominal,quantidadeFlexao,quantidadeAbdominal,flexibilidade,pressaoArterialSistolica," +
+                "pressaoArterialDiastolica,frequenciaCardiaca,observacao,caminhoImagemFrontal,observacaoImagemFrontal,caminhoImagemLateral,observacaoImagemLateral,caminhoImagemCostas," +
+                "observacaoImagemCostas,distanciaCooper,quantidadeDias)  VALUES(NULL,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE," +
+                "@perimetroAntebracoD,@perimetroCintura,@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD," +
+                "@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD,@envergadura,@altura,@massa,@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax," +
+                "@dobraCutaneaAxilarMedia,@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@tempoFlexao,@tempoAbdominal,@quantidadeFlexao,@quantidadeAbdominal" +
+                "@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica,@frequenciaCardiaca,@observacao,@caminhoImagemFrontal,@observacaoImagemFrontal,@caminhoImagemLateral," +
+                "@observacaoImagemLateral,@caminhoImagemCostas,@observacaoImagemCostas,@distanciaCooper,@quantidadeDias);";
 
 
 
@@ -31,7 +34,7 @@ namespace Gymly.BD
             if (!data.Equals("01/01/0001 00:00:00"))
                 cmd.Parameters.AddWithValue("@data", avaliacaoFisica.Data);
             else
-             
+
             cmd.Parameters.AddWithValue("@data", DateTime.Now);
             cmd.Parameters.AddWithValue("@tipo", avaliacaoFisica.TipoDeAvaliacao);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
@@ -95,7 +98,7 @@ namespace Gymly.BD
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
 
-            string sql = "SELECT id FROM AvaliacaoFisica WHERE cpf_aluno LIKE '"+cpf+"';";
+            string sql = "SELECT id FROM AvaliacaoFisica WHERE cpf_aluno LIKE '" + cpf + "';";
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -133,27 +136,35 @@ namespace Gymly.BD
                          "perimetroPernaD = @perimetroPernaD," +
                          "dobraCutaneaSubescapular = @dobraCutaneaSubescapular," +
                          "dobraCutaneaTriceps = @dobraCutaneaTriceps,"
-                         + 
-                         
+                         +
+
                          "dobraCutaneaBiceps = @dobraCutaneaBiceps," +
                          "dobraCutaneaTorax = @dobraCutaneaTorax," +
                          "dobraCutaneaAxilarMedia= @dobraCutaneaAxilarMedia ," +
                          "dobraCutaneaSuprailiaca = @dobraCutaneaSuprailiaca," +
                          "dobraCutaneaAbdominal = @dobraCutaneaAbdominal," +
                          "dobraCutaneaCoxa = @dobraCutaneaCoxa," +
-                          "dobraCutaneaAbdominal = @dobraCutaneaAbdominal,"+
-                           "distanciaCooper = @distanciaCooper,"+
+                          "dobraCutaneaAbdominal = @dobraCutaneaAbdominal," +
+                           "distanciaCooper = @distanciaCooper," +
                          "tempoFlexao = @tempoFlexao," +
-                       "quantidadeFlexao = @qtdadeFlexao," +
+                       "quantidadeFlexao = @quantidadeFlexao," +
                       "tempoAbdominal = @tempoAbdominal," +
-                       "quantidadeAbdominal = @qtdadeAbdominais," +
+                       "quantidadeAbdominal = @quantidadeAbdominal," +
                       "flexibilidade = @flexibilidade," +
+                    "caminhoImagemFrontal = @caminhoImagemFrontal," +
+                    "observacaoImagemFrontal = @observacaoImagemFrontal," +
+                    "caminhoImagemLateral = @caminhoImagemLateral," +
+                    "observacaoImagemLateral = @observacaoImagemLateral," +
+                    "caminhoImagemCostas = @caminhoImagemCostas," +
+                    "observacaoImagemCostas = @observacaoImagemCostas," +
+                    "observacao = @observacao"+
                        "frequenciaCardiaca = @frequenciaCardiaca," +
                          "pressaoArterialSistolica = @pressaoArterialSistolica," +
                         "pressaoArterialDiastolica = @pressaoArterialDiastolica," +
+                        "quantidadeDias = @quantidadeDias," +
                          "altura = @altura," +
                          "massa = @massa, " +
-                         "envergadura = @envergadura " +    
+                         "envergadura = @envergadura " +
                          "where id = @id;";
 
 
@@ -191,6 +202,7 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@dobraCutaneaPerna", avaliacaoFisica.DobraCutaneaPerna);
             cmd.Parameters.AddWithValue("@altura", avaliacaoFisica.Altura);
             cmd.Parameters.AddWithValue("@massa", avaliacaoFisica.Massa);
+            cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
             cmd.Parameters.AddWithValue("@pressaoArterialSistolica", avaliacaoFisica.PressaoArterialSistolica);
             cmd.Parameters.AddWithValue("@pressaoArterialDiastolica", avaliacaoFisica.PressaoArterialDiastolica);
             cmd.Parameters.AddWithValue("@frequenciaCardiaca", avaliacaoFisica.FrequenciaCardiaca);
@@ -200,13 +212,15 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@qtdadeFlexao", avaliacaoFisica.QtdadeFlexao);
             cmd.Parameters.AddWithValue("@tempoFlexao", avaliacaoFisica.TempoFlexao);
             cmd.Parameters.AddWithValue("@distanciaCooper", avaliacaoFisica.DistanciaCooper);
-            cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
+            cmd.Parameters.AddWithValue("@observacao", avaliacaoFisica.Observacao);
+            cmd.Parameters.AddWithValue("@quantidadeDias", avaliacaoFisica.QtdadeDiasDeTreino);
 
-
-
-
-
-           
+            cmd.Parameters.AddWithValue("@CAMINHOIMAGEMFRONTAL", avaliacaoFisica.CaminhoImagemFrontal);
+            cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMFRONTAL", avaliacaoFisica.ObservacaoImagemFrontal);
+            cmd.Parameters.AddWithValue("@CAMINHOIMAGEMLATERAL", avaliacaoFisica.CaminhoImagemLateral);
+            cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMLATERAL", avaliacaoFisica.ObservacaoImagemLateral);
+            cmd.Parameters.AddWithValue("@CAMINHOIMAGEMCOSTAS", avaliacaoFisica.CaminhoImagemCostas);
+            cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMCOSTAS", avaliacaoFisica.ObservacaoImagemCostas);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -228,10 +242,10 @@ namespace Gymly.BD
             try
             {
                 avaliacaoFisica.Id = Convert.ToInt32(reader["ID"]);
-                avaliacaoFisica.CpfAluno = reader["CPF_ALUNO"] .ToString();
+                avaliacaoFisica.CpfAluno = reader["CPF_ALUNO"].ToString();
                 avaliacaoFisica.Data = Convert.ToDateTime(reader["DATA"]);
                 avaliacaoFisica.TipoDeAvaliacao = reader["TIPO"].ToString();
-                avaliacaoFisica.PerimetroOmbro = (float) Convert.ToDouble(reader["PERIMETROOMBRO"]);
+                avaliacaoFisica.PerimetroOmbro = (float)Convert.ToDouble(reader["PERIMETROOMBRO"]);
                 avaliacaoFisica.PerimetroTorax = (float)Convert.ToDouble(reader["PERIMETROTORAX"]);
                 avaliacaoFisica.PerimetroBracoEsquerdo = (float)Convert.ToDouble(reader["PERIMETROBRACOE"]);
                 avaliacaoFisica.PerimetroBracoDireito = (float)Convert.ToDouble(reader["PERIMETROBRACOD"]);
@@ -269,8 +283,14 @@ namespace Gymly.BD
                 avaliacaoFisica.QtdadeFlexao = Convert.ToInt32(reader["QUANTIDADEFLEXAO"]);
                 avaliacaoFisica.DistanciaCooper = (float)Convert.ToDouble(reader["DISTANCIACOOPER"]);
                 avaliacaoFisica.Envergadura = (float)Convert.ToDouble(reader["ENVERGADURA"]);
-
-
+                avaliacaoFisica.Observacao = reader["OBSERVACAO"].ToString();
+                avaliacaoFisica.CaminhoImagemFrontal = reader["CAMINHOIMAGEMFRONTAL"].ToString();
+                avaliacaoFisica.ObservacaoImagemFrontal = reader["OBSERVACAOIMAGEMFRONTAL"].ToString();
+                avaliacaoFisica.CaminhoImagemLateral = reader["CAMINHOIMAGEMLATERAL"].ToString();
+                avaliacaoFisica.ObservacaoImagemLateral = reader["OBSERVACAOIMAGEMLATERAL"].ToString();
+                avaliacaoFisica.CaminhoImagemCostas = reader["CAMINHOIMAGEMCOSTAS"].ToString();
+                avaliacaoFisica.ObservacaoImagemCostas = reader["OBSERVACAOIMAGEMCOSTAS"].ToString();
+                avaliacaoFisica.QtdadeDiasDeTreino = reader["QUANTIDADEDIAS"].ToString();
 
 
             }

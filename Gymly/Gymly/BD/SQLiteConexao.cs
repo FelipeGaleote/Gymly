@@ -110,7 +110,7 @@ namespace Gymly.BD
                 sql.AppendLine("[PERIMETROOMBRO] FLOAT,");
                 sql.AppendLine("[PERIMETROTORAX] FLOAT,");
                 sql.AppendLine("[PERIMETROBRACOE] FLOAT,");
-                sql.AppendLine("[PERIMETROBRACOD] FLOAT,");
+               sql.AppendLine("[PERIMETROBRACOD] FLOAT,");
                 sql.AppendLine("[perimetroAntebracoE] FLOAT,");
                 sql.AppendLine("[perimetroAntebracoD] FLOAT,");
                 sql.AppendLine("[PERIMETROCINTURA] FLOAT,");
@@ -124,7 +124,7 @@ namespace Gymly.BD
                 sql.AppendLine("[PERIMETROCOXADISTALE] FLOAT,");
                 sql.AppendLine("[PERIMETROPERNAD] FLOAT,");
                 sql.AppendLine("[PERIMETROPERNAE] FLOAT,");
-                sql.AppendLine("[ENVERGADURA] FLOAT,");
+               sql.AppendLine("[ENVERGADURA] FLOAT,");
                 sql.AppendLine("[ALTURA] FLOAT,");
                 sql.AppendLine("[MASSA] FLOAT,");
                 sql.AppendLine("[PRESSAOARTERIALSISTOLICA] INTEGER,");
