@@ -50,23 +50,23 @@ namespace Gymly.UserControls
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
             if(!txtBoxDobraCutaneaAbdominal.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaAbdominal = float.Parse(txtBoxDobraCutaneaAbdominal.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaAbdominal = float.Parse(txtBoxDobraCutaneaAbdominal.Text.Replace( ".",",").Trim());
             if (!txtBoxDobraCutaneaAxilarMedia.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaAxilarMedia = float.Parse(txtBoxDobraCutaneaAxilarMedia.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaAxilarMedia = float.Parse(txtBoxDobraCutaneaAxilarMedia.Text.Replace( ".",",").Trim());
             if (!txtBoxDobraCutaneaBiceps.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaBiceps = float.Parse(txtBoxDobraCutaneaBiceps.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaBiceps = float.Parse(txtBoxDobraCutaneaBiceps.Text.Replace( ".",",").Trim());
             if (!txtBoxDobraCutaneaCoxa.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaCoxa = float.Parse(txtBoxDobraCutaneaCoxa.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaCoxa = float.Parse(txtBoxDobraCutaneaCoxa.Text.Replace( ".",",").Trim());
             if (!txtBoxDobraCutaneaPerna.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaPerna = float.Parse(txtBoxDobraCutaneaPerna.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaPerna = float.Parse(txtBoxDobraCutaneaPerna.Text.Replace( ".",",").Trim());
             if (!txtBoxDobraCutaneaSubescapular.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaSubescapular = float.Parse(txtBoxDobraCutaneaSubescapular.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaSubescapular = float.Parse(txtBoxDobraCutaneaSubescapular.Text.Replace( ".",",").Trim());
             if (!txtBoxDobraCutaneaSuprailiaca.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaSuprailiaca = float.Parse(txtBoxDobraCutaneaSuprailiaca.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaSuprailiaca = float.Parse(txtBoxDobraCutaneaSuprailiaca.Text.Replace( ".",",").Trim());
             if (!txtBoxDobraCutaneaTorax.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaTorax = float.Parse(txtBoxDobraCutaneaTorax.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaTorax = float.Parse(txtBoxDobraCutaneaTorax.Text.Replace( ".",",").Trim());
             if (!txtBoxDobraCutaneaTriceps.Text.Equals("mm"))
-                avaliacaoFisica.DobraCutaneaTriceps = float.Parse(txtBoxDobraCutaneaTriceps.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.DobraCutaneaTriceps = float.Parse(txtBoxDobraCutaneaTriceps.Text.Replace( ".",",").Trim());
 
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica , acao);
         }

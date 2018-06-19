@@ -70,43 +70,43 @@ namespace Gymly.UserControls
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
             if(!txtBoxEnvergadura.Text.Equals("cm"))
-            avaliacaoFisica.Envergadura =  float.Parse(txtBoxEnvergadura.Text.Replace(",", ".").Trim());
+            avaliacaoFisica.Envergadura =  float.Parse(txtBoxEnvergadura.Text.Replace( ".",",").Trim());
             if(!txtBoxPerimetroAbdominal.Text.Equals("cm"))
-            avaliacaoFisica.PerimetroAbdominal = float.Parse(txtBoxPerimetroAbdominal.Text.Replace(",", ".").Trim());
+            avaliacaoFisica.PerimetroAbdominal = float.Parse(txtBoxPerimetroAbdominal.Text.Replace( ".",",").Trim());
             if(!txtBoxPerimetroAnteBracoD.Text.Equals("Dir. cm"))
-            avaliacaoFisica.PerimetroAntebracoDireito = float.Parse(txtBoxPerimetroAnteBracoD.Text.Replace(",", ".").Trim());
+            avaliacaoFisica.PerimetroAntebracoDireito = float.Parse(txtBoxPerimetroAnteBracoD.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroAnteBracoE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroAntebracoEsquerdo = float.Parse(txtBoxPerimetroAnteBracoE.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroAntebracoEsquerdo = float.Parse(txtBoxPerimetroAnteBracoE.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroBracoD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroBracoDireito = float.Parse(txtBoxPerimetroBracoD.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroBracoDireito = float.Parse(txtBoxPerimetroBracoD.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroBracoE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroBracoEsquerdo = float.Parse(txtBoxPerimetroBracoE.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroBracoEsquerdo = float.Parse(txtBoxPerimetroBracoE.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroCintura.Text.Equals("cm"))
-                avaliacaoFisica.PerimetroCintura = float.Parse(txtBoxPerimetroCintura.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroCintura = float.Parse(txtBoxPerimetroCintura.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroCoxaDistalD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroCoxaDistalDireita = float.Parse(txtBoxPerimetroCoxaDistalD.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroCoxaDistalDireita = float.Parse(txtBoxPerimetroCoxaDistalD.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroCoxaDistalE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroCoxaDistalEsquerda = float.Parse(txtBoxPerimetroCoxaDistalE.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroCoxaDistalEsquerda = float.Parse(txtBoxPerimetroCoxaDistalE.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroCoxaMedialD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroCoxaMedialDireita = float.Parse(txtBoxPerimetroCoxaMedialD.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroCoxaMedialDireita = float.Parse(txtBoxPerimetroCoxaMedialD.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroCoxaMedialE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroCoxaMedialEsquerda = float.Parse(txtBoxPerimetroCoxaMedialE.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroCoxaMedialEsquerda = float.Parse(txtBoxPerimetroCoxaMedialE.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroCoxaProximalD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroCoxaProximalDireita = float.Parse(txtBoxPerimetroCoxaProximalD.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroCoxaProximalDireita = float.Parse(txtBoxPerimetroCoxaProximalD.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroCoxaProximalE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroCoxaProximalEsquerda = float.Parse(txtBoxPerimetroCoxaProximalE.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroCoxaProximalEsquerda = float.Parse(txtBoxPerimetroCoxaProximalE.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroOmbro.Text.Equals("cm"))
-                avaliacaoFisica.PerimetroOmbro = float.Parse(txtBoxPerimetroOmbro.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroOmbro = float.Parse(txtBoxPerimetroOmbro.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroPernaD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroPernaDireita = float.Parse(txtBoxPerimetroPernaD.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroPernaDireita = float.Parse(txtBoxPerimetroPernaD.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroPernaE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroPernaEsquerda = float.Parse(txtBoxPerimetroPernaE.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroPernaEsquerda = float.Parse(txtBoxPerimetroPernaE.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroQuadril.Text.Equals("cm"))
-                avaliacaoFisica.PerimetroQuadril = float.Parse(txtBoxPerimetroQuadril.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroQuadril = float.Parse(txtBoxPerimetroQuadril.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroTorax.Text.Equals("cm"))
-                avaliacaoFisica.PerimetroTorax = float.Parse(txtBoxPerimetroTorax.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.PerimetroTorax = float.Parse(txtBoxPerimetroTorax.Text.Replace( ".",",").Trim());
             if (!txtBoxPerimetroTorax.Text.Equals("cm"))
-                avaliacaoFisica.Envergadura = float.Parse(txtBoxEnvergadura.Text.Replace(",", ".").Trim());
+                avaliacaoFisica.Envergadura = float.Parse(txtBoxEnvergadura.Text.Replace( ".",",").Trim());
             if (avaliacaoFisica.TipoDeAvaliacao == "Antropometria") {
                 mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Antropometria", avaliacaoFisica,acao);
             }
