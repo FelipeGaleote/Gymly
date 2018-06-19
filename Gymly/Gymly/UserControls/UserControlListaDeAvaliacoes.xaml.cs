@@ -1,4 +1,5 @@
 ﻿using Gymly.BD;
+using Gymly.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -54,6 +55,8 @@ namespace Gymly.UserControls
         private void dataGridAV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataRowView dataRow = (DataRowView)dataGridAV.SelectedItem;
+            int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
+            /*
             try
             {
                int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
@@ -62,6 +65,15 @@ namespace Gymly.UserControls
             catch (Exception x)
             {
                 Console.WriteLine(x.Message);
+            }*/
+            System.Windows.MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show("Deseja gerar pdf?", "Gerar pdf da avaliação fisica", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result.ToString().ToUpper() == "YES")
+            {
+                string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
+                AvaliacaoFisica av = new AvaliacaoFisica();
+                av = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
+                Relatorio.GerarRelatorioDeAvaliacao(av.CpfAluno, local, av);
             }
         }
 
