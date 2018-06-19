@@ -17,11 +17,11 @@ namespace Gymly.BD
             string sql = "INSERT INTO AvaliacaoFisica(id,cpf_aluno,data,tipo,perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
                 ",perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroCoxaDistalE, perimetroCoxaDistalD," +
                 "perimetroPernaE, perimetroPernaD,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
-                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura,tempoFlexao,tempoAbdominal,flexibilidade,pressaoArterialSistolica,pressaoArterialDiastolica,frequenciaCardiaca)" +
-                "VALUES(NULL,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE,@perimetroAntebracoD,@perimetroCintura" +
+                "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,altura,massa,envergadura,tempoFlexao,tempoAbdominal,flexibilidade,pressaoArterialSistolica,pressaoArterialDiastolica,frequenciaCardiaca" +
+                ",OBSERVACAOIMAGEMCOSTAS, CAMINHOIMAGEMCOSTAS, OBSERVACAOIMAGEMLATERAL, CAMINHOIMAGEMLATERAL, OBSERVACAOIMAGEMFRONTAL, CAMINHOIMAGEMFRONTAL) VALUES(NULL,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE,@perimetroAntebracoD,@perimetroCintura" +
                 ",@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD,@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD," +
                 "@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax,@dobraCutaneaAxilarMedia," +
-                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura,@tempoFlexao,@tempoAbdominal,@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica,@frequenciaCardiaca);";
+                "@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@altura,@massa,@envergadura,@tempoFlexao,@tempoAbdominal,@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica,@frequenciaCardiaca, @OBSERVACAOIMAGEMCOSTAS, @CAMINHOIMAGEMCOSTAS, @OBSERVACAOIMAGEMLATERAL, @CAMINHOIMAGEMLATERAL, @OBSERVACAOIMAGEMFRONTAL, @CAMINHOIMAGEMFRONTAL);";
 
 
 
@@ -81,7 +81,7 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@CAMINHOIMAGEMFRONTAL", avaliacaoFisica.CaminhoImagemFrontal);
             cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMFRONTAL", avaliacaoFisica.ObservacaoImagemFrontal);
             cmd.Parameters.AddWithValue("@CAMINHOIMAGEMLATERAL", avaliacaoFisica.CaminhoImagemLateral);
-            cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMLATERAL", avaliacaoFisica.ObservacaoImagemLateral);
+            cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMLATERAL", avaliacaoFisica.ObservacaoImagemLateral); 
             cmd.Parameters.AddWithValue("@CAMINHOIMAGEMCOSTAS", avaliacaoFisica.CaminhoImagemCostas);
             cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMCOSTAS", avaliacaoFisica.ObservacaoImagemCostas);
 
