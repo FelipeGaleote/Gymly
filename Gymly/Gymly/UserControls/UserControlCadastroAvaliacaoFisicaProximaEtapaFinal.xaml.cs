@@ -37,6 +37,13 @@ namespace Gymly.UserControls
 
         private void BtnFinalizar_Click(object sender, RoutedEventArgs e)
         {
+            System.Windows.MessageBoxResult result =  Xceed.Wpf.Toolkit.MessageBox.Show("Deseja Salvar?", "Salvar Avaliação Física", MessageBoxButton.YesNo, MessageBoxImage.Question);
+           
+            if(result.ToString().ToUpper() == "YES")
+            {
+                string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
+                Relatorio.GerarRelatorioDeAvaliacao(avaliacaoFisica.CpfAluno, local, avaliacaoFisica);
+            }
             avaliacaoFisica.Observacao = txtBoxObservacao.Text.Trim();
             if (acao.Equals("Editar"))
             {

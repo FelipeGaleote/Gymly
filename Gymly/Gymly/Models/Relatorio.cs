@@ -459,7 +459,7 @@ namespace Gymly.Models
             doc.Add(table);
 
             doc.NewPage();
-
+            /*
             if (avaliacaoFisica.CaminhoImagemFrontal != String.Empty) {
                 doc.Add(pulaLinha);
                 doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
@@ -524,7 +524,7 @@ namespace Gymly.Models
 
                 doc.NewPage();
             }
-
+            */
             doc.Add(pulaLinha);
             doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
             doc.Add(pulaLinha);
@@ -606,6 +606,7 @@ namespace Gymly.Models
             doc.Add(pulaLinha);
             doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
             doc.Add(pulaLinha);
+            /*
             if (!File.Exists(caminhoFotoLogoEmpresa))
             {
                 doc.Add(pulaLinha);
@@ -620,9 +621,10 @@ namespace Gymly.Models
                 doc.Add(pulaLinha);
             }
             doc.Add(AdicionaImagem(aluno.CaminhoFotoDoRosto, 800, 300, 1));
+            */
             doc.Add(pulaLinha);
             doc.Add(pulaLinha);
-
+            
             PdfPTable table = new PdfPTable(2);
 
             table.AddCell(CriaCell("Nome: ", aluno.Nome, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
