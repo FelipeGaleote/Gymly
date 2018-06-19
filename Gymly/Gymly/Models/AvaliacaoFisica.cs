@@ -13,25 +13,25 @@ namespace Gymly.Models
         private string cpfAluno; //pegar do datagrid
         private DateTime data;
         private string qtdadeDiasDeTreino;
-        private string tipoDeAvaliacao; 
-        private string observacao; 
+        private string tipoDeAvaliacao;
+        private string observacao;
         private string caminhoImagemFrontal;
         private string observacaoImagemFrontal;
         private string caminhoImagemLateral;
         private string observacaoImagemLateral;
         private string caminhoImagemCostas;
         private string observacaoImagemCostas;
-        private float perimetroOmbro; 
-        private float perimetroTorax; 
-        private float perimetroBracoDireito; 
+        private float perimetroOmbro;
+        private float perimetroTorax;
+        private float perimetroBracoDireito;
         private float perimetroBracoEsquerdo;
-        private float perimetroAntebracoDireito; 
+        private float perimetroAntebracoDireito;
         private float perimetroAntebracoEsquerdo;
         private float perimetroCintura;
-        private float perimetroAbdominal; 
+        private float perimetroAbdominal;
         private float perimetroQuadril;
-        private float perimetroCoxaProximalDireita; 
-        private float perimetroCoxaProximalEsquerda; 
+        private float perimetroCoxaProximalDireita;
+        private float perimetroCoxaProximalEsquerda;
         private float perimetroCoxaMedialDireita;
         private float perimetroCoxaMedialEsquerda;
         private float perimetroCoxaDistalDireita;
@@ -52,7 +52,7 @@ namespace Gymly.Models
         private float distanciaCooper;
 
         //Tabela Antropomerica
-        private float dobraCutaneaSubescapular; 
+        private float dobraCutaneaSubescapular;
         private float dobraCutaneaTriceps;
         private float dobraCutaneaBiceps;
         private float dobraCutaneaTorax;
