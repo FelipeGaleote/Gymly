@@ -23,7 +23,12 @@ namespace Gymly.UserControls
             this.acao = acao;
 
             InitializeComponent();
+
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
+            if (acao.Equals("Editar"))
+            {
+                preencheCampos();
+            }
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
@@ -70,6 +75,19 @@ namespace Gymly.UserControls
                 ImageFotoDeLado.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeLado);
                 btnAddFotoDeLado.Background = Brushes.Transparent;
                 btnAddFotoDeLado.BorderBrush = null;
+            }
+        }
+        public void preencheCampos()
+        {
+            if (!avaliacaoFisica.CaminhoImagemLateral.Equals("") && avaliacaoFisica.CaminhoImagemLateral != null)
+            {
+                ImageFotoDeLado.Source = GerenciadorDeArquivos.BuscaImagem(avaliacaoFisica.CaminhoImagemLateral);
+                btnAddFotoDeLado.Background = Brushes.Transparent;
+                btnAddFotoDeLado.BorderBrush = null;
+            }
+            if (!avaliacaoFisica.ObservacaoImagemLateral.Equals("") && avaliacaoFisica.ObservacaoImagemLateral != null)
+            {
+                txtBoxObservacao.Text = avaliacaoFisica.ObservacaoImagemLateral;
             }
         }
     }
