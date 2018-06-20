@@ -73,7 +73,7 @@ namespace Gymly.UserControls
 
         private void TxtBoxDobraCutaneaSubescapular_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaSubescapular);
         }
 
@@ -89,13 +89,13 @@ namespace Gymly.UserControls
 
         private void TxtBoxDobraCutaneaTriceps_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaTriceps);
         }
 
         private void TxtBoxDobraCutaneaBiceps_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaBiceps);
         }
 
@@ -111,13 +111,13 @@ namespace Gymly.UserControls
 
         private void TxtBoxDobraCutaneaTorax_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaTorax);
         }
 
         private void TxtBoxDobraCutaneaAxilarMedia_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaAxilarMedia);
         }
 
@@ -133,13 +133,13 @@ namespace Gymly.UserControls
 
         private void TxtBoxDobraCutaneaSuprailiaca_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaSuprailiaca);
         }
 
         private void TxtBoxDobraCutaneaAbdominal_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaAbdominal);
         }
 
@@ -155,13 +155,13 @@ namespace Gymly.UserControls
 
         private void TxtBoxDobraCutaneaCoxa_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaCoxa);
         }
 
         private void TxtBoxDobraCutaneaPerna_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (!acao.Equals("Editar"))
+            if (!acao.Equals("EDITAR"))
                 EditorTxtBox.GotFocus(txtBoxDobraCutaneaPerna);
         }
 
