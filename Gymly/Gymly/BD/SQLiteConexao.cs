@@ -130,8 +130,8 @@ namespace Gymly.BD
                 sql.AppendLine("[PRESSAOARTERIALSISTOLICA] INTEGER,");
                 sql.AppendLine("[PRESSAOARTERIALDIASTOLICA] INTEGER,");
                 sql.AppendLine("[FREQUENCIACARDIACA] FLOAT,");
-                sql.AppendLine("[TEMPOABDOMINAL] TIME,");
-                sql.AppendLine("[TEMPOFLEXAO] TIME,");
+                sql.AppendLine("[TEMPOABDOMINAL] FLOAT,");
+                sql.AppendLine("[TEMPOFLEXAO] FLOAT,");
                 sql.AppendLine("[QUANTIDADEABDOMINAL] INTEGER,");
                 sql.AppendLine("[QUANTIDADEFLEXAO] INTEGER,");
                 sql.AppendLine("[FLEXIBILIDADE] VARCHAR(10),");
