@@ -8,6 +8,15 @@ namespace Gymly.Models
 {
     public class AvaliacaoFisica
     {
+
+        //campos novos - bioImpedancia
+        private float porcentagemAguaCorpo;
+        private float porcentagemAguaMusculo;
+        private float taxaMetabolicaBasal;
+        private float porcentagemGorduraCorporal;
+
+
+
         //Tabela Avaliação fisica
         private int id;
         private string cpfAluno; //pegar do datagrid
@@ -669,6 +678,11 @@ namespace Gymly.Models
             get { return distanciaCooper; }
             set { distanciaCooper = value; }
         }
+
+        public float PorcentagemAguaCorpo { get => porcentagemAguaCorpo; set => porcentagemAguaCorpo = value; }
+        public float PorcentagemAguaMusculo { get => porcentagemAguaMusculo; set => porcentagemAguaMusculo = value; }
+        public float TaxaMetabolicaBasal { get => taxaMetabolicaBasal; set => taxaMetabolicaBasal = value; }
+        public float PorcentagemGorduraCorporal { get => porcentagemGorduraCorporal; set => porcentagemGorduraCorporal = value; }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));
