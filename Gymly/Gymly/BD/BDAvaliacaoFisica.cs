@@ -119,65 +119,55 @@ namespace Gymly.BD
             SQLiteConnection conn = conexao.GetConexao();
 
             string sql = "UPDATE AvaliacaoFisica SET " +
-                         "data = @data," +
-                         "tipo = @tipo," +
-                         "perimetroOmbro = @perimetroOmbro," +
+                         "perimetroOmbro = @perimetroOmbro, " +
                          "perimetroTorax = @perimetroTorax, " +
                          "perimetroBracoE = @perimetroBracoE, " +
-                         "perimetroBracoD = @perimetroBracoD," +
-                         "perimetroAntebracoE = @perimetroAntebracoE," +
+                         "perimetroBracoD = @perimetroBracoD, " +
+                         "perimetroAntebracoE = @perimetroAntebracoE, " +
                          "perimetroAntebracoD = @perimetroAntebracoD," +
-                         "perimetroCintura = @perimetroCintura," +
-                         "perimetroAbdominal = @perimetroAbdominal," +
-                         "perimetroQuadril = @perimetroQuadril," +
-                         "perimetroCoxaProximalE = @perimetroCoxaProximalE," +
-                         "perimetroCoxaProximalD = @perimetroCoxaProximalD," +
-                         "perimetroCoxaMedialE= @perimetroCoxaMedialE," +
-                         "perimetroCoxaMedialD = @perimetroCoxaMedialD," +
-                         "perimetroCoxaDistalE =@perimetroCoxaDistalE," +
-                         "perimetroCoxaDistalD = @perimetroCoxaDistalD" +
-                         ",perimetroPernaE = @perimetroPernaE," +
-                         "perimetroPernaD = @perimetroPernaD," +
-                         "dobraCutaneaSubescapular = @dobraCutaneaSubescapular," +
-                         "dobraCutaneaTriceps = @dobraCutaneaTriceps,"
-                         +
-
-                         "dobraCutaneaBiceps = @dobraCutaneaBiceps," +
-                         "dobraCutaneaTorax = @dobraCutaneaTorax," +
-                         "dobraCutaneaAxilarMedia= @dobraCutaneaAxilarMedia ," +
-                         "dobraCutaneaSuprailiaca = @dobraCutaneaSuprailiaca," +
-                         "dobraCutaneaAbdominal = @dobraCutaneaAbdominal," +
-                         "dobraCutaneaCoxa = @dobraCutaneaCoxa," +
-                          "dobraCutaneaAbdominal = @dobraCutaneaAbdominal," +
-                           "distanciaCooper = @distanciaCooper," +
-                         "tempoFlexao = @tempoFlexao," +
-                       "quantidadeFlexao = @quantidadeFlexao," +
-                      "tempoAbdominal = @tempoAbdominal," +
-                       "quantidadeAbdominal = @quantidadeAbdominal," +
-                      "flexibilidade = @flexibilidade," +
-                    "caminhoImagemFrontal = @caminhoImagemFrontal," +
-                    "observacaoImagemFrontal = @observacaoImagemFrontal," +
-                    "caminhoImagemLateral = @caminhoImagemLateral," +
-                    "observacaoImagemLateral = @observacaoImagemLateral," +
-                    "caminhoImagemCostas = @caminhoImagemCostas," +
-                    "observacaoImagemCostas = @observacaoImagemCostas," +
-                    "observacao = @observacao"+
-                       "frequenciaCardiaca = @frequenciaCardiaca," +
-                         "pressaoArterialSistolica = @pressaoArterialSistolica," +
+                        "perimetroCintura = @perimetroCintura," +
+                        "perimetroAbdominal = @perimetroAbdominal," +
+                        "perimetroQuadril = @perimetroQuadril," +
+                        "perimetroCoxaProximalE = @perimetroCoxaProximalE," +
+                        "perimetroCoxaProximalD = @perimetroCoxaProximalD," +
+                        "perimetroCoxaMedialE = @perimetroCoxaMedialE," +
+                        "perimetroCoxaMedialD = @perimetroCoxaMedialD," +
+                        "perimetroCoxaDistalE = @perimetroCoxaDistalE," +
+                        " perimetroCoxaDistalD = @perimetroCoxaDistalD," +
+                        "perimetroPernaE = @perimetroPernaE, " +
+                        "perimetroPernaD = @perimetroPernaD," +
+                        "envergadura = @envergadura," +
+                        "altura = @altura," +
+                        "massa = @massa," +
+                        "dobraCutaneaSubescapular = @dobraCutaneaSubescapular," +
+                        "dobraCutaneaTriceps = @dobraCutaneaTriceps," +
+                        "dobraCutaneaBiceps = @dobraCutaneaBiceps," +
+                        "dobraCutaneaTorax = @dobraCutaneaTorax," +
+                        "dobraCutaneaAxilarMedia = @dobraCutaneaAxilarMedia," +
+                        "dobraCutaneaSuprailiaca = @dobraCutaneaSuprailiaca," +
+                        "dobraCutaneaAbdominal = @dobraCutaneaAbdominal," +
+                        "dobraCutaneaCoxa = @dobraCutaneaCoxa," +
+                        "dobraCutaneaPerna = @dobraCutaneaPerna," +
+                        "tempoFlexao = @tempoFlexao," +
+                        "tempoAbdominal = @tempoAbdominal," +
+                        "quantidadeFlexao = @quantidadeFlexao," +
+                        "quantidadeAbdominal = @quantidadeAbdominal," +
+                        "flexibilidade = @flexibilidade," +
+                        "pressaoArterialSistolica = @pressaoArterialSistolica," +
                         "pressaoArterialDiastolica = @pressaoArterialDiastolica," +
-                        "quantidadeDias = @quantidadeDias," +
-                         "altura = @altura," +
-                         "massa = @massa, " +
-                         "envergadura = @envergadura " +
-                         "where id = @id;";
-
-
-
+                        "frequenciaCardiaca = @frequenciaCardiaca," +
+                        "observacao = @observacao," +
+                        "caminhoImagemFrontal = @caminhoImagemFrontal," +
+                        "observacaoImagemFrontal = @observacaoImagemFrontal," +
+                        "caminhoImagemLateral = @caminhoImagemLateral," +
+                        "observacaoImagemLateral = @observacaoImagemLateral," +
+                        "caminhoImagemCostas = @caminhoImagemCostas," +
+                        "observacaoImagemCostas =@observacaoImagemCostas ," +
+                        "distanciaCooper = @distanciaCooper," +
+                        "quantidadeDias = @quantidadeDias " +
+                        " where id = " +avaliacaoFisica.Id+" AND cpf_aluno = " + avaliacaoFisica.CpfAluno + ";";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@id", avaliacaoFisica.Id);
-            cmd.Parameters.AddWithValue("@data", DateTime.Now.ToShortDateString());
-            cmd.Parameters.AddWithValue("@tipo", avaliacaoFisica.TipoDeAvaliacao);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
             cmd.Parameters.AddWithValue("@perimetroTorax", avaliacaoFisica.PerimetroTorax);
             cmd.Parameters.AddWithValue("@perimetroBracoE", avaliacaoFisica.PerimetroBracoEsquerdo);
@@ -195,6 +185,21 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@perimetroCoxaDistalD", avaliacaoFisica.PerimetroCoxaDistalDireita);
             cmd.Parameters.AddWithValue("@perimetroPernaE", avaliacaoFisica.PerimetroPernaEsquerda);
             cmd.Parameters.AddWithValue("@perimetroPernaD", avaliacaoFisica.PerimetroPernaDireita);
+            cmd.Parameters.AddWithValue("@altura", avaliacaoFisica.Altura);
+            cmd.Parameters.AddWithValue("@massa", avaliacaoFisica.Massa);
+            cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
+            cmd.Parameters.AddWithValue("@distanciaCooper", avaliacaoFisica.DistanciaCooper);
+            cmd.Parameters.AddWithValue("@quantidadeDias", avaliacaoFisica.QtdadeDiasDeTreino);
+
+            cmd.Parameters.AddWithValue("@quantidadeFlexao", avaliacaoFisica.QtdadeFlexao);
+            cmd.Parameters.AddWithValue("@quantidadeAbdominal", avaliacaoFisica.QtdadeAbdominais);
+            cmd.Parameters.AddWithValue("@tempoFlexao", avaliacaoFisica.TempoFlexao);
+            cmd.Parameters.AddWithValue("@tempoAbdominal", avaliacaoFisica.TempoAbdominal);
+            cmd.Parameters.AddWithValue("@flexibilidade", avaliacaoFisica.Flexibilidade);
+            cmd.Parameters.AddWithValue("@pressaoArterialSistolica", avaliacaoFisica.PressaoArterialSistolica);
+            cmd.Parameters.AddWithValue("@pressaoArterialDiastolica", avaliacaoFisica.PressaoArterialDiastolica);
+            cmd.Parameters.AddWithValue("@frequenciaCardiaca", avaliacaoFisica.FrequenciaCardiaca);
+
             cmd.Parameters.AddWithValue("@dobraCutaneaSubescapular", avaliacaoFisica.DobraCutaneaSubescapular);
             cmd.Parameters.AddWithValue("@dobraCutaneaTriceps", avaliacaoFisica.DobraCutaneaTriceps);
             cmd.Parameters.AddWithValue("@dobraCutaneaBiceps", avaliacaoFisica.DobraCutaneaBiceps);
@@ -204,20 +209,8 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@dobraCutaneaAbdominal", avaliacaoFisica.DobraCutaneaAbdominal);
             cmd.Parameters.AddWithValue("@dobraCutaneaCoxa", avaliacaoFisica.DobraCutaneaCoxa);
             cmd.Parameters.AddWithValue("@dobraCutaneaPerna", avaliacaoFisica.DobraCutaneaPerna);
-            cmd.Parameters.AddWithValue("@altura", avaliacaoFisica.Altura);
-            cmd.Parameters.AddWithValue("@massa", avaliacaoFisica.Massa);
-            cmd.Parameters.AddWithValue("@envergadura", avaliacaoFisica.Envergadura);
-            cmd.Parameters.AddWithValue("@pressaoArterialSistolica", avaliacaoFisica.PressaoArterialSistolica);
-            cmd.Parameters.AddWithValue("@pressaoArterialDiastolica", avaliacaoFisica.PressaoArterialDiastolica);
-            cmd.Parameters.AddWithValue("@frequenciaCardiaca", avaliacaoFisica.FrequenciaCardiaca);
-            cmd.Parameters.AddWithValue("@flexibilidade", avaliacaoFisica.Flexibilidade);
-            cmd.Parameters.AddWithValue("@qtdadeAbdominais", avaliacaoFisica.QtdadeAbdominais);
-            cmd.Parameters.AddWithValue("@tempoAbdominal", avaliacaoFisica.TempoAbdominal);
-            cmd.Parameters.AddWithValue("@qtdadeFlexao", avaliacaoFisica.QtdadeFlexao);
-            cmd.Parameters.AddWithValue("@tempoFlexao", avaliacaoFisica.TempoFlexao);
-            cmd.Parameters.AddWithValue("@distanciaCooper", avaliacaoFisica.DistanciaCooper);
+
             cmd.Parameters.AddWithValue("@observacao", avaliacaoFisica.Observacao);
-            cmd.Parameters.AddWithValue("@quantidadeDias", avaliacaoFisica.QtdadeDiasDeTreino);
 
             cmd.Parameters.AddWithValue("@CAMINHOIMAGEMFRONTAL", avaliacaoFisica.CaminhoImagemFrontal);
             cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMFRONTAL", avaliacaoFisica.ObservacaoImagemFrontal);
