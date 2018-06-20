@@ -896,5 +896,134 @@ namespace Gymly.Models
             return classificacao;
         }
 
+        public double calculaTaxaMetabolicaBasal(Aluno aluno)
+        {
+            double taxa;
+            if (aluno.Sexo.Equals("M"))
+            {
+                taxa = 66 + (13.7 * this.Massa) + (5 * this.Altura) - (6.8 * aluno.CalculaIdade());
+            }
+            else
+            {
+                taxa = 665 + (9.6 * this.Massa) + (1.8 * this.Altura) - (4.7 * aluno.CalculaIdade());
+            }
+            return taxa;
+        }
+
+        public double calculaPesoRecomendado()
+        {
+            return 24.9 / (this.Altura * this.Altura);
+        }
+        public float calculaRCQ()
+        {
+            return this.PerimetroCintura / this.PerimetroQuadril;
+        }
+        public string classificacaoRCQ(float rcq, Aluno aluno)
+        {
+            string classificacao =  String.Empty;
+            int idade = aluno.CalculaIdade();
+          
+
+            if (aluno.Sexo.Equals("M"))
+            {
+                if(idade < 30)
+                {
+                    if (rcq <0.83)
+                    {
+                        classificacao = "Baixo";
+                    }
+                    else if (rcq < 0.89)
+                    {
+                        classificacao = "Moderado";
+                    }
+                    else if (rcq < 0.95)
+                    {
+                        classificacao = "Alto";
+                    }
+                    else
+                    {
+                        classificacao = "Muito Alto";
+                    }
+                }
+                else if (idade < 40)
+                {
+                    if (rcq < 0.84)
+                    {
+                        classificacao = "Baixo";
+                    }
+                    else if (rcq < 0.92)
+                    {
+                        classificacao = "Moderado";
+                    }
+                    else if (rcq < 0.97)
+                    {
+                        classificacao = "Alto";
+                    }
+                    else
+                    {
+                        classificacao = "Muito Alto";
+                    }
+                }
+                else if (idade < 50)
+                {
+                    if (rcq < 0.88)
+                    {
+                        classificacao = "Baixo";
+                    }
+                    else if (rcq < 0.96)
+                    {
+                        classificacao = "Moderado";
+                    }
+                    else if (rcq < 1.00)
+                    {
+                        classificacao = "Alto";
+                    }
+                    else
+                    {
+                        classificacao = "Muito Alto";
+                    }
+                }
+                else if (idade <60)
+                {
+                    if (rcq < 0.91)
+                    {
+                        classificacao = "Baixo";
+                    }
+                    else if (rcq < 0.99)
+                    {
+                        classificacao = "Moderado";
+                    }
+                    else if (rcq < 1.04)
+                    {
+                        classificacao = "Alto";
+                    }
+                    else
+                    {
+                        classificacao = "Muito Alto";
+                    }
+                }
+                else
+                {
+                    if (rcq < 0.91)
+                    {
+                        classificacao = "Baixo";
+                    }
+                    else if (rcq < 0.99)
+                    {
+                        classificacao = "Moderado";
+                    }
+                    else if (rcq < 1.04)
+                    {
+                        classificacao = "Alto";
+                    }
+                    else
+                    {
+                        classificacao = "Muito Alto";
+                    }
+                }
+            }
+
+            return classificacao;
+        }
     }
 }
