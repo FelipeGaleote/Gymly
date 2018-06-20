@@ -59,6 +59,9 @@ namespace Gymly.Models
         private int qtdadeFlexao;
         private float tempoFlexao;
         private float distanciaCooper;
+        private string nivelFlexoes;
+        private string nivelAbdominais;
+        private string nivelCooper;
 
         //Tabela Antropomerica
         private float dobraCutaneaSubescapular;
@@ -677,6 +680,21 @@ namespace Gymly.Models
         {
             get { return distanciaCooper; }
             set { distanciaCooper = value; }
+        }
+        public string NivelFlexoes
+        {
+            get { return nivelFlexoes; }
+            set { nivelFlexoes = value; }
+        }
+        public string NivelAbdominais
+        {
+            get { return nivelAbdominais; }
+            set { nivelAbdominais = value; }
+        }
+        public string NivelCooper
+        {
+            get { return nivelCooper; }
+            set { nivelCooper = value; }
         }
 
         public float PorcentagemAguaCorpo { get => porcentagemAguaCorpo; set => porcentagemAguaCorpo = value; }

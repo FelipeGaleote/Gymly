@@ -30,6 +30,51 @@ namespace Gymly.UserControls
                 txtBoxQtdadeFlexao.Text = avaliacaoFisica.QtdadeFlexao.ToString();
                 txtBoxTempoFlexao.Text = avaliacaoFisica.TempoFlexao.ToString();
                 txtBoxTempoAbdominal.Text = avaliacaoFisica.TempoAbdominal.ToString();
+                if (avaliacaoFisica.NivelFlexoes != null)
+                {
+                    if (avaliacaoFisica.NivelFlexoes.Equals("Bom"))
+                    {
+                        rdFBom.IsChecked = true;
+                    }
+                    else if (avaliacaoFisica.NivelFlexoes.Equals("Regular"))
+                    {
+                        rdFRegular.IsChecked = true;
+                    }
+                    else if (avaliacaoFisica.NivelFlexoes.Equals("Ruim"))
+                    {
+                        rdFRuim.IsChecked = true;
+                    }
+                }
+                if (avaliacaoFisica.NivelAbdominais != null)
+                {
+                    if (avaliacaoFisica.NivelAbdominais.Equals("Bom"))
+                    {
+                        rdABom.IsChecked = true;
+                    }
+                    else if (avaliacaoFisica.NivelAbdominais.Equals("Regular"))
+                    {
+                        rdARegular.IsChecked = true;
+                    }
+                    else if (avaliacaoFisica.NivelAbdominais.Equals("Ruim"))
+                    {
+                        rdARuim.IsChecked = true;
+                    }
+                }
+                if (avaliacaoFisica.NivelCooper != null)
+                {
+                    if (avaliacaoFisica.NivelCooper.Equals("Bom"))
+                    {
+                        rdCBom.IsChecked = true;
+                    }
+                    else if (avaliacaoFisica.NivelCooper.Equals("Regular"))
+                    {
+                        rdCRegular.IsChecked = true;
+                    }
+                    else if (avaliacaoFisica.NivelCooper.Equals("Ruim"))
+                    {
+                        rdCRuim.IsChecked = true;
+                    }
+                }
 
             }
             else
@@ -54,6 +99,46 @@ namespace Gymly.UserControls
                 avaliacaoFisica.TempoFlexao = float.Parse(txtBoxTempoFlexao.Text.Replace( ".",",").Trim());
             if (!txtBoxTempoAbdominal.Text.Equals("Tempo(s)"))
                 avaliacaoFisica.TempoAbdominal = float.Parse(txtBoxTempoAbdominal.Text.Replace( ".",",").Trim());
+
+            if (rdFBom.IsChecked == true)
+            {
+                avaliacaoFisica.NivelFlexoes = "Bom";
+            }
+            else if (rdFRegular.IsChecked == true)
+            {
+                avaliacaoFisica.NivelFlexoes = "Regular";
+            }
+            else if (rdFRuim.IsChecked == true)
+            {
+                avaliacaoFisica.NivelFlexoes = "Ruim";
+            }
+
+            if (rdABom.IsChecked == true)
+            {
+                avaliacaoFisica.NivelAbdominais = "Bom";
+            }
+            else if (rdARegular.IsChecked == true)
+            {
+                avaliacaoFisica.NivelAbdominais = "Regular";
+            }
+            else if (rdARuim.IsChecked == true)
+            {
+                avaliacaoFisica.NivelAbdominais = "Ruim";
+            }
+
+            if (rdCBom.IsChecked == true)
+            {
+                avaliacaoFisica.NivelCooper = "Bom";
+            }
+            else if (rdCRegular.IsChecked == true)
+            {
+                avaliacaoFisica.NivelCooper = "Regular";
+            }
+            else if (rdCRuim.IsChecked == true)
+            {
+                avaliacaoFisica.NivelCooper = "Ruim";
+            }
+
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapaFinal", avaliacaoFisica,acao);
         }
 

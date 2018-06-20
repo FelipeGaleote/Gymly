@@ -19,7 +19,7 @@ namespace Gymly.BD
                 " perimetroCoxaDistalD,perimetroPernaE, perimetroPernaD,envergadura,altura,massa,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
                 "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,tempoFlexao,tempoAbdominal,quantidadeFlexao,quantidadeAbdominal,flexibilidade,pressaoArterialSistolica," +
                 "pressaoArterialDiastolica,frequenciaCardiaca,observacao,caminhoImagemFrontal,observacaoImagemFrontal,caminhoImagemLateral,observacaoImagemLateral,caminhoImagemCostas," +
-                "observacaoImagemCostas,distanciaCooper,quantidadeDias)  " +
+                "observacaoImagemCostas,distanciaCooper,quantidadeDias,nivelflexoes,nivelabdominais,nivelcooper)  " +
                 "" +
                 "VALUES" +
                 "" +
@@ -28,7 +28,7 @@ namespace Gymly.BD
                 "@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD,@envergadura,@altura,@massa,@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax," +
                 "@dobraCutaneaAxilarMedia,@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@tempoFlexao,@tempoAbdominal,@quantidadeFlexao,@quantidadeAbdominal," +
                 "@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica,@frequenciaCardiaca,@observacao,@caminhoImagemFrontal,@observacaoImagemFrontal,@caminhoImagemLateral," +
-                "@observacaoImagemLateral,@caminhoImagemCostas,@observacaoImagemCostas,@distanciaCooper,@quantidadeDias);";
+                "@observacaoImagemLateral,@caminhoImagemCostas,@observacaoImagemCostas,@distanciaCooper,@quantidadeDias,@nivelflexoes,@nivelabdominais,@nivelcooper);";
 
 
 
@@ -91,6 +91,10 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMLATERAL", avaliacaoFisica.ObservacaoImagemLateral);
             cmd.Parameters.AddWithValue("@CAMINHOIMAGEMCOSTAS", avaliacaoFisica.CaminhoImagemCostas);
             cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMCOSTAS", avaliacaoFisica.ObservacaoImagemCostas);
+
+            cmd.Parameters.AddWithValue("@nivelflexoes", avaliacaoFisica.NivelFlexoes);
+            cmd.Parameters.AddWithValue("@nivelabdominais", avaliacaoFisica.NivelAbdominais);
+            cmd.Parameters.AddWithValue("@nivelcooper", avaliacaoFisica.NivelCooper);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -164,7 +168,10 @@ namespace Gymly.BD
                         "caminhoImagemCostas = @caminhoImagemCostas, " +
                         "observacaoImagemCostas =@observacaoImagemCostas , " +
                         "distanciaCooper = @distanciaCooper, " +
-                        "quantidadeDias = @quantidadeDias " +
+                        "quantidadeDias = @quantidadeDias, " +
+                        "nivelflexoes = @nivelflexoes, "+
+                        "nivelabdominais = @nivelabdominais, " +
+                        "nivelcooper = @nivelcooper "+
                         " where id = " + avaliacaoFisica.Id.ToString() +" AND cpf_aluno = '" + avaliacaoFisica.CpfAluno + "';";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
@@ -218,6 +225,10 @@ namespace Gymly.BD
             cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMLATERAL", avaliacaoFisica.ObservacaoImagemLateral);
             cmd.Parameters.AddWithValue("@CAMINHOIMAGEMCOSTAS", avaliacaoFisica.CaminhoImagemCostas);
             cmd.Parameters.AddWithValue("@OBSERVACAOIMAGEMCOSTAS", avaliacaoFisica.ObservacaoImagemCostas);
+
+            cmd.Parameters.AddWithValue("@nivelflexoes", avaliacaoFisica.NivelFlexoes);
+            cmd.Parameters.AddWithValue("@nivelabdominais", avaliacaoFisica.NivelAbdominais);
+            cmd.Parameters.AddWithValue("@nivelcooper", avaliacaoFisica.NivelCooper);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -288,8 +299,9 @@ namespace Gymly.BD
                 avaliacaoFisica.CaminhoImagemCostas = reader["CAMINHOIMAGEMCOSTAS"].ToString();
                 avaliacaoFisica.ObservacaoImagemCostas = reader["OBSERVACAOIMAGEMCOSTAS"].ToString();
                 avaliacaoFisica.QtdadeDiasDeTreino = reader["QUANTIDADEDIAS"].ToString();
-
-
+                avaliacaoFisica.NivelFlexoes = reader["NIVELFLEXOES"].ToString();
+                avaliacaoFisica.NivelAbdominais = reader["NIVELABDOMINAIS"].ToString();
+                avaliacaoFisica.NivelCooper = reader["NIVELCOOPER"].ToString();
             }
             catch
             {

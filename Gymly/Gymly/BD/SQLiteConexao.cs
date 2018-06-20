@@ -146,6 +146,9 @@ namespace Gymly.BD
                 sql.AppendLine("[DOBRACUTANEAABDOMINAL] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEACOXA] FLOAT,");
                 sql.AppendLine("[DOBRACUTANEAPERNA] FLOAT,");
+                sql.AppendLine("[NIVELFLEXOES] VARCHAR(10),");
+                sql.AppendLine("[NIVELABDOMINAIS] VARCHAR(10),");
+                sql.AppendLine("[NIVELCOOPER] VARCHAR(10),");
 
 
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");
