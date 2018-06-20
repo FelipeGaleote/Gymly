@@ -36,7 +36,7 @@ namespace Gymly.UserControls
         {
          
             this.aluno = aluno;
-            this.acao = "EDITAR";
+            this.acao = "Editar";
             txtBoxCpf.IsEnabled = false;
             btnCadastrarAluno.Content = "Salvar"; 
             this.aluno = aluno;
@@ -114,7 +114,7 @@ namespace Gymly.UserControls
                 aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "-" + comboBoxMes.SelectedValue + "-" + comboBoxAno.SelectedValue));
                 try
                 {
-                    if (acao.Equals("EDITAR"))
+                    if (acao.Equals("Editar"))
                     {
                         BDAluno.AtualizaAluno(aluno);
                         mainWindow.MudarUserControl("detalhesAluno", aluno.Cpf);

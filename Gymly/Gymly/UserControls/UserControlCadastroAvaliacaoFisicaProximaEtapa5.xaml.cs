@@ -24,6 +24,10 @@ namespace Gymly.UserControls
             this.acao = acao;
             InitializeComponent();
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
+            if (acao.Equals("Editar"))
+            {
+                preencheCampos();
+            }
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
@@ -70,6 +74,19 @@ namespace Gymly.UserControls
                 ImageFotoDeCostas.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeCostas);
                 btnAddFotoDeCostas.Background = Brushes.Transparent;
                 btnAddFotoDeCostas.BorderBrush = null;
+            }
+        }
+        public void preencheCampos()
+        {
+            if (!avaliacaoFisica.CaminhoImagemCostas.Equals("") && avaliacaoFisica.CaminhoImagemCostas != null)
+            {
+                ImageFotoDeCostas.Source = GerenciadorDeArquivos.BuscaImagem(avaliacaoFisica.CaminhoImagemCostas);
+                btnAddFotoDeCostas.Background = Brushes.Transparent;
+                btnAddFotoDeCostas.BorderBrush = null;
+            }
+            if (!avaliacaoFisica.ObservacaoImagemCostas.Equals("") && avaliacaoFisica.ObservacaoImagemCostas != null)
+            {
+                txtBoxObservacao.Text = avaliacaoFisica.ObservacaoImagemCostas;
             }
         }
     }

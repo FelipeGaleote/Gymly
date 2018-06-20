@@ -43,7 +43,7 @@ namespace Gymly.UserControls
 
         private void txtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (!acao.Equals("EDITAR"))
+            if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxPorcentagemGorduraCorporal);
         }
 
@@ -54,7 +54,7 @@ namespace Gymly.UserControls
 
         private void txtBoxPorcentagemDeAguaNoCorpo_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (!acao.Equals("EDITAR"))
+            if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxPorcentagemDeAguaNoCorpo);
         }
 
@@ -65,7 +65,7 @@ namespace Gymly.UserControls
 
         private void txtBoxTaxaMetabolicaBasal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (!acao.Equals("EDITAR"))
+            if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxTaxaMetabolicaBasal);
         }
 
@@ -76,7 +76,7 @@ namespace Gymly.UserControls
 
         private void txtBoxPorcentagemDeAguaNoMusculo_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
-            if (!acao.Equals("EDITAR"))
+            if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxPorcentagemDeAguaNoMusculo);
         }
 
