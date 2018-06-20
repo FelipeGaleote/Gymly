@@ -310,16 +310,16 @@ namespace Gymly.Models
 
             PdfPTable tableTemp = new PdfPTable(1);
             
-            tableTemp.AddCell(CriaCell("Treinos/semana:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-            tableTemp.AddCell(CriaCell(avaliacaoFisica.QtdadeDiasDeTreino, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//qtdade Dias de treino
+            tableTemp.AddCell(CriaCell("Treinos/semana:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE)).BorderColor = BaseColor.WHITE;
+            tableTemp.AddCell(CriaCell(avaliacaoFisica.QtdadeDiasDeTreino, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)).BorderColor = BaseColor.WHITE;//qtdade Dias de treino
 
             table.AddCell(tableTemp);
-            table.AddCell(new PdfPCell() { BorderColor = BaseColor.WHITE , FixedHeight = 10});
+            table.AddCell(new PdfPCell() { BorderColor = BaseColor.WHITE , NoWrap = true});
 
             tableTemp = new PdfPTable(1);
 
-            tableTemp.AddCell(CriaCell("Flexibilidade:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-            tableTemp.AddCell(CriaCell(avaliacaoFisica.Flexibilidade, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Flexibilidade
+            tableTemp.AddCell(CriaCell("Flexibilidade:", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE)).BorderColor = BaseColor.WHITE;
+            tableTemp.AddCell(CriaCell(avaliacaoFisica.Flexibilidade, SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)).BorderColor = BaseColor.WHITE;//Flexibilidade
             table.AddCell(tableTemp);
 
             doc.Add(table);

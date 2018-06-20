@@ -50,12 +50,21 @@ namespace Gymly.Models
         }
         public static void MoveCopiaDeArquivo(string caminhoOrigem, string caminhoDestino)
         {
-            if (File.Exists(caminhoDestino))
-            {
-                File.Delete(caminhoDestino);
-            }
+            
+            
 
-            File.Copy(caminhoOrigem, caminhoDestino);
+            string pasta = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString())+"\\" + Path.GetDirectoryName(caminhoDestino);
+            string[] arquivos = Directory.GetFiles(pasta, "*.*", SearchOption.AllDirectories).ToArray();
+            System.IO.FileStream fs;
+            if (arquivos.Length > 0) {
+                foreach (string a in arquivos) {
+                    System.IO.File.OpenWrite(a).Close();
+                    File.Delete(a);
+                }
+               
+            }
+           
+            File.Copy(caminhoOrigem, caminhoDestino, true);
          
         }
         public static string ProcuraImagem()
@@ -87,6 +96,7 @@ namespace Gymly.Models
             
             BitmapImage bitmap = new BitmapImage();
             bitmap.BeginInit();
+            bitmap.CacheOption = BitmapCacheOption.OnLoad;
             bitmap.UriSource = new Uri(caminho);
             bitmap.EndInit();
             return bitmap;
@@ -95,6 +105,8 @@ namespace Gymly.Models
 
         public static BitmapImage BuscaImagem(string caminhoRelativo)
         {
+           
+
             return new BitmapImage(new Uri(Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString()) + "\\" + caminhoRelativo));
         }
 

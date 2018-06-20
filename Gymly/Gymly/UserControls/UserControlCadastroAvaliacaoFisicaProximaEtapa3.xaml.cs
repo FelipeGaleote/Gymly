@@ -1,5 +1,6 @@
 ﻿using Gymly.Models;
 using System;
+using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -32,9 +33,10 @@ namespace Gymly.UserControls
             }
 
         }
-
+        
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
+            
 
             if (caminhoFotoDeFrente != null && !caminhoFotoDeFrente.Equals(""))
             {
@@ -81,7 +83,7 @@ namespace Gymly.UserControls
             if (caminhoFotoDeFrente != null && !caminhoFotoDeFrente.Equals(""))
             {
                 ImageFotoDeFrente.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeFrente);
-                btnAddFotoDeFrente.Background = Brushes.Transparent;
+                btnAddFotoDeFrente.Background = System.Windows.Media.Brushes.Transparent;
                 btnAddFotoDeFrente.BorderBrush = null;
             }
         }
@@ -89,7 +91,7 @@ namespace Gymly.UserControls
         {
             if (!avaliacaoFisica.CaminhoImagemFrontal.Equals("") && avaliacaoFisica.CaminhoImagemFrontal != null) { 
                 ImageFotoDeFrente.Source = GerenciadorDeArquivos.BuscaImagem(avaliacaoFisica.CaminhoImagemFrontal);
-                btnAddFotoDeFrente.Background = Brushes.Transparent;
+                btnAddFotoDeFrente.Background = System.Windows.Media.Brushes.Transparent;
                 btnAddFotoDeFrente.BorderBrush = null;
                 caminhoFotoDeFrente = avaliacaoFisica.CaminhoImagemFrontal;
             }

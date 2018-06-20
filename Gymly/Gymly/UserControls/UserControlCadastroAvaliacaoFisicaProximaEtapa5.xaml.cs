@@ -32,6 +32,8 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
+            
+
             if (caminhoFotoDeCostas != null && !caminhoFotoDeCostas.Equals(""))
             {
                 avaliacaoFisica.CaminhoImagemCostas = caminhoFotoDeCostas;
