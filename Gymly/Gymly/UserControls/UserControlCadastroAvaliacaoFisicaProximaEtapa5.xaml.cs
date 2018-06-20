@@ -83,6 +83,7 @@ namespace Gymly.UserControls
                 ImageFotoDeCostas.Source = GerenciadorDeArquivos.BuscaImagem(avaliacaoFisica.CaminhoImagemCostas);
                 btnAddFotoDeCostas.Background = Brushes.Transparent;
                 btnAddFotoDeCostas.BorderBrush = null;
+                caminhoFotoDeCostas = avaliacaoFisica.CaminhoImagemCostas;
             }
             if (!avaliacaoFisica.ObservacaoImagemCostas.Equals("") && avaliacaoFisica.ObservacaoImagemCostas != null)
             {

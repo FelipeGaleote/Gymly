@@ -84,6 +84,7 @@ namespace Gymly.UserControls
                 ImageFotoDeLado.Source = GerenciadorDeArquivos.BuscaImagem(avaliacaoFisica.CaminhoImagemLateral);
                 btnAddFotoDeLado.Background = Brushes.Transparent;
                 btnAddFotoDeLado.BorderBrush = null;
+                caminhoFotoDeLado = avaliacaoFisica.CaminhoImagemLateral;
             }
             if (!avaliacaoFisica.ObservacaoImagemLateral.Equals("") && avaliacaoFisica.ObservacaoImagemLateral != null)
             {
