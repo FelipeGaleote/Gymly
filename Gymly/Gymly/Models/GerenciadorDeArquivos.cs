@@ -131,14 +131,17 @@ namespace Gymly.Models
             Spire.Pdf.PdfDocument doc = new Spire.Pdf.PdfDocument();
             doc.LoadFromFile(caminhoPdf);
             doc.SaveToFile(caminhoXps, FileFormat.XPS);
+            doc.Close();
             return caminhoXps;
         }
         public static FixedDocumentSequence AdicionaDocumentoParaVisualizacao(string caminhoPdf)
         {
             XpsDocument xpsDocument = new XpsDocument((ConvertePdfParaXps(caminhoPdf)), FileAccess.Read);
             FixedDocumentSequence fds = xpsDocument.GetFixedDocumentSequence();
+            xpsDocument.Close();
             return fds;
         }
+
 
     }
 

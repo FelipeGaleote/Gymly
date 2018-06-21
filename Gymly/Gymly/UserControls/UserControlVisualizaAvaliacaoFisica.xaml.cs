@@ -22,16 +22,24 @@ namespace Gymly.UserControls
     public partial class UserControlVisualizaAvaliacaoFisica : UserControl
     {
         MainWindow mainWindow;
-
+        private string caminho;
         public UserControlVisualizaAvaliacaoFisica(MainWindow mainWindow,string caminhoPdf)
         {
+            caminho = caminhoPdf;
             this.mainWindow = mainWindow;
             InitializeComponent();
             docView.Document = GerenciadorDeArquivos.AdicionaDocumentoParaVisualizacao(caminhoPdf);
+            
         }
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
         {
+            caminho = caminho.Replace(".pdf", ".xps");
+
+            System.IO.File.OpenWrite(caminho).Close();
+
+            GerenciadorDeArquivos.DeletaArquivo(caminho);
+
             mainWindow.MudarUserControl("aluno");
         }
     }
