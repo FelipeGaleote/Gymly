@@ -52,38 +52,61 @@ namespace Gymly.UserControls
             conn.Close();
         }
 
+        private void DataGridAV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnEditarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        {
+
+            if ((DataRowView)dataGridAV.SelectedItem != null)
+            {
+                DataRowView dataRow = (DataRowView)dataGridAV.SelectedItem;
+                int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
+                try
+                {
+
+                    mainWindow.MudarUserControl("editarAvaliacao", id);
+                }
+                catch (Exception x)
+                {
+                    Console.WriteLine(x.Message);
+                }
+            }
+            else
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show("Selecione uma avaliação física", "Comando inválido", MessageBoxButton.OK, MessageBoxImage.Error);
+
+            }
+        }
+
+        private void btnGerarPdf_Click(object sender, RoutedEventArgs e)
+        {
+            GeraPdf();
+        }
+
         private void DataGridAV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            GeraPdf();
+        }
+        private void GeraPdf()
         {
             DataRowView dataRow = (DataRowView)dataGridAV.SelectedItem;
             int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
-            
-            try
-            {
-               //int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
-                mainWindow.MudarUserControl("editarAvaliacao",id);
-            }
-            catch (Exception x)
-            {
-                Console.WriteLine(x.Message);
-            }
 
-            /*
             System.Windows.MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show("Deseja gerar pdf?", "Gerar pdf da avaliação fisica", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result.ToString().ToUpper() == "YES")
             {
+
                 string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
                 AvaliacaoFisica av = new AvaliacaoFisica();
                 av = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
                 Relatorio.GerarRelatorioDeAvaliacao(av.CpfAluno, local, av);
             }
-        */
         }
 
-        private void DataGridAV_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
-    }
+}
 

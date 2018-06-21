@@ -55,7 +55,7 @@ namespace Gymly.Models
 
             string pasta = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString())+"\\" + Path.GetDirectoryName(caminhoDestino);
             string[] arquivos = Directory.GetFiles(pasta, "*.*", SearchOption.AllDirectories).ToArray();
-            System.IO.FileStream fs;
+            
             if (arquivos.Length > 0) {
                 foreach (string a in arquivos) {
                     System.IO.File.OpenWrite(a).Close();
