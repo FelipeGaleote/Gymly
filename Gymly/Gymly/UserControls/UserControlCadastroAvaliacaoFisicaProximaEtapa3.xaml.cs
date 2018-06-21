@@ -29,7 +29,7 @@ namespace Gymly.UserControls
             EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
             if (acao.Equals("Editar"))
             {
-                preencheCampos();
+                PreencheCampos();
             }
 
         }
@@ -87,7 +87,7 @@ namespace Gymly.UserControls
                 btnAddFotoDeFrente.BorderBrush = null;
             }
         }
-        public void preencheCampos()
+        public void PreencheCampos()
         {
             if (!avaliacaoFisica.CaminhoImagemFrontal.Equals("") && avaliacaoFisica.CaminhoImagemFrontal != null) { 
                 ImageFotoDeFrente.Source = GerenciadorDeArquivos.BuscaImagem(avaliacaoFisica.CaminhoImagemFrontal);

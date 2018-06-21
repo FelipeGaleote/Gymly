@@ -920,7 +920,7 @@ namespace Gymly.Models
             return classificacao;
         }
 
-        public double calculaTaxaMetabolicaBasal(Aluno aluno)
+        public double CalculaTaxaMetabolicaBasal(Aluno aluno)
         {
             double taxa;
             if (aluno.Sexo.Equals("M"))
@@ -934,15 +934,15 @@ namespace Gymly.Models
             return taxa;
         }
 
-        public double calculaPesoRecomendado()
+        public double CalculaPesoRecomendado()
         {
             return 24.9 / (this.Altura * this.Altura);
         }
-        public float calculaRCQ()
+        public float CalculaRCQ()
         {
             return this.PerimetroCintura / this.PerimetroQuadril;
         }
-        public string classificacaoRCQ(float rcq, Aluno aluno)
+        public string ClassificacaoRCQ(float rcq, Aluno aluno)
         {
             string classificacao =  String.Empty;
             int idade = aluno.CalculaIdade();

@@ -41,51 +41,51 @@ namespace Gymly.UserControls
             }
         }
 
-        private void txtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxPorcentagemGorduraCorporal);
         }
 
-        private void txtBoxPorcentagemGorduraCorporal_LostFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxPorcentagemGorduraCorporal_LostFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             EditorTxtBox.LostFocus(txtBoxPorcentagemGorduraCorporal, txtBoxTextoPorcent);
         }
 
-        private void txtBoxPorcentagemDeAguaNoCorpo_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxPorcentagemDeAguaNoCorpo_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxPorcentagemDeAguaNoCorpo);
         }
 
-        private void txtBoxPorcentagemDeAguaNoCorpo_LostFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxPorcentagemDeAguaNoCorpo_LostFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             EditorTxtBox.LostFocus(txtBoxPorcentagemDeAguaNoCorpo, txtBoxTextoPorcent);
         }
 
-        private void txtBoxTaxaMetabolicaBasal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxTaxaMetabolicaBasal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxTaxaMetabolicaBasal);
         }
 
-        private void txtBoxTaxaMetabolicaBasal_LostFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxTaxaMetabolicaBasal_LostFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             EditorTxtBox.LostFocus(txtBoxTaxaMetabolicaBasal, txtBoxTextoTaxa);
         }
 
-        private void txtBoxPorcentagemDeAguaNoMusculo_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxPorcentagemDeAguaNoMusculo_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxPorcentagemDeAguaNoMusculo);
         }
 
-        private void txtBoxPorcentagemDeAguaNoMusculo_LostFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxPorcentagemDeAguaNoMusculo_LostFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             EditorTxtBox.LostFocus(txtBoxPorcentagemDeAguaNoMusculo, txtBoxTextoPorcent);
         }
 
-        private void btnProximaEtapa_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BtnProximaEtapa_Click(object sender, System.Windows.RoutedEventArgs e)
         {
 
             if (!txtBoxPorcentagemGorduraCorporal.Text.Equals(txtBoxTextoPorcent))

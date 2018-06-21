@@ -57,7 +57,7 @@ namespace Gymly.UserControls
 
         }
 
-        private void btnEditarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        private void BtnEditarAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
 
             if ((DataRowView)dataGridAV.SelectedItem != null)
@@ -81,7 +81,7 @@ namespace Gymly.UserControls
             }
         }
 
-        private void btnGerarPdf_Click(object sender, RoutedEventArgs e)
+        private void BtnGerarPdf_Click(object sender, RoutedEventArgs e)
         {
             GeraPdf();
         }

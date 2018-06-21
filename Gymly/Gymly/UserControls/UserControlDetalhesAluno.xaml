@@ -69,7 +69,7 @@
                 </ImageBrush>
             </Button.Background>
         </Button>
-        <Button Grid.Row="1"  Grid.Column="6" Name="excluirAluno" BorderBrush="{x:Null}" Foreground="Blue" HorizontalAlignment="Right" Margin="0,0,0,0"  VerticalAlignment="Top" Height="40" Click="excluirAluno_Click" ToolTip="Excluir aluno">
+        <Button Grid.Row="1"  Grid.Column="6" Name="excluirAluno" BorderBrush="{x:Null}" Foreground="Blue" HorizontalAlignment="Right" Margin="0,0,0,0"  VerticalAlignment="Top" Height="40" Click="ExcluirAluno_Click" ToolTip="Excluir aluno">
             <Button.Background>
                 <ImageBrush ImageSource="../Image/excluir.png" Stretch="Uniform">
                     <ImageBrush.RelativeTransform>

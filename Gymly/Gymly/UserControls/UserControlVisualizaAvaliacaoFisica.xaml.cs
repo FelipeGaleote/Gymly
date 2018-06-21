@@ -30,7 +30,7 @@ namespace Gymly.UserControls
             docView.Document = GerenciadorDeArquivos.AdicionaDocumentoParaVisualizacao(caminhoPdf);
         }
 
-        private void voltar_Click(object sender, RoutedEventArgs e)
+        private void Voltar_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.MudarUserControl("aluno");
         }

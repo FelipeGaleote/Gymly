@@ -124,7 +124,7 @@ namespace Gymly.Models
             return saveFileDialog.FileName;
         }
 
-        public static string convertePdfParaXps(string caminhoPdf)
+        public static string ConvertePdfParaXps(string caminhoPdf)
         {
             string caminhoXps = caminhoPdf.Replace(".pdf", ".xps");
             
@@ -135,7 +135,7 @@ namespace Gymly.Models
         }
         public static FixedDocumentSequence AdicionaDocumentoParaVisualizacao(string caminhoPdf)
         {
-            XpsDocument xpsDocument = new XpsDocument((convertePdfParaXps(caminhoPdf)), FileAccess.Read);
+            XpsDocument xpsDocument = new XpsDocument((ConvertePdfParaXps(caminhoPdf)), FileAccess.Read);
             FixedDocumentSequence fds = xpsDocument.GetFixedDocumentSequence();
             return fds;
         }

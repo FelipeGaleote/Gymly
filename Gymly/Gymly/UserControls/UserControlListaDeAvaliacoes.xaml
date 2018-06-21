@@ -31,10 +31,10 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="1" Grid.Column="3" FontSize="26" FontWeight="Bold" Text="Avaliações físicas" HorizontalAlignment="Center" Grid.ColumnSpan="2"></TextBlock>
-        <Button x:Name="btnEditarAvaliacaoFisica" FontSize="16pt" VerticalAlignment="Top" Height="50" Content="Editar avaliação" Grid.ColumnSpan="2" Margin="30,10,0,0" Grid.RowSpan="2" Grid.Column="5"  Grid.Row="8" Click="btnEditarAvaliacaoFisica_Click"></Button>
+        <Button x:Name="btnEditarAvaliacaoFisica" FontSize="16pt" VerticalAlignment="Top" Height="50" Content="Editar avaliação" Grid.ColumnSpan="2" Margin="30,10,0,0" Grid.RowSpan="2" Grid.Column="5"  Grid.Row="8" Click="BtnEditarAvaliacaoFisica_Click"></Button>
 
         <DataGrid Grid.Column="1" Background="LightSlateGray" Grid.Row="3" RowHeaderWidth="230" ColumnWidth="230"  CanUserResizeColumns="False" CanUserResizeRows="False" SelectionMode="Single" SelectionUnit="FullRow" Name="dataGridAV" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="6" Grid.RowSpan="5" MouseDoubleClick="DataGridAV_MouseDoubleClick" SelectionChanged="DataGridAV_SelectionChanged"></DataGrid>
-        <Button x:Name="btnGerarPdf" VerticalAlignment="Top" FontSize="16pt" Content="Gerar PDF" Height="50" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,10,30,0" Grid.Row="8" Grid.RowSpan="2" Click="btnGerarPdf_Click" ></Button>
+        <Button x:Name="btnGerarPdf" VerticalAlignment="Top" FontSize="16pt" Content="Gerar PDF" Height="50" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,10,30,0" Grid.Row="8" Grid.RowSpan="2" Click="BtnGerarPdf_Click" ></Button>
 
     </Grid>
 </UserControl>
