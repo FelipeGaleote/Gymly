@@ -92,19 +92,26 @@ namespace Gymly.UserControls
         }
         private void GeraPdf()
         {
-            DataRowView dataRow = (DataRowView)dataGridAV.SelectedItem;
-            int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
+            if ((DataRowView)dataGridAV.SelectedItem != null) {
+                DataRowView dataRow = (DataRowView)dataGridAV.SelectedItem;
+                int id = Convert.ToInt32(dataRow.Row.ItemArray[0]);
 
-            System.Windows.MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show("Deseja gerar pdf?", "Gerar pdf da avaliação fisica", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                System.Windows.MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show("Deseja gerar pdf?", "Gerar pdf da avaliação fisica", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            if (result.ToString().ToUpper() == "YES")
-            {
+                if (result.ToString().ToUpper() == "YES")
+                {
 
-                string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
-                AvaliacaoFisica av = new AvaliacaoFisica();
-                av = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
-                Relatorio.GerarRelatorioDeAvaliacao(av.CpfAluno, local, av);
+                    string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
+                    AvaliacaoFisica av = new AvaliacaoFisica();
+                    av = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
+                    Relatorio.GerarRelatorioDeAvaliacao(av.CpfAluno, local, av);
+                }
             }
+            else
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show("Selecione uma avaliação física", "Comando inválido", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
 
     }
