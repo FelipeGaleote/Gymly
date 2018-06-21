@@ -20,6 +20,7 @@ namespace Gymly.Models
         //Tabela Avaliação fisica
         private int id;
         private string cpfAluno; //pegar do datagrid
+        private string avaliador;
         private DateTime data;
         private string qtdadeDiasDeTreino;
         private string tipoDeAvaliacao;
@@ -695,6 +696,11 @@ namespace Gymly.Models
         {
             get { return nivelCooper; }
             set { nivelCooper = value; }
+        }
+        public string Avaliador
+        {
+            get { return avaliador; }
+            set { avaliador = value; }
         }
 
         public float PorcentagemAguaCorpo { get => porcentagemAguaCorpo; set => porcentagemAguaCorpo = value; }

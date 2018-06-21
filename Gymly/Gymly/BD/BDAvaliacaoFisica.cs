@@ -14,7 +14,7 @@ namespace Gymly.BD
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
 
-            string sql = "INSERT INTO AvaliacaoFisica(id,cpf_aluno,data,tipo,perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
+            string sql = "INSERT INTO AvaliacaoFisica(id,cpf_aluno,avaliador,data,tipo,perimetroOmbro,perimetroTorax,perimetroBracoE,perimetroBracoD,perimetroAntebracoE,perimetroAntebracoD" +
                 ",perimetroCintura,perimetroAbdominal,perimetroQuadril,perimetroCoxaProximalE,perimetroCoxaProximalD,perimetroCoxaMedialE,perimetroCoxaMedialD,perimetroCoxaDistalE," +
                 " perimetroCoxaDistalD,perimetroPernaE, perimetroPernaD,envergadura,altura,massa,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
                 "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,tempoFlexao,tempoAbdominal,quantidadeFlexao,quantidadeAbdominal,flexibilidade,pressaoArterialSistolica," +
@@ -23,7 +23,7 @@ namespace Gymly.BD
                 "" +
                 "VALUES" +
                 "" +
-                "(NULL,@cpf_aluno,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE," +
+                "(NULL,@cpf_aluno,@avaliador,@data,@tipo,@perimetroOmbro,@perimetroTorax,@perimetroBracoE,@perimetroBracoD,@perimetroAntebracoE," +
                 "@perimetroAntebracoD,@perimetroCintura,@perimetroAbdominal,@perimetroQuadril,@perimetroCoxaProximalE,@perimetroCoxaProximalD,@perimetroCoxaMedialE,@perimetroCoxaMedialD," +
                 "@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD,@envergadura,@altura,@massa,@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax," +
                 "@dobraCutaneaAxilarMedia,@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@tempoFlexao,@tempoAbdominal,@quantidadeFlexao,@quantidadeAbdominal," +
@@ -34,6 +34,7 @@ namespace Gymly.BD
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("@cpf_aluno", avaliacaoFisica.CpfAluno);
+            cmd.Parameters.AddWithValue("@avaliador", avaliacaoFisica.Avaliador);
             String data = avaliacaoFisica.Data.ToString("dd/MM/yyyy HH:mm:ss");
             if (!data.Equals("01/01/0001 00:00:00"))
                 cmd.Parameters.AddWithValue("@data", avaliacaoFisica.Data);
@@ -251,6 +252,7 @@ namespace Gymly.BD
             {
                 avaliacaoFisica.Id = Convert.ToInt32(reader["ID"]);
                 avaliacaoFisica.CpfAluno = reader["CPF_ALUNO"].ToString();
+                avaliacaoFisica.Avaliador = reader["AVALIADOR"].ToString();
                 avaliacaoFisica.Data = Convert.ToDateTime(reader["DATA"]);
                 avaliacaoFisica.TipoDeAvaliacao = reader["TIPO"].ToString();
                 avaliacaoFisica.PerimetroOmbro = (float)Convert.ToDouble(reader["PERIMETROOMBRO"]);

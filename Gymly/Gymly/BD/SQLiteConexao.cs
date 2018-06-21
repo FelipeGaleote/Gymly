@@ -98,6 +98,7 @@ namespace Gymly.BD
 
                 sql.AppendLine("CREATE TABLE IF NOT EXISTS AVALIACAOFISICA ([ID] INTEGER PRIMARY KEY AUTOINCREMENT,");
                 sql.AppendLine("[CPF_ALUNO] VARCHAR(16),");
+                sql.AppendLine("[AVALIADOR] VARCHAR(70),");
                 sql.AppendLine("[DATA] DATE,");
                 sql.AppendLine("[TIPO] VARCHAR(30),");
                 sql.AppendLine("[OBSERVACAO]  VARCHAR(1024),");
