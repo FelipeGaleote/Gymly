@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Spire.Pdf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Media.Imaging;
+using System.Windows.Xps.Packaging;
+using System.Windows.Xps;
 
 namespace Gymly.Models
 {
@@ -119,5 +123,23 @@ namespace Gymly.Models
             saveFileDialog.ShowDialog();
             return saveFileDialog.FileName;
         }
+
+        public static string convertePdfParaXps(string caminhoPdf)
+        {
+            string caminhoXps = caminhoPdf.Replace(".pdf", ".xps");
+            
+            Spire.Pdf.PdfDocument doc = new Spire.Pdf.PdfDocument();
+            doc.LoadFromFile(caminhoPdf);
+            doc.SaveToFile(caminhoXps, FileFormat.XPS);
+            return caminhoXps;
+        }
+        public static FixedDocumentSequence AdicionaDocumentoParaVisualizacao(string caminhoPdf)
+        {
+            XpsDocument xpsDocument = new XpsDocument((convertePdfParaXps(caminhoPdf)), FileAccess.Read);
+            FixedDocumentSequence fds = xpsDocument.GetFixedDocumentSequence();
+            return fds;
+        }
+
     }
+
 }

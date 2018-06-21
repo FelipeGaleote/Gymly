@@ -183,6 +183,9 @@ namespace Gymly
                 case "listarAvaliacoes":
                     pnl.Children.Add(new UserControlListaDeAvaliacoes(this,parametroAdicional));
                     break;
+                case "visualizarAvaliacaoFisica":
+                    pnl.Children.Add(new UserControlVisualizaAvaliacaoFisica(this, parametroAdicional));
+                    break;
             }
         }
 
