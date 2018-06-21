@@ -98,5 +98,24 @@ namespace Gymly.BD
             cmd.ExecuteNonQuery();
             conn.Close();
         }
+        public static bool DeletaAluno(String cpf)
+        {
+            SQLiteConexao conexao = new SQLiteConexao();
+            SQLiteConnection conn = conexao.GetConexao();
+
+            try
+            {
+                string sql = "DELETE FROM ALUNOS WHERE cpf = @CPF;";
+                SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@CPF", cpf);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -48,13 +48,42 @@
         <TextBlock Name="txtBlockNivel"  Grid.Row="3" Grid.Column="4" TextAlignment="Left" FontSize="16pt"/>
         <TextBlock Name="txtBlockSexo"  Grid.Row="5" Grid.Column="4" TextAlignment="Left" FontSize="16pt" />
 
-        <Image Name="imageFotoDeRosto" Source="/Gymly;component/Image/sem_foto.png" Grid.Row="2" Grid.RowSpan="5" Grid.Column="5" Grid.ColumnSpan="2" Margin="50,0,0,0"/>
+        <Image Name="imageFotoDeRosto" Source="/Gymly;component/Image/sem_foto.png" Grid.Row="3" Grid.RowSpan="5" Grid.Column="5" Grid.ColumnSpan="2" Margin="50,0,0,0"/>
 
 
         <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Content="Cadastrar Anamnese" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAnamnese_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0"/>
         <Button Grid.Row="10" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Fisica" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAvaliacaoFisica_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0"/>
         <Button Grid.Row="10" Grid.Column="5" Name="btnListaAvaliacaoFisicas" Content="Listar Avaliações" Height="50" FontSize="16pt" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0" Click="BtnListaAvaliacaoFisicas_Click"/>
-        <Button Grid.Row="1"  Grid.Column="6" Content="Editar Aluno" Name="editarAluno" BorderBrush="{x:Null}" Foreground="Blue" Background="Transparent" HorizontalAlignment="Right"  VerticalAlignment="Top" Height="24" Click="EditarAluno_Click"/>
+        <Button Grid.Row="1"  Grid.Column="6" Name="editarAluno" BorderBrush="{x:Null}" Foreground="Blue" HorizontalAlignment="Right" Margin="0,0,40,0"  VerticalAlignment="Top" Height="40" Click="EditarAluno_Click" ToolTip="Editar aluno">
+            <Button.Background>
+                <ImageBrush ImageSource="../Image/editar.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.7" ScaleY="0.7"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Grid.Row="1"  Grid.Column="6" Name="excluirAluno" BorderBrush="{x:Null}" Foreground="Blue" HorizontalAlignment="Right" Margin="0,0,0,0"  VerticalAlignment="Top" Height="40" Click="excluirAluno_Click" ToolTip="Excluir aluno">
+            <Button.Background>
+                <ImageBrush ImageSource="../Image/excluir.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.7" ScaleY="0.7"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+
+                </ImageBrush>
+            </Button.Background>
+        </Button>
 
 
 

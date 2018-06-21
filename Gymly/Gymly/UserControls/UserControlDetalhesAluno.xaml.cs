@@ -103,5 +103,20 @@ namespace Gymly.UserControls
         {
             mainWindow.MudarUserControl("listarAvaliacoes",aluno.Cpf);
         }
+
+        private void excluirAluno_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show("Tem certeza que deseja excluir o aluno " 
+                + aluno.Nome + " do banco de dados?", "Confirmação" , MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result.ToString().ToUpper() == "YES")
+            {
+                if (BDAluno.DeletaAluno(aluno.Cpf))
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Aluno excluido com sucesso!");
+                else
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Não foi possível deletar o aluno!");
+                mainWindow.MudarUserControl("aluno");
+            }
+            
+        }
     }
 }
