@@ -3,7 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wpfx="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended "
         xmlns:local="clr-namespace:Gymly.UserControls"
+        xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d" 
         d:DesignHeight="1000" d:DesignWidth="1000">
 
@@ -34,17 +37,17 @@
         <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="" />
 
         <TextBlock Grid.Row="2" Grid.Column="0" TextAlignment="Right" Text="Altura" VerticalAlignment="Bottom" FontSize="18pt" Grid.ColumnSpan="3"></TextBlock>
-        <TextBox TextAlignment="Center" Name="txtBoxAltura" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="2" Grid.Column="3"  VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxAltura_GotFocus" LostFocus="TxtBoxAltura_LostFocus"></TextBox>
+        <TextBox TextAlignment="Center" Name="txtBoxAltura" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100"  HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="2" Grid.Column="3"  VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" GotFocus="TxtBoxAltura_GotFocus" LostFocus="TxtBoxAltura_LostFocus"></TextBox>
 
         <TextBlock Grid.Row="2" Grid.Column="4" TextAlignment="Right" Text="Peso" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox TextAlignment="Center" Name="txtBoxMassa" GotFocus="TxtBoxMassa_GotFocus" LostFocus="TxtBoxMassa_LostFocus" Height="auto"  MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="2" Grid.Column="5" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+        <TextBox TextAlignment="Center" Name="txtBoxMassa" GotFocus="TxtBoxMassa_GotFocus" LostFocus="TxtBoxMassa_LostFocus" Height="auto"  MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="2" Grid.Column="5" VerticalAlignment="Bottom" PreviewTextInput="NumberValidationTextBox" FontSize="18pt" ></TextBox>
 
         <TextBlock Grid.Row="3" Grid.Column="0" TextAlignment="Right" Text="Pressão Arterial" VerticalAlignment="Bottom"  FontSize="18pt" Grid.ColumnSpan="3"></TextBlock>
-        <TextBox TextAlignment="Center" Name="txtBoxPressaoArterialSistolica" GotFocus="TxtBoxPressaoArterialSistolica_GotFocus" LostFocus="TxtBoxPressaoArterialSistolica_LostFocus" Height="auto"  MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="3" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
-        <TextBox TextAlignment="Center" Name="txtBoxPressaoArterialDiastolica" GotFocus="TxtBoxPressaoArterialDiastolica_GotFocus" LostFocus="TxtBoxPressaoArterialDiastolica_LostFocus" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Right" Margin="0,0,20,0" Grid.Row="3" Grid.Column="3" VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+        <TextBox TextAlignment="Center" Name="txtBoxPressaoArterialSistolica" GotFocus="TxtBoxPressaoArterialSistolica_GotFocus" LostFocus="TxtBoxPressaoArterialSistolica_LostFocus" Height="auto"  MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="3" VerticalAlignment="Bottom" PreviewTextInput="NumberValidationTextBox" FontSize="18pt"></TextBox>
+        <TextBox TextAlignment="Center" Name="txtBoxPressaoArterialDiastolica" GotFocus="TxtBoxPressaoArterialDiastolica_GotFocus" LostFocus="TxtBoxPressaoArterialDiastolica_LostFocus" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Right" Margin="0,0,20,0" Grid.Row="3" Grid.Column="3" VerticalAlignment="Bottom" PreviewTextInput="NumberValidationTextBox" FontSize="18pt"></TextBox>
 
         <TextBlock Grid.Row="3" Grid.Column="4" TextAlignment="Right" Text="Frequência cardíaca" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox TextAlignment="Center" Name="txtBoxFrenquenciaCardiaca"  GotFocus="TxtBoxFrenquenciaCardiaca_GotFocus" LostFocus="TxtBoxFrenquenciaCardiaca_LostFocus" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="5"  VerticalAlignment="Bottom" FontSize="18pt"></TextBox>
+        <TextBox TextAlignment="Center" Name="txtBoxFrenquenciaCardiaca"  GotFocus="TxtBoxFrenquenciaCardiaca_GotFocus" LostFocus="TxtBoxFrenquenciaCardiaca_LostFocus" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="5"  VerticalAlignment="Bottom" PreviewTextInput="NumberValidationTextBox" FontSize="18pt"></TextBox>
 
         <TextBlock Text="Dias de treino por semana" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="18pt" Grid.ColumnSpan="3" Margin="0,0,176,0.2" Width="324" ></TextBlock>
         <RadioButton GroupName="diasDeTreino" Content="0-2" Grid.Column="3" Grid.Row="5" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="100,0,0,0" FontSize="18pt" Name="rd0_2"/>

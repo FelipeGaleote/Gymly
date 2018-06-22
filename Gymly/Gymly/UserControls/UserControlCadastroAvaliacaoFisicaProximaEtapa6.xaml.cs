@@ -1,6 +1,10 @@
-﻿using Gymly.Models;
+﻿using System;
+using Gymly.Models;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Text;
 
 namespace Gymly.UserControls
 {
@@ -15,6 +19,7 @@ namespace Gymly.UserControls
         private string txtBoxTextoDistancia = "Dist.(m)";
         private string txtBoxTextoQuantidade = "Repetição";
         private string acao;
+        private StringBuilder erroBuilder;
 
         public UserControlCadastroAvaliacaoFisicaProximaEtapa6(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica , string acao)
         {
@@ -89,16 +94,70 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
-            if(!txtBoxDistanciaCooper.Text.Equals("Dist.(m)"))
-            avaliacaoFisica.DistanciaCooper = float.Parse(txtBoxDistanciaCooper.Text.Replace( ".",",").Trim());
-            if (!txtBoxQtdadeAbdominal.Text.Equals("Repetição"))
-                avaliacaoFisica.QtdadeAbdominais = int.Parse(txtBoxQtdadeAbdominal.Text.Trim());
-            if (!txtBoxQtdadeFlexao.Text.Equals("Repetição"))
-                avaliacaoFisica.QtdadeFlexao = int.Parse(txtBoxQtdadeFlexao.Text.Trim());
-            if (!txtBoxTempoFlexao.Text.Equals("Tempo(s)"))
-                avaliacaoFisica.TempoFlexao = float.Parse(txtBoxTempoFlexao.Text.Replace( ".",",").Trim());
-            if (!txtBoxTempoAbdominal.Text.Equals("Tempo(s)"))
-                avaliacaoFisica.TempoAbdominal = float.Parse(txtBoxTempoAbdominal.Text.Replace( ".",",").Trim());
+             erroBuilder = new StringBuilder();
+            avaliacaoFisica.DistanciaCooper = ObtemValor(txtBoxDistanciaCooper, "Dist.(m)", avaliacaoFisica.DistanciaCooper, "Distância Cooper");
+            
+            avaliacaoFisica.TempoFlexao = ObtemValor(txtBoxTempoFlexao, "Tempo(s)", avaliacaoFisica.TempoFlexao, "Tempo Flexão");
+            avaliacaoFisica.TempoAbdominal = ObtemValor(txtBoxTempoAbdominal, "Tempo(s)", avaliacaoFisica.TempoAbdominal, "Tempo Abdominal");
+
+
+            /* try
+             {
+                 if (!txtBoxDistanciaCooper.Text.Equals("Dist.(m)"))
+                     avaliacaoFisica.DistanciaCooper = float.Parse(txtBoxDistanciaCooper.Text.Replace(".", ",").Trim());
+             }
+             catch (Exception)
+             {
+
+                 erroBuilder.AppendLine("Formato inválido para Distância Cooper.");
+
+             }*/
+             try
+             {
+                 if (!txtBoxQtdadeAbdominal.Text.Equals("Repetição"))
+                     avaliacaoFisica.QtdadeAbdominais = int.Parse(txtBoxQtdadeAbdominal.Text.Trim());
+
+             }
+             catch (Exception)
+             {
+                 erroBuilder.AppendLine("Formato inválido para Quantidade de Abdominais.");
+             }
+
+             try
+             {
+                 if (!txtBoxQtdadeFlexao.Text.Equals("Repetição"))
+                     avaliacaoFisica.QtdadeFlexao = int.Parse(txtBoxQtdadeFlexao.Text.Trim());
+             }
+             catch (Exception)
+             {
+                 erroBuilder.AppendLine("Formato inválido para Quantidade de Flexão.");
+
+             }
+            /*
+            
+             try
+             {
+                 if (!txtBoxTempoFlexao.Text.Equals("Tempo(s)"))
+                     avaliacaoFisica.TempoFlexao = float.Parse(txtBoxTempoFlexao.Text.Replace(".", ",").Trim());
+             }
+             catch (Exception)
+             {
+                 erroBuilder.AppendLine("Formato inválido para Tempo de Flexão.");
+
+             }
+             try
+             {
+                 if (!txtBoxTempoAbdominal.Text.Equals("Tempo(s)"))
+                     avaliacaoFisica.TempoAbdominal = float.Parse(txtBoxTempoAbdominal.Text.Replace(".", ",").Trim());
+             }
+             catch (Exception)
+             {
+                 erroBuilder.AppendLine("Formato inválido para Tempo de Abdominal.");
+
+             }
+        */
+
+
 
             if (rdFBom.IsChecked == true)
             {
@@ -138,10 +197,33 @@ namespace Gymly.UserControls
             {
                 avaliacaoFisica.NivelCooper = "Ruim";
             }
+            if (erroBuilder.Length != 0)
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show(erroBuilder.ToString());
+            }
+            else
+            {
+                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapaFinal", avaliacaoFisica, acao);
+            }
 
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapaFinal", avaliacaoFisica,acao);
+   
         }
 
+        private float ObtemValor(TextBox txtBox, string hint, float valor, string nome)
+        {
+            try
+            {
+                if (!txtBox.Text.Equals(hint))
+                    return float.Parse(txtBox.Text.Replace(".", ",").Trim());
+
+                return valor;
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine(string.Format("Formato inválido para {0}.", nome));
+                return valor;
+            }
+        }
         private void TxtBoxTempoFlexao_GotFocus(object sender, RoutedEventArgs e)
         {
             if (!acao.Equals("Editar"))
@@ -196,5 +278,11 @@ namespace Gymly.UserControls
         {
             EditorTxtBox.LostFocus(txtBoxDistanciaCooper, txtBoxTextoDistancia);
         }
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9,]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
     }
 }

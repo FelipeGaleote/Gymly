@@ -1,5 +1,10 @@
-﻿using Gymly.Models;
+﻿using System;
+using Gymly.Models;
+using System.Text.RegularExpressions;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Text;
+
 namespace Gymly.UserControls
 {
     /// <summary>
@@ -40,6 +45,8 @@ namespace Gymly.UserControls
 
             }
         }
+
+
 
         private void TxtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
@@ -87,25 +94,69 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            StringBuilder erroBuilder = new StringBuilder();
+            try
+            {
+                if (!txtBoxPorcentagemGorduraCorporal.Text.Equals(txtBoxTextoPorcent))
+                    avaliacaoFisica.PorcentagemGorduraCorporal = float.Parse(txtBoxPorcentagemGorduraCorporal.Text.Replace(".", ","));
+            }
+            catch (Exception)
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show("Formato inválido para Porcentagem da Gordura Corporal.");
 
-            if (!txtBoxPorcentagemGorduraCorporal.Text.Equals(txtBoxTextoPorcent))
-            {
-                avaliacaoFisica.PorcentagemGorduraCorporal = float.Parse(txtBoxPorcentagemGorduraCorporal.Text.Replace(".",","));
+                throw;
             }
-            if (!txtBoxPorcentagemDeAguaNoMusculo.Text.Equals(txtBoxTextoPorcent))
+            try
             {
-                avaliacaoFisica.PorcentagemAguaMusculo = float.Parse(txtBoxPorcentagemDeAguaNoMusculo.Text.Replace(".", ","));
+                if (!txtBoxPorcentagemDeAguaNoMusculo.Text.Equals(txtBoxTextoPorcent))
+                    avaliacaoFisica.PorcentagemAguaMusculo = float.Parse(txtBoxPorcentagemDeAguaNoMusculo.Text.Replace(".", ","));
+
             }
-            if (!txtBoxPorcentagemDeAguaNoCorpo.Text.Equals(txtBoxTextoPorcent))
+            catch (Exception)
             {
-                avaliacaoFisica.PorcentagemAguaCorpo = float.Parse(txtBoxPorcentagemDeAguaNoCorpo.Text.Replace(".", ","));
+                Xceed.Wpf.Toolkit.MessageBox.Show("Formato inválido para Porcentagem da Água no Músculo.");
+
             }
-            if (!txtBoxTaxaMetabolicaBasal.Text.Equals(txtBoxTextoTaxa))
+            try
             {
-                avaliacaoFisica.TaxaMetabolicaBasal = float.Parse(txtBoxTaxaMetabolicaBasal.Text.Replace(".", ","));
+                if (!txtBoxPorcentagemDeAguaNoCorpo.Text.Equals(txtBoxTextoPorcent))
+                    avaliacaoFisica.PorcentagemAguaCorpo = float.Parse(txtBoxPorcentagemDeAguaNoCorpo.Text.Replace(".", ","));
+
+            }
+            catch (Exception)
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show("Formato inválido para Porcentagem da Água no Corpo.");
+
             }
 
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica, acao);
+            try
+            {
+                if (!txtBoxTaxaMetabolicaBasal.Text.Equals(txtBoxTextoTaxa))
+                    avaliacaoFisica.TaxaMetabolicaBasal = float.Parse(txtBoxTaxaMetabolicaBasal.Text.Replace(".", ","));
+
+            }
+            catch (Exception)
+            {
+
+                Xceed.Wpf.Toolkit.MessageBox.Show("Formato inválido para Taxa Metabólica.");
+
+            }
+
+            if (erroBuilder.Length != 0)
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show(erroBuilder.ToString());
+            }
+            else
+            {
+                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica, acao);
+            }
+ 
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9,]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

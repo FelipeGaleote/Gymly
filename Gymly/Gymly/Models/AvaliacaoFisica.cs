@@ -703,10 +703,57 @@ namespace Gymly.Models
             set { avaliador = value; }
         }
 
-        public float PorcentagemAguaCorpo { get => porcentagemAguaCorpo; set => porcentagemAguaCorpo = value; }
-        public float PorcentagemAguaMusculo { get => porcentagemAguaMusculo; set => porcentagemAguaMusculo = value; }
-        public float TaxaMetabolicaBasal { get => taxaMetabolicaBasal; set => taxaMetabolicaBasal = value; }
-        public float PorcentagemGorduraCorporal { get => porcentagemGorduraCorporal; set => porcentagemGorduraCorporal = value; }
+        public float PorcentagemAguaCorpo
+        {
+            get
+            {
+                return porcentagemAguaCorpo;
+            }
+
+            set
+            {
+                porcentagemAguaCorpo = value;
+            }
+        }
+
+        public float PorcentagemAguaMusculo
+        {
+            get
+            {
+                return porcentagemAguaMusculo;
+            }
+
+            set
+            {
+                porcentagemAguaMusculo = value;
+            }
+        }
+
+        public float TaxaMetabolicaBasal
+        {
+            get
+            {
+                return taxaMetabolicaBasal;
+            }
+
+            set
+            {
+                taxaMetabolicaBasal = value;
+            }
+        }
+
+        public float PorcentagemGorduraCorporal
+        {
+            get
+            {
+                return porcentagemGorduraCorporal;
+            }
+
+            set
+            {
+                porcentagemGorduraCorporal = value;
+            }
+        }
 
         public float CalculoImc(float massa, float altura) {
             return (massa / (altura * altura));

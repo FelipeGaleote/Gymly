@@ -26,7 +26,18 @@ namespace Gymly
     {
         private string nomeAvaliador;
 
-        public string NomeAvaliador { get => nomeAvaliador; set => nomeAvaliador = value; }
+        public string NomeAvaliador
+        {
+            get
+            {
+                return nomeAvaliador;
+            }
+
+            set
+            {
+                nomeAvaliador = value;
+            }
+        }
 
         public MainWindow()
         {

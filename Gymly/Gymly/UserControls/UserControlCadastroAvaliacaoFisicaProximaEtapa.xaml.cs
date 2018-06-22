@@ -1,6 +1,11 @@
-﻿using Gymly.Models;
+﻿using System;
+using System.Text.RegularExpressions;
+using Gymly.Models;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Text;
+
 namespace Gymly.UserControls
 {
     /// <summary>
@@ -14,6 +19,7 @@ namespace Gymly.UserControls
 
         private string txtBoxTextoMedidaCM = "cm";
         private string acao;
+        private StringBuilder erroBuilder;
 
         public UserControlCadastroAvaliacaoFisicaProximaEtapa(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica , string acao)
         {
@@ -67,52 +73,257 @@ namespace Gymly.UserControls
             }
 
         }
+
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
-            if(!txtBoxEnvergadura.Text.Equals("cm"))
-            avaliacaoFisica.Envergadura =  float.Parse(txtBoxEnvergadura.Text.Replace( ".",",").Trim());
-            if(!txtBoxPerimetroAbdominal.Text.Equals("cm"))
-            avaliacaoFisica.PerimetroAbdominal = float.Parse(txtBoxPerimetroAbdominal.Text.Replace( ".",",").Trim());
-            if(!txtBoxPerimetroAnteBracoD.Text.Equals("Dir. cm"))
-            avaliacaoFisica.PerimetroAntebracoDireito = float.Parse(txtBoxPerimetroAnteBracoD.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroAnteBracoE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroAntebracoEsquerdo = float.Parse(txtBoxPerimetroAnteBracoE.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroBracoD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroBracoDireito = float.Parse(txtBoxPerimetroBracoD.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroBracoE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroBracoEsquerdo = float.Parse(txtBoxPerimetroBracoE.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroCintura.Text.Equals("cm"))
-                avaliacaoFisica.PerimetroCintura = float.Parse(txtBoxPerimetroCintura.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroCoxaDistalD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroCoxaDistalDireita = float.Parse(txtBoxPerimetroCoxaDistalD.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroCoxaDistalE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroCoxaDistalEsquerda = float.Parse(txtBoxPerimetroCoxaDistalE.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroCoxaMedialD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroCoxaMedialDireita = float.Parse(txtBoxPerimetroCoxaMedialD.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroCoxaMedialE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroCoxaMedialEsquerda = float.Parse(txtBoxPerimetroCoxaMedialE.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroCoxaProximalD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroCoxaProximalDireita = float.Parse(txtBoxPerimetroCoxaProximalD.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroCoxaProximalE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroCoxaProximalEsquerda = float.Parse(txtBoxPerimetroCoxaProximalE.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroOmbro.Text.Equals("cm"))
-                avaliacaoFisica.PerimetroOmbro = float.Parse(txtBoxPerimetroOmbro.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroPernaD.Text.Equals("Dir. cm"))
-                avaliacaoFisica.PerimetroPernaDireita = float.Parse(txtBoxPerimetroPernaD.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroPernaE.Text.Equals("Esq. cm"))
-                avaliacaoFisica.PerimetroPernaEsquerda = float.Parse(txtBoxPerimetroPernaE.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroQuadril.Text.Equals("cm"))
-                avaliacaoFisica.PerimetroQuadril = float.Parse(txtBoxPerimetroQuadril.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroTorax.Text.Equals("cm"))
-                avaliacaoFisica.PerimetroTorax = float.Parse(txtBoxPerimetroTorax.Text.Replace( ".",",").Trim());
-            if (!txtBoxPerimetroTorax.Text.Equals("cm"))
-                avaliacaoFisica.Envergadura = float.Parse(txtBoxEnvergadura.Text.Replace( ".",",").Trim());
-            if (avaliacaoFisica.TipoDeAvaliacao == "Antropometria") {
-                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Antropometria", avaliacaoFisica,acao);
+            this.erroBuilder = new StringBuilder();
+            avaliacaoFisica.Envergadura = ObtemValor(txtBoxEnvergadura, "cm", avaliacaoFisica.Envergadura, "Envergadura");
+            avaliacaoFisica.PerimetroAbdominal = ObtemValor(txtBoxPerimetroAbdominal, "cm", avaliacaoFisica.PerimetroAbdominal, "Perimetro Abdominal");
+            avaliacaoFisica.PerimetroAntebracoDireito = ObtemValor(txtBoxPerimetroAnteBracoD, "Dir. cm", avaliacaoFisica.PerimetroAntebracoDireito, "Perimetro Antebraço Direito");
+            avaliacaoFisica.PerimetroAntebracoEsquerdo = ObtemValor(txtBoxPerimetroAnteBracoE, "Esq. cm", avaliacaoFisica.PerimetroAntebracoEsquerdo, "Perimetro Antebraço Esquerdo");
+            avaliacaoFisica.PerimetroBracoDireito = ObtemValor(txtBoxPerimetroBracoD, "Dir. cm", avaliacaoFisica.PerimetroBracoDireito, "Perimetro Braço Direito");
+            avaliacaoFisica.PerimetroBracoEsquerdo = ObtemValor(txtBoxPerimetroBracoE, "Esq. cm", avaliacaoFisica.PerimetroBracoEsquerdo, "Perimetro Braço Esquerdo");
+            avaliacaoFisica.PerimetroCintura = ObtemValor(txtBoxPerimetroCintura, "cm", avaliacaoFisica.PerimetroCintura, "Perimetro Cintura");
+            avaliacaoFisica.PerimetroCoxaDistalDireita = ObtemValor(txtBoxPerimetroCoxaDistalD, "Dir. cm", avaliacaoFisica.PerimetroCoxaDistalDireita, "Perimetro Coxa Distal Direita");
+            avaliacaoFisica.PerimetroCoxaDistalEsquerda = ObtemValor(txtBoxPerimetroCoxaDistalE, "Esq. cm", avaliacaoFisica.PerimetroCoxaDistalEsquerda, "Perimetro Coxa Distal Esquerda");
+            avaliacaoFisica.PerimetroCoxaMedialDireita = ObtemValor(txtBoxPerimetroCoxaMedialD, "Dir. cm", avaliacaoFisica.PerimetroCoxaMedialDireita, "Perimetro Coxa Medial Direita");
+            avaliacaoFisica.PerimetroCoxaMedialEsquerda = ObtemValor(txtBoxPerimetroCoxaMedialE, "Esq. cm", avaliacaoFisica.PerimetroCoxaMedialEsquerda, "Perimetro Coxa Medial Esquerda");
+            avaliacaoFisica.PerimetroCoxaProximalDireita = ObtemValor(txtBoxPerimetroCoxaProximalD, "Dir. cm", avaliacaoFisica.PerimetroCoxaProximalDireita, "Perimetro Coxa Proximal Direita");
+            avaliacaoFisica.PerimetroCoxaProximalEsquerda = ObtemValor(txtBoxPerimetroCoxaProximalE, "Esq. cm", avaliacaoFisica.PerimetroCoxaProximalEsquerda, "Perimetro Coxa Proximal Esquerda");
+            avaliacaoFisica.PerimetroPernaDireita = ObtemValor(txtBoxPerimetroPernaD, "Dir. cm", avaliacaoFisica.PerimetroPernaDireita, "Perimetro Perna Direita");
+            avaliacaoFisica.PerimetroPernaEsquerda = ObtemValor(txtBoxPerimetroPernaE, "Esq. cm", avaliacaoFisica.PerimetroPernaEsquerda, "Perimetro Perna Esquerda");
+            avaliacaoFisica.PerimetroQuadril = ObtemValor(txtBoxPerimetroQuadril, "cm", avaliacaoFisica.PerimetroQuadril, "Perimetro Quadril");
+            avaliacaoFisica.PerimetroTorax = ObtemValor(txtBoxEnvergadura, "cm", avaliacaoFisica.PerimetroTorax, "Perimetro Tórax");
+            
+
+
+            /*try
+            {
+                if (!txtBoxEnvergadura.Text.Equals("cm"))
+                    avaliacaoFisica.Envergadura = float.Parse(txtBoxEnvergadura.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+
+                erroBuilder.AppendLine("Formato inválido para Envergadura.");
+            }
+            try
+            {
+                if (!txtBoxPerimetroAbdominal.Text.Equals("cm"))
+                    avaliacaoFisica.PerimetroAbdominal =
+                        float.Parse(txtBoxPerimetroAbdominal.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+
+                erroBuilder.AppendLine("Formato inválido para Perimetro Abdominal.");
+
+            }
+            try
+            {
+                if (!txtBoxPerimetroAnteBracoD.Text.Equals("Dir. cm"))
+                    avaliacaoFisica.PerimetroAntebracoDireito =
+                        float.Parse(txtBoxPerimetroAnteBracoD.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro do Antebraço Direito.");
+            }
+            try
+            {
+                if (!txtBoxPerimetroAnteBracoE.Text.Equals("Esq. cm"))
+                    avaliacaoFisica.PerimetroAntebracoEsquerdo =
+                        float.Parse(txtBoxPerimetroAnteBracoE.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+
+                erroBuilder.AppendLine("Formato inválido para Perimetro do Antebraço Esquerdo.");
+
+            }
+            try
+            {
+                if (!txtBoxPerimetroBracoD.Text.Equals("Dir. cm"))
+                    avaliacaoFisica.PerimetroBracoDireito =
+                        float.Parse(txtBoxPerimetroBracoD.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+
+                erroBuilder.AppendLine("Formato inválido para Perimetro do Braço Direito.");
+
+            }
+            try
+            {
+                if (!txtBoxPerimetroBracoE.Text.Equals("Esq. cm"))
+                    avaliacaoFisica.PerimetroBracoEsquerdo =
+                        float.Parse(txtBoxPerimetroBracoE.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+
+                erroBuilder.AppendLine("Formato inválido para Perimetro do Braço Esquerdo.");
+            }
+            try
+            {
+                if (!txtBoxPerimetroCintura.Text.Equals("cm"))
+                    avaliacaoFisica.PerimetroCintura = float.Parse(txtBoxPerimetroCintura.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro da Cintura.");
+
+            }
+            try
+            {
+                if (!txtBoxPerimetroCoxaDistalD.Text.Equals("Dir. cm"))
+                    avaliacaoFisica.PerimetroCoxaDistalDireita =
+                        float.Parse(txtBoxPerimetroCoxaDistalD.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro da Coxa Distal Direita.");
+
+            }
+            try
+            {
+                if (!txtBoxPerimetroCoxaDistalE.Text.Equals("Esq. cm"))
+                    avaliacaoFisica.PerimetroCoxaDistalEsquerda =
+                        float.Parse(txtBoxPerimetroCoxaDistalE.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+
+                Xceed.Wpf.Toolkit.MessageBox.Show("Formato inválido para Perimetro da Coxa Distal Esquerda.");
+
+            }
+            try
+            {
+                if (!txtBoxPerimetroCoxaMedialD.Text.Equals("Dir. cm"))
+                    avaliacaoFisica.PerimetroCoxaMedialDireita =
+                        float.Parse(txtBoxPerimetroCoxaMedialD.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro da Coxa Medial Direita.");
+
+            }
+
+            try
+            {
+                if (!txtBoxPerimetroCoxaMedialE.Text.Equals("Esq. cm"))
+                    avaliacaoFisica.PerimetroCoxaMedialEsquerda =
+                        float.Parse(txtBoxPerimetroCoxaMedialE.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro da Coxa Medial Esquerda.");
+            }
+            try
+            {
+                if (!txtBoxPerimetroCoxaProximalD.Text.Equals("Dir. cm"))
+                    avaliacaoFisica.PerimetroCoxaProximalDireita =
+                        float.Parse(txtBoxPerimetroCoxaProximalD.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro da Coxa Proximal Direita.");
+            }
+            try
+            {
+                if (!txtBoxPerimetroCoxaProximalE.Text.Equals("Esq. cm"))
+                    avaliacaoFisica.PerimetroCoxaProximalEsquerda =
+                        float.Parse(txtBoxPerimetroCoxaProximalE.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro da Coxa Proximal Esquerda.");
+
+            }
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro do Ombro.");
+
+            }
+
+            try
+            {
+                if (!txtBoxPerimetroPernaD.Text.Equals("Dir. cm"))
+                    avaliacaoFisica.PerimetroPernaDireita =
+                        float.Parse(txtBoxPerimetroPernaD.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+
+                erroBuilder.AppendLine("Formato inválido para Perimetro da Panturrilha Direita.");
+            }
+            try
+            {
+                if (!txtBoxPerimetroPernaE.Text.Equals("Esq. cm"))
+                    avaliacaoFisica.PerimetroPernaEsquerda =
+                        float.Parse(txtBoxPerimetroPernaE.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro da Panturrilha Esquerda.");
+
+            }
+            try
+            {
+                if (!txtBoxPerimetroQuadril.Text.Equals("cm"))
+                    avaliacaoFisica.PerimetroQuadril = float.Parse(txtBoxPerimetroQuadril.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine("Formato inválido para Perimetro do Quadril.");
+
+            }
+            try
+            {
+                if (!txtBoxPerimetroTorax.Text.Equals("cm"))
+                    avaliacaoFisica.PerimetroTorax = float.Parse(txtBoxPerimetroTorax.Text.Replace(".", ",").Trim());
+            }
+            catch (Exception)
+            {
+           erroBuilder.AppendLine("Formato inválido para Perimetro do Tórax.");
+            }*/
+            if (erroBuilder.Length != 0)
+            {
+                Xceed.Wpf.Toolkit.MessageBox.Show(erroBuilder.ToString());
             }
             else
             {
-                mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia", avaliacaoFisica,acao);
+                if (avaliacaoFisica.TipoDeAvaliacao == "Antropometria")
+                {
+                    mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Antropometria", avaliacaoFisica,
+                        acao);
+                }
+                else
+                {
+                    mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia", avaliacaoFisica,
+                        acao);
+                }
+
+
+            }
+        }
+        private float ObtemValor(TextBox txtBox, string hint, float valor, string nome)
+        {
+            try
+            {
+                if (!txtBox.Text.Equals(hint))
+                    return float.Parse(txtBox.Text.Replace(".", ",").Trim());
+
+                return valor;
+            }
+            catch (Exception)
+            {
+                erroBuilder.AppendLine(string.Format("Formato inválido para {0}.", nome));
+                return valor;
             }
         }
 
@@ -314,6 +525,12 @@ namespace Gymly.UserControls
         private void TxtBoxPerimetroPernaE_LostFocus(object sender, RoutedEventArgs e)
         {
             EditorTxtBox.LostFocus(txtBoxPerimetroPernaE, "Esq. " + txtBoxTextoMedidaCM);
+        }
+
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9,]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

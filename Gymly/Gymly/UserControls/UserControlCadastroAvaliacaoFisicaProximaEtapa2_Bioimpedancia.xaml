@@ -31,16 +31,16 @@
         <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Bioimpedância" />
 
         <TextBlock Grid.Row="2" Grid.Column="0" TextAlignment="Right" Text="% Gordura" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox Name="txtBoxPorcentagemGorduraCorporal" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxPorcentagemGorduraCorporal_GotFocus" LostFocus="TxtBoxPorcentagemGorduraCorporal_LostFocus" ></TextBox>
+        <TextBox Name="txtBoxPorcentagemGorduraCorporal" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" GotFocus="TxtBoxPorcentagemGorduraCorporal_GotFocus" LostFocus="TxtBoxPorcentagemGorduraCorporal_LostFocus" ></TextBox>
 
         <TextBlock Grid.Row="3" Grid.Column="0" TextAlignment="Right" Text="% Água no corpo" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox Name="txtBoxPorcentagemDeAguaNoCorpo" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="3" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxPorcentagemDeAguaNoCorpo_GotFocus" LostFocus="TxtBoxPorcentagemDeAguaNoCorpo_LostFocus" ></TextBox>
+        <TextBox Name="txtBoxPorcentagemDeAguaNoCorpo" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="3" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" GotFocus="TxtBoxPorcentagemDeAguaNoCorpo_GotFocus" LostFocus="TxtBoxPorcentagemDeAguaNoCorpo_LostFocus" ></TextBox>
 
         <TextBlock Grid.Row="2" Grid.Column="2" TextAlignment="Right" Text="Taxa metabólica basal" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox Name="txtBoxTaxaMetabolicaBasal" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxTaxaMetabolicaBasal_GotFocus" LostFocus="TxtBoxTaxaMetabolicaBasal_LostFocus" ></TextBox>
+        <TextBox Name="txtBoxTaxaMetabolicaBasal" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="2" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" GotFocus="TxtBoxTaxaMetabolicaBasal_GotFocus" LostFocus="TxtBoxTaxaMetabolicaBasal_LostFocus" ></TextBox>
 
         <TextBlock Grid.Row="3" Grid.Column="2" TextAlignment="Right" Text="% Água no músculo" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
-        <TextBox Name="txtBoxPorcentagemDeAguaNoMusculo" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="3" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" GotFocus="TxtBoxPorcentagemDeAguaNoMusculo_GotFocus" LostFocus="TxtBoxPorcentagemDeAguaNoMusculo_LostFocus"></TextBox>
+        <TextBox Name="txtBoxPorcentagemDeAguaNoMusculo" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="3" Grid.Column="3" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" GotFocus="TxtBoxPorcentagemDeAguaNoMusculo_GotFocus" LostFocus="TxtBoxPorcentagemDeAguaNoMusculo_LostFocus"></TextBox>
 
 
         <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnProximaEtapa_Click" />
