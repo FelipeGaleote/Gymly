@@ -181,7 +181,7 @@ namespace Gymly.BD
                         "porcentagemAguaCorpo = @porcentagemAguaCorpo, " +
                         "porcentagemAguaMusculo = @porcentagemAguaMusculo, " +
                         "taxaMetabolicaBasal = @taxaMetabolicaBasal, " +
-                        "porcentagemGordura = @porcentagemGorduraCorporal " +
+                        "porcentagemGorduraCorporal = @porcentagemGorduraCorporal " +
                         " where id = " + avaliacaoFisica.Id.ToString() + " AND cpf_aluno = '" + avaliacaoFisica.CpfAluno + "';";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);

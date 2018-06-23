@@ -102,10 +102,12 @@ namespace Gymly.UserControls
                 {
 
                     string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
-                    AvaliacaoFisica av = new AvaliacaoFisica();
-                    av = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
-                    Relatorio.GerarRelatorioDeAvaliacao(av.CpfAluno, local, av);
-                    mainWindow.MudarUserControl("visualizarAvaliacaoFisica", local);
+                    if (!local.Equals("") && local != null) {
+                        AvaliacaoFisica av = new AvaliacaoFisica();
+                        av = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
+                        Relatorio.GerarRelatorioDeAvaliacao(av.CpfAluno, local, av);
+                        mainWindow.MudarUserControl("visualizarAvaliacaoFisica", local);
+                    }
                 }
             }
             else
