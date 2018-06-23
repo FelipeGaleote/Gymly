@@ -232,10 +232,10 @@ namespace Gymly.Models
 
             doc.Close();
         }*/
-        public static void GerarRelatorioDeAvaliacao(string cpf, string localParaSalvar, Anamnese anamnese, AvaliacaoFisica avaliacaoFisica)
+        public static void GerarRelatorioDeAvaliacao(string localParaSalvar, AvaliacaoFisica avaliacaoFisica)
         {
-            Aluno aluno = BDAluno.SelecionaAlunoPorCpf(cpf);
-
+            Aluno aluno = BDAluno.SelecionaAlunoPorCpf(avaliacaoFisica.CpfAluno);
+            Anamnese anamnese = BDAnamnese.SelecionaAnamnesePeloCpf(avaliacaoFisica.CpfAluno);
 
             Document doc = new Document(iTextSharp.text.PageSize.A4, 20, 20, 10, 10);
             PdfWriter pdfWriter = PdfWriter.GetInstance(doc, new FileStream(localParaSalvar, FileMode.Create));
@@ -670,11 +670,127 @@ namespace Gymly.Models
 
             doc.Add(table);
 
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+
+            table = new PdfPTable(2);
+            table.AddCell(new PdfPCell(new Phrase("_________________________")) { BorderColor = BaseColor.WHITE, HorizontalAlignment = 1 });
+            table.AddCell(new PdfPCell(new Phrase("_________________________")) { BorderColor = BaseColor.WHITE, HorizontalAlignment = 1 });
+            table.AddCell(new PdfPCell(new Phrase("(Assinatura do aluno)")) { BorderColor = BaseColor.WHITE, HorizontalAlignment = 1 });
+            table.AddCell(new PdfPCell(new Phrase("(Assinatura do avaliador)")) { BorderColor = BaseColor.WHITE, HorizontalAlignment = 1 });
+            doc.Add(table);
+
             return doc;
         }
 
         public static Document GeraAnamnese(Document doc, Anamnese anamnese)
         {
+
+            Dictionary<string, bool> questionario = anamnese.DictQuestionario();
+            Dictionary<string, bool> objetivo = anamnese.DictObjetivos();
+
+            Paragraph pulaLinha = new Paragraph(" ");
+
+            doc.Add(pulaLinha);
+            doc = AdicionaLinha(doc, "Anamnese", SelecionaFonte(textoTitulo, 34), 1);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+
+            doc = AdicionaLinha(doc, "Questinonário:", SelecionaFonte(textoTitulo, 14), 0);
+            doc.Add(pulaLinha);
+
+            PdfPTable table;
+            PdfPTable tableInterno;
+            PdfPTable tableYorN;
+
+            foreach (var pair in questionario)
+            {
+                table = new PdfPTable(1);
+                tableInterno = new PdfPTable(2);
+                tableYorN = new PdfPTable(2);
+
+                tableInterno.AddCell(new PdfPCell(CriaCell(pair.Key, SelecionaFonte(textoComum, 12), "Left", "Center")) { BorderColor = BaseColor.WHITE });
+                tableYorN.AddCell(new PdfPCell(CriaCell("Sim", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.RED : BaseColor.WHITE)) { BorderColor = BaseColor.WHITE });
+                tableYorN.AddCell(new PdfPCell(CriaCell("Não", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.WHITE : BaseColor.RED)) { BorderColor = BaseColor.WHITE });
+                tableInterno.AddCell(new PdfPCell(tableYorN) { BorderColor = BaseColor.WHITE });
+                table.AddCell(new PdfPCell(tableInterno) { BorderColor = BaseColor.WHITE });
+                doc.Add(table);
+            }
+
+            doc.NewPage();
+
+            doc.Add(pulaLinha);
+            doc = AdicionaLinha(doc, "Anamnese", SelecionaFonte(textoTitulo, 34), 1);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+
+            doc = AdicionaLinha(doc, "Objetivos:", SelecionaFonte(textoTitulo, 14), 0);
+            doc.Add(pulaLinha);
+
+            foreach (var pair in objetivo)
+            {
+                table = new PdfPTable(1);
+                tableInterno = new PdfPTable(2);
+                tableYorN = new PdfPTable(2);
+
+                tableInterno.AddCell(new PdfPCell(CriaCell(pair.Key, SelecionaFonte(textoComum, 12), "Left", "Center")) { BorderColor = BaseColor.WHITE });
+                tableYorN.AddCell(new PdfPCell(CriaCell("Sim", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.RED : BaseColor.WHITE)) { BorderColor = BaseColor.WHITE });
+                tableYorN.AddCell(new PdfPCell(CriaCell("Não", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.WHITE : BaseColor.RED)) { BorderColor = BaseColor.WHITE });
+                tableInterno.AddCell(new PdfPCell(tableYorN) { BorderColor = BaseColor.WHITE });
+                table.AddCell(new PdfPCell(tableInterno) { BorderColor = BaseColor.WHITE });
+                doc.Add(table);
+            }
+
+            if(!anamnese.Observacao.Equals("") && anamnese.Observacao != null)
+            {
+                doc.Add(pulaLinha);
+
+                doc = AdicionaLinha(doc, "Observação:", SelecionaFonte(textoTitulo, 14), 0);
+                doc.Add(pulaLinha);
+
+                doc.Add(CriaCell(anamnese.Observacao, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                
+            }
+            else
+            {
+                doc.Add(pulaLinha);
+                doc.Add(pulaLinha);
+                doc.Add(pulaLinha);
+                doc.Add(pulaLinha);
+                doc.Add(pulaLinha);
+                doc.Add(pulaLinha);
+                doc.Add(pulaLinha);
+                doc.Add(pulaLinha);
+                
+            }
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+            doc.Add(pulaLinha);
+
+            table = new PdfPTable(2);
+            table.AddCell(new PdfPCell(new Phrase("_________________________")) { BorderColor = BaseColor.WHITE, HorizontalAlignment = 1 });
+            table.AddCell(new PdfPCell(new Phrase("_________________________")) { BorderColor = BaseColor.WHITE, HorizontalAlignment = 1 });
+            table.AddCell(new PdfPCell(new Phrase("(Assinatura do aluno)")) { BorderColor = BaseColor.WHITE , HorizontalAlignment = 1 });
+            table.AddCell(new PdfPCell(new Phrase("(Assinatura do avaliador)")) { BorderColor = BaseColor.WHITE , HorizontalAlignment=1});
+            doc.Add(table);
+
+            doc.NewPage();
+
             return doc;
         }
 

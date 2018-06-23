@@ -105,7 +105,7 @@ namespace Gymly.UserControls
                     if (!local.Equals("") && local != null) {
                         AvaliacaoFisica av = new AvaliacaoFisica();
                         av = BDAvaliacaoFisica.SelecionaAvaliacaoFisicaPeloId(id);
-                        Relatorio.GerarRelatorioDeAvaliacao(av.CpfAluno, local, av);
+                        Relatorio.GerarRelatorioDeAvaliacao(local, av);
                         mainWindow.MudarUserControl("visualizarAvaliacaoFisica", local);
                     }
                 }
