@@ -525,5 +525,59 @@ namespace Gymly.Models
                 observacao = value;
             }
         }
+
+        public Dictionary<string, bool> DictObjetivos()
+        {
+            Dictionary<string, bool> objetivos = new Dictionary<string, bool>()
+            {
+                {"Perder Peso", this.PerderPeso },
+                {"Melhorar a Flexibilidade", this.MelhorarFlexibilidade},
+                {"Melhorar a Aptidão Cardiovascular", this.MelhorarAptidao},
+                {"Melhorar a Aptidão Muscular", this.MelhorarMuscular},
+                {"Sentir-se Melhor", this.SentirMelhor},
+                {"Reduzir as Dores", this.ReduzirDores},
+                {"Reduzir o Estresse ", this.ReduzirEstresse},
+                {"Hipertrofia", this.Hipertrofia},
+                {"Melhorar a Nutrição", this.MelhorarNutricao},
+                {"Diminuir Vícios", this.DiminuirVicios},
+            };
+
+            return objetivos;
+        }
+
+        public Dictionary<string, bool> DictQuestionario()
+        {
+
+            Dictionary<string, bool> questionario = new Dictionary<string, bool>()
+            {
+                {"O seu médico já lhe disse alguma vez que você tem um problema cardíaco?", HistoricoProblemaCardiaco },
+                {"Você tem dores no peito com frequência?", HistoricoDoresPeito},
+                {"Você desmaia com frequência ou tem episódios importantes de vertigem?", HistoricoDesmaiosOuVertigem},
+                {"Algum médico já lhe disse que a sua pressão arterial estava muito alta?", HistoricoPressaoAlta},
+                {"Algum médico já lhe disse que você tem um problema ósseo ou articular?", HistoricoProblemaOsseo},
+                {"Você tem mais de 65 anos de idade e não está acostumado a exercícios intensos? ", IdosoNaoAcostumado},
+                {"Doença cardíaca coronariana ", DoencaCardiacaCoronariana},
+                {"Doença cardíaca reumática", DoencaCardiacaReumatica},
+                {"Doença cardíaca congênita", DoencaCardiacaCongenita},
+                {"Batimentos cardíacos Irregulares", BatimentosCardiacosIrregulares},
+                {"Problemas nas válvulas cardíacas", ProblemaValvulasCardiacas},
+                {"Murmúrios cardíacos", MurmuriosCardiacos},
+                {"Ataque cardíaco", AtaqueCardiaco},
+                {"Derrame Cerebral", DerrameCerebral},
+                {"Epilepsia",Epilepsia },
+                {"Diabetes",Diabetes },
+                {"Hipertensão", Hipertensao},
+                {"Câncer", Cancer},
+                {"Dor nas costas", DorCostas},
+                {"Dor nas articulações, tendões ou músculos", DorArticulacao},
+                {"Doença pulmonar(asma, enfisema, outra)", DorPulmonar},
+                {"Você está Grávida?",Gestante },
+                {"Você Fuma?", Fumante},
+                {"Você ingere Bebida Alcoólica?",BebidaAlcoolica }
+            };
+
+
+            return questionario;
+        }
     }
 }
