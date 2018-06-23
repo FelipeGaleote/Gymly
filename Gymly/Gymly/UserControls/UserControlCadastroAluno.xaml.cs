@@ -228,13 +228,20 @@ namespace Gymly.UserControls
 
         private void TxtBoxCpf_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if(txtBoxCpf.Text.Length == 14)
+            int valor = (int)e.Key;
+
+                if(valor == 3)
+            {
+                e.Handled = false;
+                return;
+            }
+
+            if (txtBoxCpf.Text.Length == 14)
             {
                 e.Handled = true;
                 return;
             }
 
-            int valor = (int) e.Key;
             if ((valor >= 34 && valor <= 43) || (valor >= 74 && valor <= 83))
             {
                 hintCPF.Visibility = Visibility.Hidden;
@@ -247,6 +254,11 @@ namespace Gymly.UserControls
         private void TxtBoxTelefone_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             int valor = (int)e.Key;
+            if(valor == 3)
+            {
+                e.Handled = false;
+                return;
+            }
             if ((valor >= 34 && valor <= 43) || (valor >= 74 && valor <= 83))
                 e.Handled = false;
             else
