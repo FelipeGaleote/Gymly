@@ -14,18 +14,56 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="Adicionar Logo da empresa" Name="adicionarLogo" Grid.Column="1" Grid.ColumnSpan="2" Margin="20,0,20,0" Height="80" Grid.Row="0" Click="AdicionarLogo_Click"></Button>
+        <Button Grid.Column="1" Grid.Row="0" Content="Adicionar Logo da empresa" Name="adicionarLogo" Grid.ColumnSpan="2" Margin="20,0,20,0" Height="80" Click="AdicionarLogo_Click"></Button>
         <TextBlock Grid.Column="3" Grid.ColumnSpan="2" Margin="50,100,50,100" Name="txtBoxcaminhoFoto"></TextBlock>
+
+        <Button Grid.Column="4" Grid.Row="0" Content="Emitir Relatorio de alunos" Name="emitirRelatorioAluno" Grid.ColumnSpan="2" Margin="20,0,20,0" Height="80" Click="EmitirRelatorioAluno_Click"></Button>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Text="Avaliadores cadastrados" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,16" FontSize="18pt" FontWeight="Bold"></TextBlock>
+        <DataGrid RowHeaderWidth="229" ColumnWidth="229"  CanUserResizeColumns="False" CanUserResizeRows="False"    SelectionMode="Single" SelectionUnit="FullRow" Name="dataGridAvaliador" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="2" Grid.Column="1"  Grid.Row="2" Background="LightSlateGray" SelectionChanged="dataGridAvaliador_SelectionChanged" />
+        <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" Name="hintAvaliador" Text="Adicionar avaliador" Margin="4,16,0,0" FontSize="16pt" Grid.ColumnSpan="2" Foreground="Gray" Visibility="Hidden" />
+        <TextBox Grid.Column="1" Grid.Row="3" Name="txtBoxAvaliador" Grid.ColumnSpan="2" Text="" VerticalAlignment="Top" Width="Auto" Margin="0,8,0,0" FontSize="18pt" TextChanged="txtBoxAvaliador_TextChanged"></TextBox>
         
-        <Button Content="Emitir Relatorio de alunos" Name="emitirRelatorioAluno" Grid.Column="1" Grid.ColumnSpan="2" Margin="20,0,20,0" Height="80" Grid.Row="1" Click="EmitirRelatorioAluno_Click"></Button>
-
-
+        
+        <Button Grid.Row="3"  Grid.Column="2" Name="adicionarAvaliador" BorderBrush="{x:Null}" Foreground="Blue" HorizontalAlignment="Right" Margin="0,50,40,0"  VerticalAlignment="Top" Height="40" ToolTip="Adicionar avaliador" Click="adicionarAvaliador_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="../Image/criar.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.7" ScaleY="0.7"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+        <Button Grid.Row="3"  Grid.Column="2" Name="excluirAvaliador" BorderBrush="{x:Null}" Foreground="Blue" HorizontalAlignment="Right" Margin="0,50,0,0"  VerticalAlignment="Top" Height="40" ToolTip="Excluir avaliador" Click="excluirAvaliador_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="../Image/excluir.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.7" ScaleY="0.7"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+        
     </Grid>
 </UserControl>

@@ -127,6 +127,7 @@
     <Compile Include="BD\BDAluno.cs" />
     <Compile Include="BD\BDAnamnese.cs" />
     <Compile Include="BD\BDAvaliacaoFisica.cs" />
+    <Compile Include="BD\BDAvaliador.cs" />
     <Compile Include="BD\SQLiteConexao.cs" />
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Anamnese.cs" />
@@ -347,6 +348,9 @@
   <ItemGroup>
     <Resource Include="Image\editar.png" />
     <Resource Include="Image\excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\criar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />
