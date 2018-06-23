@@ -52,7 +52,7 @@ namespace Gymly.UserControls
             }
         }
 
-        private void txtBoxNomeAvaliador_GotFocus(object sender, RoutedEventArgs e)
+        private void TxtBoxNomeAvaliador_GotFocus(object sender, RoutedEventArgs e)
         {
             if (txtBoxNomeAvaliador.Text.Equals(""))
             {

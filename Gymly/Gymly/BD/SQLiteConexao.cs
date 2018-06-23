@@ -149,7 +149,6 @@ namespace Gymly.BD
                 sql.AppendLine("[DOBRACUTANEAPERNA] FLOAT,");
                 sql.AppendLine("[NIVELFLEXOES] VARCHAR(10),");
                 sql.AppendLine("[NIVELABDOMINAIS] VARCHAR(10),");
-                sql.AppendLine("[NIVELCOOPER] VARCHAR(10),");
                 sql.AppendLine("[PORCENTAGEMAGUACORPO] FLOAT,");
                 sql.AppendLine("[PORCENTAGEMAGUAMUSCULO] FLOAT,");
                 sql.AppendLine("[TAXAMETABOLICABASAL] FLOAT,");

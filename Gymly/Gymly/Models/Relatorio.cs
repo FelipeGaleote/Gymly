@@ -290,7 +290,9 @@ namespace Gymly.Models
             table.AddCell(CriaCell("Massa Magra(Kg)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
             table.AddCell(CriaCell("Massa Gorda(Kg)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
 
-            table.AddCell(CriaCell(Math.Round(avaliacaoFisica.CalculaPercentualDeGordura(aluno),2).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+
+
+            table.AddCell(CriaCell((avaliacaoFisica.TipoDeAvaliacao.Equals("Antropometria"))?Math.Round(avaliacaoFisica.CalculaPercentualDeGordura(aluno),2).ToString():avaliacaoFisica.PorcentagemGorduraCorporal.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.CalculaMassaMagra(aluno).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.CalculaMassaGorda(aluno).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
 
@@ -420,60 +422,64 @@ namespace Gymly.Models
             doc.Add(table);
 
             doc.Add(pulaLinha);
+            if (avaliacaoFisica.TipoDeAvaliacao.Equals("Antropometria"))
+            {
+                doc = AdicionaLinha(doc, "Dobras Cutaneas:", SelecionaFonte(textoTitulo, 14), 0);
+                doc.Add(pulaLinha);
 
-            doc = AdicionaLinha(doc, "Dobras Cutaneas:", SelecionaFonte(textoTitulo, 14), 0);
-            doc.Add(pulaLinha);
+                table = new PdfPTable(4);
 
-            table = new PdfPTable(4);
-
-            table.AddCell(CriaCell("Dobra", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-            table.AddCell(CriaCell("Tamanho(mm)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-            table.AddCell(CriaCell("Dobra", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-            table.AddCell(CriaCell("Tamanho(mm)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+                table.AddCell(CriaCell("Dobra", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+                table.AddCell(CriaCell("Tamanho(mm)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+                table.AddCell(CriaCell("Dobra", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
+                table.AddCell(CriaCell("Tamanho(mm)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
 
 
-            //Subescapular
-            table.AddCell(CriaCell("Subescapular", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaSubescapular.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Subescapular
+                //Subescapular
+                table.AddCell(CriaCell("Subescapular", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaSubescapular.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Subescapular
 
-            //Tríceps
-            table.AddCell(CriaCell("Tríceps", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaTriceps.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Tríceps
+                //Tríceps
+                table.AddCell(CriaCell("Tríceps", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaTriceps.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Tríceps
 
-            //Bíceps
-            table.AddCell(CriaCell("Bíceps", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaBiceps.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Bíceps
+                //Bíceps
+                table.AddCell(CriaCell("Bíceps", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaBiceps.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Bíceps
 
-            //Tórax
-            table.AddCell(CriaCell("Tórax", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaTorax.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Tórax
+                //Tórax
+                table.AddCell(CriaCell("Tórax", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaTorax.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Tórax
 
-            //Axilar Média
-            table.AddCell(CriaCell("Axilar Média", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaAxilarMedia.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Axilar Média
+                //Axilar Média
+                table.AddCell(CriaCell("Axilar Média", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaAxilarMedia.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Axilar Média
 
-            //Supra-íliaca
-            table.AddCell(CriaCell("Supra-íliaca", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaSuprailiaca.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Supra-íliaca
+                //Supra-íliaca
+                table.AddCell(CriaCell("Supra-íliaca", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaSuprailiaca.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Supra-íliaca
 
-            //Abdominal
-            table.AddCell(CriaCell("Abdominal", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaAbdominal.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Abdominal
+                //Abdominal
+                table.AddCell(CriaCell("Abdominal", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaAbdominal.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Abdominal
 
-            //Coxa
-            table.AddCell(CriaCell("Coxa", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaCoxa.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Coxa
+                //Coxa
+                table.AddCell(CriaCell("Coxa", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaCoxa.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Coxa
 
-            //Panturrilha
-            table.AddCell(CriaCell("Panturrilha", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaPerna.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Panturrilha
+                //Panturrilha
+                table.AddCell(CriaCell("Panturrilha", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.DobraCutaneaPerna.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Panturrilha
 
-            table.AddCell(CriaCell("", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell("", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            doc.Add(table);
+                table.AddCell(CriaCell("", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                table.AddCell(CriaCell("", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
+                doc.Add(table);
+
+                
+            }
 
             doc.NewPage();
-            
+
             if (!avaliacaoFisica.CaminhoImagemFrontal.Equals("")) {
                 doc.Add(pulaLinha);
                 doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
@@ -618,9 +624,9 @@ namespace Gymly.Models
                 table.AddCell(CriaCell("% Água no corpo(%)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
                 table.AddCell(CriaCell("% Água no músculo(%)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
 
-                table.AddCell(CriaCell(avaliacaoFisica.TaxaMetabolicaBasal.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //altura
-                table.AddCell(CriaCell(avaliacaoFisica.PorcentagemAguaCorpo.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //peso
-                table.AddCell(CriaCell(avaliacaoFisica.PorcentagemAguaMusculo.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (imc >= 18.5 && imc <= 24.9) ? BaseColor.WHITE : BaseColor.RED, BaseColor.WHITE));
+                table.AddCell(CriaCell(avaliacaoFisica.TaxaMetabolicaBasal.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); 
+                table.AddCell(CriaCell(avaliacaoFisica.PorcentagemAguaCorpo.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); 
+                table.AddCell(CriaCell(avaliacaoFisica.PorcentagemAguaMusculo.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
 
                 doc.Add(table);
 
@@ -632,7 +638,7 @@ namespace Gymly.Models
                 table = new PdfPTable(1);
 
                 table.AddCell(CriaCell("Taxa metabólica basal(cal)", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.GRAY, BaseColor.WHITE));
-                table.AddCell(CriaCell(avaliacaoFisica.TaxaMetabolicaBasal.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //altura
+                table.AddCell(CriaCell(avaliacaoFisica.CalculaTaxaMetabolicaBasal(aluno).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE)); //altura
 
                 doc.Add(table);
 

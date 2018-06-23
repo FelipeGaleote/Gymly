@@ -62,7 +62,6 @@ namespace Gymly.Models
         private float distanciaCooper;
         private string nivelFlexoes;
         private string nivelAbdominais;
-        private string nivelCooper;
 
         //Tabela Antropomerica
         private float dobraCutaneaSubescapular;
@@ -692,11 +691,7 @@ namespace Gymly.Models
             get { return nivelAbdominais; }
             set { nivelAbdominais = value; }
         }
-        public string NivelCooper
-        {
-            get { return nivelCooper; }
-            set { nivelCooper = value; }
-        }
+        
         public string Avaliador
         {
             get { return avaliador; }
@@ -781,7 +776,7 @@ namespace Gymly.Models
             return Massa-CalculaMassaGorda(aluno);
         }
         public double CalculaMassaGorda(Aluno aluno) {
-            return Math.Round(Massa * (CalculaPercentualDeGordura(aluno) / 100));
+            return Math.Round(Massa * (PorcentagemGorduraCorporal/100));
         }
         public double CalculaVo2Max(double distancia)
         {
