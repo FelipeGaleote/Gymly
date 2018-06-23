@@ -97,7 +97,7 @@ namespace Gymly.UserControls
         }
         public void PreencheCampos()
         {
-            if (!avaliacaoFisica.CaminhoImagemFrontal.Equals("") && avaliacaoFisica.CaminhoImagemFrontal != null) { 
+            if (avaliacaoFisica.CaminhoImagemFrontal != null && !avaliacaoFisica.CaminhoImagemFrontal.Equals("")) { 
                 ImageFotoDeFrente.Source = GerenciadorDeArquivos.BuscaImagem(avaliacaoFisica.CaminhoImagemFrontal);
                 btnAddFotoDeFrente.Background = System.Windows.Media.Brushes.Transparent;
                 btnAddFotoDeFrente.BorderBrush = null;
