@@ -24,10 +24,14 @@ namespace Gymly.UserControls
 
             InitializeComponent();
 
-            EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
+            
             if (acao.Equals("Editar"))
             {
                 PreencheCampos();
+            }
+            else
+            {
+                EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
             }
         }
 
