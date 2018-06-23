@@ -47,9 +47,13 @@ namespace Gymly.UserControls
                 avaliacaoFisica.CaminhoImagemFrontal = String.Empty;
 
             }
-            if(txtBoxObservacao.Text != String.Empty)
+            if(txtBoxObservacao.Text != String.Empty && !txtBoxObservacao.Text.Equals(txtBoxTextoObservacao))
             {
                 avaliacaoFisica.ObservacaoImagemFrontal = txtBoxObservacao.Text;
+            }
+            else
+            {
+                avaliacaoFisica.ObservacaoImagemFrontal = String.Empty;
             }
             
             mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa4", avaliacaoFisica,acao);

@@ -34,8 +34,8 @@ namespace Gymly.UserControls
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
         {
-            caminho = caminho.Replace(".pdf", ".xps");
-
+            System.IO.File.OpenWrite(caminho).Close();
+            caminho = caminho.Replace(".pdf", "Xps.xps");
             System.IO.File.OpenWrite(caminho).Close();
 
             GerenciadorDeArquivos.DeletaArquivo(caminho);

@@ -788,55 +788,55 @@ namespace Gymly.Models
             return ((distancia-504.9) / 44.73);
         }
        
-        public string VerificaNivelCapacidadeAerobica(double vo2, string sexo, int idade)
+        public string VerificaNivelCapacidadeAerobica(double distancia, string sexo, int idade)
         {
             string nivel = String.Empty;
 
             if (sexo.Equals("M"))
             {
-                if((idade <= 19 && vo2 <2090)||(idade>=20 && idade<=29 && vo2<1960)||
-                    (idade >= 30 && idade <= 39 && vo2 < 1900)|| (idade >= 40 && idade <= 49 && vo2 < 1830)
-                    || (idade >= 50 && idade <= 59 && vo2 < 1660) || idade>= 60 && vo2<1400)
+                if((idade <= 19 && distancia <2090)||(idade>=20 && idade<=29 && distancia<1960)||
+                    (idade >= 30 && idade <= 39 && distancia < 1900)|| (idade >= 40 && idade <= 49 && distancia < 1830)
+                    || (idade >= 50 && idade <= 59 && distancia < 1660) || idade>= 60 && distancia<1400)
                 {
                     nivel = "Muito Fraca";
                 }
                 else
                 {
-                    if ((idade <= 19 && vo2 < 2200) || (idade >= 20 && idade <= 29 && vo2 < 2110) ||
-                    (idade >= 30 && idade <= 39 && vo2 < 2090) || (idade >= 40 && idade <= 49 && vo2 < 1990)
-                    || (idade >= 50 && idade <= 59 && vo2 < 1870) || idade >= 60 && vo2 < 1640)
+                    if ((idade <= 19 && distancia < 2200) || (idade >= 20 && idade <= 29 && distancia < 2110) ||
+                    (idade >= 30 && idade <= 39 && distancia < 2090) || (idade >= 40 && idade <= 49 && distancia < 1990)
+                    || (idade >= 50 && idade <= 59 && distancia < 1870) || idade >= 60 && distancia < 1640)
                     {
                         nivel = "Fraca";
                     }
                     else
                     {
-                        if ((idade <= 19 && vo2 < 2510) || (idade >= 20 && idade <= 29 && vo2 < 2400) ||
-                        (idade >= 30 && idade <= 39 && vo2 < 2400) || (idade >= 40 && idade <= 49 && vo2 < 2240)
-                        || (idade >= 50 && idade <= 59 && vo2 < 2090) || idade >= 60 && vo2 < 1930)
+                        if ((idade <= 19 && distancia < 2510) || (idade >= 20 && idade <= 29 && distancia < 2400) ||
+                        (idade >= 30 && idade <= 39 && distancia < 2400) || (idade >= 40 && idade <= 49 && distancia < 2240)
+                        || (idade >= 50 && idade <= 59 && distancia < 2090) || idade >= 60 && distancia < 1930)
                         {
                             nivel = "Média";
                         }
                         else
                         {
-                            if ((idade <= 19 && vo2 < 2770) || (idade >= 20 && idade <= 29 && vo2 < 2640) ||
-                            (idade >= 30 && idade <= 39 && vo2 < 2510) || (idade >= 40 && idade <= 49 && vo2 < 2460)
-                            || (idade >= 50 && idade <= 59 && vo2 < 2320) || idade >= 60 && vo2 < 2120)
+                            if ((idade <= 19 && distancia < 2770) || (idade >= 20 && idade <= 29 && distancia < 2640) ||
+                            (idade >= 30 && idade <= 39 && distancia < 2510) || (idade >= 40 && idade <= 49 && distancia < 2460)
+                            || (idade >= 50 && idade <= 59 && distancia < 2320) || idade >= 60 && distancia < 2120)
                             {
                                 nivel = "Boa";
                             }
                             else
                             {
-                                if ((idade <= 19 && vo2 < 3000) || (idade >= 20 && idade <= 29 && vo2 < 2830) ||
-                                (idade >= 30 && idade <= 39 && vo2 < 2720) || (idade >= 40 && idade <= 49 && vo2 < 2660)
-                                || (idade >= 50 && idade <= 59 && vo2 < 2540) || idade >= 60 && vo2 < 2490)
+                                if ((idade <= 19 && distancia < 3000) || (idade >= 20 && idade <= 29 && distancia < 2830) ||
+                                (idade >= 30 && idade <= 39 && distancia < 2720) || (idade >= 40 && idade <= 49 && distancia < 2660)
+                                || (idade >= 50 && idade <= 59 && distancia < 2540) || idade >= 60 && distancia < 2490)
                                 {
                                     nivel = "Excelente";
                                 }
                                 else
                                 {
-                                    if ((idade <= 19 && vo2 > 3000) || (idade >= 20 && idade <= 29 && vo2 > 2830) ||
-                                    (idade >= 30 && idade <= 39 && vo2 > 2720) || (idade >= 40 && idade <= 49 && vo2 > 2660)
-                                    || (idade >= 50 && idade <= 59 && vo2 > 2540) || idade >= 60 && vo2 > 2490)
+                                    if ((idade <= 19 && distancia > 3000) || (idade >= 20 && idade <= 29 && distancia > 2830) ||
+                                    (idade >= 30 && idade <= 39 && distancia > 2720) || (idade >= 40 && idade <= 49 && distancia > 2660)
+                                    || (idade >= 50 && idade <= 59 && distancia > 2540) || idade >= 60 && distancia > 2490)
                                     {
                                         nivel = "Superior";
                                     }
@@ -848,49 +848,49 @@ namespace Gymly.Models
             }
             else
             {
-                if ((idade <= 19 && vo2 < 1610) || (idade >= 20 && idade <= 29 && vo2 < 1550) ||
-                    (idade >= 30 && idade <= 39 && vo2 < 1510) || (idade >= 40 && idade <= 49 && vo2 < 1420)
-                    || (idade >= 50 && idade <= 59 && vo2 < 1350) || idade >= 60 && vo2 < 1260)
+                if ((idade <= 19 && distancia < 1610) || (idade >= 20 && idade <= 29 && distancia < 1550) ||
+                    (idade >= 30 && idade <= 39 && distancia < 1510) || (idade >= 40 && idade <= 49 && distancia < 1420)
+                    || (idade >= 50 && idade <= 59 && distancia < 1350) || idade >= 60 && distancia < 1260)
                 {
                     nivel = "Muito Fraca";
                 }
                 else
                 {
-                    if ((idade <= 19 && vo2 < 1900) || (idade >= 20 && idade <= 29 && vo2 < 1790) ||
-                    (idade >= 30 && idade <= 39 && vo2 < 1690) || (idade >= 40 && idade <= 49 && vo2 < 1580)
-                    || (idade >= 50 && idade <= 59 && vo2 < 1500) || idade >= 60 && vo2 < 1390)
+                    if ((idade <= 19 && distancia < 1900) || (idade >= 20 && idade <= 29 && distancia < 1790) ||
+                    (idade >= 30 && idade <= 39 && distancia < 1690) || (idade >= 40 && idade <= 49 && distancia < 1580)
+                    || (idade >= 50 && idade <= 59 && distancia < 1500) || idade >= 60 && distancia < 1390)
                     {
                         nivel = "Fraca";
                     }
                     else
                     {
-                        if ((idade <= 19 && vo2 < 2080) || (idade >= 20 && idade <= 29 && vo2 < 1970) ||
-                        (idade >= 30 && idade <= 39 && vo2 < 1960) || (idade >= 40 && idade <= 49 && vo2 < 1790)
-                        || (idade >= 50 && idade <= 59 && vo2 < 1690) || idade >= 60 && vo2 < 1590)
+                        if ((idade <= 19 && distancia < 2080) || (idade >= 20 && idade <= 29 && distancia < 1970) ||
+                        (idade >= 30 && idade <= 39 && distancia < 1960) || (idade >= 40 && idade <= 49 && distancia < 1790)
+                        || (idade >= 50 && idade <= 59 && distancia < 1690) || idade >= 60 && distancia < 1590)
                         {
                             nivel = "Média";
                         }
                         else
                         {
-                            if ((idade <= 19 && vo2 < 2300) || (idade >= 20 && idade <= 29 && vo2 < 2160) ||
-                            (idade >= 30 && idade <= 39 && vo2 < 2080) || (idade >= 40 && idade <= 49 && vo2 < 2000)
-                            || (idade >= 50 && idade <= 59 && vo2 < 1900) || idade >= 60 && vo2 < 1750)
+                            if ((idade <= 19 && distancia < 2300) || (idade >= 20 && idade <= 29 && distancia < 2160) ||
+                            (idade >= 30 && idade <= 39 && distancia < 2080) || (idade >= 40 && idade <= 49 && distancia < 2000)
+                            || (idade >= 50 && idade <= 59 && distancia < 1900) || idade >= 60 && distancia < 1750)
                             {
                                 nivel = "Boa";
                             }
                             else
                             {
-                                if ((idade <= 19 && vo2 < 2310) || (idade >= 20 && idade <= 29 && vo2 < 2330) ||
-                                (idade >= 30 && idade <= 39 && vo2 < 2240) || (idade >= 40 && idade <= 49 && vo2 < 2160)
-                                || (idade >= 50 && idade <= 59 && vo2 < 2090) || idade >= 60 && vo2 < 1900)
+                                if ((idade <= 19 && distancia < 2310) || (idade >= 20 && idade <= 29 && distancia < 2330) ||
+                                (idade >= 30 && idade <= 39 && distancia < 2240) || (idade >= 40 && idade <= 49 && distancia < 2160)
+                                || (idade >= 50 && idade <= 59 && distancia < 2090) || idade >= 60 && distancia < 1900)
                                 {
                                     nivel = "Excelente";
                                 }
                                 else
                                 {
-                                    if ((idade <= 19 && vo2 > 2430) || (idade >= 20 && idade <= 29 && vo2 > 2330) ||
-                                    (idade >= 30 && idade <= 39 && vo2 > 2240) || (idade >= 40 && idade <= 49 && vo2 > 2160)
-                                    || (idade >= 50 && idade <= 59 && vo2 > 2090) || idade >= 60 && vo2 > 1900)
+                                    if ((idade <= 19 && distancia > 2430) || (idade >= 20 && idade <= 29 && distancia > 2330) ||
+                                    (idade >= 30 && idade <= 39 && distancia > 2240) || (idade >= 40 && idade <= 49 && distancia > 2160)
+                                    || (idade >= 50 && idade <= 59 && distancia > 2090) || idade >= 60 && distancia > 1900)
                                     {
                                         nivel = "Superior";
                                     }

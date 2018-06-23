@@ -99,11 +99,15 @@ namespace Gymly.UserControls
             {
                 string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
                 Relatorio.GerarRelatorioDeAvaliacao(avaliacaoFisica.CpfAluno, local, avaliacaoFisica);
+                mainWindow.MudarUserControl("visualizarAvaliacaoFisica", local);
+            }
+            else
+            {
+                mainWindow.MudarUserControl("aluno");
             }
 
 
-            //colocar um messagebox para perguntar se deseja imprimir a avaliação fisica ----
-            mainWindow.MudarUserControl("aluno");
+            //colocar um messagebox para perguntar se deseja imprimir a avaliação fisica ----  
         }
         private void TxtBoxObservacao_GotFocus(object sender, RoutedEventArgs e)
         {

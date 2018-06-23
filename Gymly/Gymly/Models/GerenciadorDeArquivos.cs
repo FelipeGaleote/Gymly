@@ -126,7 +126,7 @@ namespace Gymly.Models
 
         public static string ConvertePdfParaXps(string caminhoPdf)
         {
-            string caminhoXps = caminhoPdf.Replace(".pdf", ".xps");
+            string caminhoXps = caminhoPdf.Replace(".pdf", "Xps.xps");
             
             Spire.Pdf.PdfDocument doc = new Spire.Pdf.PdfDocument();
             doc.LoadFromFile(caminhoPdf);
