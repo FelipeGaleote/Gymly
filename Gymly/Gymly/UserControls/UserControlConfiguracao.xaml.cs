@@ -1,5 +1,7 @@
-﻿using Gymly.Models;
+﻿using Gymly.BD;
+using Gymly.Models;
 using System;
+using System.Data;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,12 +16,15 @@ namespace Gymly.UserControls
     {
         private MainWindow mainWindow;
         private string caminhoLogoSalvar = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString())+ "\\Fotos\\Academia\\Logo\\logo"+ GerenciadorDeArquivos.GetExtensao("Fotos\\Academia\\Logo\\logo");
+        private string avaliadorSelecionado;
 
         public UserControlConfiguracao(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
-            
+            preencheDataGridAvaliadores();
+            hintAvaliador.Visibility = Visibility.Visible;
+
         }
 
         private void AdicionarLogo_Click(object sender, RoutedEventArgs e)
@@ -44,6 +49,62 @@ namespace Gymly.UserControls
             if (!local.Equals(""))
             {
                 Relatorio.GeraRelatorioAlunos(local);
+            }
+        }
+
+        private void preencheDataGridAvaliadores() {         
+            dataGridAvaliador.ItemsSource = BDAvaliador.SelecionaAvaliadores().DefaultView;
+        }
+
+        private void adicionarAvaliador_Click(object sender, RoutedEventArgs e)
+        {
+            if (!txtBoxAvaliador.Text.Equals(""))
+            {
+                try
+                {
+                    BDAvaliador.InsereAvaliador(txtBoxAvaliador.Text);
+                    preencheDataGridAvaliadores();
+                    txtBoxAvaliador.Text = "";
+                    hintAvaliador.Visibility = Visibility.Visible;
+                }
+                catch
+                {
+                    Xceed.Wpf.Toolkit.MessageBox.Show("Falha ao adicionar avaliador");
+                }
+            }
+        }
+
+        private void excluirAvaliador_Click(object sender, RoutedEventArgs e)
+        {
+            if(avaliadorSelecionado != null && !avaliadorSelecionado.Equals(""))
+            BDAvaliador.DeletaAvaliador(avaliadorSelecionado);
+            preencheDataGridAvaliadores();
+        }
+
+        private void dataGridAvaliador_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                DataRowView dataRow = (DataRowView)dataGridAvaliador.SelectedItem;
+                if(dataRow != null)
+                avaliadorSelecionado = dataRow.Row.ItemArray[0].ToString();
+            }
+            catch
+            {
+
+            }
+            
+        }
+
+        private void txtBoxAvaliador_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(txtBoxAvaliador.Text.Length > 0)
+            {
+                hintAvaliador.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                hintAvaliador.Visibility = Visibility.Visible;
             }
         }
     }
