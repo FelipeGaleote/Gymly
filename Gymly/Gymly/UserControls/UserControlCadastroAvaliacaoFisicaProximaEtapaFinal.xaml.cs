@@ -82,9 +82,13 @@ namespace Gymly.UserControls
                 }
             }
 
-           
+            
             
             avaliacaoFisica.Observacao = txtBoxObservacao.Text.Trim();
+            if (avaliacaoFisica.Observacao.Equals(txtBoxTextoObservacao))
+            {
+                avaliacaoFisica.Observacao = string.Empty;
+            }
             if (acao.Equals("Editar"))
             {
                 BDAvaliacaoFisica.AtualizaAvaliacaoFisica(avaliacaoFisica);

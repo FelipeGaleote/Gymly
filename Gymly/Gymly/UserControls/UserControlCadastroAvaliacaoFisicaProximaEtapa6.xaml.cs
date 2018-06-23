@@ -65,21 +65,6 @@ namespace Gymly.UserControls
                         rdARuim.IsChecked = true;
                     }
                 }
-                if (avaliacaoFisica.NivelCooper != null)
-                {
-                    if (avaliacaoFisica.NivelCooper.Equals("Bom"))
-                    {
-                        rdCBom.IsChecked = true;
-                    }
-                    else if (avaliacaoFisica.NivelCooper.Equals("Regular"))
-                    {
-                        rdCRegular.IsChecked = true;
-                    }
-                    else if (avaliacaoFisica.NivelCooper.Equals("Ruim"))
-                    {
-                        rdCRuim.IsChecked = true;
-                    }
-                }
 
             }
             else
@@ -183,19 +168,6 @@ namespace Gymly.UserControls
             else if (rdARuim.IsChecked == true)
             {
                 avaliacaoFisica.NivelAbdominais = "Ruim";
-            }
-
-            if (rdCBom.IsChecked == true)
-            {
-                avaliacaoFisica.NivelCooper = "Bom";
-            }
-            else if (rdCRegular.IsChecked == true)
-            {
-                avaliacaoFisica.NivelCooper = "Regular";
-            }
-            else if (rdCRuim.IsChecked == true)
-            {
-                avaliacaoFisica.NivelCooper = "Ruim";
             }
             if (erroBuilder.Length != 0)
             {

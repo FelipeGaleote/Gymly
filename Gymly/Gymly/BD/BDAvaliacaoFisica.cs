@@ -19,7 +19,7 @@ namespace Gymly.BD
                 " perimetroCoxaDistalD,perimetroPernaE, perimetroPernaD,envergadura,altura,massa,dobraCutaneaSubescapular,dobraCutaneaTriceps,dobraCutaneaBiceps,dobraCutaneaTorax,dobraCutaneaAxilarMedia," +
                 "dobraCutaneaSuprailiaca,dobraCutaneaAbdominal,dobraCutaneaCoxa,dobraCutaneaPerna,tempoFlexao,tempoAbdominal,quantidadeFlexao,quantidadeAbdominal,flexibilidade,pressaoArterialSistolica," +
                 "pressaoArterialDiastolica,frequenciaCardiaca,observacao,caminhoImagemFrontal,observacaoImagemFrontal,caminhoImagemLateral,observacaoImagemLateral,caminhoImagemCostas," +
-                "observacaoImagemCostas,distanciaCooper,quantidadeDias,nivelflexoes,nivelabdominais,nivelcooper)  " +
+                "observacaoImagemCostas,distanciaCooper,quantidadeDias,nivelflexoes,nivelabdominais,porcentagemAguaCorpo,porcentagemAguaMusculo,taxaMetabolicaBasal,porcentagemGorduraCorporal)  " +
                 "" +
                 "VALUES" +
                 "" +
@@ -28,7 +28,8 @@ namespace Gymly.BD
                 "@perimetroCoxaDistalE, @perimetroCoxaDistalD,@perimetroPernaE, @perimetroPernaD,@envergadura,@altura,@massa,@dobraCutaneaSubescapular,@dobraCutaneaTriceps,@dobraCutaneaBiceps,@dobraCutaneaTorax," +
                 "@dobraCutaneaAxilarMedia,@dobraCutaneaSuprailiaca,@dobraCutaneaAbdominal,@dobraCutaneaCoxa,@dobraCutaneaPerna,@tempoFlexao,@tempoAbdominal,@quantidadeFlexao,@quantidadeAbdominal," +
                 "@flexibilidade,@pressaoArterialSistolica,@pressaoArterialDiastolica,@frequenciaCardiaca,@observacao,@caminhoImagemFrontal,@observacaoImagemFrontal,@caminhoImagemLateral," +
-                "@observacaoImagemLateral,@caminhoImagemCostas,@observacaoImagemCostas,@distanciaCooper,@quantidadeDias,@nivelflexoes,@nivelabdominais,@nivelcooper);";
+                "@observacaoImagemLateral,@caminhoImagemCostas,@observacaoImagemCostas,@distanciaCooper,@quantidadeDias,@nivelflexoes,@nivelabdominais,@porcentagemAguaCorpo," +
+                "@porcentagemAguaMusculo,@taxaMetabolicaBasal,@porcentagemGorduraCorporal);";
 
 
 
@@ -40,7 +41,7 @@ namespace Gymly.BD
                 cmd.Parameters.AddWithValue("@data", avaliacaoFisica.Data);
             else
 
-            cmd.Parameters.AddWithValue("@data", DateTime.Now);
+                cmd.Parameters.AddWithValue("@data", DateTime.Now);
             cmd.Parameters.AddWithValue("@tipo", avaliacaoFisica.TipoDeAvaliacao);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
             cmd.Parameters.AddWithValue("@perimetroTorax", avaliacaoFisica.PerimetroTorax);
@@ -95,7 +96,10 @@ namespace Gymly.BD
 
             cmd.Parameters.AddWithValue("@nivelflexoes", avaliacaoFisica.NivelFlexoes);
             cmd.Parameters.AddWithValue("@nivelabdominais", avaliacaoFisica.NivelAbdominais);
-            cmd.Parameters.AddWithValue("@nivelcooper", avaliacaoFisica.NivelCooper);
+            cmd.Parameters.AddWithValue("@porcentagemAguaCorpo", avaliacaoFisica.PorcentagemAguaCorpo);
+            cmd.Parameters.AddWithValue("@porcentagemAguaMusculo", avaliacaoFisica.PorcentagemAguaMusculo);
+            cmd.Parameters.AddWithValue("@taxaMetabolicaBasal", avaliacaoFisica.TaxaMetabolicaBasal);
+            cmd.Parameters.AddWithValue("@porcentagemGorduraCorporal", avaliacaoFisica.PorcentagemGorduraCorporal);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -170,10 +174,13 @@ namespace Gymly.BD
                         "observacaoImagemCostas =@observacaoImagemCostas , " +
                         "distanciaCooper = @distanciaCooper, " +
                         "quantidadeDias = @quantidadeDias, " +
-                        "nivelflexoes = @nivelflexoes, "+
+                        "nivelflexoes = @nivelflexoes, " +
                         "nivelabdominais = @nivelabdominais, " +
-                        "nivelcooper = @nivelcooper "+
-                        " where id = " + avaliacaoFisica.Id.ToString() +" AND cpf_aluno = '" + avaliacaoFisica.CpfAluno + "';";
+                        "porcentagemAguaCorpo = @porcentagemAguaCorpo, " +
+                        "porcentagemAguaMusculo = @porcentagemAguaMusculo, " +
+                        "taxaMetabolicaBasal = @taxaMetabolicaBasal, " +
+                        "porcentagemGorduraCorporal = @porcentagemGorduraCorporal " +
+                        " where id = " + avaliacaoFisica.Id.ToString() + " AND cpf_aluno = '" + avaliacaoFisica.CpfAluno + "';";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             cmd.Parameters.AddWithValue("@perimetroOmbro", avaliacaoFisica.PerimetroOmbro);
@@ -229,7 +236,10 @@ namespace Gymly.BD
 
             cmd.Parameters.AddWithValue("@nivelflexoes", avaliacaoFisica.NivelFlexoes);
             cmd.Parameters.AddWithValue("@nivelabdominais", avaliacaoFisica.NivelAbdominais);
-            cmd.Parameters.AddWithValue("@nivelcooper", avaliacaoFisica.NivelCooper);
+            cmd.Parameters.AddWithValue("@porcentagemAguaCorpo", avaliacaoFisica.PorcentagemAguaCorpo);
+            cmd.Parameters.AddWithValue("@porcentagemAguaMusculo", avaliacaoFisica.PorcentagemAguaMusculo);
+            cmd.Parameters.AddWithValue("@taxaMetabolicaBasal", avaliacaoFisica.TaxaMetabolicaBasal);
+            cmd.Parameters.AddWithValue("@porcentagemGorduraCorporal", avaliacaoFisica.PorcentagemGorduraCorporal);
 
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -303,7 +313,10 @@ namespace Gymly.BD
                 avaliacaoFisica.QtdadeDiasDeTreino = reader["QUANTIDADEDIAS"].ToString();
                 avaliacaoFisica.NivelFlexoes = reader["NIVELFLEXOES"].ToString();
                 avaliacaoFisica.NivelAbdominais = reader["NIVELABDOMINAIS"].ToString();
-                avaliacaoFisica.NivelCooper = reader["NIVELCOOPER"].ToString();
+                avaliacaoFisica.PorcentagemAguaCorpo = (float)Convert.ToDouble(reader["porcentagemAguaCorpo"]);
+                avaliacaoFisica.PorcentagemAguaMusculo = (float)Convert.ToDouble(reader["PORCENTAGEMAGUAMUSCULO"]);
+                avaliacaoFisica.TaxaMetabolicaBasal = (float)Convert.ToDouble(reader["TAXAMETABOLICABASAL"]);
+                avaliacaoFisica.PorcentagemGorduraCorporal = (float)Convert.ToDouble(reader["PORCENTAGEMGORDURACORPORAL"]);
             }
             catch
             {

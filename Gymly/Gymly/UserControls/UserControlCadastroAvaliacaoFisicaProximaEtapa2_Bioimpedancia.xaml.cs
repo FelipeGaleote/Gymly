@@ -19,6 +19,7 @@ namespace Gymly.UserControls
         private string txtBoxTextoTaxa = "cal";
         private string acao;
 
+
         public UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica,string acao)
         {
             this.mainWindow = mainWindow;
@@ -48,7 +49,8 @@ namespace Gymly.UserControls
 
 
 
-        private void TxtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+
+private void TxtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxPorcentagemGorduraCorporal);

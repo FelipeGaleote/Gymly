@@ -52,10 +52,7 @@
         <TextBlock Grid.Row="3" Grid.Column="0" TextAlignment="Right" Text="Teste de Cooper" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox Name="txtBoxDistanciaCooper" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,0,0" Grid.Row="3" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" Width="210" GotFocus="TxtBoxDistanciaCooper_GotFocus" LostFocus="TxtBoxDistanciaCooper_LostFocus"></TextBox>
         
-        <TextBlock Text="Avaliação" Grid.Row="3" Grid.Column="2" VerticalAlignment="Bottom" Margin="45,0,0,0" HorizontalAlignment="Left" FontSize="18pt"></TextBlock>
-        <RadioButton GroupName="avaliacaoCooper" Content="Bom" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="175,0,0,0" FontSize="18pt" Name="rdCBom"/>
-        <RadioButton GroupName="avaliacaoCooper" Content="Regular" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  Margin="150,0,125,0" FontSize="18pt" Name="rdCRegular"/>
-        <RadioButton GroupName="avaliacaoCooper" Content="Ruim" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="150,0,150,0" FontSize="18pt" Name="rdCRuim"/>
+      
 
         <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="1" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnProximaEtapa_Click"/>
 
