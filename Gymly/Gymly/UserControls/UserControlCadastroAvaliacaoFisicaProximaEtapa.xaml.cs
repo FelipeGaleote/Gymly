@@ -532,5 +532,10 @@ namespace Gymly.UserControls
             Regex regex = new Regex("[^0-9,]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.MudarUserControl("editarAvaliacao", avaliacaoFisica.Id);
+        }
     }
 }
