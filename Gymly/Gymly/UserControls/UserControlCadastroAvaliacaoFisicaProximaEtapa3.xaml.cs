@@ -108,5 +108,9 @@ namespace Gymly.UserControls
                 txtBoxObservacao.Text = avaliacaoFisica.ObservacaoImagemFrontal;
             }
         }
+        private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, acao);
+        }
     }
 }

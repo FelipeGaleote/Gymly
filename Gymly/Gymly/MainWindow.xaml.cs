@@ -209,6 +209,12 @@ namespace Gymly
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        internal void MudarUserControl(string v, AvaliacaoFisica avaliacaoFisica)
+        {
+            MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica);
+
+        }
     }
 }
 

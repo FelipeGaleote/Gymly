@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Text;
+using System.Windows;
 
 namespace Gymly.UserControls
 {
@@ -159,6 +160,10 @@ private void TxtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Win
         {
             Regex regex = new Regex("[^0-9,]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+        private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, acao);
         }
     }
 }

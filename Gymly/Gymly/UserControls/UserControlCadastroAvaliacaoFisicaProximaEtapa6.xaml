@@ -30,6 +30,7 @@
         </Grid.RowDefinitions>
         <TextBlock FontSize="24pt" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" TextAlignment="Center"  Foreground="Black" Text="Avaliação Física" VerticalAlignment="Center"/>
         <TextBlock FontSize="14pt" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Grid.ColumnSpan="2" TextAlignment="Center"  Foreground="Gray"  Text="Testes" />
+        <Button Grid.Row="0"  Grid.Column="0" Name="btnVoltar" Content="Voltar" HorizontalAlignment="Right" FontSize="18pt" Margin="0,0,40,0"  VerticalAlignment="Top" Height="40" Click="cadastroAvaliacaoFisica_Click"></Button>
 
         <TextBlock Grid.Row="1" Grid.Column="0" TextAlignment="Right" Text="Flexão" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox Name="txtBoxTempoFlexao" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="1" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" GotFocus="TxtBoxTempoFlexao_GotFocus" LostFocus="TxtBoxTempoFlexao_LostFocus"></TextBox>
