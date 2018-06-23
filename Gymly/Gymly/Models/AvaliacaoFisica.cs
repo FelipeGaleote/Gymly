@@ -983,7 +983,7 @@ namespace Gymly.Models
 
         public double CalculaPesoRecomendado()
         {
-            return 24.9 / (this.Altura * this.Altura);
+            return (24.9 * (((Altura)/100) * ((Altura)/100)));
         }
         public float CalculaRCQ()
         {
