@@ -150,6 +150,10 @@ namespace Gymly.BD
                 sql.AppendLine("[NIVELFLEXOES] VARCHAR(10),");
                 sql.AppendLine("[NIVELABDOMINAIS] VARCHAR(10),");
                 sql.AppendLine("[NIVELCOOPER] VARCHAR(10),");
+                sql.AppendLine("[PORCENTAGEMAGUACORPO] FLOAT,");
+                sql.AppendLine("[PORCENTAGEMAGUAMUSCULO] FLOAT,");
+                sql.AppendLine("[TAXAMETABOLICABASAL] FLOAT,");
+                sql.AppendLine("[PORCENTAGEMGORDURACORPORAL] FLOAT,");
 
 
                 sql.AppendLine("FOREIGN KEY(CPF_ALUNO) REFERENCES ALUNOS(CPF));");

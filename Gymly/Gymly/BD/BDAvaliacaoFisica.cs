@@ -177,11 +177,11 @@ namespace Gymly.BD
                         "quantidadeDias = @quantidadeDias, " +
                         "nivelflexoes = @nivelflexoes, " +
                         "nivelabdominais = @nivelabdominais, " +
-                        "nivelcooper = @nivelcooper " +
+                        "nivelcooper = @nivelcooper, " +
                         "porcentagemAguaCorpo = @porcentagemAguaCorpo, " +
                         "porcentagemAguaMusculo = @porcentagemAguaMusculo, " +
                         "taxaMetabolicaBasal = @taxaMetabolicaBasal, " +
-                        "porcentagemGordura = @porcentagemGorduraCorporal, " +
+                        "porcentagemGordura = @porcentagemGorduraCorporal " +
                         " where id = " + avaliacaoFisica.Id.ToString() + " AND cpf_aluno = '" + avaliacaoFisica.CpfAluno + "';";
 
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
@@ -317,7 +317,7 @@ namespace Gymly.BD
                 avaliacaoFisica.NivelFlexoes = reader["NIVELFLEXOES"].ToString();
                 avaliacaoFisica.NivelAbdominais = reader["NIVELABDOMINAIS"].ToString();
                 avaliacaoFisica.NivelCooper = reader["NIVELCOOPER"].ToString();
-                avaliacaoFisica.PorcentagemAguaCorpo = (float)Convert.ToDouble(reader["PORCENTAGEMAGUACORPO"]);
+                avaliacaoFisica.PorcentagemAguaCorpo = (float)Convert.ToDouble(reader["porcentagemAguaCorpo"]);
                 avaliacaoFisica.PorcentagemAguaMusculo = (float)Convert.ToDouble(reader["PORCENTAGEMAGUAMUSCULO"]);
                 avaliacaoFisica.TaxaMetabolicaBasal = (float)Convert.ToDouble(reader["TAXAMETABOLICABASAL"]);
                 avaliacaoFisica.PorcentagemGorduraCorporal = (float)Convert.ToDouble(reader["PORCENTAGEMGORDURACORPORAL"]);
