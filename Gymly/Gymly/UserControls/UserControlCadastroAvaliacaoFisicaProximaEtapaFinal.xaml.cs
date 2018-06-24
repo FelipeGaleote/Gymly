@@ -24,16 +24,28 @@ namespace Gymly.UserControls
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
             this.acao = acao;
-            if (acao.Equals("Editar"))
-            {
-                txtBoxObservacao.Text = avaliacaoFisica.Observacao;
 
+            if (acao.Equals("EditarAnterior"))
+            {
+                this.acao = "Cadastrar";
+                Edicao();
+
+            }
+            else if (acao.Equals("Editar"))
+            {
+                Edicao();
 
             }
             else
             {
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxObservacao, txtBoxTextoObservacao);
             }
+        }
+
+        public void Edicao()
+        {
+            txtBoxObservacao.Text = avaliacaoFisica.Observacao;
+
         }
 
         private void BtnFinalizar_Click(object sender, RoutedEventArgs e)
@@ -126,7 +138,7 @@ namespace Gymly.UserControls
 
         private void cadastroAvaliacaoFisica_Click7(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa6", avaliacaoFisica, acao);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa6", avaliacaoFisica, "EditarAnterior");
         }
     }
 }

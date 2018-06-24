@@ -28,43 +28,16 @@ namespace Gymly.UserControls
             this.acao = acao;
 
             InitializeComponent();
-            if (acao.Equals("Editar"))
+
+            if (acao.Equals("EditarAnterior"))
             {
-                txtBoxDistanciaCooper.Text = avaliacaoFisica.DistanciaCooper.ToString();
-                txtBoxQtdadeAbdominal.Text = avaliacaoFisica.QtdadeAbdominais.ToString();
-                txtBoxQtdadeFlexao.Text = avaliacaoFisica.QtdadeFlexao.ToString();
-                txtBoxTempoFlexao.Text = avaliacaoFisica.TempoFlexao.ToString();
-                txtBoxTempoAbdominal.Text = avaliacaoFisica.TempoAbdominal.ToString();
-                if (avaliacaoFisica.NivelFlexoes != null)
-                {
-                    if (avaliacaoFisica.NivelFlexoes.Equals("Bom"))
-                    {
-                        rdFBom.IsChecked = true;
-                    }
-                    else if (avaliacaoFisica.NivelFlexoes.Equals("Regular"))
-                    {
-                        rdFRegular.IsChecked = true;
-                    }
-                    else if (avaliacaoFisica.NivelFlexoes.Equals("Ruim"))
-                    {
-                        rdFRuim.IsChecked = true;
-                    }
-                }
-                if (avaliacaoFisica.NivelAbdominais != null)
-                {
-                    if (avaliacaoFisica.NivelAbdominais.Equals("Bom"))
-                    {
-                        rdABom.IsChecked = true;
-                    }
-                    else if (avaliacaoFisica.NivelAbdominais.Equals("Regular"))
-                    {
-                        rdARegular.IsChecked = true;
-                    }
-                    else if (avaliacaoFisica.NivelAbdominais.Equals("Ruim"))
-                    {
-                        rdARuim.IsChecked = true;
-                    }
-                }
+                this.acao = "Cadastrar";
+                Edicao();
+
+            }
+            else if (acao.Equals("Editar"))
+            {
+                Edicao();
 
             }
             else
@@ -76,6 +49,46 @@ namespace Gymly.UserControls
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxTempoAbdominal, txtBoxTextoTempo);
             }
         }
+
+        public void Edicao()
+        {
+            txtBoxDistanciaCooper.Text = avaliacaoFisica.DistanciaCooper.ToString();
+            txtBoxQtdadeAbdominal.Text = avaliacaoFisica.QtdadeAbdominais.ToString();
+            txtBoxQtdadeFlexao.Text = avaliacaoFisica.QtdadeFlexao.ToString();
+            txtBoxTempoFlexao.Text = avaliacaoFisica.TempoFlexao.ToString();
+            txtBoxTempoAbdominal.Text = avaliacaoFisica.TempoAbdominal.ToString();
+            if (avaliacaoFisica.NivelFlexoes != null)
+            {
+                if (avaliacaoFisica.NivelFlexoes.Equals("Bom"))
+                {
+                    rdFBom.IsChecked = true;
+                }
+                else if (avaliacaoFisica.NivelFlexoes.Equals("Regular"))
+                {
+                    rdFRegular.IsChecked = true;
+                }
+                else if (avaliacaoFisica.NivelFlexoes.Equals("Ruim"))
+                {
+                    rdFRuim.IsChecked = true;
+                }
+            }
+            if (avaliacaoFisica.NivelAbdominais != null)
+            {
+                if (avaliacaoFisica.NivelAbdominais.Equals("Bom"))
+                {
+                    rdABom.IsChecked = true;
+                }
+                else if (avaliacaoFisica.NivelAbdominais.Equals("Regular"))
+                {
+                    rdARegular.IsChecked = true;
+                }
+                else if (avaliacaoFisica.NivelAbdominais.Equals("Ruim"))
+                {
+                    rdARuim.IsChecked = true;
+                }
+            }
+        }
+
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
@@ -259,7 +272,7 @@ namespace Gymly.UserControls
 
         private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa5", avaliacaoFisica, acao);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa5", avaliacaoFisica, "EditarAnterior");
         }
     }
 }

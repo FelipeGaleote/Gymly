@@ -23,8 +23,15 @@ namespace Gymly.UserControls
             this.avaliacaoFisica = avaliacaoFisica;
             this.acao = acao;
             InitializeComponent();
-            
-            if (acao.Equals("Editar"))
+
+
+            if (acao.Equals("EditarAnterior"))
+            {
+                this.acao = "Cadastrar";
+                PreencheCampos();
+
+            }
+            else if(acao.Equals("Editar"))
             {
                 PreencheCampos();
             }
@@ -102,7 +109,7 @@ namespace Gymly.UserControls
         }
         private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa4", avaliacaoFisica, acao);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa4", avaliacaoFisica, "EditarAnterior");
         }
     }
 }

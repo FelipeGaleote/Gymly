@@ -29,36 +29,16 @@ namespace Gymly.UserControls
             this.avaliacaoFisica = avaliacaoFisica;
             this.acao = acao;
             InitializeComponent();
-            if (acao.Equals("Editar"))
+
+            if (acao.Equals("EditarAnterior"))
             {
-                txtBoxAltura.Text = avaliacaoFisica.Altura.ToString();
-                txtBoxMassa.Text = avaliacaoFisica.Massa.ToString();
-                txtBoxPressaoArterialDiastolica.Text = avaliacaoFisica.PressaoArterialDiastolica.ToString();
-                txtBoxPressaoArterialSistolica.Text = avaliacaoFisica.PressaoArterialSistolica.ToString();
-                txtBoxFrenquenciaCardiaca.Text = avaliacaoFisica.FrequenciaCardiaca.ToString();
+                this.acao = "Cadastrar";
+                Edicao();
 
-                if (avaliacaoFisica.QtdadeDiasDeTreino != null)
-                {
-
-                    if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("0-2 Dias")) {
-                        rd0_2.IsChecked = true;
-                    }
-                    else if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("3-5 Dias")) {
-                        rd3_5.IsChecked = true;
-                    }
-                    else if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("6-7 Dias"))
-                    {
-                        rd6_7.IsChecked = true;
-                    }
-                    
-                }
-                if (avaliacaoFisica.Flexibilidade != null)
-                {
-
-                    rdBom.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Bom");
-                    rdRegular.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Regular");
-                    rdRuim.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Ruim");
-                }
+            }
+            else if (acao.Equals("Editar"))
+            {
+                Edicao();
             }
             else
             {
@@ -70,6 +50,40 @@ namespace Gymly.UserControls
                     ("Sist. " + txtBoxTextoPressao));
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxFrenquenciaCardiaca, txtBoxTextoFrequenciaCardiaca);
 
+            }
+        }
+
+        public void Edicao()
+        {
+            txtBoxAltura.Text = avaliacaoFisica.Altura.ToString();
+            txtBoxMassa.Text = avaliacaoFisica.Massa.ToString();
+            txtBoxPressaoArterialDiastolica.Text = avaliacaoFisica.PressaoArterialDiastolica.ToString();
+            txtBoxPressaoArterialSistolica.Text = avaliacaoFisica.PressaoArterialSistolica.ToString();
+            txtBoxFrenquenciaCardiaca.Text = avaliacaoFisica.FrequenciaCardiaca.ToString();
+
+            if (avaliacaoFisica.QtdadeDiasDeTreino != null)
+            {
+
+                if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("0-2 Dias"))
+                {
+                    rd0_2.IsChecked = true;
+                }
+                else if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("3-5 Dias"))
+                {
+                    rd3_5.IsChecked = true;
+                }
+                else if (avaliacaoFisica.QtdadeDiasDeTreino.Equals("6-7 Dias"))
+                {
+                    rd6_7.IsChecked = true;
+                }
+
+            }
+            if (avaliacaoFisica.Flexibilidade != null)
+            {
+
+                rdBom.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Bom");
+                rdRegular.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Regular");
+                rdRuim.IsChecked = avaliacaoFisica.Flexibilidade.Equals("Ruim");
             }
         }
 

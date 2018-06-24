@@ -97,8 +97,8 @@ namespace Gymly
                     break;
             }
         }
-
-        internal void MudarUserControl(string nomeDoControl, int id)
+        
+        public void MudarUserControl(string nomeDoControl, int id)
         {
             pnl.Children.Clear();
             switch (nomeDoControl)
@@ -109,7 +109,7 @@ namespace Gymly
                     break;
             }
         }
-
+        
         public void MudarUserControl(String nomeDoControl, Anamnese anamnese)
         {
             pnl.Children.Clear();
@@ -154,7 +154,7 @@ namespace Gymly
                     pnl.Children.Add(new UserControlTipoAvaliacaoFisica(this, avaliacaoFisica));
                     break;
                 case "cadastroAvaliacaoFisica":
-                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this, avaliacaoFisica,"Cadastrar"));
+                    pnl.Children.Add(new UserControlCadastroAvaliacaoFisica(this, avaliacaoFisica, acao));
                     break;
                 case "cadastroAvaliacaoFisicaProximaEtapa":
                     pnl.Children.Add(new UserControlCadastroAvaliacaoFisicaProximaEtapa(this, avaliacaoFisica ,acao));

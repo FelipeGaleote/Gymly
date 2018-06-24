@@ -31,12 +31,16 @@ namespace Gymly.UserControls
         }
         public void AdicionaObservacoesNosCampos(string acao)
         {
-            if (acao.Equals("Editar"))
+
+            if (acao.Equals("EditarAnterior"))
             {
-                txtBoxPorcentagemDeAguaNoCorpo.Text = avaliacaoFisica.PorcentagemAguaCorpo.ToString();
-                txtBoxPorcentagemDeAguaNoMusculo.Text = avaliacaoFisica.PorcentagemAguaMusculo.ToString();
-                txtBoxPorcentagemGorduraCorporal.Text = avaliacaoFisica.PorcentagemGorduraCorporal.ToString();
-                txtBoxTaxaMetabolicaBasal.Text = avaliacaoFisica.TaxaMetabolicaBasal.ToString();
+                this.acao = "Cadastrar";
+                Edicao();
+
+            }
+            else if (acao.Equals("Editar"))
+            {
+                Edicao();
             }
             else
             {
@@ -49,9 +53,15 @@ namespace Gymly.UserControls
         }
 
 
+        public void Edicao()
+        {
+            txtBoxPorcentagemDeAguaNoCorpo.Text = avaliacaoFisica.PorcentagemAguaCorpo.ToString();
+            txtBoxPorcentagemDeAguaNoMusculo.Text = avaliacaoFisica.PorcentagemAguaMusculo.ToString();
+            txtBoxPorcentagemGorduraCorporal.Text = avaliacaoFisica.PorcentagemGorduraCorporal.ToString();
+            txtBoxTaxaMetabolicaBasal.Text = avaliacaoFisica.TaxaMetabolicaBasal.ToString();
+        }
 
-
-private void TxtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
+        private void TxtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!acao.Equals("Editar"))
                 EditorTxtBox.GotFocus(txtBoxPorcentagemGorduraCorporal);
@@ -163,7 +173,7 @@ private void TxtBoxPorcentagemGorduraCorporal_GotFocus(object sender, System.Win
         }
         private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, acao);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, "EditarAnterior");
         }
     }
 }

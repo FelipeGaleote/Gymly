@@ -27,26 +27,16 @@ namespace Gymly.UserControls
             this.avaliacaoFisica = avaliacaoFisica;
             this.acao = acao;
             InitializeComponent();
-            if (acao.Equals("Editar"))
+
+            if (acao.Equals("EditarAnterior"))
             {
-                txtBoxPerimetroTorax.Text = avaliacaoFisica.PerimetroTorax.ToString();
-                txtBoxPerimetroQuadril.Text = avaliacaoFisica.PerimetroQuadril.ToString();
-                txtBoxPerimetroPernaE.Text = avaliacaoFisica.PerimetroPernaEsquerda.ToString();
-                txtBoxPerimetroPernaD.Text = avaliacaoFisica.PerimetroPernaDireita.ToString();
-                txtBoxPerimetroOmbro.Text = avaliacaoFisica.PerimetroOmbro.ToString();
-                txtBoxPerimetroCoxaProximalE.Text = avaliacaoFisica.PerimetroCoxaProximalEsquerda.ToString();
-                txtBoxPerimetroCoxaProximalD.Text = avaliacaoFisica.PerimetroCoxaProximalDireita.ToString();
-                txtBoxPerimetroCoxaMedialD.Text = avaliacaoFisica.PerimetroCoxaMedialDireita.ToString();
-                txtBoxPerimetroCoxaMedialE.Text = avaliacaoFisica.PerimetroCoxaMedialEsquerda.ToString();
-                txtBoxPerimetroCoxaDistalE.Text = avaliacaoFisica.PerimetroCoxaDistalEsquerda.ToString();
-                txtBoxPerimetroCoxaDistalD.Text = avaliacaoFisica.PerimetroCoxaDistalDireita.ToString();
-                txtBoxPerimetroCintura.Text = avaliacaoFisica.PerimetroCintura.ToString();
-                txtBoxPerimetroBracoE.Text = avaliacaoFisica.PerimetroBracoEsquerdo.ToString();
-                txtBoxPerimetroBracoD.Text = avaliacaoFisica.PerimetroBracoDireito.ToString();
-                txtBoxPerimetroAnteBracoE.Text = avaliacaoFisica.PerimetroAntebracoEsquerdo.ToString();
-                txtBoxPerimetroAnteBracoD.Text = avaliacaoFisica.PerimetroAntebracoDireito.ToString();
-                txtBoxPerimetroAbdominal.Text = avaliacaoFisica.PerimetroAbdominal.ToString();
-                txtBoxEnvergadura.Text = avaliacaoFisica.Envergadura.ToString();
+                this.acao = "Cadastrar";
+                Edicao();
+
+            }
+            else if (acao.Equals("Editar"))
+            {
+                Edicao();
 
 
             }
@@ -72,6 +62,28 @@ namespace Gymly.UserControls
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxEnvergadura, txtBoxTextoMedidaCM);
             }
 
+        }
+
+        public void Edicao()
+        {
+            txtBoxPerimetroTorax.Text = avaliacaoFisica.PerimetroTorax.ToString();
+            txtBoxPerimetroQuadril.Text = avaliacaoFisica.PerimetroQuadril.ToString();
+            txtBoxPerimetroPernaE.Text = avaliacaoFisica.PerimetroPernaEsquerda.ToString();
+            txtBoxPerimetroPernaD.Text = avaliacaoFisica.PerimetroPernaDireita.ToString();
+            txtBoxPerimetroOmbro.Text = avaliacaoFisica.PerimetroOmbro.ToString();
+            txtBoxPerimetroCoxaProximalE.Text = avaliacaoFisica.PerimetroCoxaProximalEsquerda.ToString();
+            txtBoxPerimetroCoxaProximalD.Text = avaliacaoFisica.PerimetroCoxaProximalDireita.ToString();
+            txtBoxPerimetroCoxaMedialD.Text = avaliacaoFisica.PerimetroCoxaMedialDireita.ToString();
+            txtBoxPerimetroCoxaMedialE.Text = avaliacaoFisica.PerimetroCoxaMedialEsquerda.ToString();
+            txtBoxPerimetroCoxaDistalE.Text = avaliacaoFisica.PerimetroCoxaDistalEsquerda.ToString();
+            txtBoxPerimetroCoxaDistalD.Text = avaliacaoFisica.PerimetroCoxaDistalDireita.ToString();
+            txtBoxPerimetroCintura.Text = avaliacaoFisica.PerimetroCintura.ToString();
+            txtBoxPerimetroBracoE.Text = avaliacaoFisica.PerimetroBracoEsquerdo.ToString();
+            txtBoxPerimetroBracoD.Text = avaliacaoFisica.PerimetroBracoDireito.ToString();
+            txtBoxPerimetroAnteBracoE.Text = avaliacaoFisica.PerimetroAntebracoEsquerdo.ToString();
+            txtBoxPerimetroAnteBracoD.Text = avaliacaoFisica.PerimetroAntebracoDireito.ToString();
+            txtBoxPerimetroAbdominal.Text = avaliacaoFisica.PerimetroAbdominal.ToString();
+            txtBoxEnvergadura.Text = avaliacaoFisica.Envergadura.ToString();
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
@@ -535,7 +547,7 @@ namespace Gymly.UserControls
 
         private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("editarAvaliacao", avaliacaoFisica.Id);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica, "EditarAnterior");
         }
     }
 }

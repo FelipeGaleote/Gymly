@@ -25,17 +25,17 @@ namespace Gymly.UserControls
             this.avaliacaoFisica = avaliacaoFisica;
             this.acao = acao;
             InitializeComponent();
-            if (acao.Equals("Editar"))
+
+
+            if (acao.Equals("EditarAnterior"))
             {
-                txtBoxDobraCutaneaAbdominal.Text = avaliacaoFisica.DobraCutaneaAbdominal.ToString();
-                txtBoxDobraCutaneaAxilarMedia.Text = avaliacaoFisica.DobraCutaneaAxilarMedia.ToString();
-                txtBoxDobraCutaneaBiceps.Text = avaliacaoFisica.DobraCutaneaBiceps.ToString();
-                txtBoxDobraCutaneaCoxa.Text = avaliacaoFisica.DobraCutaneaCoxa.ToString();
-                txtBoxDobraCutaneaPerna.Text = avaliacaoFisica.DobraCutaneaPerna.ToString();
-                txtBoxDobraCutaneaSubescapular.Text = avaliacaoFisica.DobraCutaneaSubescapular.ToString();
-                txtBoxDobraCutaneaSuprailiaca.Text = avaliacaoFisica.DobraCutaneaSuprailiaca.ToString();
-                txtBoxDobraCutaneaTorax.Text = avaliacaoFisica.DobraCutaneaTorax.ToString();
-                txtBoxDobraCutaneaTriceps.Text = avaliacaoFisica.DobraCutaneaTriceps.ToString();
+                this.acao = "Cadastrar";
+                Edicao();
+
+            }
+            else if (acao.Equals("Editar"))
+            {
+                Edicao();
 
             }
             else
@@ -50,6 +50,19 @@ namespace Gymly.UserControls
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaTorax, txtBoxTextoMedidaMM);
                 EditorTxtBox.AdicionaTextoInicialTxtBox(txtBoxDobraCutaneaTriceps, txtBoxTextoMedidaMM);
             }
+        }
+
+        public void Edicao()
+        {
+            txtBoxDobraCutaneaAbdominal.Text = avaliacaoFisica.DobraCutaneaAbdominal.ToString();
+            txtBoxDobraCutaneaAxilarMedia.Text = avaliacaoFisica.DobraCutaneaAxilarMedia.ToString();
+            txtBoxDobraCutaneaBiceps.Text = avaliacaoFisica.DobraCutaneaBiceps.ToString();
+            txtBoxDobraCutaneaCoxa.Text = avaliacaoFisica.DobraCutaneaCoxa.ToString();
+            txtBoxDobraCutaneaPerna.Text = avaliacaoFisica.DobraCutaneaPerna.ToString();
+            txtBoxDobraCutaneaSubescapular.Text = avaliacaoFisica.DobraCutaneaSubescapular.ToString();
+            txtBoxDobraCutaneaSuprailiaca.Text = avaliacaoFisica.DobraCutaneaSuprailiaca.ToString();
+            txtBoxDobraCutaneaTorax.Text = avaliacaoFisica.DobraCutaneaTorax.ToString();
+            txtBoxDobraCutaneaTriceps.Text = avaliacaoFisica.DobraCutaneaTriceps.ToString();
         }
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
@@ -291,7 +304,7 @@ namespace Gymly.UserControls
         }
         private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, acao);
+            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, "EditarAnterior");
         }
     }
 }
