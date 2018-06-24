@@ -103,6 +103,7 @@ namespace Gymly.UserControls
                     caminhoSalvarFotoDeRosto = "Fotos\\" + cpf + "\\" + "Cadastro\\rosto" + GerenciadorDeArquivos.GetExtensao(caminhoFotoDeRosto);
                     GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoFotoDeRosto, caminhoSalvarFotoDeRosto);
                     aluno.CaminhoFotoDoRosto = caminhoSalvarFotoDeRosto;
+                    System.IO.File.OpenWrite(caminhoSalvarFotoDeRosto).Close();
                 }
                 else
                 {
@@ -152,6 +153,7 @@ namespace Gymly.UserControls
             if (caminhoFotoDeRosto != null && !caminhoFotoDeRosto.Equals(""))
             {
                 ImageFotoDeRosto.Source = GerenciadorDeArquivos.AdicionaImagem(caminhoFotoDeRosto);
+                
                 btnAddFotoDeRosto.Background = Brushes.Transparent;
                 btnAddFotoDeRosto.BorderBrush = null;
             }

@@ -747,7 +747,7 @@ namespace Gymly.Models
                 doc.Add(table);
             }
 
-            if(!anamnese.Observacao.Equals("") && anamnese.Observacao != null)
+            if(anamnese.Observacao != null && !anamnese.Observacao.Equals("") )
             {
                 doc.Add(pulaLinha);
 
