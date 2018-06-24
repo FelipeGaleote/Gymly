@@ -136,9 +136,6 @@ namespace Gymly.UserControls
             EditorTxtBox.LostFocus(txtBoxObservacao, txtBoxTextoObservacao);
         }
 
-        private void cadastroAvaliacaoFisica_Click7(object sender, RoutedEventArgs e)
-        {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa6", avaliacaoFisica, "EditarAnterior");
-        }
+     
     }
 }

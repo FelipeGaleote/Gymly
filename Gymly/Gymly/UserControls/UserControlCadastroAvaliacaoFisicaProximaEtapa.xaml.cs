@@ -545,9 +545,6 @@ namespace Gymly.UserControls
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
-        {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisica", avaliacaoFisica, "EditarAnterior");
-        }
+ 
     }
 }
