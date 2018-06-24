@@ -1,6 +1,7 @@
 ﻿using Gymly.BD;
 using Gymly.Models;
 using System;
+using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Windows;
@@ -22,7 +23,8 @@ namespace Gymly.UserControls
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
-            preencheDataGridAvaliadores();
+            PreencheListViewAvaliadores();
+           // preencheDataGridAvaliadores();
             hintAvaliador.Visibility = Visibility.Visible;
 
         }
@@ -51,11 +53,17 @@ namespace Gymly.UserControls
                 Relatorio.GeraRelatorioAlunos(local);
             }
         }
-
+        /*
         private void preencheDataGridAvaliadores() {         
             dataGridAvaliador.ItemsSource = BDAvaliador.SelecionaAvaliadores().DefaultView;
         }
+        */
 
+        private void PreencheListViewAvaliadores()
+        {
+            
+            listViewAvaliadoresCadastrados.ItemsSource = (BDAvaliador.SelecionaAvaliadores());
+        }
         private void adicionarAvaliador_Click(object sender, RoutedEventArgs e)
         {
             if (!txtBoxAvaliador.Text.Equals(""))
@@ -63,7 +71,8 @@ namespace Gymly.UserControls
                 try
                 {
                     BDAvaliador.InsereAvaliador(txtBoxAvaliador.Text);
-                    preencheDataGridAvaliadores();
+                    //preencheDataGridAvaliadores();
+                    PreencheListViewAvaliadores();
                     txtBoxAvaliador.Text = "";
                     hintAvaliador.Visibility = Visibility.Visible;
                 }
@@ -78,9 +87,10 @@ namespace Gymly.UserControls
         {
             if(avaliadorSelecionado != null && !avaliadorSelecionado.Equals(""))
             BDAvaliador.DeletaAvaliador(avaliadorSelecionado);
-            preencheDataGridAvaliadores();
+            PreencheListViewAvaliadores();
+            //preencheDataGridAvaliadores();
         }
-
+        /*
         private void dataGridAvaliador_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -95,7 +105,7 @@ namespace Gymly.UserControls
             }
             
         }
-
+        */
         private void txtBoxAvaliador_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(txtBoxAvaliador.Text.Length > 0)
@@ -105,6 +115,20 @@ namespace Gymly.UserControls
             else
             {
                 hintAvaliador.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void listViewAvaliadoresCadastrados_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+
+                if (listViewAvaliadoresCadastrados.SelectedItems[0].ToString() != null)
+                    avaliadorSelecionado = listViewAvaliadoresCadastrados.SelectedItems[0].ToString();
+            }
+            catch
+            {
+
             }
         }
     }

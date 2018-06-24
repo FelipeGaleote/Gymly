@@ -24,18 +24,25 @@ namespace Gymly.BD
             conn.Close();
         }
 
-        public static DataTable SelecionaAvaliadores()
+        public static List<string> SelecionaAvaliadores()
         {
             SQLiteConexao conexao = new SQLiteConexao();
             SQLiteConnection conn = conexao.GetConexao();
-            string query = "SELECT nome AS 'Nome do avaliador' FROM Avaliadores;";
+            string query = "SELECT nome  FROM Avaliadores;";//AS 'Nome do avaliador'
             SQLiteCommand command = new SQLiteCommand(query, conn);
             DataTable dt = new DataTable("Avaliadores");
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
             DataSet ds = new DataSet();
             adapter.Fill(dt);
             conn.Close();
-            return dt;
+            List<string> dados = new List<string>();
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                string informação = dataRow["NOME"].ToString();
+                dados.Add(informação);
+            }
+
+            return dados;
         }
 
         public static void DeletaAvaliador(String nome)
