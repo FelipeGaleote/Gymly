@@ -54,10 +54,10 @@
         <RadioButton GroupName="diasDeTreino" Content="3-5" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="5" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  Margin="196,0,246,0" FontSize="18pt" Name="rd3_5"/>
         <RadioButton GroupName="diasDeTreino" Content="6-7" Grid.Column="4" Grid.Row="5" Width="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="0,0,150,0" FontSize="18pt" Name="rd6_7"/>
 
-        <TextBlock Text="Flexibilidade" Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="18pt" Grid.ColumnSpan="4" Margin="0,0,249,0" Height="57" Width="193"></TextBlock>
-        <RadioButton GroupName="flexibilidade" Content="Bom" Grid.Column="3" Grid.Row="6" MinWidth="120"  HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="100,0,0,10" FontSize="18pt" Name="rdBom" Height="110" Grid.RowSpan="2"/>
-        <RadioButton GroupName="flexibilidade" Content="Regular" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="6" MinWidth="120"  HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  Margin="165,0,215,0" FontSize="18pt" Name="rdRegular" Height="125" Grid.RowSpan="2"/>
-        <RadioButton GroupName="flexibilidade" Content="Ruim" Grid.Column="4" Grid.Row="6" MinWidth="120"  HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Margin="0,0,93,70" FontSize="18pt" Name="rdRuim" Height="150" Grid.RowSpan="3" Width="147"/>
+        <TextBlock Text="Flexibilidade" Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="18pt" Grid.ColumnSpan="4" Margin="0,0,249,90.2" Height="35" Width="193" Grid.RowSpan="2"></TextBlock>
+        <RadioButton GroupName="flexibilidade" Content="Bom" Grid.Column="3" Grid.Row="7" MinWidth="120"  HorizontalAlignment="Left" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  FontSize="18pt" Name="rdBom" Height="49" Margin="100.4,0,0,0" Width="56" />
+        <RadioButton GroupName="flexibilidade" Content="Regular" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="7" MinWidth="120"  HorizontalAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  FontSize="18pt" Name="rdRegular" Height="49" Margin="187.4,0,191.6,0" Width="103" />
+        <RadioButton GroupName="flexibilidade" Content="Ruim" Grid.Column="4" Grid.Row="7" MinWidth="120"  HorizontalAlignment="Right" VerticalAlignment="Bottom" VerticalContentAlignment="Center"  FontSize="18pt" Name="rdRuim" Height="49" Margin="0,0,88.6,0.2" Width="117"/>
 
         <Button Name="btnProximaEtapa" Content="Próximo" FontSize ="18pt" Grid.Row="9" Grid.Column="3" Height="auto" Width="auto" Grid.ColumnSpan="2" Click="BtnProximaEtapa_Click"/>
 
