@@ -1,6 +1,8 @@
 ﻿using Gymly.Models;
 using System.Windows;
 using System.Windows.Controls;
+using Gymly.BD;
+using Xceed.Wpf.Toolkit;
 
 namespace Gymly.UserControls
 {
@@ -20,44 +22,47 @@ namespace Gymly.UserControls
             this.mainWindow = mainWindow;
             this.av = av;
             InitializeComponent();
+            PreencheAvaliadores();
         }
 
+        private void PreencheAvaliadores()
+        {
+            comboBoxNomeAvaliador.ItemsSource = BDAvaliador.SelecionaAvaliadores();
+        }
+        
         private void Antropometrica_Click(object sender, RoutedEventArgs e)
         {
-            if (!txtBoxNomeAvaliador.Text.Equals(""))
+
+            if (!comboBoxNomeAvaliador.SelectionBoxItem.ToString().Equals(""))
             {
-                av.Avaliador = txtBoxNomeAvaliador.Text;
+               
+                av.Avaliador = comboBoxNomeAvaliador.SelectionBoxItem.ToString();
                 av.TipoDeAvaliacao = "Antropometria";
                 mainWindow.MudarUserControl("cadastroAvaliacaoFisica", av, "CADASTRAR");
             }
             else
             {
-                hintNomeAvaliador.Text = "O nome do avaliador não pode ser nulo";
-                hintNomeAvaliador.Visibility = Visibility.Visible;
+                Xceed.Wpf.Toolkit.MessageBox.Show("Selecione um avaliador", "Avaliador", MessageBoxButton.OK, MessageBoxImage.Error);
+
             }
         }
-
+        
         private void Bioimpedancia_Click(object sender, RoutedEventArgs e)
         {
-            if (!txtBoxNomeAvaliador.Text.Equals(""))
+            if (!comboBoxNomeAvaliador.SelectionBoxItem.ToString().Equals(""))
             {
-                av.Avaliador = txtBoxNomeAvaliador.Text;
+                
+                av.Avaliador = comboBoxNomeAvaliador.SelectionBoxItem.ToString();
                 av.TipoDeAvaliacao = "Bioimpedancia";
                 mainWindow.MudarUserControl("cadastroAvaliacaoFisica", av, "CADASTRAR");
             }
             else
             {
-                hintNomeAvaliador.Text = "O nome do avaliador não pode ser nulo";
-                hintNomeAvaliador.Visibility = Visibility.Visible;
-            }
-        }
+                Xceed.Wpf.Toolkit.MessageBox.Show("Selecione um avaliador", "Avaliador", MessageBoxButton.OK, MessageBoxImage.Error);
 
-        private void TxtBoxNomeAvaliador_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtBoxNomeAvaliador.Text.Equals(""))
-            {
-                hintNomeAvaliador.Visibility = Visibility.Hidden;
             }
         }
+        
+        
     }
 }

@@ -23,8 +23,8 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25pt" FontWeight="Black" Text="Informe o nome do avaliador"></TextBlock>
-        <TextBlock Grid.Column="1" Grid.Row="1" Margin="3,1" VerticalAlignment="Center" Name="hintNomeAvaliador" FontSize="18pt" Grid.ColumnSpan="2" Foreground="OrangeRed" Visibility="Hidden" />
-        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="Auto" MinHeight="50" Name="txtBoxNomeAvaliador" FontSize="18pt" GotFocus="TxtBoxNomeAvaliador_GotFocus"></TextBox>
+
+        <ComboBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="Auto" MinHeight="50" Name="comboBoxNomeAvaliador" FontSize="18pt"></ComboBox>
         
         <TextBlock Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25pt" FontWeight="Black" Text="Escolha o tipo da avaliação fisica"></TextBlock>
         <Button Name="Antropometrica" Grid.Row="3" Grid.Column="1" Margin="10" Height="50" FontSize="16pt" Content="Antropometrica" Click="Antropometrica_Click"></Button>
