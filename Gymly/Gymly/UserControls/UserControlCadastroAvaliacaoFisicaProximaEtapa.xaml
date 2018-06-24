@@ -54,9 +54,6 @@
         <TextBlock Grid.Row="6" Grid.Column="0" TextAlignment="Right" Text="Panturrilha" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>
         <TextBox Name="txtBoxPerimetroPernaD" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Left" Margin="20,0,20,0" Grid.Row="6" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" GotFocus="TxtBoxPerimetroPernaD_GotFocus" LostFocus="TxtBoxPerimetroPernaD_LostFocus"></TextBox>
         <TextBox Name="txtBoxPerimetroPernaE" Height="auto" MinWidth="130" MaxWidth="100" MaxLength="100" HorizontalAlignment="Right" Margin="20,0,20,0" Grid.Row="6" Grid.Column="1" TextAlignment="Center" VerticalAlignment="Bottom" FontSize="18pt" PreviewTextInput="NumberValidationTextBox" GotFocus="TxtBoxPerimetroPernaE_GotFocus" LostFocus="TxtBoxPerimetroPernaE_LostFocus"></TextBox>
-
-
-        <Button Grid.Row="0"  Grid.Column="0" Name="btnVoltar" Content="Voltar" HorizontalAlignment="Right" FontSize="18pt" Margin="0,0,40,0"  VerticalAlignment="Top" Height="40" Click="cadastroAvaliacaoFisica_Click"></Button>
       
 
             <TextBlock Grid.Row="1" Grid.Column="2" TextAlignment="Right" Text="Ombro" VerticalAlignment="Bottom" FontSize="18pt"></TextBlock>

@@ -21,7 +21,7 @@ namespace Gymly.UserControls
         private string acao;
 
 
-        public UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica,string acao)
+        public UserControlCadastroAvaliacaoFisicaProximaEtapa2_Bioimpedancia(MainWindow mainWindow, AvaliacaoFisica avaliacaoFisica, string acao)
         {
             this.mainWindow = mainWindow;
             this.avaliacaoFisica = avaliacaoFisica;
@@ -163,17 +163,13 @@ namespace Gymly.UserControls
             {
                 mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica, acao);
             }
- 
+
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9,]+");
             e.Handled = regex.IsMatch(e.Text);
-        }
-        private void cadastroAvaliacaoFisica_Click(object sender, RoutedEventArgs e)
-        {
-            mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa", avaliacaoFisica, "EditarAnterior");
         }
     }
 }
