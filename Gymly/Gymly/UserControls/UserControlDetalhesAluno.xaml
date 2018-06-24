@@ -51,9 +51,24 @@
         <Image Name="imageFotoDeRosto" Source="/Gymly;component/Image/sem_foto.png" Grid.Row="3" Grid.RowSpan="5" Grid.Column="5" Grid.ColumnSpan="2" Margin="50,0,0,0"/>
 
 
-        <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Content="Cadastrar Anamnese" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAnamnese_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0"/>
-        <Button Grid.Row="10" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Content="Cadastrar Avaliação Fisica" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAvaliacaoFisica_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0"/>
-        <Button Grid.Row="10" Grid.Column="5" Name="btnListaAvaliacaoFisicas" Content="Listar Avaliações" Height="50" FontSize="16pt" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0" Click="BtnListaAvaliacaoFisicas_Click"/>
+        <Button Grid.Row="10" Grid.Column="1" Name="btnCadastrarAnamnese" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAnamnese_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0">
+            <DockPanel>
+                <Image Name="imageBtnNovaAnamnese" Height="20" Margin="0,0,10,0" DockPanel.Dock="Left" Source="../Image/plus_button.png"></Image>
+                <TextBlock Name="txtBtnNovaAnamnese" DockPanel.Dock="Right" Text="Nova anamnese"></TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Grid.Row="10" Grid.Column="3" Name="btnCadastrarAvaliacaoFisica" Height="50" FontSize="16pt" VerticalAlignment="Top" Click="BtnCadastrarAvaliacaoFisica_Click" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0">
+            <DockPanel>
+                <Image Height="20" Margin="0,0,10,0" DockPanel.Dock="Left" Source="../Image/plus_button.png"></Image>
+                <TextBlock DockPanel.Dock="Right" Text="Nova avaliação fisica"></TextBlock>
+            </DockPanel>
+        </Button>
+        <Button Grid.Row="10" Grid.Column="5" Name="btnListaAvaliacaoFisicas" Height="50" FontSize="16pt" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2" Margin="4,0,4,0" Click="BtnListaAvaliacaoFisicas_Click">
+            <DockPanel>
+                <Image Height="20" Margin="0,0,10,0" DockPanel.Dock="Left" Source="../Image/list.png"></Image>
+                <TextBlock DockPanel.Dock="Right" Text="Listar avaliações"></TextBlock>
+            </DockPanel>
+        </Button>
         <Button Grid.Row="1"  Grid.Column="6" Name="editarAluno" BorderBrush="{x:Null}" Foreground="Blue" HorizontalAlignment="Right" Margin="0,0,40,0"  VerticalAlignment="Top" Height="40" Click="EditarAluno_Click" ToolTip="Editar aluno">
             <Button.Background>
                 <ImageBrush ImageSource="../Image/editar.png" Stretch="Uniform">

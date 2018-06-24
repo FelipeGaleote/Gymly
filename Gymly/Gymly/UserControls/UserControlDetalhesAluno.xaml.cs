@@ -1,8 +1,11 @@
 ﻿using Gymly.BD;
 using Gymly.Models;
+using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
+
 namespace Gymly.UserControls
 {
     /// <summary>
@@ -53,7 +56,9 @@ namespace Gymly.UserControls
             Anamnese anamnese = BDAnamnese.SelecionaAnamnesePeloCpf(cpf);
             if (anamnese.CpfAluno != null)
             {
-                btnCadastrarAnamnese.Content = "Editar anamnese";
+                txtBtnNovaAnamnese.Text = "Editar anamnese";
+                Image img = new Image();
+                imageBtnNovaAnamnese.Source = new BitmapImage(new Uri("../Image/editar_branco.png", UriKind.Relative));
                 this.aluno.Anamnese = anamnese;
             }
             else
@@ -63,7 +68,9 @@ namespace Gymly.UserControls
                     CpfAluno = this.aluno.Cpf
                 };
                 this.aluno.Anamnese = an;
-                btnCadastrarAnamnese.Content = "Cadastrar anamnese";
+                Image img = new Image();
+                imageBtnNovaAnamnese.Source = new BitmapImage(new Uri("../Image/plus_button.png", UriKind.Relative));
+                txtBtnNovaAnamnese.Text = "Cadastrar anamnese";
             }
         }
 
