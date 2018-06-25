@@ -34,13 +34,23 @@ namespace Gymly.UserControls
 
         private void Voltar_Click(object sender, RoutedEventArgs e)
         {
-            System.IO.File.OpenWrite(caminho).Close();
-            caminho = caminho.Replace(".pdf", "Xps.xps");
-            //System.IO.File.OpenWrite(caminho).Close();
+            try
+            {
+                System.IO.File.OpenWrite(caminho).Close();
+                caminho = caminho.Replace(".pdf", "Xps.xps");
+                System.IO.File.OpenWrite(caminho).Close();
 
-            GerenciadorDeArquivos.DeletaArquivo(caminho);
+                GerenciadorDeArquivos.DeletaArquivo(caminho);
+            }
+            catch
+            {
 
-            mainWindow.MudarUserControl("aluno");
+            }
+            finally
+            {
+                mainWindow.MudarUserControl("aluno");
+
+            }
         }
     }
 }

@@ -66,15 +66,30 @@ namespace Gymly.Models
             {
                 arquivos = null;
             }
-            if (arquivos != null && arquivos.Length > 0) {
-                foreach (string a in arquivos) {
-                    System.IO.File.OpenWrite(a).Close();
-                    File.Delete(a);
+            try
+            {
+                if (arquivos != null && arquivos.Length > 0)
+                {
+                    foreach (string a in arquivos)
+                    {
+                        System.IO.File.OpenWrite(a).Close();
+                        File.Delete(a);
+                    }
+
                 }
-               
             }
-           
-            File.Copy(caminhoOrigem, caminhoDestino, true);
+            catch
+            {
+
+            }
+            try
+            {
+                File.Copy(caminhoOrigem, caminhoDestino, true);
+            }
+            catch
+            {
+
+            }
          
         }
         public static string ProcuraImagem()

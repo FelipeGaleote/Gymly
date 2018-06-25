@@ -168,15 +168,23 @@ namespace Gymly.Models
         }
         public static iTextSharp.text.Image AdicionaImagem(string caminhoImagem, float escalaX, float escalaY, int alinhamento)
         {
+            iTextSharp.text.Image img=null;
+            try
+            {
+                img = iTextSharp.text.Image.GetInstance(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\" + caminhoImagem);
+                img.Alignment = (alinhamento | iTextSharp.text.Image.TEXTWRAP);
+                img.Border = (iTextSharp.text.Image.BOX);
+                img.BorderWidth = (10);
+                img.BorderColor = (BaseColor.WHITE);
+                img.ScaleToFit(escalaX, escalaY);
+            }
+            catch
+            {
 
-            iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\" + caminhoImagem);
-            img.Alignment = (alinhamento | iTextSharp.text.Image.TEXTWRAP);
-            img.Border = (iTextSharp.text.Image.BOX);
-            img.BorderWidth = (10);
-            img.BorderColor = (BaseColor.WHITE);
-            img.ScaleToFit(escalaX, escalaY);
-
+            }
+            
             return img;
+
         }
         public static Document AdicionaLinha(Document doc, string texto, Font fonte, int alinhamento)
         {
