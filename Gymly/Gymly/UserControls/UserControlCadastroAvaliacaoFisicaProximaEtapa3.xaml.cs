@@ -104,7 +104,7 @@ namespace Gymly.UserControls
                 btnAddFotoDeFrente.BorderBrush = null;
                 caminhoFotoDeFrente = avaliacaoFisica.CaminhoImagemFrontal;
             }
-            if(!avaliacaoFisica.ObservacaoImagemFrontal.Equals("") && avaliacaoFisica.ObservacaoImagemFrontal != null)
+            if(avaliacaoFisica.ObservacaoImagemFrontal != null && !avaliacaoFisica.ObservacaoImagemFrontal.Equals("") )
             {
                 txtBoxObservacao.Text = avaliacaoFisica.ObservacaoImagemFrontal;
             }

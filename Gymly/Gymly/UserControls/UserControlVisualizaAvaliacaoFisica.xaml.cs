@@ -36,7 +36,7 @@ namespace Gymly.UserControls
         {
             System.IO.File.OpenWrite(caminho).Close();
             caminho = caminho.Replace(".pdf", "Xps.xps");
-            System.IO.File.OpenWrite(caminho).Close();
+            //System.IO.File.OpenWrite(caminho).Close();
 
             GerenciadorDeArquivos.DeletaArquivo(caminho);
 

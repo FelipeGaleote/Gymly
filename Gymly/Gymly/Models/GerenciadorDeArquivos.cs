@@ -54,13 +54,19 @@ namespace Gymly.Models
         }
         public static void MoveCopiaDeArquivo(string caminhoOrigem, string caminhoDestino)
         {
-            
-            
 
+
+            string[] arquivos;
             string pasta = Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString())+"\\" + Path.GetDirectoryName(caminhoDestino);
-            string[] arquivos = Directory.GetFiles(pasta, "*.*", SearchOption.AllDirectories).ToArray();
-            
-            if (arquivos.Length > 0) {
+            try
+            {
+                 arquivos = Directory.GetFiles(pasta, "*.*", SearchOption.AllDirectories).ToArray();
+            }
+            catch
+            {
+                arquivos = null;
+            }
+            if (arquivos != null && arquivos.Length > 0) {
                 foreach (string a in arquivos) {
                     System.IO.File.OpenWrite(a).Close();
                     File.Delete(a);
@@ -77,7 +83,7 @@ namespace Gymly.Models
             OpenFileDialog dlg = new OpenFileDialog
             {
                 InitialDirectory = "c:\\",
-                Filter = "Image files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png |All Files (*.*)|*.*",
+                Filter = "Image files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png",
                 RestoreDirectory = true,
                 Multiselect = false
             };

@@ -65,27 +65,27 @@ namespace Gymly.UserControls
 
             if (!avaliacaoFisica.CaminhoImagemFrontal.Equals("")) {
                 caminhoSalvarFoto = "Fotos\\" + cpf  + "\\Avaliacoes\\" + ((acao.Equals("Editar"))?(avaliacaoFisica.Id):avNumero) + "\\Frente\\frente" + GerenciadorDeArquivos.GetExtensao(avaliacaoFisica.CaminhoImagemFrontal);
-                if (!Path.GetFileNameWithoutExtension(avaliacaoFisica.CaminhoImagemFrontal).EndsWith(Path.GetFileNameWithoutExtension(caminhoSalvarFoto)))
-                {
+                //if (!Path.GetFileNameWithoutExtension(avaliacaoFisica.CaminhoImagemFrontal).EndsWith(Path.GetFileNameWithoutExtension(caminhoSalvarFoto)))
+                //{
                     GerenciadorDeArquivos.MoveCopiaDeArquivo(avaliacaoFisica.CaminhoImagemFrontal, caminhoSalvarFoto);
                     avaliacaoFisica.CaminhoImagemFrontal = caminhoSalvarFoto;
-                }
+               // }
             }
             if (!avaliacaoFisica.CaminhoImagemLateral.Equals("")) {
                 caminhoSalvarFoto = "Fotos\\" + cpf + "\\Avaliacoes\\" + ((acao.Equals("Editar")) ? (avaliacaoFisica.Id) : avNumero) + "\\Lado\\lateral" + GerenciadorDeArquivos.GetExtensao(avaliacaoFisica.CaminhoImagemLateral);
-                if (!Path.GetFileNameWithoutExtension(avaliacaoFisica.CaminhoImagemLateral).EndsWith(Path.GetFileNameWithoutExtension(caminhoSalvarFoto)))
-                { 
+                //if (!Path.GetFileNameWithoutExtension(avaliacaoFisica.CaminhoImagemLateral).EndsWith(Path.GetFileNameWithoutExtension(caminhoSalvarFoto)))
+                //{ 
                     GerenciadorDeArquivos.MoveCopiaDeArquivo(avaliacaoFisica.CaminhoImagemLateral, caminhoSalvarFoto);
                     avaliacaoFisica.CaminhoImagemLateral = caminhoSalvarFoto;
-                }
+               // }
             }
             if (!avaliacaoFisica.CaminhoImagemCostas.Equals("")) {
                 caminhoSalvarFoto = "Fotos\\" + cpf + "\\Avaliacoes\\" + ((acao.Equals("Editar")) ? (avaliacaoFisica.Id) : avNumero) + "\\Costas\\costas" + GerenciadorDeArquivos.GetExtensao(avaliacaoFisica.CaminhoImagemCostas);
-                if (!Path.GetFileNameWithoutExtension(avaliacaoFisica.CaminhoImagemCostas).EndsWith(Path.GetFileNameWithoutExtension(caminhoSalvarFoto)))
-                {
+              //  if (!Path.GetFileNameWithoutExtension(avaliacaoFisica.CaminhoImagemCostas).EndsWith(Path.GetFileNameWithoutExtension(caminhoSalvarFoto)))
+               // {
                     GerenciadorDeArquivos.MoveCopiaDeArquivo(avaliacaoFisica.CaminhoImagemCostas, caminhoSalvarFoto);
                     avaliacaoFisica.CaminhoImagemCostas = caminhoSalvarFoto;
-                }
+               // }
             }
 
             
@@ -117,7 +117,6 @@ namespace Gymly.UserControls
             }
 
 
-            //colocar um messagebox para perguntar se deseja imprimir a avaliação fisica ----  
         }
         private void TxtBoxObservacao_GotFocus(object sender, RoutedEventArgs e)
         {

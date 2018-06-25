@@ -18,7 +18,7 @@ namespace Gymly.Models
         private static readonly string textoTitulo = FontFactory.HELVETICA_BOLD;
         private static readonly string textoComum = FontFactory.HELVETICA;
         private static readonly string caminhoFotoLogoEmpresa = "Fotos\\Academia\\Logo\\logo";
-
+        private static string arquivo;
         //private string caminhoRelatorioAvaliacaoFisica = "av.pdf";
 
         public static void GeraRelatorioAlunos(string local)
@@ -472,6 +472,16 @@ namespace Gymly.Models
                 doc.Add(pulaLinha);
 
                 table = new PdfPTable(2);
+
+                try
+                {
+                    arquivo = Directory.GetFiles(Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString()) + "\\Fotos\\Avaliacoes\\"+avaliacaoFisica.Id+"\\Frente")[0];
+                }
+                catch
+                {
+                    arquivo = null;
+                }
+
                 table.AddCell(AdicionaImagem(avaliacaoFisica.CaminhoImagemFrontal, 400, 150, Element.ALIGN_CENTER));
                 table.AddCell(CriaCell(avaliacaoFisica.ObservacaoImagemFrontal, SelecionaFonte(textoComum, 12), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE)); //observacao frente
                 doc.Add(table);
@@ -783,7 +793,7 @@ namespace Gymly.Models
             doc = AdicionaLinha(doc, "Avaliação Física", SelecionaFonte(textoTitulo, 34), 1);
             doc.Add(pulaLinha);
 
-            string arquivo;
+            
 
             try
             {
