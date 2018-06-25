@@ -109,7 +109,7 @@ namespace Gymly.UserControls
             {
                 BDAvaliacaoFisica.InsereAvaliacaoFisica(avaliacaoFisica);
             }
-            System.Windows.MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show("Deseja Salvar?", "Salvar Avaliação Física", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            System.Windows.MessageBoxResult result = Xceed.Wpf.Toolkit.MessageBox.Show("Deseja gerar pdf?", "Gerar pdf da avaliação física", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result.ToString().ToUpper() == "YES")
             {
