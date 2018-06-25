@@ -87,6 +87,13 @@ namespace Gymly.UserControls
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
              erroBuilder = new StringBuilder();
+            if (txtBoxDistanciaCooper.Text.Equals("Dist.(m)") || txtBoxTempoFlexao.Text.Equals("Tempo(s)") ||
+           txtBoxTempoAbdominal.Text.Equals("Tempo(s)"))
+            {
+                exibeAviso();
+                return;
+            }
+
             avaliacaoFisica.DistanciaCooper = ObtemValor(txtBoxDistanciaCooper, "Dist.(m)", avaliacaoFisica.DistanciaCooper, "Distância Cooper");
             
             avaliacaoFisica.TempoFlexao = ObtemValor(txtBoxTempoFlexao, "Tempo(s)", avaliacaoFisica.TempoFlexao, "Tempo Flexão");
@@ -187,7 +194,10 @@ namespace Gymly.UserControls
 
    
         }
-
+        private void exibeAviso()
+        {
+            Xceed.Wpf.Toolkit.MessageBox.Show("Preencha todos os campos para continuar!");
+        }
         private float ObtemValor(TextBox txtBox, string hint, float valor, string nome)
         {
             try
