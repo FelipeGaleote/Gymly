@@ -30,13 +30,8 @@ namespace Gymly.UserControls
             this.acao = acao;
             InitializeComponent();
 
-            if (acao.Equals("EditarAnterior"))
-            {
-                this.acao = "Cadastrar";
-                Edicao();
-
-            }
-            else if (acao.Equals("Editar"))
+           
+            if (acao.Equals("Editar"))
             {
                 Edicao();
             }

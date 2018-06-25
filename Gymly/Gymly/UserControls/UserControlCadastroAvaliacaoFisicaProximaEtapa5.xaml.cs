@@ -25,13 +25,9 @@ namespace Gymly.UserControls
             InitializeComponent();
 
 
-            if (acao.Equals("EditarAnterior"))
-            {
-                this.acao = "Cadastrar";
-                PreencheCampos();
-
-            }
-            else if(acao.Equals("Editar"))
+            
+            
+            if(acao.Equals("Editar"))
             {
                 PreencheCampos();
             }

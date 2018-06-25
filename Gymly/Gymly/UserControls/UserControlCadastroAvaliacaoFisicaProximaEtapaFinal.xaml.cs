@@ -25,13 +25,7 @@ namespace Gymly.UserControls
             this.avaliacaoFisica = avaliacaoFisica;
             this.acao = acao;
 
-            if (acao.Equals("EditarAnterior"))
-            {
-                this.acao = "Cadastrar";
-                Edicao();
-
-            }
-            else if (acao.Equals("Editar"))
+            if (acao.Equals("Editar"))
             {
                 Edicao();
 
@@ -114,7 +108,7 @@ namespace Gymly.UserControls
             if (result.ToString().ToUpper() == "YES")
             {
                 string local = GerenciadorDeArquivos.BuscaLocalParaSalvarArquivo();
-                Relatorio.GerarRelatorioDeAvaliacao(avaliacaoFisica.CpfAluno, local, avaliacaoFisica);
+                Relatorio.GerarRelatorioDeAvaliacao(local, avaliacaoFisica);
                 mainWindow.MudarUserControl("visualizarAvaliacaoFisica", local);
             }
             else

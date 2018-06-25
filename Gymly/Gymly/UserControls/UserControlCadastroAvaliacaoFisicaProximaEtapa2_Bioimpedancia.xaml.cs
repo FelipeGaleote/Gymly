@@ -32,13 +32,8 @@ namespace Gymly.UserControls
         public void AdicionaObservacoesNosCampos(string acao)
         {
 
-            if (acao.Equals("EditarAnterior"))
-            {
-                this.acao = "Cadastrar";
-                Edicao();
-
-            }
-            else if (acao.Equals("Editar"))
+           
+            if (acao.Equals("Editar"))
             {
                 Edicao();
             }

@@ -204,34 +204,7 @@ namespace Gymly.Models
             return FontFactory.GetFont(tipoFonte, tamanho);
         }
 
-        public static void GerarRelatorioDeAvaliacao(string cpf, string localParaSalvar, AvaliacaoFisica avaliacaoFisica)
-        {
-            Aluno aluno = BDAluno.SelecionaAlunoPorCpf(cpf);
-            
-
-            Document doc = new Document(iTextSharp.text.PageSize.A4, 20, 20, 10, 10);
-            PdfWriter pdfWriter = PdfWriter.GetInstance(doc, new FileStream(localParaSalvar, FileMode.Create));
-            doc.Open();
-            doc = CriaCapaPdf(doc, aluno, avaliacaoFisica.TipoDeAvaliacao);
-            
-            doc = GeraAvaliacaoFisica(doc, avaliacaoFisica, aluno);
-            
-            doc.Close();
-        }
-        /*public static void GerarRelatorioDeAvaliacao(string cpf, string localParaSalvar, Anamnese anamnese)
-        {
-            Aluno aluno = BDAluno.SelecionaAlunoPorCpf(cpf);
-
-
-            Document doc = new Document(iTextSharp.text.PageSize.A4, 20, 20, 10, 10);
-            PdfWriter pdfWriter = PdfWriter.GetInstance(doc, new FileStream(localParaSalvar, FileMode.Create));
-            doc.Open();
-            doc = CriaCapaPdf(doc, aluno, aval);
-            
-            doc = GeraAnamnese(doc, anamnese);
-
-            doc.Close();
-        }*/
+        
         public static void GerarRelatorioDeAvaliacao(string localParaSalvar, AvaliacaoFisica avaliacaoFisica)
         {
             Aluno aluno = BDAluno.SelecionaAlunoPorCpf(avaliacaoFisica.CpfAluno);
@@ -241,7 +214,10 @@ namespace Gymly.Models
             PdfWriter pdfWriter = PdfWriter.GetInstance(doc, new FileStream(localParaSalvar, FileMode.Create));
             doc.Open();
             doc = CriaCapaPdf(doc, aluno, avaliacaoFisica.TipoDeAvaliacao);
-            doc = GeraAnamnese(doc, anamnese);
+            if (anamnese.CpfAluno != null)
+            {
+                doc = GeraAnamnese(doc, anamnese);
+            }
             doc = GeraAvaliacaoFisica(doc, avaliacaoFisica, aluno);
             
             doc.Close();
