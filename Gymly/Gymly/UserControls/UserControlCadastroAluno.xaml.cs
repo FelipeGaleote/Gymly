@@ -261,6 +261,12 @@ namespace Gymly.UserControls
                 e.Handled = false;
                 return;
             }
+            if (txtBoxTelefone.Text.Length == 15)
+            {
+                e.Handled = true;
+                return;
+            }
+               
             if ((valor >= 34 && valor <= 43) || (valor >= 74 && valor <= 83))
                 e.Handled = false;
             else
