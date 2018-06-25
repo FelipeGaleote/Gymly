@@ -90,90 +90,56 @@ namespace Gymly.UserControls
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
             erroBuilder = new StringBuilder();
+
+            if(txtBoxAltura.Text.Equals("cm") || txtBoxPressaoArterialDiastolica.Text.Equals("Diast. mmHg") ||
+                txtBoxPressaoArterialSistolica.Text.Equals("Sist. mmHg") || txtBoxFrenquenciaCardiaca.Text.Equals("bpm") ||
+                txtBoxMassa.Text.Equals("kg"))
+            {
+                exibeAviso();
+                return;
+            }
+
             avaliacaoFisica.Altura = ObtemValor(txtBoxAltura, "cm", avaliacaoFisica.Altura, "Altura");
             avaliacaoFisica.PressaoArterialDiastolica = ObtemValor(txtBoxPressaoArterialDiastolica, "Diast. mmHg", avaliacaoFisica.PressaoArterialDiastolica, "Pressão Arterial Diastolica");
             avaliacaoFisica.PressaoArterialSistolica = ObtemValor(txtBoxPressaoArterialSistolica, "Sist. mmHg", avaliacaoFisica.PressaoArterialSistolica, "Pressão Arterial Sistolica");
             avaliacaoFisica.FrequenciaCardiaca = ObtemValor(txtBoxFrenquenciaCardiaca, "bpm", avaliacaoFisica.FrequenciaCardiaca, "Frequência Cardíaca");
             avaliacaoFisica.Massa =  ObtemValor(txtBoxMassa, "kg", avaliacaoFisica.Massa, "Peso");
- 
-            /*try
-            {
-                if (!txtBoxAltura.Text.Equals("cm"))
-                    avaliacaoFisica.Altura = float.Parse(txtBoxAltura.Text.Trim());
-            }
-            catch (Exception ex)
-            {
-                erroBuilder.AppendLine("Formato inválido para Altura.");
-            }
-            try
-            {
-                if (!txtBoxPressaoArterialDiastolica.Text.Equals("Diast. mmHg"))
-                    avaliacaoFisica.PressaoArterialDiastolica = float.Parse(txtBoxPressaoArterialDiastolica.Text.Trim());
-            }
-            catch (Exception)
-            {
-                erroBuilder.AppendLine("Formato inválido para Pressão Arterial Diastolica.");
-                
-            }
-            try
-            {
-
-                if (!txtBoxPressaoArterialSistolica.Text.Equals("Sist. mmHg"))
-                    avaliacaoFisica.PressaoArterialSistolica = float.Parse(txtBoxPressaoArterialSistolica.Text.Trim());
-            }
-            catch (Exception)
-            {
-
-                erroBuilder.AppendLine("Formato inválido para Pressão Arterial Sistolica.");
-            }
-            try
-            {
-                if (!txtBoxFrenquenciaCardiaca.Text.Equals("bpm"))
-                    avaliacaoFisica.FrequenciaCardiaca = float.Parse(txtBoxFrenquenciaCardiaca.Text.Trim());
-            }
-            catch (Exception)
-            {
-
-                erroBuilder.AppendLine("Formato inválido para Frequência Cardíaca.");
-                
-            }
-            try
-            {
-                if (!txtBoxMassa.Text.Equals("kg"))
-                    avaliacaoFisica.Massa = float.Parse(txtBoxMassa.Text.Trim());
-
-            }
-            catch (Exception)
-            {
-
-                erroBuilder.AppendLine("Formato inválido para Peso.");
-            } */
 
             if (rd0_2.IsChecked == true)
-                {
-                    avaliacaoFisica.QtdadeDiasDeTreino = "0-2 Dias";
-                }
-                else if (rd3_5.IsChecked == true)
-                {
-                    avaliacaoFisica.QtdadeDiasDeTreino = "3-5 Dias";
-                }
-                else if (rd6_7.IsChecked == true)
-                {
-                    avaliacaoFisica.QtdadeDiasDeTreino = "6-7 Dias";
-                }
+            {
+                avaliacaoFisica.QtdadeDiasDeTreino = "0-2 Dias";
+            }
+            else if (rd3_5.IsChecked == true)
+            {
+                avaliacaoFisica.QtdadeDiasDeTreino = "3-5 Dias";
+            }
+            else if (rd6_7.IsChecked == true)
+            {
+                avaliacaoFisica.QtdadeDiasDeTreino = "6-7 Dias";
+            }
+            else
+            {
+                exibeAviso();
+                return;
+            }
 
-                if (rdBom.IsChecked == true)
-                {
-                    avaliacaoFisica.Flexibilidade = "Bom";
-                }
-                else if (rdRegular.IsChecked == true)
-                {
-                    avaliacaoFisica.Flexibilidade = "Regular";
-                }
-                else if (rdRuim.IsChecked == true)
-                {
-                    avaliacaoFisica.Flexibilidade = "Ruim";
-                }
+            if (rdBom.IsChecked == true)
+            {
+                avaliacaoFisica.Flexibilidade = "Bom";
+            }
+            else if (rdRegular.IsChecked == true)
+            {
+                avaliacaoFisica.Flexibilidade = "Regular";
+            }
+            else if (rdRuim.IsChecked == true)
+            {
+                avaliacaoFisica.Flexibilidade = "Ruim";
+            }
+            else
+            {
+                exibeAviso();
+                return;
+            }
 
             if (erroBuilder.Length != 0)
             {
@@ -187,6 +153,11 @@ namespace Gymly.UserControls
            
 
 
+        }
+
+        private void exibeAviso()
+        {
+            Xceed.Wpf.Toolkit.MessageBox.Show("Preencha todos os campos para continuar!");
         }
 
         private float ObtemValor(TextBox txtBox, string hint, float valor, string nome)
