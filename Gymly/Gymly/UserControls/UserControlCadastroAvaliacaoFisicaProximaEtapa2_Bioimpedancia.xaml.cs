@@ -103,6 +103,13 @@ namespace Gymly.UserControls
         private void BtnProximaEtapa_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             StringBuilder erroBuilder = new StringBuilder();
+
+            if (txtBoxPorcentagemDeAguaNoMusculo.Text.Equals(txtBoxTextoPorcent) || txtBoxPorcentagemDeAguaNoCorpo.Text.Equals(txtBoxTextoPorcent) ||
+               txtBoxTaxaMetabolicaBasal.Text.Equals(txtBoxTextoTaxa) || txtBoxPorcentagemGorduraCorporal.Text.Equals(txtBoxTextoPorcent))
+            {
+                exibeAviso();
+                return;
+            }
             try
             {
                 if (!txtBoxPorcentagemGorduraCorporal.Text.Equals(txtBoxTextoPorcent))
@@ -159,6 +166,10 @@ namespace Gymly.UserControls
                 mainWindow.MudarUserControl("cadastroAvaliacaoFisicaProximaEtapa3", avaliacaoFisica, acao);
             }
 
+        }
+        private void exibeAviso()
+        {
+            Xceed.Wpf.Toolkit.MessageBox.Show("Preencha todos os campos para continuar!");
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
