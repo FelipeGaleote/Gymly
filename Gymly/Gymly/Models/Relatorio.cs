@@ -712,8 +712,8 @@ namespace Gymly.Models
                 tableYorN = new PdfPTable(2);
 
                 tableInterno.AddCell(new PdfPCell(CriaCell(pair.Key, SelecionaFonte(textoComum, 12), "Left", "Center")) { BorderColor = BaseColor.WHITE });
-                tableYorN.AddCell(new PdfPCell(CriaCell("Sim", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.RED : BaseColor.WHITE)) { BorderColor = BaseColor.WHITE });
-                tableYorN.AddCell(new PdfPCell(CriaCell("Não", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.WHITE : BaseColor.RED)) { BorderColor = BaseColor.WHITE });
+                tableYorN.AddCell(new PdfPCell(CriaCell("Sim", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.LIGHT_GRAY : BaseColor.WHITE)) { BorderColor = BaseColor.WHITE });
+                tableYorN.AddCell(new PdfPCell(CriaCell("Não", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.WHITE : BaseColor.LIGHT_GRAY)) { BorderColor = BaseColor.WHITE });
                 tableInterno.AddCell(new PdfPCell(tableYorN) { BorderColor = BaseColor.WHITE });
                 table.AddCell(new PdfPCell(tableInterno) { BorderColor = BaseColor.WHITE });
                 doc.Add(table);
@@ -738,8 +738,8 @@ namespace Gymly.Models
                 tableYorN = new PdfPTable(2);
 
                 tableInterno.AddCell(new PdfPCell(CriaCell(pair.Key, SelecionaFonte(textoComum, 12), "Left", "Center")) { BorderColor = BaseColor.WHITE });
-                tableYorN.AddCell(new PdfPCell(CriaCell("Sim", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.RED : BaseColor.WHITE)) { BorderColor = BaseColor.WHITE });
-                tableYorN.AddCell(new PdfPCell(CriaCell("Não", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.WHITE : BaseColor.RED)) { BorderColor = BaseColor.WHITE });
+                tableYorN.AddCell(new PdfPCell(CriaCell("Sim", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.LIGHT_GRAY : BaseColor.WHITE)) { BorderColor = BaseColor.WHITE });
+                tableYorN.AddCell(new PdfPCell(CriaCell("Não", SelecionaFonte(textoComum, 12), "Center", "Center", (pair.Value) ? BaseColor.WHITE : BaseColor.LIGHT_GRAY)) { BorderColor = BaseColor.WHITE });
                 tableInterno.AddCell(new PdfPCell(tableYorN) { BorderColor = BaseColor.WHITE });
                 table.AddCell(new PdfPCell(tableInterno) { BorderColor = BaseColor.WHITE });
                 doc.Add(table);
