@@ -62,6 +62,16 @@ namespace Gymly.UserControls
         {
              erroBuilder = new StringBuilder();
 
+            if (txtBoxDobraCutaneaAbdominal.Text.Equals("mm") || txtBoxDobraCutaneaAxilarMedia.Text.Equals("mm") ||
+                txtBoxDobraCutaneaBiceps.Text.Equals("mm") || txtBoxDobraCutaneaCoxa.Text.Equals("mm") ||
+                txtBoxDobraCutaneaPerna.Text.Equals("mm") || txtBoxDobraCutaneaSubescapular.Text.Equals("mm") ||
+                txtBoxDobraCutaneaSuprailiaca.Text.Equals("mm") || 
+         txtBoxDobraCutaneaTorax.Text.Equals("mm") || txtBoxDobraCutaneaTriceps.Text.Equals("mm") )
+            {
+                exibeAviso();
+                return;
+            }
+
             avaliacaoFisica.DobraCutaneaAbdominal = ObtemValor(txtBoxDobraCutaneaAbdominal, "mm", avaliacaoFisica.DobraCutaneaAbdominal, "Dobra Cutânea Abdominal");
             avaliacaoFisica.DobraCutaneaAxilarMedia = ObtemValor(txtBoxDobraCutaneaAxilarMedia, "mm", avaliacaoFisica.DobraCutaneaAxilarMedia, "Dobra Cutânea Axilar Média");
             avaliacaoFisica.DobraCutaneaBiceps = ObtemValor(txtBoxDobraCutaneaBiceps, "mm", avaliacaoFisica.DobraCutaneaBiceps, "Dobra Cutânea Biceps");
@@ -174,6 +184,10 @@ namespace Gymly.UserControls
             }
 
       
+        }
+        private void exibeAviso()
+        {
+            Xceed.Wpf.Toolkit.MessageBox.Show("Preencha todos os campos para continuar!");
         }
         private float ObtemValor(TextBox txtBox, string hint, float valor, string nome)
         {

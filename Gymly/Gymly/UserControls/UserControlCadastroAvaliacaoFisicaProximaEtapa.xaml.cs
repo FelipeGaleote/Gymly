@@ -84,24 +84,44 @@ namespace Gymly.UserControls
 
         private void BtnProximaEtapa_Click(object sender, RoutedEventArgs e)
         {
-            this.erroBuilder = new StringBuilder();
+            erroBuilder = new StringBuilder();
+
+            if (txtBoxEnvergadura.Text.Equals("cm") || txtBoxPerimetroAbdominal.Text.Equals("cm") ||
+               txtBoxPerimetroAnteBracoD.Text.Equals("Dir. cm") || txtBoxPerimetroAnteBracoE.Text.Equals("Esq. cm") ||
+               txtBoxPerimetroBracoD.Text.Equals("Dir.cm") || txtBoxPerimetroBracoE.Text.Equals("Esq.cm")
+    || txtBoxPerimetroCintura.Text.Equals("cm") ||
+                              txtBoxPerimetroCoxaDistalD.Text.Equals("Dir. cm") || txtBoxPerimetroCoxaDistalE.Text.Equals("Esq. cm") ||
+          txtBoxPerimetroCoxaMedialD.Text.Equals("Dir. cm") || txtBoxPerimetroCoxaMedialE.Text.Equals("Esq. cm") ||
+
+                    txtBoxPerimetroCoxaProximalD.Text.Equals("Dir. cm") || txtBoxPerimetroCoxaProximalE.Text.Equals("Esq. cm") ||
+          txtBoxPerimetroPernaD.Text.Equals("Dir. cm") || txtBoxPerimetroPernaE.Text.Equals("Esq. cm") ||
+          txtBoxPerimetroQuadril.Text.Equals("cm") || txtBoxPerimetroTorax.Text.Equals("cm"))
+       
+            {
+                exibeAviso();
+                return;
+            }
+
             avaliacaoFisica.Envergadura = ObtemValor(txtBoxEnvergadura, "cm", avaliacaoFisica.Envergadura, "Envergadura");
             avaliacaoFisica.PerimetroAbdominal = ObtemValor(txtBoxPerimetroAbdominal, "cm", avaliacaoFisica.PerimetroAbdominal, "Perimetro Abdominal");
             avaliacaoFisica.PerimetroAntebracoDireito = ObtemValor(txtBoxPerimetroAnteBracoD, "Dir. cm", avaliacaoFisica.PerimetroAntebracoDireito, "Perimetro Antebraço Direito");
             avaliacaoFisica.PerimetroAntebracoEsquerdo = ObtemValor(txtBoxPerimetroAnteBracoE, "Esq. cm", avaliacaoFisica.PerimetroAntebracoEsquerdo, "Perimetro Antebraço Esquerdo");
+
             avaliacaoFisica.PerimetroBracoDireito = ObtemValor(txtBoxPerimetroBracoD, "Dir. cm", avaliacaoFisica.PerimetroBracoDireito, "Perimetro Braço Direito");
             avaliacaoFisica.PerimetroBracoEsquerdo = ObtemValor(txtBoxPerimetroBracoE, "Esq. cm", avaliacaoFisica.PerimetroBracoEsquerdo, "Perimetro Braço Esquerdo");
             avaliacaoFisica.PerimetroCintura = ObtemValor(txtBoxPerimetroCintura, "cm", avaliacaoFisica.PerimetroCintura, "Perimetro Cintura");
+
             avaliacaoFisica.PerimetroCoxaDistalDireita = ObtemValor(txtBoxPerimetroCoxaDistalD, "Dir. cm", avaliacaoFisica.PerimetroCoxaDistalDireita, "Perimetro Coxa Distal Direita");
             avaliacaoFisica.PerimetroCoxaDistalEsquerda = ObtemValor(txtBoxPerimetroCoxaDistalE, "Esq. cm", avaliacaoFisica.PerimetroCoxaDistalEsquerda, "Perimetro Coxa Distal Esquerda");
             avaliacaoFisica.PerimetroCoxaMedialDireita = ObtemValor(txtBoxPerimetroCoxaMedialD, "Dir. cm", avaliacaoFisica.PerimetroCoxaMedialDireita, "Perimetro Coxa Medial Direita");
             avaliacaoFisica.PerimetroCoxaMedialEsquerda = ObtemValor(txtBoxPerimetroCoxaMedialE, "Esq. cm", avaliacaoFisica.PerimetroCoxaMedialEsquerda, "Perimetro Coxa Medial Esquerda");
             avaliacaoFisica.PerimetroCoxaProximalDireita = ObtemValor(txtBoxPerimetroCoxaProximalD, "Dir. cm", avaliacaoFisica.PerimetroCoxaProximalDireita, "Perimetro Coxa Proximal Direita");
             avaliacaoFisica.PerimetroCoxaProximalEsquerda = ObtemValor(txtBoxPerimetroCoxaProximalE, "Esq. cm", avaliacaoFisica.PerimetroCoxaProximalEsquerda, "Perimetro Coxa Proximal Esquerda");
+
             avaliacaoFisica.PerimetroPernaDireita = ObtemValor(txtBoxPerimetroPernaD, "Dir. cm", avaliacaoFisica.PerimetroPernaDireita, "Perimetro Perna Direita");
             avaliacaoFisica.PerimetroPernaEsquerda = ObtemValor(txtBoxPerimetroPernaE, "Esq. cm", avaliacaoFisica.PerimetroPernaEsquerda, "Perimetro Perna Esquerda");
             avaliacaoFisica.PerimetroQuadril = ObtemValor(txtBoxPerimetroQuadril, "cm", avaliacaoFisica.PerimetroQuadril, "Perimetro Quadril");
-            avaliacaoFisica.PerimetroTorax = ObtemValor(txtBoxEnvergadura, "cm", avaliacaoFisica.PerimetroTorax, "Perimetro Tórax");
+            avaliacaoFisica.PerimetroTorax = ObtemValor(txtBoxPerimetroTorax, "cm", avaliacaoFisica.PerimetroTorax, "Perimetro Tórax");
             
 
 
@@ -318,6 +338,10 @@ namespace Gymly.UserControls
 
 
             }
+        }
+        private void exibeAviso()
+        {
+            Xceed.Wpf.Toolkit.MessageBox.Show("Preencha todos os campos para continuar!");
         }
         private float ObtemValor(TextBox txtBox, string hint, float valor, string nome)
         {
