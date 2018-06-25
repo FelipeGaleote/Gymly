@@ -100,6 +100,36 @@ namespace Gymly.UserControls
             avaliacaoFisica.TempoAbdominal = ObtemValor(txtBoxTempoAbdominal, "Tempo(s)", avaliacaoFisica.TempoAbdominal, "Tempo Abdominal");
 
 
+            if (rdFBom.IsChecked == true)
+            {
+                avaliacaoFisica.NivelFlexoes = "Bom";
+            }
+            else if (rdFRegular.IsChecked == true)
+            {
+                avaliacaoFisica.NivelFlexoes = "Regular";
+            }
+            else if (rdFRuim.IsChecked == true)
+            {
+                avaliacaoFisica.NivelFlexoes = "Ruim";
+            }
+            else
+            {
+                exibeAviso();
+                return;
+            }
+
+            if (rdABom.IsChecked == true)
+            {
+                avaliacaoFisica.NivelAbdominais = "Bom";
+            }
+            else if (rdARegular.IsChecked == true)
+            {
+                avaliacaoFisica.NivelAbdominais = "Regular";
+            }
+            else if (rdARuim.IsChecked == true)
+            {
+                avaliacaoFisica.NivelAbdominais = "Ruim";
+            }
             /* try
              {
                  if (!txtBoxDistanciaCooper.Text.Equals("Dist.(m)"))
@@ -111,7 +141,7 @@ namespace Gymly.UserControls
                  erroBuilder.AppendLine("Formato inválido para Distância Cooper.");
 
              }*/
-             try
+            try
              {
                  if (!txtBoxQtdadeAbdominal.Text.Equals("Repetição"))
                      avaliacaoFisica.QtdadeAbdominais = int.Parse(txtBoxQtdadeAbdominal.Text.Trim());
