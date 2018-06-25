@@ -117,6 +117,10 @@ namespace Gymly.UserControls
 
         }
 
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.MudarUserControl("detalhesAluno", cpfAluno);
+        }
     }
 }
 

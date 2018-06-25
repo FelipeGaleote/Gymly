@@ -36,5 +36,6 @@
         <DataGrid Grid.Column="1" Background="LightSlateGray" Grid.Row="3" RowHeaderWidth="230" ColumnWidth="230" CanUserResizeColumns="False" CanUserResizeRows="False" SelectionMode="Single" SelectionUnit="FullRow" Name="dataGridAV" Foreground="Black" IsReadOnly="True" AutoGenerateColumns="True" Grid.ColumnSpan="6" Grid.RowSpan="5" MouseDoubleClick="DataGridAV_MouseDoubleClick" SelectionChanged="DataGridAV_SelectionChanged"></DataGrid>
         <Button x:Name="btnGerarPdf" VerticalAlignment="Top" FontSize="16pt" Content="Gerar PDF" Height="50" Grid.ColumnSpan="2" Grid.Column="3" Margin="0,10,30,0" Grid.Row="8" Grid.RowSpan="2" Click="BtnGerarPdf_Click" ></Button>
 
+        <Button Name="btnVoltar" Grid.Column="1" Grid.Row="1" Content="Voltar" FontSize="16pt" Height="50" Click="btnVoltar_Click"></Button>
     </Grid>
 </UserControl>
