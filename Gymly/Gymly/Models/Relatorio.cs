@@ -408,7 +408,7 @@ namespace Gymly.Models
             doc.Add(pulaLinha);
             if (avaliacaoFisica.TipoDeAvaliacao.Equals("Antropometria"))
             {
-                doc = AdicionaLinha(doc, "Dobras Cutaneas:", SelecionaFonte(textoTitulo, 14), 0);
+                doc = AdicionaLinha(doc, "Dobras Cutâneas:", SelecionaFonte(textoTitulo, 14), 0);
                 doc.Add(pulaLinha);
 
                 table = new PdfPTable(4);
