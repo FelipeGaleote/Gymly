@@ -22,10 +22,28 @@ namespace Gymly.UserControls
         public UserControlConfiguracao(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
+            
             InitializeComponent();
             PreencheListViewAvaliadores();
-           // preencheDataGridAvaliadores();
+            // preencheDataGridAvaliadores();
+            string arquivo;
             hintAvaliador.Visibility = Visibility.Visible;
+            try
+            {
+                arquivo = Directory.GetFiles(Path.GetDirectoryName(System.AppDomain.CurrentDomain.BaseDirectory.ToString()) + "\\Fotos\\Academia\\Logo")[0];
+            }
+            catch
+            {
+                arquivo = null;
+            }
+            if (arquivo != null && File.Exists(arquivo)) 
+            {
+                adicionarLogo.Content = "Alterar Logo da empresa";
+            }
+            else
+            {
+                adicionarLogo.Content = "Adicionar Logo da empresa";
+            }
 
         }
 
@@ -39,6 +57,8 @@ namespace Gymly.UserControls
                 caminhoLogoSalvar = "Fotos\\Academia\\Logo\\logo" + GerenciadorDeArquivos.GetExtensao(caminhoLogo);
                 GerenciadorDeArquivos.MoveCopiaDeArquivo(caminhoLogo, caminhoLogoSalvar);
                 txtBoxcaminhoFoto.Text = caminhoLogoSalvar;
+                adicionarLogo.Content = "Alterar Logo da empresa";
+
                 Xceed.Wpf.Toolkit.MessageBox.Show("Logo adicionado com sucesso", "Logo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             
