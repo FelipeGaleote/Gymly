@@ -331,42 +331,42 @@ namespace Gymly.Models
             table.AddCell(CriaCell("Braço", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroBracoEsquerdo.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Esquerda
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroBracoDireito.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//direita
-            diferenca = Math.Abs(avaliacaoFisica.PerimetroBracoEsquerdo - avaliacaoFisica.PerimetroBracoDireito);
+            diferenca = (float)(Math.Abs(Math.Round(Convert.ToDouble(avaliacaoFisica.PerimetroBracoEsquerdo - avaliacaoFisica.PerimetroBracoDireito), 1)));
             table.AddCell(CriaCell(Math.Abs(diferenca).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (diferenca <= 0.5) ? BaseColor.WHITE : BaseColor.RED, BaseColor.WHITE));//diferença
 
             //Antebraço
             table.AddCell(CriaCell("Antebraço", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroAntebracoEsquerdo.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Esquerda
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroAntebracoDireito.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//direita
-            diferenca = Math.Abs(avaliacaoFisica.PerimetroAntebracoEsquerdo - avaliacaoFisica.PerimetroAntebracoDireito);
+            diferenca = (float)(Math.Abs(Math.Round(avaliacaoFisica.PerimetroAntebracoEsquerdo - avaliacaoFisica.PerimetroAntebracoDireito, 1)));
             table.AddCell(CriaCell(Math.Abs(diferenca).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (diferenca <= 0.5) ? BaseColor.WHITE : BaseColor.RED, BaseColor.WHITE));//diferença
 
             //Coxa Proximal
             table.AddCell(CriaCell("Coxa Proximal", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroCoxaProximalEsquerda.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Esquerda
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroCoxaProximalDireita.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//direita
-            diferenca = Math.Abs(avaliacaoFisica.PerimetroCoxaProximalEsquerda - avaliacaoFisica.PerimetroCoxaProximalDireita);
+            diferenca = (float)(Math.Abs(Math.Round(avaliacaoFisica.PerimetroCoxaProximalEsquerda - avaliacaoFisica.PerimetroCoxaProximalDireita, 1)));
             table.AddCell(CriaCell(Math.Abs(diferenca).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (diferenca <= 0.5) ? BaseColor.WHITE : BaseColor.RED, BaseColor.WHITE));//diferença
 
             //Coxa Medial
             table.AddCell(CriaCell("Coxa Medial", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroCoxaMedialEsquerda.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Esquerda
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroCoxaMedialDireita.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//direita
-            diferenca = Math.Abs(avaliacaoFisica.PerimetroCoxaMedialEsquerda - avaliacaoFisica.PerimetroCoxaMedialDireita);
+            diferenca = (float)(Math.Abs(Math.Round(avaliacaoFisica.PerimetroCoxaMedialEsquerda - avaliacaoFisica.PerimetroCoxaMedialDireita,1)));
             table.AddCell(CriaCell(Math.Abs(diferenca).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (diferenca <= 0.5) ? BaseColor.WHITE : BaseColor.RED, BaseColor.WHITE));//diferença
 
             //Coxa Distal
             table.AddCell(CriaCell("Coxa Distal", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroCoxaDistalEsquerda.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Esquerda
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroCoxaDistalDireita.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//direita
-            diferenca = Math.Abs(avaliacaoFisica.PerimetroCoxaDistalEsquerda - avaliacaoFisica.PerimetroCoxaDistalDireita);
+            diferenca = (float)(Math.Abs(Math.Round(avaliacaoFisica.PerimetroCoxaDistalEsquerda - avaliacaoFisica.PerimetroCoxaDistalDireita,1)));
             table.AddCell(CriaCell(Math.Abs(diferenca).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (diferenca <= 0.5) ? BaseColor.WHITE : BaseColor.RED, BaseColor.WHITE));//diferença
 
             //Panturrilha
             table.AddCell(CriaCell("Panturrilha", SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroPernaEsquerda.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//Esquerda
             table.AddCell(CriaCell(avaliacaoFisica.PerimetroPernaDireita.ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", BaseColor.WHITE, BaseColor.WHITE));//direita
-            diferenca = Math.Abs(avaliacaoFisica.PerimetroPernaEsquerda - avaliacaoFisica.PerimetroPernaDireita);
+            diferenca = (float)(Math.Abs(Math.Round(avaliacaoFisica.PerimetroPernaEsquerda - avaliacaoFisica.PerimetroPernaDireita, 1)));
             table.AddCell(CriaCell(Math.Abs(diferenca).ToString(), SelecionaFonte(textoComum, 12), "Center", "Center", (diferenca <= 0.5) ? BaseColor.WHITE : BaseColor.RED, BaseColor.WHITE));//diferença
 
             doc.Add(table);
