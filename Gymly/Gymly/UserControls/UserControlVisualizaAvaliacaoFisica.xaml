@@ -8,6 +8,19 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <DocumentViewer Name="docView"></DocumentViewer>
-        <Button Name="voltar" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" Foreground="Black" Height="Auto" Width="auto" BorderBrush="{x:Null}" Click="Voltar_Click" >Voltar</Button>
+        <Button Name="voltar" VerticalAlignment="Top" HorizontalAlignment="Right" Foreground="Black"  BorderBrush="{x:Null}" Click="Voltar_Click" >
+            <Button.Background>
+                <ImageBrush ImageSource="../Image/voltar_button.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="1" CenterX="1" ScaleX="1" ScaleY="1"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
     </Grid>
 </UserControl>
