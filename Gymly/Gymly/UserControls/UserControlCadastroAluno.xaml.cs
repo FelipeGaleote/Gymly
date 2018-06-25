@@ -311,9 +311,12 @@ namespace Gymly.UserControls
                 hintDataNasc.Visibility = Visibility.Visible;
                 todosCamposValidos = false;
             }
-            /*if (!validaCpf(txtBoxCpf.ToString()){
-                    todosCamposValidos = false;
-            }*/
+            if (!txtBoxCpf.Text.Equals("") && !Aluno.ValidaCpf(txtBoxCpf.Text)){
+                hintCPF.Text = "CPF inválido";
+                hintCPF.Visibility = Visibility.Visible;
+                txtBoxCpf.Text = "";
+                todosCamposValidos = false;
+            }
             if (!ValidaEmail(txtBoxEmail.Text.ToString()))
             {
                 txtBoxEmail.Text = "";
