@@ -840,7 +840,7 @@ namespace Gymly.Models
             table.AddCell(CriaCell("Nível: ", aluno.Nivel, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell("E-mail: ", aluno.Email, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell("Telefone: ", aluno.Telefone, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
-            table.AddCell(CriaCell("Nome do avaliador: ", nomeAvaliador, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
+            table.AddCell(CriaCell("Avaliador: ", nomeAvaliador, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
             table.AddCell(CriaCell("", null, SelecionaFonte(textoTitulo, 14), SelecionaFonte(textoComum, 14), "Left", "Center", BaseColor.WHITE, BaseColor.WHITE));
 
 
