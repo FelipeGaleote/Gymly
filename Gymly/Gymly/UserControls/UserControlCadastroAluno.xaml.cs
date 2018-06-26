@@ -57,6 +57,7 @@ namespace Gymly.UserControls
                     ImageFotoDeRosto.Source = GerenciadorDeArquivos.BuscaImagem(aluno.CaminhoFotoDoRosto);
                     btnAddFotoDeRosto.Background = Brushes.Transparent;
                     btnAddFotoDeRosto.BorderBrush = null;
+                    caminhoFotoDeRosto = aluno.CaminhoFotoDoRosto;   
                 }
 
             }
@@ -78,7 +79,9 @@ namespace Gymly.UserControls
                     Nome = txtBoxNome.Text,
                     Cpf = txtBoxCpf.Text,
                     Email = txtBoxEmail.Text,
-                    Telefone = txtBoxTelefone.Text
+                    Telefone = txtBoxTelefone.Text,
+                    CaminhoFotoDoRosto = caminhoFotoDeRosto
+                    
                 };
                 if (rdMasculino.IsChecked == true)
                 {
@@ -105,11 +108,10 @@ namespace Gymly.UserControls
                     aluno.CaminhoFotoDoRosto = caminhoSalvarFotoDeRosto;
                     System.IO.File.OpenWrite(caminhoSalvarFotoDeRosto).Close();
                 }
-                else
+                else if(!acao.Equals("Editar"))
                 {
                     aluno.CaminhoFotoDoRosto = String.Empty;
                 }
-
                 CultureInfo culture = new CultureInfo("pt-BR");
 
                 aluno.DataNasc = DateTime.Parse((comboBoxDia.SelectedValue + "-" + comboBoxMes.SelectedValue + "-" + comboBoxAno.SelectedValue));

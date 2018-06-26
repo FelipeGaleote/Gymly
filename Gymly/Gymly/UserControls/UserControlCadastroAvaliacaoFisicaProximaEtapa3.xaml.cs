@@ -95,6 +95,7 @@ namespace Gymly.UserControls
                 btnAddFotoDeFrente.Background = System.Windows.Media.Brushes.Transparent;
                 btnAddFotoDeFrente.BorderBrush = null;
             }
+            
         }
         public void PreencheCampos()
         {
