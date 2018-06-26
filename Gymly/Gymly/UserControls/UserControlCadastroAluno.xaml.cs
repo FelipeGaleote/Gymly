@@ -20,13 +20,13 @@ namespace Gymly.UserControls
         private string caminhoSalvarFotoDeRosto;
         private string acao;
         private Aluno aluno;
+        private int dias;
 
         public UserControlCadastroAluno(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             this.acao = "CADASTRAR";
             InitializeComponent();
-            PreencheComboBoxs("dia");
             PreencheComboBoxs("mes");
             PreencheComboBoxs("ano");
         }
@@ -163,7 +163,7 @@ namespace Gymly.UserControls
             switch (nomeComboBox)
             {
                 case "dia":
-                    AdicionaItemNoCmB(1, 31, comboBoxDia, "ASC");
+                    AdicionaItemNoCmB(1, dias, comboBoxDia, "ASC");
                     break;
                 case "mes":
                     AdicionaItemNoCmB(1, 12, comboBoxMes, "ASC");
@@ -286,14 +286,47 @@ namespace Gymly.UserControls
 
         private void ComboBoxMes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            int mes = Convert.ToInt32(comboBoxMes.SelectedValue);
+            int ano = Convert.ToInt32(comboBoxAno.SelectedValue);
+            //item = comboBoxAno.SelectedValue as ComboBoxItem;
+            //texto = item.Content.ToString();
+
             if (comboBoxAno.SelectedValue != null && comboBoxDia.SelectedValue != null)
                 hintDataNasc.Visibility = Visibility.Hidden;
+            if (mes == 2)
+            {
+                if (!DateTime.IsLeapYear(ano))
+                {
+                    dias = 28;
+                }
+                else
+                {
+                    dias = 29;
+                }
+            }
+            else if (mes == 3 || mes == 1 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
+            {
+                dias = 31;
+            }
+            else
+            {
+                dias = 30;
+            }
+
+            PreencheComboBoxs("dia");
+            comboBoxDia.IsEnabled = true;
         }
 
         private void ComboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (comboBoxDia.SelectedValue != null && comboBoxMes.SelectedValue != null)
+            {
                 hintDataNasc.Visibility = Visibility.Hidden;
+            }
+                
+                //if (!DateTime.IsLeapYear((int)comboBoxAno.SelectedValue)){
+
+              
         }
 
         private bool CamposValidos()

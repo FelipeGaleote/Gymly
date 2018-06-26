@@ -70,7 +70,7 @@
                 <ColumnDefinition Width="1*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <ComboBox Name="comboBoxDia" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="50" MaxWidth="70" SelectionChanged="ComboBoxDia_SelectionChanged"></ComboBox>
+            <ComboBox Name="comboBoxDia" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="50" MaxWidth="70" SelectionChanged="ComboBoxDia_SelectionChanged" IsEnabled="False" ></ComboBox>
             <ComboBox Name="comboBoxMes" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="50" MaxWidth="70" SelectionChanged="ComboBoxMes_SelectionChanged"></ComboBox>
             <ComboBox Name="comboBoxAno" Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center" MinWidth="50" MaxWidth="70" SelectionChanged="ComboBoxAno_SelectionChanged"></ComboBox>
         </Grid>
