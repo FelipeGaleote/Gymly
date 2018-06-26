@@ -289,6 +289,30 @@ namespace Gymly.UserControls
 
         private void ComboBoxMes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (comboBoxAno.SelectedValue != null)
+            {
+                ConfiguraData();
+            }
+        }
+
+        private void ComboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (comboBoxDia.SelectedValue != null && comboBoxMes.SelectedValue != null)
+            {
+                hintDataNasc.Visibility = Visibility.Hidden;
+            }
+            if (comboBoxMes.SelectedValue != null)
+            {
+                ConfiguraData();
+            }
+
+            //if (!DateTime.IsLeapYear((int)comboBoxAno.SelectedValue)){
+
+
+        }
+
+        private void ConfiguraData()
+        {
             int mes = Convert.ToInt32(comboBoxMes.SelectedValue);
             int ano = Convert.ToInt32(comboBoxAno.SelectedValue);
             //item = comboBoxAno.SelectedValue as ComboBoxItem;
@@ -318,18 +342,6 @@ namespace Gymly.UserControls
 
             PreencheComboBoxs("dia");
             comboBoxDia.IsEnabled = true;
-        }
-
-        private void ComboBoxAno_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (comboBoxDia.SelectedValue != null && comboBoxMes.SelectedValue != null)
-            {
-                hintDataNasc.Visibility = Visibility.Hidden;
-            }
-                
-                //if (!DateTime.IsLeapYear((int)comboBoxAno.SelectedValue)){
-
-              
         }
 
         private bool CamposValidos()
