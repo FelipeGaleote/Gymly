@@ -177,5 +177,37 @@ namespace Gymly.UserControls
             Regex regex = new Regex("[^0-9,]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void txtBoxPorcentagemGorduraCorporal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(txtBoxPorcentagemGorduraCorporal.Text.Length > 1)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtBoxPorcentagemDeAguaNoCorpo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtBoxPorcentagemDeAguaNoCorpo.Text.Length > 1)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtBoxTaxaMetabolicaBasal_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void txtBoxPorcentagemDeAguaNoMusculo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (txtBoxPorcentagemDeAguaNoMusculo.Text.Length > 1)
+            {
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }
