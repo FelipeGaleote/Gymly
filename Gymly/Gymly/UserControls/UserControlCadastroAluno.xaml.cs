@@ -173,6 +173,9 @@ namespace Gymly.UserControls
                     break;
             }
         }
+
+        
+
         public void AdicionaItemNoCmB(int valorInicial, int valorFinal, System.Windows.Controls.ComboBox comboBox, string ordenacao)
         {
        
