@@ -20,13 +20,14 @@ namespace Gymly.UserControls
         private string caminhoSalvarFotoDeRosto;
         private string acao;
         private Aluno aluno;
-        private int dias;
+        private int dias = 31;
 
         public UserControlCadastroAluno(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             this.acao = "CADASTRAR";
             InitializeComponent();
+            PreencheComboBoxs("dia");
             PreencheComboBoxs("mes");
             PreencheComboBoxs("ano");
         }
